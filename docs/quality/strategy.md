@@ -2,6 +2,8 @@
 
 Contrato de [ADR-009](../decisions/adr-009-quality.md). **Esta fase no ejecuta tests ni construye un runner.** Solo se realiza revisión estática de los documentos nuevos. Toda evidencia de software descrita aquí está pendiente.
 
+Los [Validation Profiles y WOs de SP2](../specs/work-orders.md) concretan la selección futura para el primer circuito y sus gates habilitantes; no sustituyen el contrato de equivalencia e invalidación de esta fuente.
+
 ## Categorías ortogonales
 
 | Categoría | Propósito / qué prueba | Qué no prueba | Coste relativo y activación |

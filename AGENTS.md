@@ -1,6 +1,6 @@
 # CasPro — mapa para agentes
 
-CasPro es un ERP interno para TILMUX y las entidades autorizadas de su propietario. Estado de trabajo: fundación para revisión; no iniciar funcionalidad sin encargo posterior explícito.
+CasPro es un ERP interno para TILMUX y las entidades autorizadas de su propietario. El [estado vigente](docs/review.md) delimita la fase autorizada; no iniciar funcionalidad sin encargo explícito.
 
 ## Cargar según la tarea
 

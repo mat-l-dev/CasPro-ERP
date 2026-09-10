@@ -27,14 +27,9 @@ Protocolo: autenticar y verificar membresía/capacidad inicial mediante Workspac
 
 Una restricción UNIQUE resuelve identidad/deduplicación; CHECK, propiedades de la fila; FK, pertenencia y referencia. Una suma que cruza varias filas necesita serializar el recurso que limita esa suma. Dos requests válidas individualmente no justifican aceptar ambas.
 
-Hipótesis local PROVISIONAL para analizar flujos monetarios/comerciales, no orden global obligatorio:
+SUPERPROMPT 2 concreta los recursos competidos del primer circuito en su [matriz local](../specs/command-matrix.md). Esa matriz es la fuente del orden candidato para esos comandos y sustituye la hipótesis ilustrativa anterior; sigue PROVISIONAL, pendiente de validación ejecutable conforme ADR-007.
 
-1. Objetivos de liquidación afectados.
-2. Movimientos de financiación afectados.
-3. Raíces comerciales afectadas.
-4. Posiciones de stock y unidades seriales, con orden documentado entre ambas.
-
-El orden aceptable se deriva de comandos y recursos concretos compartidos, con desempate estable entre recursos de la misma clase. Debe incluir la identidad de intención cuando exista deduplicación, restricciones/FKs relevantes y creación concurrente de raíces: no se puede bloquear una fila todavía inexistente. El mecanismo para ese caso se especifica y valida, no se inventa aquí. La matriz debe ser compatible entre todos los comandos que compitan; después necesita evidencia ejecutable de intercalación, rollback y retry. La lista anterior puede cambiar sin abandonar estos principios.
+El orden aceptable se deriva de comandos y recursos concretos compartidos, con desempate estable entre recursos de la misma clase. Debe incluir la identidad de intención cuando exista deduplicación, restricciones/FKs relevantes y creación concurrente de raíces: no se puede bloquear una fila todavía inexistente. El mecanismo para ese caso se especifica y valida, no se inventa aquí. La matriz debe ser compatible entre todos los comandos que compitan; después necesita evidencia ejecutable de intercalación, rollback y retry. Su orden puede cambiar con esa evidencia sin abandonar estos principios.
 
 Una operación que descubre otra raíz no la añade violando el orden acordado: vuelve a empezar con el conjunto completo. La lectura inicial para descubrir relaciones no decide importes. Tras adquirir locks se releen relaciones/revisiones; si el conjunto cambió, rollback y reintento acotado. Esto es especialmente necesario para un refund que descubre aplicaciones nuevas.
 
@@ -54,7 +49,7 @@ La decisión depende del efecto de repetir una intención, no de que el hecho pu
 
 Cada comando documenta su clasificación y contraejemplo. Cuando requiere deduplicación, persiste en la misma transacción identidad única, fingerprint canónico y resultado estable. Misma intención y contenido devuelve el efecto ya confirmado; contenido diferente produce conflicto. Se revalida autorización al consultar ese resultado. El fingerprint usa entradas solicitadas normalizadas y versión de contrato; el resultado conserva las decisiones ya aplicadas, sin recalcular el pasado al reintentar.
 
-El caso concreto delimita entidad/operación y, cuando corresponda, principal o mandato; retención, caducidad, solicitudes en curso y rechazo previo al commit siguen PROVISIONAL hasta su especificación. No se reutiliza una clave caducada para duplicar un hecho confirmado. Un mecanismo incompleto no se declara naturalmente idempotente para evitar ese trabajo.
+El caso concreto delimita entidad/operación y, cuando corresponda, principal o mandato. [CM0 de SP2](../specs/command-matrix.md#cm0) especifica identidad, solicitudes en curso, rechazo y protección de efectos del primer circuito; plazos de retención y mecanismo ejecutable conservan pendientes explícitos. No se reutiliza una clave caducada para duplicar un hecho confirmado. Un mecanismo incompleto no se declara naturalmente idempotente para evitar ese trabajo.
 
 La deduplicación se resuelve junto con los locks/constraints, no solo mediante una consulta anterior al bloqueo. No asumir que on_commit garantiza entrega de trabajo externo: un fallo del proceso después del commit puede perder ese callback. La intención que deba sobrevivir queda persistida dentro de la transacción.
 

@@ -1,6 +1,6 @@
 # Revisión y condición de avance
 
-Fecha: 2026-09-10. Alcance del cierre: correcciones documentales de Gate 1 en CasPro. **Veredicto: PASS. Gate 1: CLOSED, exclusivamente documental.** Este archivo es la fuente del estado global del gate; cada ADR conserva la autoridad sobre sus alcances. Ese cierre no acredita software construido, desplegado o production-ready ni sustituye aprobaciones empresariales. El Foundation Amendment posterior se registra por separado abajo. SUPERPROMPT 2 no se inicia ni queda autorizado por este cierre.
+Fecha: 2026-09-10. **Gate 1: CLOSED, PASS documental. Foundation Amendment: PASS documental.** Este archivo es la fuente del estado global; cada ADR conserva la autoridad sobre sus alcances. Esos cierres no acreditan software construido, desplegado o production-ready ni sustituyen aprobaciones empresariales. SUPERPROMPT 2 fue autorizado por un mandato posterior y se registra al final; los cierres anteriores no fueron por sí mismos su autorización.
 
 ## Refutación del diseño
 
@@ -31,11 +31,11 @@ Fecha: 2026-09-10. Alcance del cierre: correcciones documentales de Gate 1 en Ca
 
 ## Decisiones realmente humanas
 
-Conservan pendientes humanos en los alcances indicados; el amendment concreta parte de H1 sin cerrar los restantes. Los ADRs distinguen principios aceptados y mecanismos provisionales; estos últimos conservan incertidumbre técnica, que no se traslada al propietario como si fuera una decisión empresarial.
+Conservan pendientes humanos en los alcances indicados; el amendment concretó parte de H1 y SUPERPROMPT 2 eligió el circuito B2C. Las cinco políticas del circuito se precisan únicamente en [HP1–HP5](specs/first-operational-circuit.md). Los ADRs distinguen principios aceptados y mecanismos provisionales; estos últimos conservan incertidumbre técnica, que no se traslada al propietario como si fuera una decisión empresarial.
 
 | ID | Decisión | Recomendación / qué condiciona |
 |---|---|---|
-| H1 | Nivel de contabilidad interna y políticas empresariales exigibles al primer uso; alcance parcialmente concretado | Jumpseller, Documents y Resend/AUTO_WITH_APPROVAL más operación básica quedan incluidos por el amendment. Resta precisar cierre exigible y políticas del circuito; el margen básico no sustituye Accounting |
+| H1 | Políticas empresariales exigibles al primer uso; circuito seleccionado por SUPERPROMPT 2 | Venta B2C por Jumpseller, Treasury, entrega física, CPE externo y Documents/Resend quedan especificados. HP1–HP5 delimitan decisiones productivas pendientes; margen básico no sustituye Accounting |
 | H2 | Presupuesto de hosting, almacenamiento, soporte y región/condiciones de tratamiento de datos | Managed inicialmente; candidato Render+Supabase, sin contratación en esta fase |
 | H3 | RPO, RTO y retención empresarial/regulatoria | Decidir pérdida/interrupción tolerable antes de seleccionar plan de backups y continuidad |
 | H4 | Excepción de segregación y acciones que requieren aprobación adicional | Mostrar autoaprobación; no simular dos personas; limitar devoluciones/elevaciones/cierres conforme al riesgo aceptado |
@@ -111,8 +111,29 @@ Revisión estática del cambio: referencias locales afectadas resueltas, fuentes
 
 **Foundation Amendment: PASS documental.** La fundación queda lista para especificación en SUPERPROMPT 2 cuando el propietario la autorice; ese paso deberá concretar los pendientes del circuito, sin darlos por resueltos ni habilitar operación real. Gate 1 permanece CLOSED. No se inicia SUPERPROMPT 2, no se ejecutan tests/Docker/builds, no se implementa software ni se consulta/modifica Wbpro.
 
-## SUPERPROMPT 2: siguiente fase propuesta
+## SUPERPROMPT 2 — especificación del circuito, 2026-09-10
 
-Después de autorización humana, resolver lo pendiente de H1 y las políticas que bloqueen el circuito elegido; especificar Workspace/Parties/Catalog mínimos y un recorrido comercial completo con dinero, stock, evidencia y correcciones que incluya el alcance del amendment. Precisar estados, contratos entre propietarios, límites monetarios/temporales y matriz de locks; mantener Accounting/Tax separados y validar normativa antes de fijar tratamientos.
+Mandato posterior explícito: especificar y publicar la rama documental; no implementar ni ejecutar WOs. Preflight: árbol limpio, main/HEAD/origin/main idénticos tras fetch en `e89f344fc76cc70092962764e626f48ef80b6e90`, remoto CasPro ya publicado, sin archivos ajenos. Se creó `spec/superprompt-2-first-operational-circuit` desde ese origin/main; no se reescribe historia ni se trabaja directamente sobre main.
 
-Diseñar casos de aceptación y Validation Profiles, ordenar riesgos habilitantes y preparar solo las primeras WO pequeñas revisables. No especificar todos los módulos exhaustivamente por rutina, no generar una cola masiva y no iniciar implementación, infraestructura o pruebas salvo autorización expresa en esa fase.
+La [spec de entrada](specs/first-operational-circuit.md) distribuye siete archivos por contexto: alcance/maestros/operación, negocio, CPE/Documents, integración, matriz de comandos, aceptación y WOs/perfiles. No se crean nuevos módulos, ADRs, motores de workflow, identidad Customer duplicada ni código. Los documentos fundacionales afectados solo actualizan enlaces, estado de fase y pendientes ya concretados; Gate 1 no se reaudita.
+
+| Refutación del primer circuito | Respuesta incorporada y límite |
+|---|---|
+| Dos webhooks/dos reservas duplican venta o consumen el mismo stock | Caso por conexión+pedido, aceptación explícita íntegra, unicidades y raíces compartidas; concurrencia real pendiente |
+| Propuesta discrepante queda bloqueada sin corrección posible | C15 revisa términos con evidencia, conserva observación y C04 reevalúa; nueva observación material invalida conformidad |
+| PAID crea dinero, cierre de cuenta compite con confirmación o refund evade cobertura | Treasury confirma evidencia, F entra en orden común, S/T/R protegen aplicación/refund/entrega; no transferencia ni dinero desde webhook |
+| Retorno se confunde con refund o corrección de retorno duplica reventa | Dirección/original/ciclo/coste y corrección referenciada con tope/unidades disponibles; pasos físicos, comerciales, fiscales y monetarios separados |
+| PUT absoluto considerado reducción repone stock consumido por checkout concurrente | Gate STOCK-PUBLISH; publicación positiva desatendida bloqueada hasta protocolo probado, ventana controlada explícita para baseline. No fence remoto ni cero sobreventa inventados |
+| Preparar en MANUAL envía sin capacidad o corrección obliga a crear segundo original | Solicitud de dispatch y documents.send explícitos, revisión de intención existente, unicidad original, C39/C35 y revalidación antes de I/O |
+| Preparación automática se pierde o Documents llama Sales directamente | Reevaluación durable por caso mediante coordinador, insumos verificados; no nuevo dueño empresarial ni framework genérico |
+| CPE equivocado/XML reconstruido pasa o aprobación cambia de destinatario | Correspondencia documentada, procedencia original/representación/copia, fingerprint y permisos actuales; política HP4 pendiente, no tratamiento fiscal inventado |
+| Staging filtra CC/BCC, timeout/lease/restore repite original | Guardia de entorno sobre todos los destinatarios, UNKNOWN/HOLD y conciliación, registro antes de I/O, efectos desactivados al restaurar |
+| WO necesita inventar evidencia o seis WOs aparentan terminar el ERP | Seis encargos PREPARED con perfiles/recortes/gates; UNIT aislado y RLS habilitante en WO-SP2-02. No atribuir a evidencia parcial un escenario completo |
+
+Contradicción externa conservada: documentación oficial Jumpseller discrepa sobre momento de descuento de stock y calendario de retries; [S21/S26](decisions/sources.md). El contrato bloquea la activación dependiente hasta comprobar la tienda/flujo real. No se trasladan esas afirmaciones a invariantes internas. SUNAT solo acredita la consulta documentada de un CPE identificado, no descarga total SOL; el baseline manual sigue disponible según política.
+
+**SUPERPROMPT 2: PASS documental.** Se revisaron las fichas, transiciones, permisos, orden común y contraejemplos del circuito; no se identificaron contradicciones internas residuales en este alcance. Comprobaciones estáticas: 17 archivos Markdown (7 nuevos y 10 existentes), 218 referencias locales resueltas, incluidas 49 a anchors explícitos; 37 fichas completas y coincidentes con la matriz; 110 escenarios y seis WOs sin IDs duplicados, referencias a fuentes reconocidas entre S01–S28. El grafo de 11 módulos permanece acíclico, sin nuevas dependencias empresariales; no hay archivos vacíos, patrones de secretos detectados o cambios fuera de la lista autorizada. Diff completo revisado y comprobación de whitespace sin errores; son comprobaciones documentales, no pruebas de aplicación.
+
+No se ejecutaron tests de aplicación, Docker, builds, CI ni infraestructura; tampoco se consultó Wbpro/legacy ni cuentas privadas o se enviaron correos. La revisión del diseño no demuestra locks, RLS, precisión, recuperación ni semántica de proveedores ejecutables. Workspace/RLS, mecanismos de concurrencia y durabilidad, rangos numéricos y activación de proveedores conservan sus condiciones provisionales; HP1–HP5 condicionan operación, no la preparación independiente de WO-SP2-01.
+
+La preparación siguiente está delimitada por [WO-SP2-01](specs/work-orders.md#wo-sp2-01): runtime/calidad mínima identificables para poder demostrar después aislamiento. Las seis WOs permanecen sin ejecutar y requieren autorización nueva; no SUPERPROMPT 3 ni operación real por cerrar esta especificación.

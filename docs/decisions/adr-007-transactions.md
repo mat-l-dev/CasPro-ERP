@@ -21,4 +21,4 @@ SERIALIZABLE global introduce abortos/operación sin reemplazar la modelación. 
 
 ## Consequences
 
-La matriz de locks forma parte de la spec, con pruebas de intercalación real. No se acepta un control sintáctico como prueba de conservación. Rechazos se auditan tras rollback exterior, con limitación explícita si falla DB. Fuentes: [S04–S05](sources.md).
+La [matriz de SP2](../specs/command-matrix.md) concreta el primer circuito, pendiente de pruebas de intercalación real. No se acepta un control sintáctico como prueba de conservación. Rechazos se auditan tras rollback exterior, con limitación explícita si falla DB. Fuentes: [S04–S05](sources.md).

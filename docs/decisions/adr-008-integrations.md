@@ -7,7 +7,7 @@ Fecha: 2026-09-10. **Estado autoritativo por alcance.** ACCEPTED acepta el contr
 | Adaptadores, hechos versionados e intención durable necesaria | ACCEPTED | Estado empresarial en su dueño; efectos externos fuera de la transacción crítica |
 | Foundation Amendment: Jumpseller inicial, stock autoritativo CasPro y Resend inicial detrás de puerto email | ACCEPTED | Mandato del propietario posterior a Gate 1; solo esos proveedores, sin conexiones habilitadas |
 | Documents conserva archivo y entrega; CPE emitido externamente; acquire → link/verify → deliver | ACCEPTED | Sin Document Vault ni emisión/envío CPE a SUNAT desde CasPro; AUTO_WITH_APPROVAL operativo inicial, modos/HOLD según contrato |
-| Backend outbox/inbox/jobs PostgreSQL, representación y worker concretos | PROVISIONAL | Consumidores iniciales identificados; faltan comandos/registros y evidencia de caída/reanudación/deduplicación, sin framework genérico previo |
+| Backend outbox/inbox/jobs PostgreSQL, representación y worker concretos | PROVISIONAL | [SP2](../specs/integrations.md) concreta comandos/registros; falta evidencia ejecutable de caída/reanudación/deduplicación, sin framework genérico previo |
 | Activación de proveedores, política publicable y política documental concreta | PROVISIONAL | Permisos/cuentas/API reales, carreras del stock, artefactos/retención, aprobación/HOLD, destinatarios seguros y resultados ambiguos; adquisición masiva SOL no verificada |
 
 ## Context

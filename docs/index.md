@@ -6,7 +6,7 @@ Fecha de corte: 2026-09-10. Los documentos describen la fundación, no acreditan
 
 | Verdad | Fuente canónica | No puede sustituirse por |
 |---|---|---|
-| BUSINESS — qué debe ocurrir | [Producto](product/charter.md), [modelo](domain/model.md), [invariantes](domain/invariants.md); futuras specs locales | Un test, un prompt o una interpretación del implementador |
+| BUSINESS — qué debe ocurrir | [Producto](product/charter.md), [modelo](domain/model.md), [invariantes](domain/invariants.md); [spec del primer circuito](specs/first-operational-circuit.md) | Un test, un prompt o una interpretación del implementador |
 | ARCHITECTURE — organización y motivos | [Arquitectura](architecture/overview.md), contratos enlazados y ADRs | Un árbol de carpetas o una instrucción histórica |
 | IMPLEMENTATION — qué existe | Futuro código, migraciones y configuración; hoy no existen | Una decisión ACCEPTED |
 | VERIFICATION — qué se ha demostrado | Futuras pruebas y evidencia vinculada al candidato; hoy solo [revisión estática documental](review.md) | Generación de IA, coverage o una checklist rellenada |
@@ -19,6 +19,7 @@ Fecha de corte: 2026-09-10. Los documentos describen la fundación, no acreditan
 | Producto, hechos y non-goals | [Charter](product/charter.md) |
 | Agregados y ciclos | [Modelo conceptual](domain/model.md) |
 | Conservación y estados | [Invariantes](domain/invariants.md) |
+| Primer circuito Jumpseller–venta–cobro–entrega–CPE–email | [Spec local](specs/first-operational-circuit.md), con matriz, aceptación y primeras WOs enlazadas |
 | Principios y estructura futura | [Overview](architecture/overview.md) |
 | Ownership y dependencias | [Boundaries](architecture/boundaries.md) |
 | Comparación tecnológica | [Technology](architecture/technology.md) |
