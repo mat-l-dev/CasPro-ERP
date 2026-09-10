@@ -1,0 +1,51 @@
+# Modelo conceptual
+
+Mapa previo al ORM. No es una propuesta de una tabla por fila. Las reglas completas de cada módulo se escribirán después de revisar esta fundación. Ownership modular: [boundaries](../architecture/boundaries.md).
+
+## Convenciones comunes
+
+Toda raíz empresarial tiene identidad estable, entidad propietaria explícita, revisión y autoría. Un hijo hereda la propiedad de su raíz y no puede cambiarla. Los hechos confirmados conservan fecha empresarial, instante de registro y procedencia; se corrigen con una relación explícita de reversión/ajuste, no reescribiendo historia.
+
+Los maestros pueden evolucionar con trazabilidad; el documento confirmado conserva el snapshot estrictamente necesario de lo que utilizó. Un mismo nombre, número tributario o usuario no fusiona propietarios ni patrimonios.
+
+| Concepto / identidad | Propietario | Relaciones y cardinalidad | Ciclo y mutabilidad | Corrección / temporalidad / auditoría |
+|---|---|---|---|---|
+| Entidad legal / ID estable | Organization dentro de la agrupación provisional Workspace | Directorio global mínimo; perfil empresarial protegido; 1:N establecimientos; N:M usuarios mediante membresía | Propuesta → activa → suspendida/retirada; no implica estado RUC | Cambios autorizados y fechados; no reasignar sus operaciones a otra entidad |
+| Usuario / ID de identidad | Identity dentro de Workspace; global de plataforma | 0:N membresías; no es una Party | Invitado → activo → bloqueado; credenciales rotables | Autenticaciones, recuperación y revocaciones; los hechos antiguos preservan actor |
+| Actor / contexto de una actuación | Access verifica usando Identity y Organization; cada hecho conserva referencia | Usuario o principal de sistema + entidad + capacidades + motivo | Valor de ejecución, no nueva tabla por request | Impersonación y elevación separadas; no actor implícito ni usuario ficticio de worker |
+| Membresía / usuario+entidad | Access dentro de Workspace | N:M; capacidades limitables por establecimiento/almacén | Vigente → revocada, con intervalo y revisión | Revocación observable; sin permisos por ser staff |
+| Party / ID por entidad | Parties | 0:N identidades versionadas; 0:N roles cliente/proveedor/socio | Alta → activa → retirada; roles no crean personas nuevas | No fusionar por coincidencia; snapshot fiscal/documental conserva versión y fuente |
+| Producto y SKU / IDs | Catalog | Producto 1:N SKU; SKU 1:N precios/unidades válidas | Borrador → activo → retirado | Retirar limita nuevos compromisos; ejecución/corrección de compromisos existentes requiere regla explícita |
+| Servicio o concepto no almacenable | Catalog conceptualmente; alcance por aprobar | Puede ser concepto de compra/gasto, sin existencias | No se convierte artificialmente en SKU de stock | Venta de servicios fuera del primer alcance; tratamiento contable pendiente |
+| Almacén/ubicación / IDs | Inventory | Entidad 1:N almacenes; almacén 1:N ubicaciones | Activo → cerrado; cierre exige destino de existencias | Traslado registra origen y destino; no cambiar propietario para transferir bienes |
+| Posición de stock / entidad+SKU+ubicación+dimensiones activadas | Inventory | N movimientos; serial/lote solo donde el artículo lo exige | Proyección del historial, reconciliable | No corregir saldo a mano; hecho de ajuste sustentado y fechado |
+| Movimiento de stock / ID | Inventory | N:1 posición; referencia a recepción/entrega/ajuste y evidencia | Preparado → confirmado; confirmado inmutable | Contramovimiento al coste correspondiente; serial no puede estar simultáneamente en dos posesiones |
+| Compra / ID y número comercial | Procurement | 1:N líneas; N:M recepciones por líneas; 0:N obligaciones de proveedor | Borrador → comprometida → parcial/completa/cancelada según saldo | Cancelar remanente no borra recepción ni factura; precios y cantidades comprometidos congelados |
+| Recepción / ID | Inventory | N líneas pueden ejecutar líneas de compra mediante referencia pública | Preparada → confirmada; parciales acumulativas | Reversión vinculada no supera recibido neto; fecha del hecho separada del registro |
+| Obligación comercial / ID del dueño + revisión | Sales o Procurement | Dirección por cobrar/por pagar explícita; documento 1:N ajustes; 1 objetivo de liquidación activo por obligación/moneda en Treasury | Emitida/reconocida → ajustada/cerrada; deuda derivada de importes válidos | No confundir con asiento ni CPE borrador; fecha, política y procedencia conservadas |
+| Pedido/venta / ID y número | Sales | 1:N líneas, 0:N entregas, 0:N expedientes documentales según política | Borrador → confirmado → parcial/completo/cancelado | Estado comercial independiente del cobro; ajustar remanente con motivo |
+| Entrega / ID | Sales posee acto comercial; Inventory posee movimiento físico | N líneas consumen remanentes de pedido y stock | Preparada → confirmada; ambas mitades se confirman atómicamente | La devolución referencia entrega original; no simular devolución física por devolver dinero |
+| Cuenta financiera / ID | Treasury | N movimientos; entidad y moneda conocidas | Activa → cerrada, con conciliación pendiente visible | Titularidad bancaria exige evidencia; un IBAN/número no prueba disponibilidad |
+| Cobro/pago / ID de movimiento | Treasury | Cuenta 1:N movimientos; movimiento 0:N aplicaciones y devoluciones | Propuesto → confirmado → compensado parcial/total | Signo/tipo inequívoco; reversión conserva original y referencia externa |
+| Objetivo de liquidación / entidad+dueño+obligación+moneda | Treasury | Proyección versionada de obligación comercial; N:M cobros o pagos compatibles con su dirección mediante aplicaciones | Abierto → parcial/liquidado/reabierto | No es segunda fuente del importe comercial; cambios coordinados con dueño |
+| Aplicación / ID | Treasury | N:M movimiento ↔ objetivo; moneda/entidad coherentes | Confirmada; saldo neto deriva de aplicaciones y des-aplicaciones | Reversión ligada y acotada; no deducir pago de un booleano |
+| Refund / ID | Treasury posee movimiento compensatorio; workflow coordina consecuencias | Referencia cobro/pago previo; salida al devolver un cobro, entrada al recuperar un pago; aplicaciones y motivo explícitos | Solicitado → validado → confirmado o rechazado | Reduce el neto del original; un refund de cobro afecta cobertura de entrega; no genera automáticamente nota fiscal o ingreso de stock |
+| Conciliación / ID | Treasury | Extracto 1:N líneas; relaciones N:M con movimientos permitidas por regla | Importado → revisado → conciliado/observado | Extracto original inmutable; deshacer matching explícitamente no borra dinero |
+| Evidencia/documento / ID y versión | Documents | Un archivo puede sustentar varios hechos de la misma entidad; vínculo propietario validado | Recibido → cuarentena → disponible/rechazado | Hash detecta cambio, no autenticidad; retención/rectificación según política |
+| Expediente CPE de venta / ID interno; identidad externa separada | Sales | Datos del adquirente, líneas, política y vínculos a evidencia en Documents; corrección referencia original | Preparación, emisión externa registrada y verificación externa son dimensiones distintas | Sales posee el ciclo documental comercial; reglas PENDING DOMAIN/REGULATORY VALIDATION |
+| Expediente CPE de proveedor / ID interno; identidad externa separada | Procurement | Documento recibido, emisor, líneas, obligación y vínculos a evidencia en Documents | Captura, revisión comercial y verificación externa son dimensiones distintas; capturar no acredita validez fiscal | Procurement posee el ciclo del documento recibido y sus ajustes; Tax interpreta su tratamiento y Accounting registra según sus políticas |
+| Hecho económico / ID + secuencia por agregado | Módulo productor | 1 transición → hechos necesarios; N consumidores | Inmutable y versionado | Corrección por nuevo hecho; Accounting/Tax aplican políticas propias |
+| Evento externo / proveedor+cuenta externa+ID | Integración receptora | Mensaje → inbox → caso de uso; duplicados y orden parcial | Recibido → pendiente/aplicado/rechazado/ambiguo | No es verdad económica por llegar; validación y conciliación antes de aceptación |
+| Evento de auditoría / ID | Audit | Actor, entidad, recurso, transición, correlación y motivo | Append-only en interfaz y permisos ordinarios de DB | Acceso administrativo queda fuera de esa garantía; evidencia externa y recuperación separadas |
+
+## Tres separaciones que gobiernan los flujos
+
+1. **Obligación, dinero y stock:** una factura no cobra; un pago no entrega; una devolución monetaria no recibe bienes.
+2. **Hecho, tratamiento y presentación:** Accounting interpreta hechos; Tax aplica reglas verificadas; una presentación externa requiere una autorización empresarial distinta.
+3. **Validez temporal y registro:** una identidad/precio/política puede cambiar hoy sin alterar la versión usada por una operación anterior.
+
+Un anticipo puede ser dinero sin aplicación a una obligación actual. No se convierte por ello en ingreso ni se fuerza su aplicación a un CPE inexistente. La especificación posterior decidirá su circuito empresarial y contable, manteniendo la conservación del dinero.
+
+Las devoluciones de bienes siguen dirección, movimiento original y ciclo de posesión de las [invariantes](invariants.md). Los archivos y resultados técnicos de disponibilidad pertenecen a Documents; los estados del CPE pertenecen a Sales o Procurement. Tax conserva la interpretación fiscal, no el ciclo comercial de ninguno de los dos expedientes.
+
+La persistencia del progreso de una coordinación y de su seguimiento técnico se asigna por propietario en [integraciones](../architecture/integrations.md). Ningún estado de negocio queda almacenado exclusivamente en la memoria del coordinador ni pasa a ser propiedad de workflows.
