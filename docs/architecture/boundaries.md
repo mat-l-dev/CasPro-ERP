@@ -8,15 +8,15 @@ Contrato arquitectónico de [ADR-001](../decisions/adr-001-modularity.md). La fl
 |---|---|---|---|
 | Workspace, agrupación provisional | Subáreas Identity, Organization y Access delimitadas abajo | Audit; infraestructura de autenticación | Módulos operativos; convertir el perfil empresarial en datos globales |
 | Audit | Rastro técnico/empresarial mínimo de quién hizo qué | Primitivas compartidas | Cualquier llamada de negocio de retorno |
-| Documents | Evidencia, versiones, metadatos y vínculo a objeto almacenado | Workspace, Audit | Decidir estados CPE, deuda o entrega |
+| Documents | Archivo privado, versiones, procedencia, disponibilidad y entrega documental | Workspace, Audit; puertos de objetos/email conectados por composición | Decidir estados legales del CPE, deuda o entrega física; importar Sales/Procurement o SDKs de proveedores en el dominio |
 | Parties | Contrapartes por entidad, roles cliente/proveedor, identidad vigente | Workspace, Audit, Documents | Apropiar saldos o tratar persona igual a usuario |
 | Catalog | Bienes/SKU, unidades, especificaciones y precios comerciales versionados | Workspace, Audit | Existencias y costes de stock |
-| Inventory | Almacenes/ubicaciones, movimientos, valorización, seriales y disponibilidad | Catalog, Workspace, Audit, Documents | Importar Sales/Procurement o decidir si un cliente pagó |
+| Inventory | Almacenes/ubicaciones, movimientos, valorización, seriales, reservas y stock publicable | Catalog, Workspace, Audit, Documents | Importar Sales/Procurement o decidir si un cliente pagó |
 | Procurement | Compromisos de compra, obligaciones y expediente CPE recibido de proveedor, con sus ajustes comerciales | Parties, Catalog, Workspace, Audit, Documents | Escribir existencias o dinero |
 | Sales | Pedidos, progreso comercial, expediente CPE de venta y ajustes comerciales | Parties, Catalog, Workspace, Audit, Documents | Consultar/escribir Treasury o Inventory directamente |
 | Treasury | Cuentas, movimientos, objetivos de liquidación, aplicaciones/reversiones y conciliación | Parties, Workspace, Audit, Documents | Leer modelos comerciales o generar asientos |
 | Accounting | Plan aplicado, políticas contables versionadas, asientos y cierres futuros | Workspace, Audit, Documents; contrato de hechos económicos | Llamar/escribir módulos operativos |
-| Tax | Perfiles, fuentes/reglas fiscales verificadas, conciliación y expedientes futuros | Accounting, Workspace, Audit, Documents; contrato de hechos | Alterar hechos operativos o presentar automáticamente |
+| Tax | Perfiles, fuentes/reglas fiscales verificadas, conciliación y expedientes futuros | Accounting, Workspace, Audit, Documents; contrato de hechos | Alterar hechos operativos o emitir/presentar CPE a SUNAT en el alcance inicial |
 
 Todas las APIs de negocio usan el [contrato de acceso](tenancy-access.md). Audit recibe metadatos explícitos y no consulta Workspace, evitando el ciclo autorización ↔ auditoría.
 
@@ -42,11 +42,14 @@ Configuration no es un módulo universal: secretos/settings pertenecen a config;
 | Registro de obligación | Sales/Procurement + Treasury | Publicar objetivo de liquidación con referencia y versión comercial |
 | Entrega | Sales + Treasury + Inventory | Elegibilidad comercial, dinero vigente si procede y salida física |
 | Devolución de cliente / a proveedor | Sales o Procurement + Inventory + Treasury, según el caso | Dirección física y monetaria explícitas; retorno, ajuste comercial y refund son pasos relacionados, no equivalentes automáticos |
-| Preparación/revisión documental futura | Sales o Procurement + Tax + Documents, según el expediente | Cada dueño comercial conserva su CPE; Tax aporta interpretación y Documents evidencia sin decidir deuda, emisión o aceptación fiscal |
+| Adquirir y vincular/verificar CPE externo | Sales o Procurement + Documents; Tax cuando se requiera interpretación fiscal | El dueño comercial conserva su expediente y vínculo verificado; Documents conserva artefactos y decide disponibilidad/entregabilidad documental, sin emitir ni determinar validez legal |
+| Aceptar pedido de canal / reservar / publicar disponibilidad | Sales + Parties + Catalog + Inventory, según la actuación | Sales conserva pedido y referencia externa; Parties resuelve contraparte; Inventory aplica compromiso y calcula disponibilidad; publicación mediante adaptador externo |
 
 Los coordinadores están por encima de los módulos. Ningún módulo los importa ni los llama. Tienen autoridad transaccional, no propiedad de datos. Los adaptadores externos tampoco los invocan como efecto oculto: una entrada autenticada entrega un mensaje traducido al caso de uso correspondiente.
 
 Si una coordinación continúa después del commit, el progreso empresarial queda en su dueño y la entrega/reintento de tareas en registros técnicos durables con responsable explícito; [integraciones](integrations.md) define esa separación. Workflows no adquiere tablas de hechos ni un estado empresarial universal.
+
+Documents sigue siendo el propietario existente del archivo y de las intenciones de entrega documental; no se crea Document Vault ni un módulo de mensajería. El coordinador proporciona referencias/revisiones verificadas del CPE y el destinatario autorizado mediante contratos de valores; Documents no consulta hacia Sales, Procurement o Parties. El flujo completo revalida esos insumos antes de despachar, sin invertir dependencias. Sales y el adaptador SUNAT no llaman a Resend. La bandeja de pendientes reúne lecturas de propietarios; no adquiere sus decisiones ni hechos.
 
 El contrato distingue comandos completos y operaciones participantes de un workflow. Web, imports y workers solo invocan comandos completos; las operaciones participantes se publican exclusivamente para coordinadores identificados y exigen su frontera transaccional. No existe un segundo comando público que permita devolver dinero, cambiar un objetivo comercial o despachar omitiendo a los otros propietarios necesarios. Cada participante conserva la validación de pertenencia y sus guardas; la composición restringe llamadores y el plan común determina los locks. Esta disciplina dentro de un proceso requiere revisión/verificación posterior: una marca de contexto no constituye aislamiento frente a código malicioso.
 

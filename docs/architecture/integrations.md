@@ -8,15 +8,56 @@ Los adaptadores viven fuera de Sales, Treasury y Procurement. Traducen HTTP/arch
 
 | Integración | Primer uso conceptual | Condición de activación |
 |---|---|---|
-| SUNAT | Preparación, consulta y conciliación de evidencia | Fuente normativa y contrato técnico vigente; ningún envío/presentación automática inicial |
-| Jumpseller | Entrada de pedidos y conciliación de estados | Un pedido externo es propuesta, no orden de despachar; firma/cuenta/duplicados/stock deben especificarse |
+| SUNAT | Adquirir/importar, vincular y verificar CPE emitidos fuera de CasPro | Solo capacidades oficiales comprobadas; CasPro no emite, presenta ni envía CPE a SUNAT, tampoco desde un botón manual |
+| Jumpseller | Primer canal real inicial: importar pedidos y publicar stock calculado por CasPro | Cuenta/permisos, correspondencias, inbox, reconciliación y política de disponibilidad validados antes de operar |
 | Bancos | Importar extractos y registrar evidencia de movimientos | Conciliar no ordena transferir; pago externo automático fuera de alcance |
-| Email | Avisos sin datos sensibles innecesarios | Fallo de notificación no invalida una transacción económica confirmada |
-| Storage | Evidencia privada y exportaciones temporales | Adaptador de objetos, autorización al descargar y recuperación de blobs |
+| Email / Resend | Entrega documental inicial bajo responsabilidad de Documents | AUTO_WITH_APPROVAL operativo inicial; puerto email sin SDK en dominio, autenticación de callbacks y controles por entorno |
+| Object storage | Archivo privado de Documents, previews y snapshots | Bytes separados de metadata PostgreSQL; proveedor pendiente, acceso autorizado y recuperación separada |
 
 Cada conexión declara proveedor/cuenta, entidad local vinculada, secreto externo a Git, URL permitida, timeouts de conexión/lectura, tamaño máximo, política de retry, identidad externa y traducción de errores. No aceptar una URL arbitraria recibida en webhook ni elegir entidad a partir del cuerpo sin verificar su conexión.
 
-Webhooks: autenticar según contrato oficial, verificar antigüedad/replay cuando el proveedor lo permita, persistir recepción durable y responder pronto; duplicados se reconocen sin repetir el efecto. Falta de versión/orden fiable obliga a reconciliar con la fuente; no suponer entrega ordenada.
+Webhooks: autenticar según contrato oficial, verificar antigüedad/replay cuando el proveedor lo permita y confirmar inbox durable antes del acuse de éxito. Cada integración receptora responde por su inbox técnico en PostgreSQL: conexión/entidad, procedencia, identidad o fingerprint, payload acotado y estado de procesamiento; el payload no es verdad empresarial. Procesar después mediante comandos completos y confirmar deduplicación local junto al efecto. Falta de versión/orden fiable obliga a reconciliar; recibir repetidamente no vuelve a confirmar negocio.
+
+## Jumpseller: pedido observado y stock autoritativo
+
+Sales recibe pedidos, líneas y estados comerciales útiles; Parties resuelve clientes hacia la Party común y Sales conserva direcciones/datos usados como snapshot. El ID de cliente del canal no crea otro Customer ni autoriza fusionar por email. Producto/variante externo debe corresponder inequívocamente a SKU de Catalog. Datos ambiguos quedan pendientes; importar no autoriza despacho. Pago/refund observado conserva fuente/fecha y se concilia con Treasury, sin crear o revertir dinero por el estado del canal.
+
+Inventory es autoridad del stock interno y calcula available-to-sell por destino, descontando compromisos y cantidades no vendibles sin contarlos dos veces. El resultado no es negativo ni excede existencia elegible neta; reservar reduce disponibilidad, despachar consume reserva y existencia coordinadamente. Recepciones, anulaciones y devoluciones actualizan su hecho dueño antes de recalcular. Momento de reserva/liberación, almacenes elegibles, buffers, unidades y asignación por canal permanecen PROVISIONAL hasta especificar casos reales; no se inventa una fórmula cerrada ni se publica stock ilimitado como fallback.
+
+Publicar un objetivo de stock versionado, no repetir deltas. Catalog posee la correspondencia producto/variante externo → SKU; Inventory posee objetivo publicable, destino y revisión, y la integración conserva intento/resultado técnico bajo su responsabilidad. Descarta trabajos obsoletos y reconcilia objetivo, observación remota y pedidos pendientes; una respuesta tardía o un webhook eco no genera un movimiento ni dispara un bucle de republicación. El descuento automático del canal se concilia con el compromiso local, sin descontarlo otra vez al importar y luego despachar. Antes de aumentar el stock publicado se requiere frescura suficiente de pedidos/disponibilidad; si es incierta se bloquea el incremento y se expone la discrepancia. No hay atomicidad CasPro–canal: carreras, demora y prevención de sobreventa requieren validación posterior, no promesa de cero sobreventa por usar outbox.
+
+Capacidades documentadas: API de lectura de pedidos/productos y actualización de stock por producto/variante/ubicación [S22](../decisions/sources.md); selección de endpoint, permisos mínimos, paginación y comportamiento de la tienda deben comprobarse al especificar Jumpseller. Webhooks usan HMAC SHA-256 sobre cuerpo crudo con token de la conexión [S21](../decisions/sources.md). La página consultada no documenta ID único de evento: no usar solo order_id para deduplicar ni considerar Triggered-At un orden total. Conservar recepciones y comparar observaciones; fingerprint ayuda a reconocer repetición, no sustituye la idempotencia del comando o la reconciliación periódica/manual de pedidos y stock, incluidos eventos perdidos.
+
+Canal/cuenta, referencia externa, SKU vinculado y stock publicable son los conceptos neutrales mínimos. Solo se especificará Jumpseller; sin modelo universal de estados ecommerce, conectores vacíos ni motor de sincronización configurable. Discrepancia → revisión/reconciliación; cualquier ajuste local exige motivo, capacidad y auditoría del dueño, nunca edición directa del saldo.
+
+## CPE externo: acquire → link/verify → deliver
+
+| Paso | Responsable y límite |
+|---|---|
+| acquire | El operador emite por SOL u otra vía externa autorizada. Documents adquiere/importa PDF, XML u otros artefactos privados con procedencia; un adaptador solo automatiza adquisición oficialmente comprobada. Un XML reconstruido es representación generada y no satisface un requisito de original |
+| link/verify | El flujo coordina Sales para CPE de venta o Procurement para proveedor y Documents para artefactos. Vincula identidad del CPE y contrapartes/importes pertinentes; captura resultado/fuente/fecha de verificación sin confundirlo con autenticidad del archivo. Ambigüedad o faltante queda pendiente; Tax interpreta cuando corresponda, sin imponer construir Tax para almacenar un archivo |
+| deliver | Documents determina entregabilidad documental con insumos verificados del dueño y versiones disponibles. Solicita email por puerto/adaptador; ni Sales ni el adaptador SUNAT llaman Resend. Entregar al destinatario no emite, presenta ni valida fiscalmente el CPE |
+
+La Consulta Integrada oficial verifica un comprobante identificado por RUC emisor, tipo, serie, número, fecha e importe; devuelve estados/observaciones. Su operación HTTP POST es una consulta semántica, no emisión. El manual consultado no documenta enumeración ni descarga de todos los CPE emitidos en SOL [S23](../decisions/sources.md). Esa adquisición masiva **no está verificada ni se presupone disponible**; el alcance puede usar importación del operador. Credenciales, habilitación de consulta y cualquier adquisición automática quedan PENDING VALIDATION de capacidad oficial y cuenta autorizada. No se investigan ni aprueban reglas tributarias por describir esta API.
+
+## Entrega documental y Resend
+
+Documents posee política, intención y resultado de entrega; el SDK queda en el adaptador de email. Los modos se aplican al propósito documental autorizado, no a cualquier CPE recibido: un CPE de proveedor no se envía a un cliente por estar archivado.
+
+| Modo | Efecto permitido |
+|---|---|
+| MANUAL | Cada envío nace de una intención explícita del operador autorizado |
+| AUTO_WITH_APPROVAL | Prepara la intención automáticamente y espera aprobación explícita antes de enviar; modo operativo inicial |
+| AUTO | Puede enviar sin aprobación individual solo al cumplir todas las condiciones de entregabilidad |
+| DISABLED | No ejecuta envíos del propósito configurado, tampoco manuales |
+
+HOLD es un bloqueo persistido con motivo, ortogonal al modo: suspende envío/reintento hasta liberación explícita y auditada; ni un webhook ni un cambio de modo lo levanta. Para AUTO de CPE se exige vínculo inequívoco, artefactos requeridos disponibles, destinatario válido/autorizado, ninguna entrega original previa y ausencia de HOLD. La primera entrega de cada CPE/finalidad dentro de la entidad también se protege frente a otra intención original en curso o con resultado incierto; no basta buscar estado «delivered», ni cambiar destinatario/versión habilita otra primera entrega. Registrar entregas externas conocidas; historial insuficiente exige resolución explícita antes de habilitar una primera entrega automática. MANUAL y aprobación no permiten omitir vínculo, artefactos, autorización o HOLD. Qué artefactos son requeridos por propósito queda PROVISIONAL hasta validar necesidad y capacidad; una política incompleta bloquea automatización.
+
+La intención conserva entidad, CPE/revisión cuando aplique, propósito (primera entrega/reenvío), versiones/hashes de artefactos, destinatario usado, contenido aprobado, actor/aprobación, estado, intentos e identificador externo. Aprobar fija esos insumos; cambiarlos invalida la aprobación. El comando completo vuelve a comprobar su vigencia, permisos, modo y HOLD al autorizar el despacho; confirma intención/intento antes del I/O, sin mantener locks durante el envío. Un HOLD posterior al despacho no puede retirar un correo ya aceptado: se registra la carrera y se concilia el resultado, sin prometer cancelación remota.
+
+Reintento = misma intención, destinatario/contenido e identidad idempotente; reenvío = nueva intención explícita, relacionada con la anterior, con sus controles y clave nueva, nunca CPE nuevo. Con resultado ambiguo no se crea automáticamente otra primera entrega. Resend ofrece adjuntos y clave idempotente con retención de 24 horas [S25](../decisions/sources.md): el historial y protección local persisten según su política, no dependen de ese plazo. Si vence la ventana con resultado desconocido, HOLD y conciliación/resolución autorizada antes de otro envío; no retry ciego. Retención local debe cubrir intención, replays y restauración antes de habilitar automatización.
+
+Callbacks Resend: verificar firma sobre cuerpo crudo con secreto de la conexión; deduplicar svix-id y vincular email_id al intento propio. Hay entrega al menos una vez y orden no garantizado [S24](../decisions/sources.md). Conservar observaciones y derivar estado conforme a su semántica parcial; llegada tardía no sobrescribe ciegamente un resultado, contradicción exige conciliación. Accepted/sent/delivered/bounce son resultados del correo: fallo o bounce no invalida CPE ni venta; delivered tampoco acredita lectura o aceptación fiscal. Los controles de [entornos](../operations/delivery.md) se aplican a cualquier modo y reenvío.
 
 ## Tres clases de evento
 
@@ -32,24 +73,24 @@ El evento lleva ID, entidad, tipo/versión, raíz/revisión, fecha empresarial, 
 
 Dinero y stock locales se resuelven dentro de una transacción corta. Consultar proveedores, enviar correos o producir reportes largos sucede fuera de esa transacción. Para un efecto que deba sobrevivir al proceso, el cambio y su intención quedan en DB antes del commit; on_commit solo puede despertar un consumidor, nunca ser el único registro del trabajo.
 
-Al activar trabajo durable, una cola/outbox PostgreSQL y un proceso worker simple son el candidato PROVISIONAL, sin broker inicial. El backend y su representación requieren un consumidor concreto y evidencia de caída/reanudación antes de aceptarse. Contrato de referencia: claim corto con exclusión, lease/vence, token de intento, contador/fecha de próximo intento, límite/backoff, resultado y dead-letter con replay autorizado. El worker no mantiene un lock DB durante HTTP. Un resultado de lease antiguo no puede sobrescribir al intento vigente.
+Jumpseller y la entrega documental ya identifican consumidores iniciales de trabajo durable. Una cola/outbox PostgreSQL y un proceso worker simple siguen como candidato PROVISIONAL, sin broker inicial: falta especificar registros/comandos y demostrar caída/reanudación antes de aceptar su mecanismo. Contrato de referencia: claim corto con exclusión, lease/vence, token de intento, contador/fecha de próximo intento, límite/backoff, resultado y dead-letter con replay autorizado. El worker no mantiene un lock DB durante HTTP. Un resultado de lease antiguo no puede sobrescribir al intento vigente.
 
-La entrega es al menos una vez. La unicidad del ID procesado y el efecto de DB se confirman juntos. Frente a un proveedor, una lease no evita duplicación de un efecto externo: se exige clave idempotente del proveedor o conciliación antes de reenviar. Resultado ambiguo de dinero/documento irreversible → revisión/consulta de estado, no retry ciego.
+La entrega es al menos una vez. La unicidad del ID procesado y el efecto de DB se confirman juntos. Frente a un proveedor, una lease no evita duplicación de un efecto externo: se exige clave idempotente del proveedor o conciliación antes de reenviar. Si repetir un resultado ambiguo puede duplicar o alterar el efecto esperado, se revisa/consulta estado antes de reintentar.
 
-No se adopta Celery, Redis, RabbitMQ, Kafka ni SQS inicialmente. Se reconsidera si volumen, scheduling, topología o operación lo justifican. Django Tasks ofrece API/plumbing; no aporta por sí solo el worker productivo [S10](../decisions/sources.md). Su backend se evaluará cuando exista trabajo concreto, evitando implementar un framework general de colas.
+No se adopta Celery, Redis, RabbitMQ, Kafka ni SQS inicialmente. Se reconsidera si volumen, scheduling, topología o operación lo justifican. Django Tasks ofrece API/plumbing; no aporta por sí solo el worker productivo [S10](../decisions/sources.md). Su backend se evaluará al especificar esos trabajos concretos, evitando implementar un framework general de colas.
 
 ## Dónde persiste la coordinación que debe sobrevivir
 
 | Estado necesario | Propietario y persistencia conceptual |
 |---|---|
 | Progreso empresarial para reanudar | En PostgreSQL, en el caso del módulo dueño: Sales o Procurement cuando exista una devolución comercial. Una intención que solo afecta Treasury permanece allí; no crea un expediente comercial artificial. Conserva sus decisiones y referencias a hechos de otros propietarios, sin copiar sus saldos ni sustituirlos por flags |
-| Hecho físico, monetario o documental | En su módulo propietario. Documents persiste archivo/disponibilidad; Sales y Procurement conservan sus respectivos expedientes CPE |
+| Hecho físico, monetario o documental | En su módulo propietario. Documents persiste archivo, disponibilidad e intención/resultado de entrega documental; Sales y Procurement conservan sus respectivos expedientes CPE |
 | Entrega de un hecho producido / tarea solicitada | Registro técnico durable en PostgreSQL bajo responsabilidad del productor/solicitante; contiene identidad de intención, destino, intento y resultado técnico. El backend es infraestructura reemplazable, no dueño del hecho |
 | Procesamiento de un consumidor | El consumidor persiste su recepción/deduplicación junto con su efecto; por ejemplo Accounting con el asiento. Un acuse de entrega del productor no demuestra ese efecto |
 
 Si el progreso se deriva íntegramente de hechos persistidos, se reconstruye por referencias y no se almacena otra máquina de estados. Si hay una decisión empresarial indispensable no derivable, la especificación la asigna al caso del módulo dueño antes de implementarla. Workflows ejecuta coordinación sin tablas propias de hechos ni progreso empresarial en memoria como única copia.
 
-Tablas, campos, esquema técnico compartido o por módulo y backend exacto permanecen PROVISIONAL hasta el primer caso durable; esta asignación de responsabilidad no crea un workflow engine ni un nuevo módulo. Su aceptación requiere demostrar recuperación tras commit/caída, deduplicación y ausencia de divergencia con los propietarios. Si todo cabe en una transacción local, no se introduce seguimiento durable adicional.
+Tablas, campos, esquema técnico compartido o por módulo y backend exacto permanecen PROVISIONAL hasta especificar y validar los primeros casos durables; esta asignación de responsabilidad no crea un workflow engine ni un nuevo módulo. Su aceptación requiere demostrar recuperación tras commit/caída, deduplicación y ausencia de divergencia con los propietarios. Si todo cabe en una transacción local, no se introduce seguimiento durable adicional.
 
 ## Fallos que el contrato debe admitir
 

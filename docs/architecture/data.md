@@ -40,12 +40,20 @@ Los snapshots conservan lo necesario para reproducir una decisión: identidad fi
 
 Maestros y borradores pueden modificarse con concurrencia optimista y auditoría proporcional. Historia económica y auditoría crítica usan restricciones de escritura y reversión explícita. Datos temporales, sesiones, exportaciones caducadas y contenido rechazado pueden purgarse conforme a retención aprobada; no heredar «nunca borrar nada» universalmente.
 
+## Archivo documental existente
+
+Documents conserva PDF, XML y otros artefactos privados; object storage conserva bytes y PostgreSQL identidad/entidad, metadata, procedencia, hash, versión, retención y relaciones autorizadas con hechos empresariales. Una versión disponible no se sobrescribe: corrección o representación nueva conserva relación con su origen. Tipo declarado, contenido detectado, origen de adquisición/generación y condición original/representación son explícitos. Un XML reconstruido por CasPro jamás se etiqueta XML original; hash comprueba integridad, no autenticidad. El expediente y su estado comercial siguen en Sales/Procurement.
+
+Preview rápido de PDF mediante contenido o representación derivada autorizada, cacheada por entidad/artefacto/versión con caducidad; descargar o previsualizar exige permisos actuales. Sin buckets públicos ni visores externos que reciban documentos privados por defecto. Cuarentena/análisis preceden disponibilidad; [integraciones](integrations.md) gobierna carga no atómica, huérfanos y links breves. Proveedor de storage, límites/tiempos de preview y retención concreta son PROVISIONAL hasta condiciones de operación; no se inventan plazos legales.
+
 ## Reporting, imports y exports
 
 Consultas paginadas con orden estable; keyset cuando el volumen lo justifique. Listas frecuentes deben tener filtros e índices asociados al acceso por entidad. Cálculo comercial reutiliza políticas del dueño; los informes pueden combinar contratos/proyecciones de lectura publicadas, nunca escribir tablas operativas.
 
-CSV/Excel/PDF son formatos de salida, no bases paralelas. Procesar por lotes/streaming limitado; imports pasan por staging y validación, informe de errores y aplicación idempotente por fila/lote con semántica declarada. Nunca confirmar todo un archivo como efecto de subirlo. Neutralizar fórmulas en exportaciones de texto no confiable a hojas de cálculo.
+CSV/Excel/PDF son formatos de salida, no bases paralelas. La importación CSV/Excel sigue validate → preview → confirm: staging con archivo/versión y errores, vista de cambios propuestos y confirmación explícita mediante comandos del dueño. Declarar atomicidad/fallos por fila o lote y deduplicación según efecto; confirmar revalida permisos y revisiones, y cambios relevantes invalidan el preview. Nunca ejecutar macros/fórmulas del archivo ni confirmar negocio por subirlo. Procesar con límites; neutralizar fórmulas en exportaciones de texto no confiable a hojas de cálculo.
 
 Un reporte largo captura filtros, entidad, actor, versión/cursor de datos y fecha de corte; vuelve a comprobar permisos al descargar. Se genera fuera de transacciones operativas largas. Consistencia de snapshot entre páginas/chunks debe especificarse: repetir consultas bajo READ COMMITTED no da por sí solo un reporte histórico consistente. Sin data warehouse ni réplica inicial; aislar carga mediante límites y trabajo durable cuando aparezca consumidor.
+
+Los informes permiten preview temporal o snapshot PDF persistido en Documents con origen, corte y versión de cálculo. Un preview no es automáticamente evidencia retenida; un snapshot es representación generada, no documento original externo. Coste y margen bruto básico combinan importes comerciales de Sales y costes atribuibles de Inventory mediante lectura pública, con moneda, base de ingresos/descuentos/devoluciones/impuestos, período y política explícitos. Coste faltante/provisional queda visible y no se trata como cero ni como margen definitivo. Preservar líneas, costes, ajustes y hechos fuente permite Accounting futuro; no crea asientos ni determina reconocimiento contable. La base concreta del indicador sigue PROVISIONAL hasta su especificación.
 
 La [arquitectura operativa](../operations/delivery.md) define migraciones, retención, backup y restore. El mero dump de PostgreSQL no incluye blobs ni todas las configuraciones externas.

@@ -47,4 +47,10 @@ Si aparece ese caso, comparar candidatos con su licencia, coste, accesibilidad, 
 
 Los importes llegan como texto decimal y moneda; presentación del servidor y entrada localizada inequívoca. No usar parseFloat/Number como fuente de cálculos empresariales. Feedback provisional no confirma dinero y se reconcilia con el servidor.
 
+## Operación del primer período
+
+Bandeja única de pendientes/excepciones como lectura de los dueños: pedido sin correspondencia, discrepancia de stock/pago del canal, CPE sin vínculo/artefacto, aprobación de entrega o bounce. Cada entrada muestra entidad, origen, antigüedad, motivo y siguiente acción autorizada; resolverla invoca al dueño, no cambia flags de un workflow engine. WARNING informa y permite las acciones válidas; BLOCKING identifica la acción impedida y qué debe resolverse, sin bloquear indiscriminadamente todo el ERP. HOLD documental sigue el [contrato de entrega](integrations.md).
+
+Búsqueda global reúne solo recursos permitidos de la entidad activa mediante consultas públicas de cada propietario. Incluye permisos en resultados, extractos, conteos, sugerencias y cachés; sin contexto no busca en todas las entidades. Abrir un resultado vuelve a autorizar. No requiere motor externo ni Customer de CRM. Preview PDF autorizado, CSV/Excel validate → preview → confirm y cifras de coste/margen usan el [contrato de datos](data.md); ajustes muestran motivo, impacto y auditoría antes de confirmar.
+
 REQUIRES LATER VALIDATION: navegación por teclado, foco tras swaps, CSRF/errores, CSP, compatibilidad de build, doble submit/retry y tareas densas con datos representativos. No se construyó UI durante la fundación.

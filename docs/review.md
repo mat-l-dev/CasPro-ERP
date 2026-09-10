@@ -1,6 +1,6 @@
 # Revisión y condición de avance
 
-Fecha: 2026-09-10. Alcance: correcciones documentales de Gate 1 en CasPro. **Veredicto: PASS. Gate 1: CLOSED, exclusivamente documental.** Este archivo es la fuente del estado global del gate; cada ADR conserva la autoridad sobre sus alcances. Nada de esta entrega acredita software construido, desplegado o production-ready ni aprueba decisiones empresariales. SUPERPROMPT 2 no se inicia ni queda autorizado por este cierre.
+Fecha: 2026-09-10. Alcance del cierre: correcciones documentales de Gate 1 en CasPro. **Veredicto: PASS. Gate 1: CLOSED, exclusivamente documental.** Este archivo es la fuente del estado global del gate; cada ADR conserva la autoridad sobre sus alcances. Ese cierre no acredita software construido, desplegado o production-ready ni sustituye aprobaciones empresariales. El Foundation Amendment posterior se registra por separado abajo. SUPERPROMPT 2 no se inicia ni queda autorizado por este cierre.
 
 ## Refutación del diseño
 
@@ -31,11 +31,11 @@ Fecha: 2026-09-10. Alcance: correcciones documentales de Gate 1 en CasPro. **Ver
 
 ## Decisiones realmente humanas
 
-Todas figuran PENDING HUMAN DECISION. Los ADRs distinguen principios aceptados y mecanismos provisionales; estos últimos conservan incertidumbre técnica, que no se traslada al propietario como si fuera una decisión empresarial.
+Conservan pendientes humanos en los alcances indicados; el amendment concreta parte de H1 sin cerrar los restantes. Los ADRs distinguen principios aceptados y mecanismos provisionales; estos últimos conservan incertidumbre técnica, que no se traslada al propietario como si fuera una decisión empresarial.
 
 | ID | Decisión | Recomendación / qué condiciona |
 |---|---|---|
-| H1 | Primer uso empresarial, bienes/servicios y nivel de contabilidad interna exigible desde ese uso | Empezar por un circuito pequeño completo; no habilitar ventas por tener pantallas si falta el cierre requerido |
+| H1 | Nivel de contabilidad interna y políticas empresariales exigibles al primer uso; alcance parcialmente concretado | Jumpseller, Documents y Resend/AUTO_WITH_APPROVAL más operación básica quedan incluidos por el amendment. Resta precisar cierre exigible y políticas del circuito; el margen básico no sustituye Accounting |
 | H2 | Presupuesto de hosting, almacenamiento, soporte y región/condiciones de tratamiento de datos | Managed inicialmente; candidato Render+Supabase, sin contratación en esta fase |
 | H3 | RPO, RTO y retención empresarial/regulatoria | Decidir pérdida/interrupción tolerable antes de seleccionar plan de backups y continuidad |
 | H4 | Excepción de segregación y acciones que requieren aprobación adicional | Mostrar autoaprobación; no simular dos personas; limitar devoluciones/elevaciones/cierres conforme al riesgo aceptado |
@@ -93,8 +93,26 @@ La fundación es técnicamente defendible como diseño de CasPro. No demuestra q
 
 CasPro puede ser el nuevo destino autorizado por el propietario, manteniendo Wbpro intacto. La elección de ese destino no obliga a copiar su arquitectura ni a desechar toda pieza útil. No recomendaría iniciar una reescritura integral por el solo hecho de haber creado esta fundación; primero especificar un circuito y comparar coste/riesgo de portar cada familia bajo el contrato nuevo.
 
+## Foundation Amendment posterior a Gate 1 — 2026-09-10
+
+Mandato: incorporar necesidades reales del primer período, sin reabrir Gate 1. Antes de editar se comprobó árbol limpio, rama main con seguimiento origin/main, [remoto CasPro-ERP](https://github.com/mat-l-dev/CasPro-ERP.git) y HEAD 586bdfdad789b30d548d8159a9acaaf5bd098603, idéntico al main anunciado por el remoto. No se reescribió historia ni se hizo commit/push.
+
+Cambian el alcance ecommerce/correo, la entrega documental de Documents y las necesidades operativas iniciales. El [producto](product/charter.md) delimita el alcance y [ADR-008](decisions/adr-008-integrations.md) conserva la autoridad de sus decisiones: proveedores iniciales elegidos, mecanismos pendientes. Las otras decisiones de Gate 1 no se reauditan.
+
+| Contradicción o contraejemplo del amendment | Resolución documental |
+|---|---|
+| Ecommerce diferido, prohibición indiscriminada de escrituras externas y README sin remoto | Jumpseller/correo incluidos expresamente; CasPro no emite/presenta/envía CPE a SUNAT; README distingue generación y publicación |
+| Documents tiene prohibido decidir «entrega», o vuelve a poseer el CPE | Entrega documental diferenciada de entrega física/estado legal; referencias verificadas vía coordinador, sin llamadas Documents → Sales/Procurement/Parties |
+| Pedido importado y despacho descuentan dos veces; webhook eco repite publicación | Reserva y movimiento separados, objetivo versionado y reconciliación; frescura incierta bloquea incremento; carreras externas aún requieren validación |
+| Consulta SUNAT se interpreta como descarga total SOL, o XML reconstruido sustituye original | Capacidad de consulta acotada, adquisición masiva no verificada e importación del operador; procedencia/representación explícita |
+| Reenvío, timeout, callback tardío o restore producen otro original o invalidan la venta | Intención/propósito y destinatario fijados, HOLD, deduplicación local, conciliación y restauración sin efectos; resultado del correo separado del CPE/venta |
+
+Revisión estática del cambio: referencias locales afectadas resueltas, fuentes S21–S25 identificadas y diff limitado a 13 archivos Markdown existentes, sin altas/bajas. No se encontraron contradicciones residuales en el alcance modificado; no se valida comportamiento ejecutable. El proveedor de objetos, políticas concretas de stock/artefactos/retención/margen y mecanismos/cuentas de integración siguen provisionales; los pendientes humanos no resueltos permanecen arriba. La documentación pública de Jumpseller tiene cifras de retries inconsistentes, por lo que no se fija esa garantía.
+
+**Foundation Amendment: PASS documental.** La fundación queda lista para especificación en SUPERPROMPT 2 cuando el propietario la autorice; ese paso deberá concretar los pendientes del circuito, sin darlos por resueltos ni habilitar operación real. Gate 1 permanece CLOSED. No se inicia SUPERPROMPT 2, no se ejecutan tests/Docker/builds, no se implementa software ni se consulta/modifica Wbpro.
+
 ## SUPERPROMPT 2: siguiente fase propuesta
 
-Después de revisión humana, resolver H1 y las políticas que bloqueen el circuito elegido; especificar Workspace/Parties/Catalog mínimos y un recorrido comercial completo con dinero, stock, evidencia y correcciones. Precisar estados, contratos entre propietarios, límites monetarios/temporales y matriz de locks; mantener Accounting/Tax separados y validar normativa antes de fijar tratamientos.
+Después de autorización humana, resolver lo pendiente de H1 y las políticas que bloqueen el circuito elegido; especificar Workspace/Parties/Catalog mínimos y un recorrido comercial completo con dinero, stock, evidencia y correcciones que incluya el alcance del amendment. Precisar estados, contratos entre propietarios, límites monetarios/temporales y matriz de locks; mantener Accounting/Tax separados y validar normativa antes de fijar tratamientos.
 
 Diseñar casos de aceptación y Validation Profiles, ordenar riesgos habilitantes y preparar solo las primeras WO pequeñas revisables. No especificar todos los módulos exhaustivamente por rutina, no generar una cola masiva y no iniciar implementación, infraestructura o pruebas salvo autorización expresa en esa fase.

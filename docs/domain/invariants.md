@@ -29,6 +29,7 @@ Contraejemplos que deberán refutar la implementación: un cobro 100 aplicado 80
 ## Stock y parcialidades
 
 - Existencia por posición = entradas confirmadas − salidas confirmadas, incluidas correcciones vinculadas. La primera política rechaza stock físico negativo; cualquier excepción requiere decisión y escenario propio.
+- Importar un pedido o un estado del canal no descuenta stock físico. Reserva y despacho coordinados consumen el mismo compromiso una vez; la publicación/observación de stock externo no genera otro movimiento. El cálculo publicable pertenece a Inventory, según [integraciones](../architecture/integrations.md).
 - Recepción, entrega y devolución identifican dirección, movimiento original y cantidades netas ya ejecutadas o corregidas. Las parcialidades no exceden el remanente de esa referencia; no se limita toda la vida del SKU o serial a una sola operación.
 - Devolución de cliente: entrada que referencia una salida anterior y repone su coste atribuible. Devolución a proveedor: salida que referencia la recepción correspondiente; no repone inventario. La política de valoración de esa salida sigue pendiente de especificación y validación de dominio: no se deduce que ambas direcciones usan el mismo cálculo.
 - Cuando se reparte un coste original entre parcialidades, el reparto conserva el total y asigna el resto exacto a la que lo agota; no reconstruye ese total usando un unitario redondeado.
@@ -41,6 +42,7 @@ Contraejemplos que deberán refutar la implementación: un cobro 100 aplicado 80
 - Un reintento de la misma intención produce el mismo efecto confirmado; una clave repetida con contenido distinto produce conflicto.
 - Confirmar una transición económica implica persistir sus cambios, hecho económico necesario y auditoría crítica en una sola transacción.
 - El expediente preparado, el dato capturado de emisión y la verificación externa no son equivalentes.
+- Artefacto adquirido, representación generada y entrega por email son dimensiones distintas; ninguna representación reconstruida se etiqueta como original ni un resultado de email cambia la validez del CPE o la venta.
 - Una referencia o hash no se trata como prueba de autenticidad, firma, autorización o titularidad.
 
 ## Contrato de máquina de estados

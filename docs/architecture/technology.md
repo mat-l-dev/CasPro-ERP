@@ -2,7 +2,7 @@
 
 Recomendaciones independientes del stack de V1. Las capacidades citadas se contrastaron con [fuentes oficiales](../decisions/sources.md). Las ventajas de productividad/operación son juicio de diseño para este producto; no benchmarks realizados.
 
-GOOD/ACCEPTABLE/QUESTIONABLE son juicios comparativos, no estados de aceptación. Los alcances autoritativos viven en los [ADRs](../decisions/index.md): combinaciones/versiones concretas, configuración de acceso, backend de trabajo y proveedores conservan sus condiciones provisionales hasta la evidencia correspondiente.
+GOOD/ACCEPTABLE/QUESTIONABLE son juicios comparativos, no estados de aceptación. Los alcances autoritativos viven en los [ADRs](../decisions/index.md): combinaciones/versiones concretas, configuración de acceso, backend de trabajo y proveedores de infraestructura conservan sus condiciones provisionales. Jumpseller y Resend son elecciones iniciales del propietario en ADR-008, con activación técnica pendiente.
 
 ## Evaluación y coste de propiedad
 
@@ -34,7 +34,7 @@ Revisar 6.2 cuando sea estable y compatible; no basar el diseño en APIs futuras
 |---|---|---|
 | PostgreSQL | Seleccionado como candidato managed | Roles limitados, schema privado, SQL PostgreSQL normal; dump/restore, roles, extensiones y versiones evaluados |
 | Auth | No adoptar | Django gestiona identidad; una migración de DB no obliga a migrar auth de proveedor |
-| Storage | Diferido, candidato entre opciones de objetos | Solo tras elegir retención, coste y API; adaptador de Documents. Migrar blobs y ACLs es trabajo separado |
+| Storage | Object storage requerido inicialmente; Supabase Storage es candidato, proveedor aún sin elegir | Elegir retención, coste y API para Documents; metadata en PostgreSQL, bytes privados separados. Migrar blobs y ACLs es trabajo separado |
 | Realtime | No adoptar inicialmente | No hay consumidor que justifique nueva entrega/seguridad de eventos al navegador |
 | Edge Functions | No adoptar | Evita un segundo runtime para reglas que pertenecen a Django |
 | Data API | Deshabilitar al provisionar CasPro | No se prevé acceso directo del navegador a tablas; la documentación permite desactivarla [S08](../decisions/sources.md) |
