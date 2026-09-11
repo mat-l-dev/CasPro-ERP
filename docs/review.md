@@ -2,13 +2,14 @@
 
 Fecha de corte: 2026-09-11. Este encabezado es la **única fuente del estado global vigente**.
 
-**FINAL GLOBAL DOCUMENTATION FREEZE CANDIDATE / READY FOR INDEPENDENT REVIEW.**
-**GLOBAL FREEZE: PENDING INDEPENDENT ACCEPTANCE.**
+**GLOBAL DOCUMENTATION FREEZE: ACCEPTED.**
 **IMPLEMENTATION: NOT AUTHORIZED.**
 
 El [expediente final A–W](research/final-documentation-closure.md) documenta reconciliación UX, cierre transversal/G1 y handoff de candidato exacto. La readiness individual vive en [deep-spec-index](specs/deep-spec-index.md); decisiones abiertas, pruebas futuras y activaciones en [decisions-gaps](roadmap/decisions-gaps.md). El [memo UX](research/ux-reconciliation.md) registra el input externo y DDR-01–12; [UI](architecture/ui.md) conserva el contrato.
 
-La evaluación del autor presenta el conjunto a revisión; no es aceptación independiente ni aprobación profesional de datos/políticas reales. [ADR-012](decisions/adr-012-global-documentation-freeze.md) exige aceptación independiente → investigación dedicada de skills → regeneración de WOs → autorización explícita de implementación. Ninguna WO está autorizada ni se crearon skills. PR2 permanece abierto para esa revisión.
+Resultado de revisión independiente comunicado por el propietario: **PASS WITH ONE MINOR EDITORIAL CHANGE** sobre commit `f6b64ae8c0734f7eed38ebdbcc02c7ce5d1ab5fb`, tree `0185e76655154dfcac80e39e3d58b3b5878d3525`. Se aplica la única corrección solicitada: el caso adversarial02 identifica mediante enlace el comando SP2 C15, distinto de los gates de activación. Este registro incorpora el resultado suministrado; no simula una nueva revisión independiente.
+
+Permanecen abiertos **B16/C13/D6**; las validaciones profesionales siguen siendo gates de activación. El freeze documental **no significa producción preparada** ni aprobación de políticas/datos reales. Conforme a [ADR-012](decisions/adr-012-global-documentation-freeze.md), la implementación sigue **NOT AUTHORIZED** hasta investigación dedicada de skills, WOs regeneradas y autorización explícita del propietario. En este cierre no se crean skills ni se regeneran WOs. PR2 permanece abierto, sin merge.
 
 ## Alcance del registro histórico siguiente
 

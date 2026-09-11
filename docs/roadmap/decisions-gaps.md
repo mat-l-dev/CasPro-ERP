@@ -28,7 +28,7 @@ Este es el único registro de incógnitas/gates abiertos. Sustituye la clasifica
 | C — PRODUCTION / FEATURE ACTIVATION BLOCKER | Usar en datos reales la función/configuración afectada sin hechos, política o habilitación | **13** |
 | D — DEFERRED / TRIGGERED | Iniciar una evolución opcional sin su trigger y nueva spec/WO | **6** |
 
-Son 35 registros de trabajo agrupados, no un conteo de cada parámetro o pregunta profesional. La aceptación independiente del candidato es un requisito de gobernanza, pendiente aparte: no es una incógnita de diseño A ni evidencia de runtime B. La aprobación independiente puede descubrir una A y devolver el candidato. Ni la tabla ni un ensayo B autorizan implementar.
+Son 35 registros de trabajo agrupados, no un conteo de cada parámetro o pregunta profesional. La aceptación independiente del candidato es un requisito de gobernanza cuyo resultado se registra únicamente en [review](../review.md): no es una incógnita de diseño A ni evidencia de runtime B, y no cierra los gates B/C/D. Ni la tabla ni un ensayo B autorizan implementar.
 
 A exige resolver antes de freeze: no se convierte en B una decisión semántica abierta. B congela hipótesis, evidencia y respuesta segura al fallo; no el mecanismo como ya probado. C admite preparar/implementar un contrato definido con fixtures y función desactivada; no inventa datos reales. Una respuesta real que exceda la superficie de política especificada abre amendment A antes de ampliar ese alcance.
 
@@ -155,6 +155,6 @@ Las menciones PROVISIONAL/PENDING/REQUIRES LATER VALIDATION en fuentes locales c
 | Tax/CPE/Corporate y registro N001–N029 | B06–B08/B10/B12; C01/C06–C09; D02 cuando no aplicable aún |
 | Matriz62/delta NIIF y textos no leídos íntegros | D02 por norma/trigger; si hechos iniciales la activan, C01/C08 exige resolución antes de uso |
 | Blueprint/DDR y UI | DDR cerrados en [memo](../research/ux-reconciliation.md); B09/B10, C12, D04/D06 |
-| Audit/review/programa/WOs/skills | Clasificación anterior sustituida por este registro; aceptación independiente pendiente en review; WOs a regenerar; skills posteriores, sin ejecución ahora |
+| Audit/review/programa/WOs/skills | Clasificación anterior sustituida por este registro; resultado de aceptación independiente en review; WOs a regenerar; skills posteriores, sin ejecución ahora |
 
 Una omisión o contradicción semántica descubierta por reviewer se registra como A con contraejemplo, dueño y contrato afectado. Cero A es conclusión de este cierre documental, no garantía de ausencia de errores ni aceptación independiente.

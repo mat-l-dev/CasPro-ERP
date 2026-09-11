@@ -1,6 +1,6 @@
 # Deep specs y readiness documental
 
-Propietario: Architecture con dueños de dominio. Este archivo es la única matriz de readiness M01–M09; [review](../review.md) posee el estado global y [gaps](../roadmap/decisions-gaps.md) clasifica pendientes. READY_FOR_FREEZE_REVIEW significa que el contrato está listo para revisión independiente; no significa FROZEN, software demostrado, política real aprobada ni permiso de implementación.
+Propietario: Architecture con dueños de dominio. Este archivo conserva la matriz de readiness con la que M01–M09 se presentaron a revisión; la aceptación independiente posterior del freeze se registra únicamente en [review](../review.md), y [gaps](../roadmap/decisions-gaps.md) conserva los pendientes. Las etiquetas READY_FOR_FREEZE_REVIEW siguientes describen el candidato revisado, no una aceptación todavía pendiente ni evidencia de software, políticas reales aprobadas o permiso de implementación.
 
 ## Matriz de cobertura y readiness
 

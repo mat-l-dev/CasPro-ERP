@@ -1,10 +1,10 @@
 # Cierre final documental — expediente para revisión independiente
 
-Corte: 2026-09-11. Evaluación del autor sobre el candidato documental, no aceptación independiente ni dictamen profesional. Este expediente explica el resultado; [review](../review.md) conserva el estado global, [deep specs](../specs/deep-spec-index.md) la readiness y [gaps](../roadmap/decisions-gaps.md) los pendientes. Ningún resumen de aquí sustituye esos propietarios.
+Corte: 2026-09-11. Registro histórico de la evaluación del autor del candidato `f6b64ae8c0734f7eed38ebdbcc02c7ce5d1ab5fb`, previo al resultado independiente suministrado por el propietario y registrado en [review](../review.md). Se conserva la evidencia y el handoff de esa evaluación, con la aclaración editorial del caso02 solicitada por el reviewer. Este expediente no es dictamen profesional; review conserva el estado global vigente, [deep specs](../specs/deep-spec-index.md) la readiness del candidato y [gaps](../roadmap/decisions-gaps.md) los pendientes.
 
 ## A. Veredicto ejecutivo
 
-**FINAL GLOBAL DOCUMENTATION FREEZE CANDIDATE / READY FOR INDEPENDENT REVIEW. GLOBAL FREEZE: PENDING INDEPENDENT ACCEPTANCE. IMPLEMENTATION: NOT AUTHORIZED.** El cierre reconcilia UX, precisa la cadena contable G1 y resuelve contradicciones editoriales/materiales. La conclusión del autor es cero decisiones A abiertas; los mecanismos y datos reales conservan gates explícitos. No se declara PASS global ni producción preparada.
+**Veredicto histórico del autor: FINAL GLOBAL DOCUMENTATION FREEZE CANDIDATE / READY FOR INDEPENDENT REVIEW.** El cierre reconcilia UX, precisa la cadena contable G1 y resuelve contradicciones editoriales/materiales. La conclusión del autor es cero decisiones A abiertas; los mecanismos y datos reales conservan gates explícitos. La aceptación independiente posterior se registra únicamente en [review](../review.md); no acredita producción preparada ni autoriza implementación.
 
 ## B. Realidad del repositorio
 
@@ -77,7 +77,7 @@ Resultados de análisis estático contra contratos, **no tests ejecutados**. En 
 | Caso adversarial | Dueño / hechos preservados y desenlace | UX y replay/efecto externo |
 |---|---|---|
 | 01. Webhook duplicado o fuera de orden | Integrations preserva observación/conexión, revisión/generación; Sales conserva aceptación. [Canal](../specs/integrations.md) rechaza promover lectura vieja | Mostrar antigüedad/discrepancia; mismo hecho no crea otra venta. ABA legítimo no se pierde por hash eterno |
-| 02. Venta aceptada100; nueva versión externa120 | Sales conserva snapshot100; cambio requiere C15 con cobertura/documentación, no update por canal | Comparar cambio propuesto; no nuevo cobro/reserva por replay |
+| 02. Venta aceptada100; nueva versión externa120 | Sales conserva snapshot100; cambio requiere el comando SP2 [C15](../specs/sales-stock-treasury.md#c15) con cobertura/documentación, no update por canal | Comparar cambio propuesto; no nuevo cobro/reserva por replay |
 | 03. Canal PAID, Treasury sin cobro | Treasury es dueño de dinero; observación no cumple HP1 | Advertir “pago por confirmar”; bloquear despacho dependiente; retry webhook no confirma caja |
 | 04. Pago confirmado después del corte | Treasury preserva fecha económica y conocimiento; [hechos](../specs/economic-facts.md)/Accounting mantienen corte publicado y revisión/ajuste posterior | Paquete histórico no cambia; nueva recepción del hecho no backdatea silenciosamente el asiento |
 | 05. Despacho parcial de venta100 con cobro40 | Sales/Inventory/Treasury revalidan cobertura íntegra100 antes de cualquier parcial | Preparar no despacha; mostrar faltante60; concurrencia con refund usa recursos comunes |
