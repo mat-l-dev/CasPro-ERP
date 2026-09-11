@@ -21,3 +21,11 @@ Un riesgo conocido puede seguir bloqueando aceptación. No esconderlo por estar 
 ## Veredicto
 
 Entregar conclusión, evidencia, impacto y cambio requerido. Aceptar solo el alcance demostrado. Una decisión técnica de arquitectura no aprueba normativa ni hechos empresariales. Una revisión estática no certifica ejecución. Si se requieren dos jueces, usar sesiones independientes de esta misma rúbrica y resolver discrepancias por evidencia/contrato, no votación automática.
+
+## Separación y salida del reviewer
+
+Entradas: encargo/WO, base/head/tree e insumos relevantes, diff y afirmaciones/evidencia del autor. Reviewer trabaja en contexto separado, en lectura, y no corrige el candidato durante su evaluación. Si edita, pasa a ser autor de esa corrección y otro reviewer evalúa el nuevo delta. No auto-PASS seguido de merge.
+
+Evaluar por separado cumplimiento de spec, corrección de código cuando exista, invariantes, seguridad, suficiencia/equivalencia de evidencia, scope creep y claims sobre gates. No repetir pruebas costosas sin cambio relevante, incertidumbre o contraejemplo que lo justifique; [Quality](../docs/quality/strategy.md#reutilización-verificable) conserva el contrato, no este documento.
+
+Salida: identidad, alcance evaluado, fuentes, hallazgos con archivo/impacto/requisito, evidencia ejecutada/reutilizada/pendiente, gates no cerrados y veredicto. PASS acepta solo alcance demostrado; PASS WITH CHANGES exige delta editorial concreto y verificación posterior; REQUEST CHANGES requiere corregir hallazgos materiales; FAIL identifica incumplimiento demostrado del alcance. Un candidato sin revisión separada sigue PENDING INDEPENDENT REVIEW. Ningún veredicto autoriza producción o merge por sí mismo.

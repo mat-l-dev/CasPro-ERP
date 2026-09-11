@@ -1,0 +1,22 @@
+---
+name: caspro-architecture
+description: "Preparar amendments de arquitectura o contratos CasPro y explicar decisiones históricas concretas; no cambiar reglas dentro de una skill ni hacer mantenimiento local sin impacto de contrato."
+---
+
+# caspro-architecture
+
+Lee el [protocolo](../../../.ai/README.md) y el [estado](../../../docs/review.md) si no están en contexto. Esta skill no concede permiso: implementación requiere WO regenerada y autorización explícita; hoy solo análisis/documentación del alcance encargado. No generar WOs reales en la misión de agentes. Docs poseen las reglas; ante contradicción detener el efecto afectado y escalar, sin editar el contrato silenciosamente.
+
+## Entrada y contexto
+
+Requiere pregunta/contraejemplo, fuente afectada, resultado buscado y permiso de edición si se pide amendment. Leer [overview](../../../docs/architecture/overview.md), [boundaries](../../../docs/architecture/boundaries.md), ADR pertinente desde [decisions](../../../docs/decisions/index.md), spec del dueño y [gaps](../../../docs/roadmap/decisions-gaps.md). Para una pregunta documental menor, leer solo la fuente y sus referencias afectadas.
+
+## Procedimiento por modo
+
+- Amendment: identificar OLD/NEW, owner, invariantes/consumidores/evidencia afectados y alternativas; separar propuesta de aceptación. No cambiar una regla congelada sin encargo y revisión de ese cambio; una incompatibilidad real se reporta con owner/impacto, no se oculta en playbook.
+- Trazabilidad: empezar por ADR actual. Leer únicamente el registro/candidato histórico que explique la pregunta, marcado HISTORICAL; no promover su estado a vigente. History es opcional, nunca contexto base.
+- Referencia Wbpro: comprobar [política](../../../docs/architecture/wbpro-reference-policy.md) y autorización concreta antes de cualquier lectura. Copiar implementación o usarlo como runtime no es transferencia autorizada; conservar procedencia committed/uncommitted si se autoriza una consulta.
+
+## Salida y revisión
+
+Propuesta/explicación con fuentes, delta, motivo, incertidumbres, dueño, gates y criterio de validación; no decisión empresarial inventada. Architecture checkpoint y dueño revisan cambios materiales; seguridad/Accounting/Tax/Legal según frontera, no por nombre de modelo. Solo corregir documentos canónicos si el encargo explícito abarca esa fuente.

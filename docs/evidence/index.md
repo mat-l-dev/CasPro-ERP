@@ -9,5 +9,6 @@ AUDIT / REVIEW EVIDENCE. Cada documento conserva el candidato, corte y límites 
 | [Extracción Wbpro](wbpro-knowledge.md) | Architecture/dominio: técnicas transferibles y límites de origen | Clasificación de procedencia conservada; rige la [política de referencia](../architecture/wbpro-reference-policy.md) |
 | [Reconciliación UX](ux-reconciliation.md) | UI/reviewer: input externo y DDR-01–12 | Corte de reconciliación del freeze; el contrato actual vive en [UI](../architecture/ui.md) |
 | [Arquitectura de información](documentation-ia.md) | Reviewer de esta reorganización: inventario y comprobaciones | Enmienda documental posterior al freeze; no aceptación independiente ni evidencia funcional |
+| [Sistema de agentes y skills](agent-system-research.md) | Orquestador/reviewer: fuentes oficiales, boundaries y routing sintético | Candidato del autor posterior al merge de PR3; no ejecución CasPro ni aceptación independiente |
 
 Los informes [Astra anterior](../history/astra-master-audit.md) y [cierre del freeze](../history/final-documentation-closure.md) son expedientes históricos de sus candidatos, accesibles desde [history](../history/index.md). Volver al [índice principal](../index.md).

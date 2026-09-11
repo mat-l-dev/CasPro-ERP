@@ -1,11 +1,13 @@
 # Plantilla de Work Order
 
-Plantilla conceptual. No es una orden de implementación activa ni una cola de tareas.
+Plantilla conceptual. No es una orden de implementación activa ni una cola de tareas. Su uso para regenerar WOs de implementación queda pendiente de aceptar el sistema de agentes y de un encargo de preparación; esta misión solo crea el mecanismo.
 
 | Campo | Contenido obligatorio cuando aplique |
 |---|---|
 | WO-ID / Goal | Identidad y resultado concreto |
 | Authorization / Mode | Encargo que autoriza; estático/documental/implementación; ejecuciones y efectos permitidos |
+| Git candidate / dependencies | Base/head/tree e insumos pertinentes, dependencias aceptadas y evidencia que se invoca; no HEAD aislado como prueba |
+| Local gates | IDs aplicables del registro, owner, momento/trigger, evidencia pendiente y efecto que sigue desactivado; no copiar ni cerrar el registro |
 | Canonical spec | Enlaces y revisión de la fuente de comportamiento; ADRs relevantes |
 | Context required | Contratos y secciones mínimas; evitar cargar el ERP completo |
 | Files expected | Archivos/módulos propios del cambio; justificar ampliación |

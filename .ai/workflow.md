@@ -20,3 +20,11 @@ La WO declara si se permite ejecución. En modo estático, el resultado se limit
 Al revisar un candidato se aplica el contrato de equivalencia e invalidación de [calidad](../docs/quality/strategy.md) y se añade el contraejemplo necesario. Este protocolo no mantiene otra definición de reutilización ni permite inferirla del nombre de una tarea o módulo.
 
 Archive significa conservar la decisión/evidencia del trabajo de CasPro conforme a su política, no acceder o modificar legacy de Wbpro. No borrar historia empresarial ni reescribir una aprobación anterior.
+
+## Entrega por candidato
+
+Antes de editar: identificar rama/base/head y cambios existentes; no normalizar trabajo ajeno. Crear rama del alcance autorizado. Para implementación futura, comprobar encargo y WO regenerada; para este sistema de agentes solo archivos operativos y simulaciones documentales. Preparación sin autorización produce análisis de alcance, no una WO de implementación inventada.
+
+Commit/push/PR cuando el encargo los cubra. El PR nombra base/head/tree y claims/evidencia pendientes; no se fusiona por auto-PASS ni porque «se ve bien». Reviewer separado evalúa el candidato sin modificarlo; el autor corrige y entrega nuevo delta para revisión. Merge requiere aceptación del candidato aplicable y autorización del propietario; si ya existen ambas, proceder sin reconfirmación ceremonial. Publicar identidad del merge y evaluar equivalencia conforme QA.
+
+Un hallazgo en docs se registra con fuentes/owner/impacto; no arreglarlo dentro de una skill ni cambiar semántica silenciosamente. Continuar lo independiente permitido. No cerrar gates con una simulación ni convertir falta de evidencia en fallo demostrado de runtime.
