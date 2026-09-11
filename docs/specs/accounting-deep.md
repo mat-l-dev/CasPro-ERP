@@ -14,6 +14,14 @@ Interpretación: hechos íntegros + política/regla tipada + inputs de juicio/es
 
 Asiento confirmado: entidad/libro/período/diario/identidad, fecha económica/contable/registro, moneda de origen e importes, moneda funcional, tasa, cuenta/dimensiones, débitos/créditos no negativos, exactamente un lado positivo por línea, suma débito=crédito exacta a precisión aprobada, al menos dos líneas y hechos/políticas referenciados. Cero no representa partida desconocida. Numeración se asigna bajo recurso que protege serie/período; huecos por abortos se explican si la política los permite, no promesa de secuencia sin huecos por usar autoincremento.
 
+## Superficie de política y activación
+
+El contrato a congelar representa hechos preservados, reglas tipadas con entradas explícitas, revisión profesional, posting inmutable, auxiliares, cortes y paquetes versionados. La elegibilidad de TILMUX, ESFA real, PCGE aplicado y estimaciones no se inventan para cerrar diseño. [C01–C03](../roadmap/decisions-gaps.md#activation-gates) impiden activar el libro/política afectados; [B07–B08](../roadmap/decisions-gaps.md#implementation-gates) exigen evidencia del mecanismo. Si no es elegible NPIF, no se activa ese libro por conveniencia; el marco necesario sigue su trigger y contratos propios.
+
+La superficie inicial es finita: NP-01–18 y las capacidades de la tabla siguiente, con entradas de elegibilidad/edición, fecha de disponibilidad, coste/vida/residual, evidencia de obligación, fechas de consumo, tasas fuente, mapeo/cuenta aprobada y tratamiento de corrección según el marco. Selecciones de método solo donde la spec/norma las admite; Inventory operativo conserva HP3. No se acepta una expresión arbitraria de reconocimiento, un calendario sin soporte, tasa fiscal por defecto ni una cuenta puente para lo desconocido. Si falta una interpretación aplicable, el hecho permanece INCOMPLETE/UNMAPPED/REVIEW_REQUIRED hasta regla tipada revisada. La validación real que requiera una capacidad o dato no representado abre A; cambiar parámetros dentro del contrato produce nueva versión y aplica su vigencia, sin reescribir historia.
+
+PCGE tiene tres cuestiones distintas: representar 2019/2026 y mapear por versión es contrato del adapter; corroborar procedencia/duplicado 70992 es gate del dataset 2026; adoptar edición/fecha en TILMUX es elección de activación. El hash distinto no demuestra que el catálogo sea semánticamente incorrecto. No repetir las 413 pruebas externas como sustituto de reconciliar procedencia o aprobar adopción.
+
 ## Auxiliares y políticas de primer año
 
 No exige apps independientes. Cada fila tiene roll-forward y reconciliación con GL; ausencia de hechos activa NOT TRIGGERED con evidencia, no eliminación de la capability.

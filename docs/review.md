@@ -1,10 +1,18 @@
 # Revisión y condición de avance
 
-Fecha de corte y revisión: 2026-09-11. **Astra Master Audit: COMPLETED — candidato documental entregado. GLOBAL DOCUMENTATION FREEZE: NOT ACHIEVED. IMPLEMENTACIÓN: NO AUTORIZADA.** Los PASS de Foundation, SP2 y el primer Grand Master Program que se conservan debajo son antecedentes históricos, no aceptación del candidato actual. El [ADR-012](decisions/adr-012-global-documentation-freeze.md) exige deep specs coordinadas M01–M09 y aceptación global; después vendrán skills y autorización de delivery. No congelar M01 para iniciar código mientras sigan abiertos los gates del conjunto.
+Fecha de corte: 2026-09-11. Este encabezado es la **única fuente del estado global vigente**.
 
-Evidencia nueva: [realidad de repositorios](research/repository-audit.md), [auditoría ejecutada de pcge-peru](research/pcge-code-audit.md), [catálogo NPIF](accounting/npif-policy-catalog.md), [delta NIIF verificado](research/ifrs-2025-2026-delta.md) e [índice de deep specs](specs/deep-spec-index.md). Ningún resultado externo o comprobación estática acredita software CasPro construido ni revisión independiente/profesional concluida.
+**FINAL GLOBAL DOCUMENTATION FREEZE CANDIDATE / READY FOR INDEPENDENT REVIEW.**
+**GLOBAL FREEZE: PENDING INDEPENDENT ACCEPTANCE.**
+**IMPLEMENTATION: NOT AUTHORIZED.**
 
-El [informe final A–R](research/astra-master-audit.md) contiene errores corregidos, lectura normativa con sus límites, refutación final, readiness por hito, cinco decisiones agrupadas y publicación. M01–M09 tienen contratos candidatos; faltan aceptación profesional/empresarial de políticas y revisión separada. La auto-revisión del autor no se presenta como reviewer independiente. No se crearon skills finales ni se ejecutó una WO de implementación.
+El [expediente final A–W](research/final-documentation-closure.md) documenta reconciliación UX, cierre transversal/G1 y handoff de candidato exacto. La readiness individual vive en [deep-spec-index](specs/deep-spec-index.md); decisiones abiertas, pruebas futuras y activaciones en [decisions-gaps](roadmap/decisions-gaps.md). El [memo UX](research/ux-reconciliation.md) registra el input externo y DDR-01–12; [UI](architecture/ui.md) conserva el contrato.
+
+La evaluación del autor presenta el conjunto a revisión; no es aceptación independiente ni aprobación profesional de datos/políticas reales. [ADR-012](decisions/adr-012-global-documentation-freeze.md) exige aceptación independiente → investigación dedicada de skills → regeneración de WOs → autorización explícita de implementación. Ninguna WO está autorizada ni se crearon skills. PR2 permanece abierto para esa revisión.
+
+## Alcance del registro histórico siguiente
+
+Todos los apartados que siguen registran Foundation, Amendment, SP2 y Grand Master anteriores al cierre actual. Sus PASS, números de QA, H1–H5, riesgos y pendientes son históricos y no definen el estado ni el triage actual. La [auditoría Astra anterior](research/astra-master-audit.md) conserva evidencia y límites; el cierre A–W y el registro de gaps sustituyen su clasificación de bloqueos. No releer un “pendiente” histórico como nueva autorización o como decisión A actual.
 
 ## Refutación del diseño
 

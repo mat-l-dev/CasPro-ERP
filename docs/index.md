@@ -1,6 +1,6 @@
 # Índice y autoridad documental
 
-Fecha de corte: 2026-09-10. Los documentos describen la fundación, no acreditan implementación. El [registro](decisions/index.md) enlaza cada ADR, cuya tabla de alcances es la única fuente autoritativa de sus estados. La condición global y el cierre de Gate 1 se consultan en [review](review.md).
+Los documentos describen contratos y evidencia documental, no acreditan implementación. [Review](review.md) es la única fuente del estado global; [deep-spec-index](specs/deep-spec-index.md) de readiness por hito y [gaps](roadmap/decisions-gaps.md) de pendientes A/B/C/D. El [registro](decisions/index.md) enlaza cada ADR, cuya tabla de alcances posee el estado de esa decisión. Los PASS históricos no aceptan un candidato posterior.
 
 ## Cinco fuentes de verdad
 
@@ -39,7 +39,8 @@ Fecha de corte: 2026-09-10. Los documentos describen la fundación, no acreditan
 | IA y contexto local | [Protocolo](../.ai/README.md), [flujo](../.ai/workflow.md) |
 | Capability map, gaps y cuatro roadmaps | [Capabilities](roadmap/capabilities.md), [decisiones/gaps](roadmap/decisions-gaps.md), [programa](roadmap/program.md) |
 | Pendientes y revisión de la fundación | [Review](review.md) |
-| Auditoría Astra y especificación global M01–M09 | [Informe final A–R](research/astra-master-audit.md), [repositorios](research/repository-audit.md), [pcge-peru](research/pcge-code-audit.md), [deep specs](specs/deep-spec-index.md) |
+| Cierre documental y reconciliación UX | [Expediente A–W](research/final-documentation-closure.md), [memo UX/DDR](research/ux-reconciliation.md), [deep specs](specs/deep-spec-index.md) |
+| Evidencia de la auditoría Astra anterior | [Informe histórico A–R](research/astra-master-audit.md), [repositorios](research/repository-audit.md), [pcge-peru](research/pcge-code-audit.md) |
 | NPIF completa y delta NIIF 2025/2026 | [Catálogo de políticas](accounting/npif-policy-catalog.md), [delta oficial](research/ifrs-2025-2026-delta.md) |
 
 ## Mantenimiento mínimo

@@ -1,38 +1,39 @@
-# Deep specs y gate documental global
+# Deep specs y readiness documental
 
-Propietario: Architecture con dueños de dominio. Mandato [ADR-012](../decisions/adr-012-global-documentation-freeze.md). **Candidato M01–M09 entregado para revisión; ningún hito está FROZEN ni autorizado para código.** Las specs SP2 mantienen contratos precisados; las siguientes amplían y resuelven fronteras del programa. IDs de specs/comandos no implican clases/tablas anticipadas. [Cierre/readiness](../research/astra-master-audit.md) distingue contenido, aceptación y evidencia.
+Propietario: Architecture con dueños de dominio. Este archivo es la única matriz de readiness M01–M09; [review](../review.md) posee el estado global y [gaps](../roadmap/decisions-gaps.md) clasifica pendientes. READY_FOR_FREEZE_REVIEW significa que el contrato está listo para revisión independiente; no significa FROZEN, software demostrado, política real aprobada ni permiso de implementación.
 
-## Matriz de cobertura
+## Matriz de cobertura y readiness
 
-| Hito | Contrato local profundo | Contenido de cierre documental |
-|---|---|---|
-| M01 | [Runtime/access/audit/operations](runtime-masters.md) | Runtime fijable, bootstrap, aislamiento/revocación, documentos privados, recuperación y ensayo habilitante |
-| M02 | [Maestros e importación](runtime-masters.md) | Identidades/referencias/versiones, servicio comprado separado, preview invalidable y corrección |
-| M03 | [Inventory/costeo](inventory-deep.md), [Treasury SP2](sales-stock-treasury.md), [integraciones](integrations.md) | Apertura/UNKNOWN, secuencia de valoración, dinero confirmado y propuesta externa |
-| M04 | [B2C profundo](inventory-deep.md), [CPE](cpe-document-delivery.md), [hechos](economic-facts.md) | HP1–HP5, correcciones coordinadas, oportunidad CPE/adquisición externa, preservación para Accounting |
-| M05 | [Procure-to-Pay](procurement-deep.md) | Mercancía/servicios, PO/recepción/conformidad/factura, match/hold, anticipo, devolución y payability |
-| M06 | [Conciliación bancaria y Corporate](treasury-corporate-deep.md) | Import/duplicado/N:M/reversión, financiación/actos/relaciones y gate profesional temprano |
-| M07 | [Accounting](accounting-deep.md) y [políticas NPIF](../accounting/npif-policy-catalog.md) | Interpretación, PCGE aplicado, posting/revisión, ledger, subcontroles, cierre y apertura |
-| M08 | [Paquete financiero y goldens](reporting-goldens.md) | Cuatro estados+notas, comparativos, transición, integridad y drill-through |
-| M09 | [Tax Perú](tax-deep.md) | Perfiles/vigencias, base fiscal, CPE/IGV/SIRE/SPOT, no domiciliados, registros/conciliación |
+| Hito | Readiness | Contrato local profundo | Gates pertinentes del registro |
+|---|---|---|---|
+| M01 | **READY_FOR_FREEZE_REVIEW** | [Runtime/access/audit/operations](runtime-masters.md) | A0; B01–04/B10/B13–15; C10/C12/C13 |
+| M02 | **READY_FOR_FREEZE_REVIEW** | [Maestros/importación](runtime-masters.md) | A0; B02–04/B09/B10/B15; C03/C13 |
+| M03 | **READY_FOR_FREEZE_REVIEW** | [Inventory](inventory-deep.md), [Treasury SP2](sales-stock-treasury.md), [canal](integrations.md) | A0; B02–06/B09–12/B15; C03/C05/C11/C13; D05 |
+| M04 | **READY_FOR_FREEZE_REVIEW** | [B2C](inventory-deep.md), [CPE](cpe-document-delivery.md), [hechos](economic-facts.md) | A0; B02–05/B09–12; C03/C05/C07/C11; D05 |
+| M05 | **READY_FOR_FREEZE_REVIEW** | [Procure-to-Pay](procurement-deep.md) | A0; B02–06/B09/B10; C03–05/C07/C08/C13 |
+| M06 | **READY_FOR_FREEZE_REVIEW** | [Treasury/Corporate](treasury-corporate-deep.md) | A0; B02–04/B06/B09/B10/B12; C05/C06/C09; D01 con B16 solo si piloto |
+| M07 | **READY_FOR_FREEZE_REVIEW** | [Accounting](accounting-deep.md), [NPIF](../accounting/npif-policy-catalog.md) | A0; B02–05/B07; C01–03/C06/C08 cuando aplique; D02 |
+| M08 | **READY_FOR_FREEZE_REVIEW** | [Paquete financiero/G1–G7](reporting-goldens.md) | A0; B02/B07–10/B12–15; C01–03/C10/C12; D02 |
+| M09 | **READY_FOR_FREEZE_REVIEW** | [Tax Perú](tax-deep.md) | A0; B02–04/B07/B08/B10/B12; C07–09 y C06 si financiación; D02 |
 
-Las nueve filas tienen contrato candidato. SPECIFIED describe contenido, no aceptación: conservan gates profesionales y ejecutables expresos. El [contrato transversal](economic-facts.md) es obligatorio y extiende el orden de CM0 para P2P, conciliación, valoración y libros. Capabilities/programa conservan propósito, dependencias y roles, sin duplicar estados de comandos.
+B14 (equivalencia de evidencia), B02 (acceso de nuevas entradas), B03 cuando haya efecto crítico y C10/C13 antes de producción se aplican transversalmente aunque una fila destaque otros gates. D03/D04/D06 solo se abren por su trigger; no bloquean estos hitos. Gates compartidos se cuentan una vez en gaps. C06 precede a cualquier financiación real, aunque ocurra antes de M06; sin esa activación no bloquea otros hitos.
 
-## Criterios de revisión transversal
+Las nueve filas tienen entradas/salidas, propietarios, estados/comandos, guardas, atomicidad, acceso, corrección/replay, evidencia, UX y aceptación futura en sus fuentes. El [contrato de hechos](economic-facts.md) extiende CM0 para P2P, conciliación, valoración, cortes y libros. IDs de comandos no son clases/tablas anticipadas. El [memo UX](../research/ux-reconciliation.md) resuelve DDR-01–12 sin crear otra spec.
 
-1. Cada dato/estado/dinero/stock tiene un único dueño; referencias interempresa quedan rechazadas en servicio y persistencia.
-2. Todo hecho relevante anterior a M07 puede consumirse una sola vez con trazabilidad, sin reconstruirlo desde el estado final mutable.
-3. Ninguna norma se infiere de cuenta PCGE, ejemplo de guía o código Wbpro; fuente/edición/vigencia/marco/hechos son explícitos.
-4. Refund/despacho, pago/cambio de proveedor, factura/recepción, costo tardío/cierre, posting/cierre y restore/replay tienen desenlace definido.
-5. No hay FROZEN si un pendiente cambia reconocimiento, política legal, dato obligatorio o autorización. Experimentos declaran ensayo acotado y fallo.
-6. Evidencia corresponde al candidato/afirmación; revisión estática no acredita PostgreSQL, RLS, CPE externo ni reportes ejecutables.
-7. El paquete financiero cubre capabilities aplicables del primer año; no se difieren PPE/devengos/provisiones sin evaluar hechos.
-8. UI explica origen/acción/corrección sin detalles técnicos innecesarios; búsqueda/drill-through respetan permisos.
-9. Investigación/aprobación de financiación preceden al desembolso; implementación tardía no posterga ese control.
-10. Reviewer separado y aprobación humana/profesional son hechos registrados, no roles ficticios de una misma respuesta.
+## Criterios de revisión independiente
 
-## Handoff de futura WO
+1. Un dueño por hecho/estado; referencias y autorización conservan entidad en todos los caminos.
+2. Los productores anteriores a M07 preservan hechos/componentes y completitud; Accounting no reconstruye historia desde estado mutable ni la consume dos veces.
+3. Marco, catálogo, plan aplicado, política y fuente/edición/vigencia son conceptos distintos; PCGE no decide reconocimiento.
+4. Correcciones tienen desenlace explícito: refund/despacho, pago/cambio de proveedor, factura/recepción, late cost/cierre, posting/cierre y restore/replay.
+5. No hay incógnita A sin resolver. Toda B tiene hipótesis/ensayo/pase/fallo/owner; C identifica función y momento; D tiene trigger. Una política real fuera de superficie tipada requiere amendment.
+6. G1 prueba documentalmente hecho→interpretación→posting→mayor→mapping→valor de los cuatro estados y notas, sin doble conteo, plug ni linaje inventado; B07/B08 siguen sin ejecutar.
+7. UI respeta estados/autoridad del dueño, incertidumbre y PREPARE ≠ EXECUTE; accesibilidad, teclas y rendimiento no se declaran probados.
+8. Obligatoriedad profesional/regulatoria se resuelve antes de la activación pertinente; no espera a que exista su interfaz ni bloquea sin causa toda construcción.
+9. Reviewer separado usa identidad exacta y registra PASS/FAIL con evidencia; el autor no se acepta a sí mismo.
 
-Leer AGENTS → estado global → tarjeta de hito → spec local/dependencias concretas → perfil de evidencia. Sol orquesta y conserva candidato; implementador/reviewer son distintos; Astra interviene en arquitectura, dinero/stock, Accounting/Tax/Legal, seguridad o contraejemplo transversal. WO fija archivos permitidos/prohibidos, datos sintéticos, incertidumbre y escalación. Si falta una política, no la inventa ni pide al propietario elegir detalles técnicos.
+## Handoff posterior
 
-No generar skills finales mientras GLOBAL FREEZE siga abierto. Familias futuras del programa son propuesta, no instalación ni autorización de agentes autónomos.
+La secuencia obligatoria es aceptación independiente del freeze → investigación dedicada de skills útiles → regeneración de WOs acotadas → autorización explícita de implementación. Las [seis WOs SP2](work-orders.md) son insumos históricos NEEDS REGENERATION AFTER FREEZE: incorporar hechos tempranos, pool/revisiones, CM0 extendido, CPE, UX y gates locales antes de encargarlas.
+
+Contexto futuro: AGENTS → review → tarjeta de hito → spec y dependencias concretas → gates/perfil de evidencia. Sol orquesta; implementador y reviewer trabajan separados; Astra revisa arquitectura, dinero/stock, Accounting/Tax/Legal, seguridad o contraejemplo transversal. Ninguna etiqueta de readiness ni skill autoriza funciones, migraciones, pruebas o despliegues.

@@ -16,6 +16,8 @@ Protocolo: autenticar y verificar membresía/capacidad inicial mediante Workspac
 
 Ejecutar exige el comando público del dueño, capacidad actual, revisión explícita del impacto y las guardas/idempotencia anteriores. Una preparación obsoleta se invalida; no se ejecuta reinterpretando silenciosamente sus entradas. La revisión y su activación deliberada deben poder completarse con teclado. El gesto que abre la revisión no puede confirmar también su acción. El resultado incierto conserva la misma intención y conduce a consultar/conciliar su efecto antes de otra ejecución; la UI y la IA no eligen una nueva clave para eludir ese control. El patrón no exige un diálogo adicional para cada edición reversible de maestro; cada comando mantiene su frontera semántica.
 
+La revisión es humana en el caso interactivo; un modo automático solo puede consumir el mandato de política explícitamente admitido por su spec, con alcance/versión/evidencia y guardas vigentes. Por ejemplo, preparar una entrega CPE no la envía: el dispatch posterior verifica por separado el mandato AUTO permitido por Documents. Este principio no elimina esos modos ya especificados ni crea automatismos nuevos para dinero, stock o Accounting.
+
 ## Ficha de cada comando crítico
 
 | Campo | Qué debe declarar |

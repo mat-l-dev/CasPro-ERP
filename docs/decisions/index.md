@@ -2,7 +2,7 @@
 
 Corte 2026-09-10. **La única fuente autoritativa del estado de una decisión es la tabla de alcances de su ADR.** Este índice es navegación; no mantiene una segunda columna de estados. El contrato enlazado desarrolla la regla y las condiciones. Una discrepancia entre textos se corrige como defecto documental, no permite elegir el estado más conveniente.
 
-ACCEPTED acepta el contrato de diseño de ese alcance, no acredita software ejecutado, aprobación empresarial/regulatoria ni aptitud productiva. PROVISIONAL identifica un candidato que no puede tratarse como mecanismo aceptado; PENDING VALIDATION describe su evidencia faltante, no otro grado de aprobación. PENDING HUMAN DECISION identifica las decisiones empresariales de la [revisión](../review.md).
+ACCEPTED acepta el contrato de diseño de ese alcance, no acredita software ejecutado, aprobación empresarial/regulatoria ni aptitud productiva. PROVISIONAL identifica un candidato que no puede tratarse como mecanismo aceptado; PENDING VALIDATION describe su evidencia faltante, no otro grado de aprobación. PENDING HUMAN DECISION remite a los [gates/DH vigentes](../roadmap/decisions-gaps.md); esas palabras no clasifican por sí solas un bloqueo de diseño. ADR-012 separa diseño, validación del mecanismo y activación real.
 
 | ADR: estado y motivo autoritativos | Contrato detallado | Materia que distingue |
 |---|---|---|

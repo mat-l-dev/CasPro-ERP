@@ -1,21 +1,21 @@
 # CasPro Master Program
 
-Propietario: Product/Architecture. Estado: programa documental ampliado por [ADR-012](../decisions/adr-012-global-documentation-freeze.md), no autorización de implementación. **Deep specs M01–M09 → GLOBAL DOCUMENTATION FREEZE → skills justificadas → entrega mediante WOs autorizadas.** IDs ordenan dependencias de entrega, no aplazan especificación ni prometen fechas. El [índice profundo](../specs/deep-spec-index.md) dirige revisión transversal.
+Propietario: Product/Architecture. [ADR-012](../decisions/adr-012-global-documentation-freeze.md) rige la secuencia, [review](../review.md) el estado global y el [índice profundo](../specs/deep-spec-index.md) la readiness por hito. **Deep specs M01–M09 → aceptación independiente del GLOBAL DOCUMENTATION FREEZE → investigación dedicada de skills → regeneración de WOs → implementación expresamente autorizada.** IDs ordenan dependencias de entrega, no aplazan especificación ni prometen fechas. Las tarjetas distinguen resultados futuros de entrega de criterios documentales; no exigen ejecutar esos resultados para revisar el diseño. Los pendientes se clasifican únicamente en [gaps](decisions-gaps.md).
 
 ## Cuatro vistas coordinadas
 
 | ID | Product outcome | Documentation gate | Delivery increment | AI execution |
 |---|---|---|---|---|
-| M00 | Visión y contratos completos antes de código | Auditoría/research y deep specs M01–M09; freeze GLOBAL pendiente | Solo documentación | Astra analiza/refuta; aceptación independiente por riesgo; sin runtime IA |
+| M00 | Visión y contratos completos antes de código | Auditoría/research, deep specs M01–M09 y candidato exacto para revisión global | Solo documentación | Astra analiza/refuta; aceptación independiente por riesgo; sin runtime IA |
 | M01 | Plataforma aislada y recuperable | Runtime/access/audit/operations specs congeladas | Bootstrap + entidad/acceso/audit + restore base | Sol 5.6 orquesta WOs; Astra checkpoint de seguridad |
 | M02 | Maestros confiables | Parties/Catalog/import specs | Party, bienes/SKU/precios, import preview | IA no necesaria |
 | M03 | Stock/dinero observables y pedido externo durable | Inventory/Treasury/Jumpseller specs | Apertura, movimientos/cobros base, inbox/propuesta | IA no confirma; evaluación futura recopila casos |
 | M04 | Primera venta B2C segura | SP2 actualizado + CPE/delivery/UX policy | Pedido, cobro íntegro y reserva habilitan despacho; CPE externo se obtiene en su oportunidad legal, incluso antes del despacho; entrega documental por aprobación | Solo explicación de excepción, si existe piloto separado |
 | M05 | Compra a pago controlado | P2P + Tax de compra + conteo specs | PO/receipt/service/CPE/match/payable/payment | Matching IA solo candidato después del determinista |
-| M06 | Control financiero y corporate | Treasury reconciliation + Corporate/Mutuo validation | Extractos, conciliación, cash position; expediente corporate | Primer piloto de candidatos bancarios, humano obligatorio |
-| M07 | Ledger y cierre | Accounting policies/R2R/PCGE specs + revisión profesional | Posting, GL, conciliaciones, períodos, ajustes/cierre | Sugerencia contable opcional sin escritura |
+| M06 | Control financiero y corporate | Contratos Treasury/Corporate; C06 antes de financiar realmente | Extractos, conciliación, cash position; expediente corporate | Piloto opcional D01 de candidatos bancarios, humano obligatorio |
+| M07 | Ledger y cierre | Accounting policies/R2R/PCGE specs; C01–03 antes de activar políticas/libro reales | Posting, GL, conciliaciones, períodos, ajustes/cierre | Sugerencia contable opcional sin escritura |
 | M08 | EEFF NPIF completos | Reporting/notas/transición spec + golden cases | Cuatro estados, notas, comparativos y drill-down | Explicación de cifras con fuente, revisión humana |
-| M09 | Operación tributaria preparada | RER/IGV/SIRE/SPOT policy specs validadas | Registros/conciliaciones/calendario, sin presentación automática | Clasificación candidata de excepciones; sin determinación/presentación |
+| M09 | Operación tributaria preparada | Contratos tipados RER/IGV/SIRE/SPOT; perfiles reales C07–09 | Registros/conciliaciones/calendario, sin presentación automática | Clasificación candidata de excepciones; sin determinación/presentación |
 | M10 | Madurez y expansión por trigger | Gate de necesidad para cada capability | maker/checker, otros canales/marcos solo si activados | proveedor se renueva por evaluación, no permanencia automática |
 
 Ruta crítica: **M00 → M01 → M02 → M03 → M04 → M05 → M07 → M08**. M06 puede avanzar tras M04 y alimenta M07; la parte Mutuo no bloquea ventas ni Accounting general si permanece inactiva. M09 investiga en paralelo, pero su salida operativa necesita hechos de M04/M05 y ledger de M07.
@@ -213,4 +213,4 @@ Ruta explícita de entrega: **repositorio documental (M00) → primer ERP ejecut
 
 ## Future skill derivation, after freeze
 
-No skill is created in this program. After the **GLOBAL DOCUMENTATION FREEZE of M01–M09**, derive a short skill only if repeated execution benefits from it. Candidate families: orchestration, Accounting, Tax, P2P, Inventory, Treasury, Sales/Documents/Integrations, security/QA, UI and AI assistance. Each skill links canonical docs, names allowed decisions/escalations and contains no copied business or regulatory rules. AGENTS remains the router. Changing a skill never changes the domain truth.
+No skill is created in this program. After independent acceptance of the **GLOBAL DOCUMENTATION FREEZE of M01–M09**, conduct a dedicated review of frozen canonical sources and repeated workflows. Derive a short skill only when it changes repeated execution for the better: identify mandatory context, allowed/forbidden decisions, escalation and a concrete behavioral check. Candidate families: orchestration, Accounting, Tax, P2P, Inventory, Treasury, Sales/Documents/Integrations, security/QA, UI and AI assistance. Families are not an instruction to create a file for each domain. Link canonical docs and avoid copying business/regulatory rules. AGENTS remains the router. Regenerate bounded WOs afterward; changing a skill never changes domain truth or authorizes code.

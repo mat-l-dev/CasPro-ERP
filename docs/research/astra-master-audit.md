@@ -1,6 +1,6 @@
 # Astra Master Audit — cierre documental del encargo
 
-Corte: 2026-09-11. Autor: agente arquitecto/editor de esta revisión. Destinatario: propietario de CasPro y futuro reviewer. Este informe resume fuentes locales; los contratos viven en sus documentos propietarios. No es dictamen legal/contable ni revisión independiente del trabajo del mismo autor.
+Corte: 2026-09-11. **REGISTRO HISTÓRICO de la auditoría anterior al cierre final UX/freeze.** Su veredicto, readiness y clasificación de pendientes corresponden al candidato publicado hasta `384584c5eaecbd2b78d8567259371f30fecc48aa`; no son estado vigente. El [cierre A–W](final-documentation-closure.md), [review](../review.md) y [gaps](../roadmap/decisions-gaps.md) los sustituyen. La evidencia de lectura/investigación/pcge aquí preservada mantiene sus límites originales. Autor: agente arquitecto/editor; no dictamen legal/contable ni revisión independiente.
 
 ## A. VERDICT
 

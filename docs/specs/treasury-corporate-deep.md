@@ -12,7 +12,7 @@ Transferencia propia tiene dos piernas vinculadas y moneda de cada cuenta. Misma
 
 ## Importación bancaria y matching
 
-Preservar archivo/version/hash, banco/cuenta/moneda/período, parser y formato, fecha operación/valor, referencia exacta y texto original, signo, importe y saldo cuando exista. Parsear fuera de TX; preview muestra totales, fechas fuera de rango, saldos, duplicados y errores. BBVA es banco inicial, **formato real no verificado**: no inventar columnas ni prometer API bancaria. Primera WO usa fixture sintético con contrato de formato aprobado mediante muestra privada.
+Preservar archivo/version/hash, banco/cuenta/moneda/período, parser y formato, fecha operación/valor, referencia exacta y texto original, signo, importe y saldo cuando exista. Parsear fuera de TX; preview muestra totales, fechas fuera de rango, saldos, duplicados y errores. BBVA es banco inicial, **formato real no verificado**: no inventar columnas ni prometer API bancaria. El núcleo neutral se construye con fixtures sintéticos; la WO del parser BBVA requiere contrato del formato y muestra autorizada privada/sanitizada, conforme a B06/C05. Esa muestra no condiciona todo el módulo M06.
 
 Identidad fuerte de línea del banco si existe, única por cuenta. Si no existe, fingerprint de fecha/importe/texto solo detecta candidatos: dos pagos iguales pueden ser reales. Mantener ocurrencia/posición en archivo, solapamiento de extractos y resolución humana de duplicados. Importar otro archivo con distinto hash no crea derecho a duplicar líneas ya identificadas; tampoco elimina una línea legítima por coincidencia débil.
 
@@ -49,7 +49,7 @@ Instrumento financiero: propuesta→validado legal/tributario/contable→autoriz
 | CO04 registrar capitalización / corporate.record_capitalization / D | Acuerdo, formalidades aplicables, deuda confirmada y aprobación I→M→O→T→R→D | Hecho societario y extinción de obligación por mecanismo acreditado; no movimiento ficticio de caja. Accounting determina fecha/clasificación; cancelación posterior necesita acto/corrección, no editar capital |
 | CO05 preparar beneficiario final / corporate.prepare_beneficial_owner / D | Cadena propiedad/control y fechas, perfil de obligación I→M→O→D | Expediente/versiones y propuesta de declaración; envío fuera del ERP inicialmente. Constancia preservada por acto separado; no inferir persona final del representante |
 
-Investigación y validación de mutuo son gate temprano transversal antes de financiar M03/M04; no esperar UI M06. RTF 08044-1-2022 se usa con sus hechos/límites y no como aprobación de tasa0. No aplicar automáticamente artículos26 y32-A simultáneamente. Capitalización, dividendos, fondos para futuro aporte y préstamo mantienen evidencia y evaluación propias.
+Investigación y validación de mutuo son gate de activación temprano antes de contratar/financiar, incluso si ocurre durante M03/M04; no esperar UI M06. No bloquean diseñar Treasury/Corporate ni construir M01–M05 sin activar financiación. RTF 08044-1-2022 se usa con sus hechos/límites y no como aprobación de tasa0. No aplicar automáticamente artículos26 y32-A simultáneamente. Capitalización, dividendos, fondos para futuro aporte y préstamo mantienen evidencia y evaluación propias; [C06/DH2](../roadmap/decisions-gaps.md#dh2) conserva la pregunta profesional.
 
 ## Aceptación, UX y handoff
 
