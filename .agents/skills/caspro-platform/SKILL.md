@@ -5,7 +5,7 @@ description: "Trabajar runtime M01, maestros M02, acceso/RLS, seguridad o recupe
 
 # caspro-platform
 
-Lee el [protocolo](../../../.ai/README.md) y el [estado](../../../docs/review.md) si no están en contexto. Esta skill no concede permiso: implementación requiere WO regenerada y autorización explícita; hoy solo análisis/documentación del alcance encargado. No generar WOs reales en la misión de agentes. Docs poseen las reglas; ante contradicción detener el efecto afectado y escalar, sin editar el contrato silenciosamente.
+Consulta el [estado](../../../docs/review.md) para la fase vigente y aplica el [protocolo](../../../.ai/README.md#autoridad-y-autorización). Esta skill no concede permiso: implementación solo con fase habilitada y WO regenerada explícitamente autorizada, respetando todos sus límites. Preparar WOs también requiere autorización vigente. Docs poseen las reglas; ante contradicción, detener la parte afectada y escalar.
 
 ## Entrada y contexto por modo
 
@@ -13,7 +13,7 @@ Requiere alcance, componente/entrypoint y WO autorizada antes de implementación
 
 | Modo | Añadir |
 |---|---|
-| Runtime M01 | [Tecnología](../../../docs/architecture/technology.md), [QA](../../../docs/quality/strategy.md); compatibilidad exacta a verificar en ejecución futura |
+| Runtime M01 | [Tecnología](../../../docs/architecture/technology.md), [QA](../../../docs/quality/strategy.md); verificar compatibilidad exacta cuando se autorice esa ejecución |
 | Party/Catalog/importación | M02 + [C11/C12/preview](../../../docs/specs/flows/first-operational-circuit.md), [data](../../../docs/architecture/data.md), acceso aplicado al dato |
 | RLS/autorización/seguridad | [Tenancy/access](../../../docs/architecture/tenancy-access.md), [threat model](../../../docs/security/threat-model.md), QA y entrypoints afectados |
 | Restore/operación/migración | [Delivery](../../../docs/operations/delivery.md), recuperación M01, QA, entorno/manifiesto y mandato específicos |
@@ -26,4 +26,4 @@ Seleccionar B01/B02/B13/B15, C10/C12/C13 y demás aplicables; leer transacciones
 
 ## Salida / revisión
 
-Contexto, superficie afectada, análisis o cambio encargado, evidencia real/futura y gates. Reviewer independiente seguridad para acceso y operaciones/seguridad para recuperación; Architect ante frontera. Sin runtime, fixtures o autorización, describir validación pendiente en vez de ejecutar DB/Docker/builds.
+Contexto, superficie afectada, análisis o cambio encargado, evidencia obtenida/pendiente y gates. Reviewer independiente seguridad para acceso y operaciones/seguridad para recuperación; Architect ante frontera. Sin runtime, fixtures o autorización, describir validación pendiente en vez de ejecutar DB/Docker/builds.

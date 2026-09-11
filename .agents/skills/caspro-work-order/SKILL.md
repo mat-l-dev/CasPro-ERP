@@ -5,11 +5,11 @@ description: "Preparar Work Orders CasPro acotadas desde specs y gates, cuando e
 
 # caspro-work-order
 
-Lee el [protocolo](../../../.ai/README.md) y el [estado](../../../docs/review.md) si no están en contexto. Esta skill no concede permiso: implementación requiere WO regenerada y autorización explícita; hoy solo análisis/documentación del alcance encargado. No generar WOs reales en la misión de agentes. Docs poseen las reglas; ante contradicción detener el efecto afectado y escalar, sin editar el contrato silenciosamente.
+Consulta el [estado](../../../docs/review.md) para la fase vigente y aplica el [protocolo](../../../.ai/README.md#autoridad-y-autorización). Esta skill no concede permiso: implementación solo con fase habilitada y WO regenerada explícitamente autorizada, respetando todos sus límites. Preparar WOs también requiere autorización vigente. Docs poseen las reglas; ante contradicción, detener la parte afectada y escalar.
 
 ## Entrada y selección
 
-Requiere objetivo/hito, encargo de preparación, candidato/base y alcance permitido. Si solo se solicita código sin WO, señalar el requisito; no convertir esta skill en autorización. En la misión de agentes entregar únicamente ruta y análisis de campos faltantes, no una WO real.
+Requiere objetivo/hito, encargo de preparación, candidato/base y alcance permitido. Si solo se solicita código sin WO, señalar el requisito; no convertir esta skill en autorización. Si la preparación no está autorizada por encargo y fase vigente, entregar únicamente ruta y análisis permitido de campos faltantes, no una WO real.
 
 ## Contexto y procedimiento
 

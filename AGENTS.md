@@ -1,6 +1,6 @@
 # CasPro — router del repositorio
 
-CasPro es el ERP interno de TILMUX y entidades autorizadas del propietario. [Estado y fase permitida](docs/review.md): **IMPLEMENTATION: NOT AUTHORIZED.** El freeze y la IA documental aceptados no habilitan código, datos reales ni producción.
+CasPro es el ERP interno de TILMUX y entidades autorizadas del propietario. Lee el [estado vigente](docs/review.md), única fuente de la fase global permitida. Un freeze documental o merge no habilita por sí mismo código, datos reales ni producción.
 
 ## Qué leer después
 
@@ -17,4 +17,4 @@ No inventar hechos, políticas ni aprobaciones; no guardar secretos, datos reale
 
 Wbpro sigue READ-ONLY, solo por lectura concreta autorizada conforme a la [política](docs/architecture/wbpro-reference-policy.md). `archive`, `15-history`, legacy y Webrax quedan fuera de lectura/modificación; no copiar Wbpro como implementación ni dependencia runtime.
 
-La misión de agentes permite research, protocolos, skills y simulaciones documentales. No código CasPro, tests/builds/Docker/DB/migraciones/despliegues, credenciales, efectos económicos ni regeneración de WOs de implementación. El siguiente avance depende de aceptar el PR de agentes, regenerar WOs y obtener autorización explícita del propietario. Autor ≠ reviewer; capacidad de una herramienta ≠ permiso.
+Preparar WOs requiere encargo y fase que lo permitan. Implementar requiere fase habilitada y WO regenerada explícitamente autorizada, dentro de sus límites conforme al [protocolo](.ai/README.md#autoridad-y-autorización). Cada ejecución o efecto necesita autorización explícita; no inferirla de un PASS, merge, skill, modelo o herramienta. Autor ≠ reviewer; capacidad de una herramienta ≠ permiso.

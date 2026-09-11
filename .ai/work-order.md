@@ -1,6 +1,6 @@
 # Plantilla de Work Order
 
-Plantilla conceptual. No es una orden de implementación activa ni una cola de tareas. Su uso para regenerar WOs de implementación queda pendiente de aceptar el sistema de agentes y de un encargo de preparación; esta misión solo crea el mecanismo.
+Plantilla reutilizable, no una orden de implementación activa ni una cola de tareas. Preparar o regenerar WOs requiere encargo explícito y una fase que lo permita según el [estado vigente](../docs/review.md). Preparación y ejecución son autorizaciones distintas, conforme al [protocolo](README.md#autoridad-y-autorización).
 
 | Campo | Contenido obligatorio cuando aplique |
 |---|---|
