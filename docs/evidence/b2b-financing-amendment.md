@@ -158,13 +158,13 @@ Archivos del delta (32):
 - [docs/specs/milestones/treasury-corporate-deep.md](../specs/milestones/treasury-corporate-deep.md)
 - [docs/tax/architecture.md](../tax/architecture.md)
 
-Checkpoints: `633bb3b` research; `253c26d` B2B/financiación y contratos; `613b976` entrega opcional/externa. El commit de cierre documental y su head/tree exactos se identifican en el PR para evitar autorreferencia circular en este archivo.
+Checkpoints: `633bb3b` research; `253c26d` B2B/financiación y contratos; `613b976` entrega opcional/externa; `b3840d4` cierre documental para revisión. El checkpoint de publicación y el head/tree exactos del candidato se identifican en el PR para evitar autorreferencia circular en este archivo.
 
-PR contra main: publicación pendiente del cierre; permanecerá abierto, aceptación independiente pendiente, sin merge ni efectos empresariales externos.
+PR contra main: [#5 — Specify B2B sales and financing operations](https://github.com/mat-l-dev/CasPro-ERP/pull/5), publicado y abierto para revisión independiente. Sin aceptación ni merge; sin efectos empresariales externos.
 
 ## Evidencia final del autor
 
-Comprobaciones del autor: links/anchors locales y bloques Markdown sin errores; diff sin whitespace indebido; IDs01–37 completos y únicos; gates A0/B16/C13/D6; aritmética del fixture principal1.700, adelantos150, total1.850 y caja+500. Alcance: solo32 archivos Markdown de docs, sin cambios a M01/M02, agentes, skills, código, migraciones o WOs. Verificación de publicación/head/tree se completa en el PR. No se ejecutaron tests CasPro, conexión SUNAT/banco/email ni validación profesional. El trabajo de búsqueda normativa tiene los límites explícitos del memo, incluida jurisprudencia posterior no leída íntegramente.
+Comprobaciones del autor: 480 links/anchors locales y bloques Markdown sin errores; diff sin whitespace indebido; IDs01–37 completos y únicos; gates A0/B16/C13/D6; aritmética del fixture principal1.700, adelantos150, total1.850 y caja+500. Alcance: solo32 archivos Markdown de docs, sin cambios a M01/M02, agentes, skills, código, migraciones o WOs. El PR identifica el head/tree publicado para revisión. No se ejecutaron tests CasPro, conexión SUNAT/banco/email ni validación profesional. El trabajo de búsqueda normativa tiene los límites explícitos del memo, incluida jurisprudencia posterior no leída íntegramente.
 
 
 **PASS — SCOPED SEMANTIC AMENDMENT READY FOR INDEPENDENT REVIEW.** Evaluación estática del autor, no aceptación del amendment. Pendientes: reviewer independiente del candidato; validación profesional de actos/políticas reales bajo sus gates; futuras pruebas de implementación solo con autorización. IMPLEMENTATION: NOT AUTHORIZED.
