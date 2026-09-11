@@ -19,7 +19,7 @@ Este registro explica evidencia nueva posterior a Gate 1 sin reabrirlo por rutin
 
 ## Clasificación vigente de pendientes
 
-Este es el único registro de incógnitas/gates abiertos. Sustituye la clasificación de bloqueos del informe Astra anterior; no cambia hechos normativos ni declara pruebas ejecutadas. El estado global vive en [review](../review.md) y la readiness M01–M09 en [deep specs](../specs/deep-spec-index.md).
+Este es el único registro de incógnitas/gates abiertos. Sustituye la clasificación de bloqueos del informe Astra anterior; no cambia hechos normativos ni declara pruebas ejecutadas. El estado global vive en [review](../review.md) y la readiness M01–M09 en [deep specs](../specs/index.md).
 
 | Clase | Qué impide | Registros abiertos |
 |---|---|---:|
@@ -36,14 +36,14 @@ A exige resolver antes de freeze: no se convierte en B una decisión semántica 
 
 | Antes | Cierre candidato y fuente |
 |---|---|
-| Devolución a proveedor todavía “por especificar” en invariantes | [INV06](../specs/inventory-deep.md) y [invariantes](../domain/invariants.md): promedio del pool y crédito comercial separados |
+| Devolución a proveedor todavía “por especificar” en invariantes | [INV06](../specs/milestones/inventory-deep.md) y [invariantes](../domain/invariants.md): promedio del pool y crédito comercial separados |
 | Precio a6 decimales vs coste a12 parecían reglas incompatibles | [Data](../architecture/data.md): magnitudes/fronteras distintas, residuos exactos; capacidad numérica B04, parámetros reales C03 |
-| Pool y replay parecían alternativas todavía sin elegir | [Inventory](../specs/inventory-deep.md): granularidad y secuencia definidas; cambiarlas exige amendment; prueba B05 |
-| Balance G1 podía cuadrar sin demostrar origen | [G1](../specs/reporting-goldens.md): hechos/componentes, posting, mayor y membresía/fórmulas; ejecución B07–B08 |
-| DDR-09/11 y continuidad sensible incompletos | [UI](../architecture/ui.md), [Transactions](../architecture/transactions.md#preparar-y-ejecutar): causa/owner/resolución, preparación, incertidumbre y revocación; [12 DDR](../research/ux-reconciliation.md) cerrados en diseño |
+| Pool y replay parecían alternativas todavía sin elegir | [Inventory](../specs/milestones/inventory-deep.md): granularidad y secuencia definidas; cambiarlas exige amendment; prueba B05 |
+| Balance G1 podía cuadrar sin demostrar origen | [G1](../specs/acceptance/reporting-goldens.md): hechos/componentes, posting, mayor y membresía/fórmulas; ejecución B07–B08 |
+| DDR-09/11 y continuidad sensible incompletos | [UI](../architecture/ui.md), [Transactions](../architecture/transactions.md#preparar-y-ejecutar): causa/owner/resolución, preparación, incertidumbre y revocación; [12 DDR](../evidence/ux-reconciliation.md) cerrados en diseño |
 | Aprobación de cifras, RUC, mutuo o prototipo bloqueaba toda arquitectura | Contrato tipado definido vs aplicabilidad/activación C; ningún valor real queda aprobado por este cambio |
-| Catálogo PCGE confundido con política/marco | [M07](../specs/accounting-deep.md): representación B07; procedencia2026 C02; adopción/vigencia C01 |
-| WOs anteriores tratadas como listas para ejecutar | [WOs](../specs/work-orders.md): NEEDS REGENERATION AFTER FREEZE; no ejecución |
+| Catálogo PCGE confundido con política/marco | [M07](../specs/milestones/accounting-deep.md): representación B07; procedencia2026 C02; adopción/vigencia C01 |
+| WOs anteriores tratadas como listas para ejecutar | [WOs](../history/work-orders-sp2.md): NEEDS REGENERATION AFTER FREEZE; no ejecución |
 
 <a id="implementation-gates"></a>
 ## B — Ensayos futuros de implementación
@@ -102,39 +102,39 @@ Cada WO concreta el fixture/candidato/configuración y evidencia de los gates pe
 
 ## Máximo cinco grupos humanos y profesionales
 
-DH1–DH5 son agrupaciones de preguntas de activación, no aprobación solicitada ahora ni sustitución de HP1–HP5. Referencias históricas H1–H5 en review no son IDs actuales. No se pide al propietario decidir locks, tablas, librerías ni cómo probar RLS.
+DH1–DH5 son agrupaciones de preguntas de activación, no aprobación solicitada ahora ni sustitución de HP1–HP5. Referencias históricas H1–H5 en [review histórico](../history/reviews.md) no son IDs actuales. No se pide al propietario decidir locks, tablas, librerías ni cómo probar RLS.
 
 <a id="dh1"></a>
 ### DH1 — Contabilidad, apertura y valoración
 
 | Hechos necesarios / pregunta concreta | Opciones permitidas / fuente | Qué cambia / clase / cuándo |
 |---|---|---|
-| Ingresos/UIT/ejercicios, supervisor, marco anterior y comienzo real: ¿es elegible NPIF, qué edición/remisión y fecha ESFA/comparativo corresponden? | Marco acreditado con [N001–N004](../research/normative-register.md); NPIF si procede, otro marco mediante su contrato/trigger; no RER=SAC=NPIF | Perfil/apertura/paquete; C01, antes de activar libro y presentar primer período |
+| Ingresos/UIT/ejercicios, supervisor, marco anterior y comienzo real: ¿es elegible NPIF, qué edición/remisión y fecha ESFA/comparativo corresponden? | Marco acreditado con [N001–N004](../research/normative/normative-register.md); NPIF si procede, otro marco mediante su contrato/trigger; no RER=SAC=NPIF | Perfil/apertura/paquete; C01, antes de activar libro y presentar primer período |
 | Activos/vidas/residuales, obligaciones/estimaciones, contratos/divisas y política de error: ¿qué inputs y tratamiento aplican a cada NP-01–18, incluida clasificación RER y supletoriedad? | [Catálogo NPIF](../accounting/npif-policy-catalog.md) y M07: elección sustentada dentro de superficie tipada; fuera de ella amendment | Regla/estimación/mapeo y notas reales; C01/C03, antes del reconocimiento dependiente. No bloquea mecanismo contable |
-| ¿Qué plan y fecha adopta TILMUX y qué evidencia editorial resuelve2026/70992? | 2019 vigente o adopción anticipada2026 permitida; [auditoría PCGE](../research/pcge-code-audit.md) y N011. Representar ambos no elige uno | Plan aplicado C01; dataset2026 C02 antes de uso. No inventar70902 ni concluir corrupción por hash |
+| ¿Qué plan y fecha adopta TILMUX y qué evidencia editorial resuelve2026/70992? | 2019 vigente o adopción anticipada2026 permitida; [auditoría PCGE](../evidence/pcge-code-audit.md) y N011. Representar ambos no elige uno | Plan aplicado C01; dataset2026 C02 antes de uso. No inventar70902 ni concluir corrupción por hash |
 | Facturas/fletes/descuentos/unidades y rangos: ¿qué costes y cuantizaciones reales se aprueban? | Promedio operativo/pool ya especificados, fronteras [Data](../architecture/data.md); política fiscal independiente | Valores/políticas reales C03; antes de operación dependiente. Ingeniería prueba suficiencia B04; profesional no diseña tipos DB |
 
 <a id="dh2"></a>
 ### DH2 — Financiación antes de contrato o dinero
 
-Hechos: prestamista/prestatario, vinculación, residencia, poderes, origen/destino, moneda, línea/plazo, interés/gratuidad, devoluciones y garantías. Pregunta a legal/tax/contador: ¿es jurídicamente válida la modalidad, quién firma, qué reconocimiento, valor de mercado/comparabilidad, efectos por ambos sujetos y evidencia periódica exige? Opciones: modalidad documentada aprobada, términos corregidos o no financiar; “gratuito” no significa neutral. Fuente: [memorando y límites RTF](../research/mutuo-tax-corporate.md), N017–N019 y hechos nuevos. Cambia contrato/policy/expendiente, **C06 antes de primer contrato/desembolso**; no bloqueo general M01–M05. Fondos ya ocurridos se preservan como pendientes; no se borran por incumplir aprobación.
+Hechos: prestamista/prestatario, vinculación, residencia, poderes, origen/destino, moneda, línea/plazo, interés/gratuidad, devoluciones y garantías. Pregunta a legal/tax/contador: ¿es jurídicamente válida la modalidad, quién firma, qué reconocimiento, valor de mercado/comparabilidad, efectos por ambos sujetos y evidencia periódica exige? Opciones: modalidad documentada aprobada, términos corregidos o no financiar; “gratuito” no significa neutral. Fuente: [memorando y límites RTF](../research/normative/mutuo-tax-corporate.md), N017–N019 y hechos nuevos. Cambia contrato/policy/expendiente, **C06 antes de primer contrato/desembolso**; no bloqueo general M01–M05. Fondos ya ocurridos se preservan como pendientes; no se borran por incumplir aprobación.
 
 <a id="dh3"></a>
 ### DH3 — Operación, responsables y evidencia bancaria
 
 | Hechos / pregunta | Opciones / fuente | Cambio / clase / cuándo |
 |---|---|---|
-| Roles/personas, compras y conformidades: ¿quién autoriza cada efecto, qué evidencia basta y qué diferencias se aceptan con motivo? | [P2P](../specs/procurement-deep.md): match exacto, excepción autorizada o HOLD; compra directa justificada. Autoaprobación identificada o doble aprobación real, sin inventar segunda persona | C04/C13; antes de habilitar usuarios/liberar/anticipar/pagar reales; no redefine N:M ni dueño |
-| Cuenta/moneda, comprobantes y muestra privada BBVA: ¿qué confirma dinero y cómo se interpreta cada fecha/signo/referencia? | [Treasury](../specs/treasury-corporate-deep.md): confirmación por evidencia aprobada, importación validada o vía manual; estado canal no prueba cobro | C05, antes de parser/cuenta/cobro real; B06 prueba parser con fixture autorizado, no pedir columnas ficticias |
-| Entidades/unidades/identidades/stock inicial reales: ¿qué fuente y responsable los aprueban? | [Maestros](../specs/runtime-masters.md), [Inventory](../specs/inventory-deep.md): preview y revisión o rechazo | C03/C13, antes de importar/abrir realmente; conserva UNKNOWN donde permitido |
+| Roles/personas, compras y conformidades: ¿quién autoriza cada efecto, qué evidencia basta y qué diferencias se aceptan con motivo? | [P2P](../specs/milestones/procurement-deep.md): match exacto, excepción autorizada o HOLD; compra directa justificada. Autoaprobación identificada o doble aprobación real, sin inventar segunda persona | C04/C13; antes de habilitar usuarios/liberar/anticipar/pagar reales; no redefine N:M ni dueño |
+| Cuenta/moneda, comprobantes y muestra privada BBVA: ¿qué confirma dinero y cómo se interpreta cada fecha/signo/referencia? | [Treasury](../specs/milestones/treasury-corporate-deep.md): confirmación por evidencia aprobada, importación validada o vía manual; estado canal no prueba cobro | C05, antes de parser/cuenta/cobro real; B06 prueba parser con fixture autorizado, no pedir columnas ficticias |
+| Entidades/unidades/identidades/stock inicial reales: ¿qué fuente y responsable los aprueban? | [Maestros](../specs/milestones/runtime-masters.md), [Inventory](../specs/milestones/inventory-deep.md): preview y revisión o rechazo | C03/C13, antes de importar/abrir realmente; conserva UNKNOWN donde permitido |
 
 <a id="dh4"></a>
 ### DH4 — Cumplimiento según operaciones reales
 
 | Hechos / pregunta al profesional | Opciones / fuente | Cambio / clase / cuándo |
 |---|---|---|
-| RUC/SEE, venta/anticipo/entrega/corrección y documentos disponibles: ¿qué artefacto/momento y canal son válidos? | [CPE](../specs/cpe-document-delivery.md), N009 y [Tax](../specs/tax-deep.md); política por hecho o no activar operación sin cumplimiento | C07; antes de la primera operación afectada, no después de construir M09 |
-| Régimen/ingresos/actividad, RUC/cohorte, servicio/bien, proveedores/vínculo/residencia: ¿qué RER/IGV/SIRE/SPOT/ND y vencimientos aplican? | [Registro](../research/normative-register.md), N021/N024–N028; aplicar/no aplicar con fundamento o pendiente que bloquea obligación | C08; antes de determinar/declarar/pagar; servicio ND antes de contratar/pagar cuando lo exija la regla |
+| RUC/SEE, venta/anticipo/entrega/corrección y documentos disponibles: ¿qué artefacto/momento y canal son válidos? | [CPE](../specs/flows/cpe-document-delivery.md), N009 y [Tax](../specs/milestones/tax-deep.md); política por hecho o no activar operación sin cumplimiento | C07; antes de la primera operación afectada, no después de construir M09 |
+| Régimen/ingresos/actividad, RUC/cohorte, servicio/bien, proveedores/vínculo/residencia: ¿qué RER/IGV/SIRE/SPOT/ND y vencimientos aplican? | [Registro](../research/normative/normative-register.md), N021/N024–N028; aplicar/no aplicar con fundamento o pendiente que bloquea obligación | C08; antes de determinar/declarar/pagar; servicio ND antes de contratar/pagar cuando lo exija la regla |
 | Cadena de propiedad/control, RUC/activación/ingresos: ¿qué cohorte, beneficiarios y fecha de declaración corresponden? | N029 y [Corporate](../corporate/architecture.md); declaración requerida o no aplicable sustentada | C09; antes de vencimiento real, con expediente privado fuera de Git |
 
 <a id="dh5"></a>
@@ -154,7 +154,7 @@ Las menciones PROVISIONAL/PENDING/REQUIRES LATER VALIDATION en fuentes locales c
 | Accounting/NP-01–18/G1–G7/PCGE | B04/B05/B07/B08; C01–C03; D02 |
 | Tax/CPE/Corporate y registro N001–N029 | B06–B08/B10/B12; C01/C06–C09; D02 cuando no aplicable aún |
 | Matriz62/delta NIIF y textos no leídos íntegros | D02 por norma/trigger; si hechos iniciales la activan, C01/C08 exige resolución antes de uso |
-| Blueprint/DDR y UI | DDR cerrados en [memo](../research/ux-reconciliation.md); B09/B10, C12, D04/D06 |
+| Blueprint/DDR y UI | DDR cerrados en [memo](../evidence/ux-reconciliation.md); B09/B10, C12, D04/D06 |
 | Audit/review/programa/WOs/skills | Clasificación anterior sustituida por este registro; resultado de aceptación independiente en review; WOs a regenerar; skills posteriores, sin ejecución ahora |
 
 Una omisión o contradicción semántica descubierta por reviewer se registra como A con contraejemplo, dueño y contrato afectado. Cero A es conclusión de este cierre documental, no garantía de ausencia de errores ni aceptación independiente.

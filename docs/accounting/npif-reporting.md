@@ -1,6 +1,6 @@
 # Información financiera inicial bajo NPIF
 
-Propietario: Accounting. Alcance: arquitectura del paquete formal inicial, no política aprobada para una operación real ni software construido. Corte de investigación: 2026-09-11; períodos objetivo: 2027. La [arquitectura contable](architecture.md) gobierna registro y cierre; el [registro normativo](../research/normative-register.md) gobierna fuentes, vigencias e incertidumbres.
+Propietario: Accounting. Alcance: arquitectura del paquete formal inicial, no política aprobada para una operación real ni software construido. Corte de investigación: 2026-09-11; períodos objetivo: 2027. La [arquitectura contable](architecture.md) gobierna registro y cierre; el [registro normativo](../research/normative/normative-register.md) gobierna fuentes, vigencias e incertidumbres.
 
 ## Marco y aplicabilidad
 
@@ -23,7 +23,7 @@ Una versión contable solo es usable cuando produce el conjunto completo siguien
 | Notas y políticas | Datos cuantitativos reproducibles y narrativas revisadas, con referencias a rubros | Nota identificada, versión, autor/revisor, evidencia y comparativo; una nota no cura reconocimiento incorrecto |
 | Comparativos y transición | Períodos y marcos expresos, apertura/ESFA y conciliaciones de transición | No presentar ausencia de información como cero; no fabricar ejercicio anterior de una entidad nueva |
 
-CasPro adopta como dirección el flujo directo para el reporte inicial, por utilidad al operador y datos disponibles. La guía §4.7 lo recomienda; no convertir el ejemplo en un mandato de formato rígido. [Accounting profundo](../specs/accounting-deep.md) y [reporting/goldens](../specs/reporting-goldens.md) concretan clasificación, transferencias, moneda y operaciones mixtas como políticas candidatas que requieren revisión profesional.
+CasPro adopta como dirección el flujo directo para el reporte inicial, por utilidad al operador y datos disponibles. La guía §4.7 lo recomienda; no convertir el ejemplo en un mandato de formato rígido. [Accounting profundo](../specs/milestones/accounting-deep.md) y [reporting/goldens](../specs/acceptance/reporting-goldens.md) concretan clasificación, transferencias, moneda y operaciones mixtas como políticas candidatas que requieren revisión profesional.
 
 La cadena es: **paquete → estado/nota → rubro y versión del mapeo → cuenta aplicada → líneas/asiento → interpretación y política → hecho versionado → evidencia**. Navegar exige autorización en cada dueño. La vista agregada no concede lectura del documento privado. El paquete persistido conserva corte, entidad, marco, moneda, versiones de políticas/mapeos, datos de cierre y estado de aprobación. Su PDF es una representación generada conservada por Documents, nunca un CPE original.
 
@@ -65,6 +65,6 @@ Las notas iniciales cubren entidad/actividad, bases y políticas, juicios/estima
 
 ## Diseño revisable y activación profesional
 
-El [catálogo NPIF](npif-policy-catalog.md), [M07](../specs/accounting-deep.md) y [M08](../specs/reporting-goldens.md) especifican apertura, mediciones, flujos, moneda, correcciones y paquete como candidato. La revisión independiente acepta o rechaza ese diseño. Elegibilidad, hechos del primer año, políticas/notas y remisión supletoria reales corresponden a C01/C03 en [gaps](../roadmap/decisions-gaps.md#activation-gates): antes del libro/reconocimiento/paquete oficial afectados. No son incógnitas de cómo representar esas decisiones; si exceden el contrato, requieren amendment antes de ampliar el alcance. La existencia de una spec no aprueba valores reales ni evidencia ejecución del período sintético.
+El [catálogo NPIF](npif-policy-catalog.md), [M07](../specs/milestones/accounting-deep.md) y [M08](../specs/acceptance/reporting-goldens.md) especifican apertura, mediciones, flujos, moneda, correcciones y paquete como candidato. La revisión independiente acepta o rechaza ese diseño. Elegibilidad, hechos del primer año, políticas/notas y remisión supletoria reales corresponden a C01/C03 en [gaps](../roadmap/decisions-gaps.md#activation-gates): antes del libro/reconocimiento/paquete oficial afectados. No son incógnitas de cómo representar esas decisiones; si exceden el contrato, requieren amendment antes de ampliar el alcance. La existencia de una spec no aprueba valores reales ni evidencia ejecución del período sintético.
 
 La evidencia ejecutable futura deberá recorrer un período sintético con apertura, compra de bienes y servicio, cobro previo, venta, devolución, pago/financiamiento, deterioro y reversión, depreciación si aplica, corrección y cierre. Debe reconciliar cada estado y nota con el mayor y sus fuentes, demostrar aislamiento y congelación de versiones y generar el paquete sin dependencia obligatoria de Excel. Aquí no se ejecutó esa evidencia.

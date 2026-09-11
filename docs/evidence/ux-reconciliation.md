@@ -17,17 +17,17 @@ Las secciones citadas corresponden al archivo identificado arriba. ADOPT/ADAPT s
 | Lista/detalle, regreso con foco/filtros/scroll, links directos | ADAPT | UI conserva estado seguro; reautorizar y descartar datos revocados prevalece sobre continuidad |
 | Dos paneles, drawers, preview, menú y paleta | ADAPT | UI usa alternativa secuencial; dos es guía habitual, nunca límite de cardinalidad empresarial |
 | Inventario de pantallas UX-01–15 | ADAPT | Familias de tareas de UI y specs por dueño; no 15 pantallas obligatorias ni nueva spec de producto |
-| Detalle por estados separados y excepciones visibles | ALREADY CANONICAL | UI y [SP2](../specs/sales-stock-treasury.md); PAID externo no confirma Treasury |
-| PDF original, extracción y candidato separados; retorno desde maestro | ADOPT | UI + [Data](../architecture/data.md) + [maestros](../specs/runtime-masters.md); no merge ni aceptación por OCR |
+| Detalle por estados separados y excepciones visibles | ALREADY CANONICAL | UI y [SP2](../specs/flows/sales-stock-treasury.md); PAID externo no confirma Treasury |
+| PDF original, extracción y candidato separados; retorno desde maestro | ADOPT | UI + [Data](../architecture/data.md) + [maestros](../specs/milestones/runtime-masters.md); no merge ni aceptación por OCR |
 | PREPARE ≠ EXECUTE | ADOPT | Una definición transversal en [Transactions](../architecture/transactions.md#preparar-y-ejecutar), consumida por UI; afecta intención, revisión e incertidumbre |
 | Flujos A–K y secuencias visuales de O2C/P2P | ADAPT | Navegación sobre hechos/relaciones del dueño, no obligación de producir documentos en el orden dibujado |
 | Teclado, tablas nativas vs grid, foco distinto de selección | ALREADY CANONICAL | UI; grid necesita comportamiento completo y evidencia accesible |
 | Prohibir confirmación mediante cualquier tecla | REJECT | El operador puede activar deliberadamente un control confirmado con teclado; se impide que el gesto de abrir o un atajo global ejecute el efecto |
 | Ctrl/Cmd+K, anchos, alturas, milisegundos, anillo y tokens hex | DEFER–VALIDATE DURING IMPLEMENTATION | Candidatos visuales en pruebas de componentes/tareas; no cifras normativas ni bloqueantes de diseño |
 | Document Flow N:M, lista alternativa, relaciones sugeridas/confirmadas | ADOPT | UI; cada dueño conserva relaciones, permisos y cantidades; no grafo paralelo autoritativo ni filtración de nodos privados |
-| Cockpit de conciliación, grupos/remanentes/explicación | ADAPT | [T04–T06](../specs/treasury-corporate-deep.md) poseen efectos; retirar propuesta y desconciliar son acciones distintas |
-| Cierre con tareas/evidencia; tareas terminadas ≠ período cerrado | ADOPT | UI proyecta [A07–A08](../specs/accounting-deep.md); no fuerza cierre ni crea controles jurídicos |
-| EEFF con contexto y drill-through | ADAPT | [Reporting](../specs/reporting-goldens.md): contribuciones, fórmulas y narrativas tienen linaje diferente; no fabricar asientos para cada celda |
+| Cockpit de conciliación, grupos/remanentes/explicación | ADAPT | [T04–T06](../specs/milestones/treasury-corporate-deep.md) poseen efectos; retirar propuesta y desconciliar son acciones distintas |
+| Cierre con tareas/evidencia; tareas terminadas ≠ período cerrado | ADOPT | UI proyecta [A07–A08](../specs/milestones/accounting-deep.md); no fuerza cierre ni crea controles jurídicos |
+| EEFF con contexto y drill-through | ADAPT | [Reporting](../specs/acceptance/reporting-goldens.md): contribuciones, fórmulas y narrativas tienen linaje diferente; no fabricar asientos para cada celda |
 | Selección página/filas/todos, totales, acciones masivas, saved views | ADOPT | UI más atomicidad de cada dueño; compartir requiere capacidad; sin Undo financiero genérico |
 | Estados por ejes, error estructurado, incertidumbre persistente | ADOPT | UI y Transactions; recuperación consulta intención original, no retry optimista |
 | Inbox por causa, propietario y resolución verificable | ADAPT | UI fija proyección y orden inicial; asignación/escalación no inventan SLA ni liberan HOLD |
@@ -43,21 +43,21 @@ El diagnóstico final es por **decisión de dominio**: CLOSED BY EXISTING CONTRA
 
 | DDR | Clasificación final | Contrato que responde / límite posterior |
 |---|---|---|
-| DDR-01 | CLOSED BY EXISTING CONTRACT | [SP2](../specs/sales-stock-treasury.md), [integraciones](../specs/integrations.md): estados/comandos, HP1, observación vs aceptación; probar carreras/duplicados |
-| DDR-02 | CLOSED BY EXISTING CONTRACT | [P2P P01–P10](../specs/procurement-deep.md): N:M, mercancía/servicio, conformidad, excepción y payability; parámetros/aprobadores reales antes de activar |
-| DDR-03 | CLOSED BY EXISTING CONTRACT | [Treasury T01–T06](../specs/treasury-corporate-deep.md): cuenta/moneda/N:M/remanente, confirmación y reversión; parser BBVA/evidencia real posterior |
-| DDR-04 | CLOSED BY EXISTING CONTRACT | [Inventory INV01–07](../specs/inventory-deep.md): unidades/condición/pool/fechas/secuencia/UNKNOWN/revisiones; calibrar precisión y demostrar concurrencia |
-| DDR-05 | CLOSED BY EXISTING CONTRACT | [Accounting A01–A06](../specs/accounting-deep.md): borrador, posting inmutable, reversión/delta y unicidad económica; no editar posted |
-| DDR-06 | CLOSED BY EXISTING CONTRACT | [Accounting A07–A09](../specs/accounting-deep.md): corte completo, evidencia, cierre/reapertura/apertura; política real antes de cierre oficial |
-| DDR-07 | CLOSED BY EXISTING CONTRACT | [Reporting G1–G7](../specs/reporting-goldens.md): membresía/signos/fórmulas/versiones/comparativos; golden y navegación requieren ejecución futura |
-| DDR-08 | CLOSED BY EXISTING CONTRACT | [CPE/entrega](../specs/cpe-document-delivery.md), [P2P](../specs/procurement-deep.md), Data: expediente de dueño, artefacto/relación y envío; SEE real limita activación |
+| DDR-01 | CLOSED BY EXISTING CONTRACT | [SP2](../specs/flows/sales-stock-treasury.md), [integraciones](../specs/flows/jumpseller-external-work.md): estados/comandos, HP1, observación vs aceptación; probar carreras/duplicados |
+| DDR-02 | CLOSED BY EXISTING CONTRACT | [P2P P01–P10](../specs/milestones/procurement-deep.md): N:M, mercancía/servicio, conformidad, excepción y payability; parámetros/aprobadores reales antes de activar |
+| DDR-03 | CLOSED BY EXISTING CONTRACT | [Treasury T01–T06](../specs/milestones/treasury-corporate-deep.md): cuenta/moneda/N:M/remanente, confirmación y reversión; parser BBVA/evidencia real posterior |
+| DDR-04 | CLOSED BY EXISTING CONTRACT | [Inventory INV01–07](../specs/milestones/inventory-deep.md): unidades/condición/pool/fechas/secuencia/UNKNOWN/revisiones; calibrar precisión y demostrar concurrencia |
+| DDR-05 | CLOSED BY EXISTING CONTRACT | [Accounting A01–A06](../specs/milestones/accounting-deep.md): borrador, posting inmutable, reversión/delta y unicidad económica; no editar posted |
+| DDR-06 | CLOSED BY EXISTING CONTRACT | [Accounting A07–A09](../specs/milestones/accounting-deep.md): corte completo, evidencia, cierre/reapertura/apertura; política real antes de cierre oficial |
+| DDR-07 | CLOSED BY EXISTING CONTRACT | [Reporting G1–G7](../specs/acceptance/reporting-goldens.md): membresía/signos/fórmulas/versiones/comparativos; golden y navegación requieren ejecución futura |
+| DDR-08 | CLOSED BY EXISTING CONTRACT | [CPE/entrega](../specs/flows/cpe-document-delivery.md), [P2P](../specs/milestones/procurement-deep.md), Data: expediente de dueño, artefacto/relación y envío; SEE real limita activación |
 | DDR-09 | CLOSED BY EXISTING CONTRACT | [UI: pendientes](../architecture/ui.md#selección-errores-y-pendientes): dueño/gravedad/edad/acción/causa; resolución por dueño, no por leído. Se precisó orden y escalación sin SLA nuevo |
-| DDR-10 | CLOSED BY EXISTING CONTRACT | [Acceso](../architecture/tenancy-access.md), [CM0](../specs/command-matrix.md#cm0): capacidades/alcance/revocación/mandato; UI nunca sustituye autorización |
+| DDR-10 | CLOSED BY EXISTING CONTRACT | [Acceso](../architecture/tenancy-access.md), [CM0](../specs/cross-cutting/command-matrix.md#cm0): capacidades/alcance/revocación/mandato; UI nunca sustituye autorización |
 | DDR-11 | CLOSED BY EXISTING CONTRACT | [Transactions](../architecture/transactions.md), [integraciones](../architecture/integrations.md): intención durable/resultado incierto/consulta/epoch; se explicitó PREPARE ≠ EXECUTE |
-| DDR-12 | CLOSED BY EXISTING CONTRACT | [Maestros M02](../specs/runtime-masters.md): identidad/versiones/unidad/serial/snapshot/importación invalidable; datos reales no se inventan |
+| DDR-12 | CLOSED BY EXISTING CONTRACT | [Maestros M02](../specs/milestones/runtime-masters.md): identidad/versiones/unidad/serial/snapshot/importación invalidable; datos reales no se inventan |
 
 ## Verificación externa selectiva
 
 Solo se reabrieron tres fuentes primarias W3C el 2026-09-11 para diferencias que afectan el contrato: [diálogos modales](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/), [foco no oculto mínimo](https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html) y [reflow](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html). **EXTERNAL VERIFIED SOURCE** para esas afirmaciones; el resto del inventario de productos del blueprint sigue siendo referencia de investigación, no una nueva auditoría de sus implementaciones. No se añaden estas fuentes UX al registro normativo tributario.
 
-Readiness y pendientes tienen autoridad en [deep specs](../specs/deep-spec-index.md) y [gaps](../roadmap/decisions-gaps.md). El memo no conserva un segundo estado global.
+Readiness y pendientes tienen autoridad en [deep specs](../specs/index.md) y [gaps](../roadmap/decisions-gaps.md). El memo no conserva un segundo estado global.

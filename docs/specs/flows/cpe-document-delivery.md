@@ -1,10 +1,10 @@
 # SP2 — CPE externo, archivo y entrega documental
 
-Propietarios: Sales conserva CPE de venta/vínculo comercial; Documents conserva archivo, disponibilidad, política e intención de entrega. Adaptadores SUNAT/Resend ejecutan consultas/envíos concretos fuera de transacción. No nuevo Document Vault ni plataforma CRM/email. Estas son las fuentes locales de estados; [CM0](command-matrix.md#cm0) completa fichas, [integraciones](integrations.md) posee jobs y protocolo externo. HP4/HP5 de [alcance](first-operational-circuit.md) delimitan decisiones de política.
+Propietarios: Sales conserva CPE de venta/vínculo comercial; Documents conserva archivo, disponibilidad, política e intención de entrega. Adaptadores SUNAT/Resend ejecutan consultas/envíos concretos fuera de transacción. No nuevo Document Vault ni plataforma CRM/email. Estas son las fuentes locales de estados; [CM0](../cross-cutting/command-matrix.md#cm0) completa fichas, [integraciones](jumpseller-external-work.md) posee jobs y protocolo externo. HP4/HP5 de [alcance](first-operational-circuit.md) delimitan decisiones de política.
 
 ## Identificar, adquirir, vincular y verificar
 
-Baseline: operador prepara contexto de venta en CasPro, emite fuera por SOL/u otra vía autorizada, registra identidad/evidencia de esa emisión, importa artefactos disponibles y registra verificación oficial cuando aplique. CasPro no emite, presenta ni tiene botón para enviar CPE a SUNAT. La [revisión RCP](../research/tax-current-review.md) exige separar oportunidad de emisión, otorgamiento, pago y despacho: un diagrama que muestre CPE después de dispatch no prescribe ese orden legal. Conformidad del medio de pago/anticipo puede generar obligación antes de que Treasury confirme o Sales acepte internamente. Preservar observación y fecha externa; la demora de captura no desplaza el nacimiento legal.
+Baseline: operador prepara contexto de venta en CasPro, emite fuera por SOL/u otra vía autorizada, registra identidad/evidencia de esa emisión, importa artefactos disponibles y registra verificación oficial cuando aplique. CasPro no emite, presenta ni tiene botón para enviar CPE a SUNAT. La [revisión RCP](../../research/normative/tax-current-review.md) exige separar oportunidad de emisión, otorgamiento, pago y despacho: un diagrama que muestre CPE después de dispatch no prescribe ese orden legal. Conformidad del medio de pago/anticipo puede generar obligación antes de que Treasury confirme o Sales acepte internamente. Preservar observación y fecha externa; la demora de captura no desplaza el nacimiento legal.
 
 La identidad externa de CPE es `(RUC emisor, tipo, serie, número)`, bajo entidad propietaria; conservar valores recibidos y normalización de contrato, sin colisiones por quitar ceros/formatos arbitrariamente. Para el CPE de esta venta: emisor corresponde a Organization acreditada, fecha/moneda/importes/componentes compatibles con el expediente, identidad del adquirente compatible cuando exista/se exija y evidencia que lo relaciona con esa venta. Una identidad externa conocida no se asigna a dos ventas por error.
 
@@ -44,7 +44,7 @@ Si el CPE contiene referencia de pedido/venta, se contrasta. Si no la contiene, 
 | NOT_CHECKED/UNAVAILABLE → PENDING → resultado | C33 solicita consulta o registra evidencia oficial manual; C08 conserva respuesta y versión; un error de red no da NEGATIVE ni MATCH |
 | LINKED → RETRACTED/MISMATCH | C30/C33 con evidencia/motivo/capacidad de corrección; invalida entregabilidad/aprobación correspondiente, conserva CPE/archivos anteriores |
 
-VERIFIED técnico: el manual oficial de Consulta Integrada describe POST `validarcomprobante`, con RUC del consultante en ruta y del emisor en datos, tipo/serie/número/fecha/importe; success indica ejecución de consulta, no por sí solo aceptación del CPE. El código estadoCp 1 informa aceptado, 0 no informado y 2 anulado; otros valores/desconocidos requieren interpretación aplicable, no se convierten en éxito [S23](../decisions/sources.md). Guardar códigos/raw acotado y observaciones, sin inventar estado fiscal universal.
+VERIFIED técnico: el manual oficial de Consulta Integrada describe POST `validarcomprobante`, con RUC del consultante en ruta y del emisor en datos, tipo/serie/número/fecha/importe; success indica ejecución de consulta, no por sí solo aceptación del CPE. El código estadoCp 1 informa aceptado, 0 no informado y 2 anulado; otros valores/desconocidos requieren interpretación aplicable, no se convierten en éxito [S23](../../research/technical-sources.md). Guardar códigos/raw acotado y observaciones, sin inventar estado fiscal universal.
 
 La verificación se vincula al conjunto exacto de inputs y fecha. Si cambian, resultado previo deja de acreditar esa identidad/vínculo. El servicio no demuestra por sí solo autenticidad de los bytes ni que la venta sea la correcta. Sin cuenta/capacidad habilitada, baseline manual: consulta oficial realizada externamente y evidencia referenciada por operador; UNAVAILABLE permanece visible si no hay verificación exigida. No simular navegador SOL ni enumeración/descarga masiva; capacidad automática de adquisición PENDING VALIDATION.
 
@@ -111,13 +111,13 @@ Retry mantiene intención, clave, destinatario y contenido exactos; solo se habi
 
 ID externo conocido permite consultar proveedor; desconocido no habilita búsqueda por email+hora como prueba de identidad. Un callback temprano queda pendiente hasta asociación por resultado o evidencia inequívoca de proveedor, incluyendo correlación opaca de la intención cuando el contrato la soporte; no por coincidencia de asunto. Reenvío tras cambiar destinatario es nueva intención y aprobación, no retry con payload distinto. Fallo/bounce no invalida CPE ni venta.
 
-Callbacks se autentican/deduplican en C02/C09; su fuente acredita al menos una vez y orden no garantizado [S24](../decisions/sources.md). Documents conserva conjunto de observaciones por external ID/attempt, no overwrites por último arribo. Derivación local inicial:
+Callbacks se autentican/deduplican en C02/C09; su fuente acredita al menos una vez y orden no garantizado [S24](../../research/technical-sources.md). Documents conserva conjunto de observaciones por external ID/attempt, no overwrites por último arribo. Derivación local inicial:
 
 | Observaciones compatibles | Resultado presentado / consecuencia |
 |---|---|
 | API aceptó / sent, sin resultado de destino | PROVIDER_ACCEPTED / pendiente de entrega; no prueba lectura |
 | delivery_delayed sin resultado definitivo | DELAYED; no reenviar como original nuevo |
-| delivered | DELIVERY_REPORTED: servidor destinatario aceptó; no lectura ni aceptación fiscal [S27](../decisions/sources.md) |
+| delivered | DELIVERY_REPORTED: servidor destinatario aceptó; no lectura ni aceptación fiscal [S27](../../research/technical-sources.md) |
 | bounced o suppressed | NON_DELIVERY_REPORTED y pendiente de revisar destinatario/política; HOLD para nuevo envío a esa dirección |
 | failed sin delivered contradictorio | FAILURE_REPORTED; revisar causa, no retry por webhook aislado |
 | delivered y bounced/failed incompatibles para el mismo intento/destinatario | CONFLICT/HOLD, ambas evidencias conservadas y consulta autorizada; no elegir la fecha más reciente como verdad universal |

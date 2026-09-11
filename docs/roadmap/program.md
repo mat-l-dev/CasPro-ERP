@@ -1,6 +1,6 @@
 # CasPro Master Program
 
-Propietario: Product/Architecture. [ADR-012](../decisions/adr-012-global-documentation-freeze.md) rige la secuencia, [review](../review.md) el estado global y el [índice profundo](../specs/deep-spec-index.md) la readiness por hito. **Deep specs M01–M09 → aceptación independiente del GLOBAL DOCUMENTATION FREEZE → investigación dedicada de skills → regeneración de WOs → implementación expresamente autorizada.** IDs ordenan dependencias de entrega, no aplazan especificación ni prometen fechas. Las tarjetas distinguen resultados futuros de entrega de criterios documentales; no exigen ejecutar esos resultados para revisar el diseño. Los pendientes se clasifican únicamente en [gaps](decisions-gaps.md).
+Propietario: Product/Architecture. [ADR-012](../decisions/adr-012-global-documentation-freeze.md) rige la secuencia, [review](../review.md) el estado global y el [índice profundo](../specs/index.md) la readiness por hito. **Deep specs M01–M09 → aceptación independiente del GLOBAL DOCUMENTATION FREEZE → investigación dedicada de skills → regeneración de WOs → implementación expresamente autorizada.** IDs ordenan dependencias de entrega, no aplazan especificación ni prometen fechas. Las tarjetas distinguen resultados futuros de entrega de criterios documentales; no exigen ejecutar esos resultados para revisar el diseño. Los pendientes se clasifican únicamente en [gaps](decisions-gaps.md).
 
 ## Cuatro vistas coordinadas
 
@@ -64,7 +64,7 @@ Ruta explícita de entrega: **repositorio documental (M00) → primer ERP ejecut
 |---|---|
 | Business outcome / why now | Identidades, bienes y precios versionados antes de pedidos/stock |
 | Dependencies | M01 |
-| Canonical docs | model, boundaries, data, charter y [maestros profundos](../specs/runtime-masters.md) |
+| Canonical docs | model, boundaries, data, charter y [maestros profundos](../specs/milestones/runtime-masters.md) |
 | Research / human decisions | atributos reales mínimos y unidades; no crear Customer duplicado |
 | Regulatory / technical / security gates | PII/identidad fiscal, exactitud Decimal, bulk validate→preview→confirm |
 | UX deliverable / AI role | selectores, búsqueda, import preview; IA fuera |

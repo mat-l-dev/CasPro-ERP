@@ -1,6 +1,6 @@
 # Arquitectura objetivo de Accounting
 
-Propietario: Accounting. Estado: arquitectura con [deep spec M07](../specs/accounting-deep.md) y [M08/goldens](../specs/reporting-goldens.md) candidatas; no es implementación ni política profesional aprobada. Fuentes normativas: [registro](../research/normative-register.md), [matriz NIIF](../research/ifrs-applicability.md) y [reporte NPIF](npif-reporting.md).
+Propietario: Accounting. Estado: arquitectura con [deep spec M07](../specs/milestones/accounting-deep.md) y [M08/goldens](../specs/acceptance/reporting-goldens.md) candidatas; no es implementación ni política profesional aprobada. Fuentes normativas: [registro](../research/normative/normative-register.md), [matriz NIIF](../research/normative/ifrs-applicability.md) y [reporte NPIF](npif-reporting.md).
 
 ## Cadena y ownership
 
@@ -34,7 +34,7 @@ Sales, Procurement, Inventory, Treasury y Corporate publican hechos neutrales; n
 
 ## PCGE y `pcge-peru` v0.2.0
 
-La [auditoría de código y distribución](../research/pcge-code-audit.md) fija identidad, API, datasets, prueba externa y límites de `pcge-peru` 0.2.0. Ofrece navegación/búsqueda/anomalías y valores congelados; el objeto catálogo mantiene estructuras internas mutables, por lo que no se presenta como profundamente inmutable. El loader valida integridad estructural y hash de entries, no autentica el PDF oficial. El adapter encapsula esos límites.
+La [auditoría de código y distribución](../evidence/pcge-code-audit.md) fija identidad, API, datasets, prueba externa y límites de `pcge-peru` 0.2.0. Ofrece navegación/búsqueda/anomalías y valores congelados; el objeto catálogo mantiene estructuras internas mutables, por lo que no se presenta como profundamente inmutable. El loader valida integridad estructural y hash de entries, no autentica el PDF oficial. El adapter encapsula esos límites.
 
 Contrato del adaptador CasPro:
 
@@ -57,7 +57,7 @@ Un hash prueba integridad respecto del artefacto esperado, no autoridad normativ
 
 ## Reporting NPIF V1
 
-El primer producto contable usable genera situación financiera, resultados, cambios en patrimonio, flujos de efectivo y notas, con comparativos cuando correspondan, aunque NPIF haga opcionales los dos estados adicionales. El EFE directo se concreta como candidato en [M08](../specs/reporting-goldens.md), incluida conciliación numérica. Reportes gerenciales no se etiquetan como EEFF formales. Ningún texto de cumplimiento se genera o aprueba automáticamente con IA.
+El primer producto contable usable genera situación financiera, resultados, cambios en patrimonio, flujos de efectivo y notas, con comparativos cuando correspondan, aunque NPIF haga opcionales los dos estados adicionales. El EFE directo se concreta como candidato en [M08](../specs/acceptance/reporting-goldens.md), incluida conciliación numérica. Reportes gerenciales no se etiquetan como EEFF formales. Ningún texto de cumplimiento se genera o aprueba automáticamente con IA.
 
 ## Gates para especificación y operación
 

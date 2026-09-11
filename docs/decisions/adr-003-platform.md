@@ -21,4 +21,4 @@ Otro PostgreSQL managed es intercambiable conceptualmente. VPS exige asumir back
 
 ## Consequences
 
-No usar SDK ni funciones de proveedor para el dominio. Mover DB no mueve la plataforma completa. Aceptación contractual/presupuestaria y roles/conectividad/restore pendientes, sin contratación automática. Fuentes: [S07–S09/S20](sources.md).
+No usar SDK ni funciones de proveedor para el dominio. Mover DB no mueve la plataforma completa. Aceptación contractual/presupuestaria y roles/conectividad/restore pendientes, sin contratación automática. Fuentes: [S07–S09/S20](../research/technical-sources.md).

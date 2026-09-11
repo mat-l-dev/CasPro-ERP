@@ -1,10 +1,10 @@
 # SP2 — Compromiso, stock, dinero y entrega
 
-Propietarios: Sales (propuesta/venta/acto comercial), Inventory (posiciones/reservas/costes/movimientos), Treasury (cuentas/dinero/aplicaciones). Coordinadores nombrados componen contratos, sin tablas de hechos propias ni llamadas entre modelos ajenos. Fuente de estados de estos propietarios para la slice; [CM0 y orden](command-matrix.md) completan sus fichas. [HP1–HP3](first-operational-circuit.md) distinguen decisiones cerradas y validaciones pendientes.
+Propietarios: Sales (propuesta/venta/acto comercial), Inventory (posiciones/reservas/costes/movimientos), Treasury (cuentas/dinero/aplicaciones). Coordinadores nombrados componen contratos, sin tablas de hechos propias ni llamadas entre modelos ajenos. Fuente de estados de estos propietarios para la slice; [CM0 y orden](../cross-cutting/command-matrix.md) completan sus fichas. [HP1–HP3](first-operational-circuit.md) distinguen decisiones cerradas y validaciones pendientes.
 
 ## De observado a aceptado
 
-Sales conserva un caso por `(entidad, conexión, external order ID)` y sus observaciones inmutables. Tiene revisión local monotónica y puntero a observación seleccionada; el tiempo externo no es versión confiable. Recibos/inbox son de integración, no la venta. Las etapas técnicas y de recepción están en [integraciones](integrations.md); aquí solo vive la decisión comercial.
+Sales conserva un caso por `(entidad, conexión, external order ID)` y sus observaciones inmutables. Tiene revisión local monotónica y puntero a observación seleccionada; el tiempo externo no es versión confiable. Recibos/inbox son de integración, no la venta. Las etapas técnicas y de recepción están en [integraciones](jumpseller-external-work.md); aquí solo vive la decisión comercial.
 
 | Dimensión / estado | Significado |
 |---|---|
@@ -45,7 +45,7 @@ Una posición identifica SKU/unidad y ubicación física interna declarada bajo 
 
 X incluye pedidos remotos abiertos no aceptados y aumentos observados no aceptados de un compromiso. Una cantidad ya reservada/entregada internamente no sigue en X. Al aceptar, retirar esa contribución X y aumentar R ocurre bajo el mismo plan K/E/S/P/V: no hay doble descuento de disponibilidad. X es una proyección de observaciones seleccionadas, con IDs/revisiones Sales, no un nuevo hecho de Inventory ni un permiso de despachar. Cancelar externamente no libera R de una venta; C15 decide su remanente.
 
-Ejemplo sintético: P=10, N=2, R=3, X=2 y B=0 aprobado para el ejemplo → A=5, Q=3. Aceptar las 2 observadas produce R=5, X=0, Q=3. Despacharlas produce P=8, R=3, Q=3. Descontar nuevamente al recibir PAID daría un resultado incorrecto. Las carreras/remoto se rigen por [publicación](integrations.md#stock-publication), que no promete atomicidad entre sistemas.
+Ejemplo sintético: P=10, N=2, R=3, X=2 y B=0 aprobado para el ejemplo → A=5, Q=3. Aceptar las 2 observadas produce R=5, X=0, Q=3. Despacharlas produce P=8, R=3, Q=3. Descontar nuevamente al recibir PAID daría un resultado incorrecto. Las carreras/remoto se rigen por [publicación](jumpseller-external-work.md#stock-publication), que no promete atomicidad entre sistemas.
 
 Reserva identifica venta/línea, SKU, posición y cantidad original; `remaining = allocated − consumed − released`, siempre no negativo. Tiene ACTIVE mientras remaining>0; EXHAUSTED si todo consumido, RELEASED si todo liberado, CLOSED_MIXED si ambos agotaron el total. No tabla universal de estados. Una reserva mixta conserva componentes exactos, no un status que pierda parcialidades.
 
@@ -74,7 +74,7 @@ Cuenta: entidad, identidad pública, moneda, tipo declarado, titularidad/evidenc
 
 C16 recibe observación PAID como una referencia de procedencia posible. C17 exige además evidencia de dinero y confirmación humana; el importe/fecha/cuenta no se rellenan desde flags del canal. Una referencia transaccional de banco/pasarela tiene namespace por entidad/cuenta/proveedor y evita duplicados aunque cambie la clave de intención. Referencia ausente no prueba duplicación ni unicidad: HP2 debe definir comprobación; sin ella se conserva propuesta, no confirmación. Mismo monto/fecha no basta para deduplicar dos cobros reales ni para confirmar uno.
 
-Las invariantes N/A/U de [dinero](../domain/invariants.md) gobiernan C17/C18/C22. Exceso confirmado queda sin aplicar, nunca ingreso ficticio. Aplicar tiene importe/objetivo explícitos; no se reparte automáticamente ni se mezcla moneda. Des-aplicar no devuelve dinero. Un refund confirmado es registro de devolución monetaria efectuada externamente con evidencia; CasPro no ordena transferir. Si se trata de un error de captura sin devolución real se registra corrección contable-operativa de captura, con tipo/referencia/motivo distinguibles, nunca se etiqueta refund bancario.
+Las invariantes N/A/U de [dinero](../../domain/invariants.md) gobiernan C17/C18/C22. Exceso confirmado queda sin aplicar, nunca ingreso ficticio. Aplicar tiene importe/objetivo explícitos; no se reparte automáticamente ni se mezcla moneda. Des-aplicar no devuelve dinero. Un refund confirmado es registro de devolución monetaria efectuada externamente con evidencia; CasPro no ordena transferir. Si se trata de un error de captura sin devolución real se registra corrección contable-operativa de captura, con tipo/referencia/motivo distinguibles, nunca se etiqueta refund bancario.
 
 Refund descubre todos los objetivos/aplicaciones del cobro y las ventas de su cobertura. Bloquear S/T/R en el orden común, releer el conjunto; una aplicación nueva obliga a replanificar. Si N disminuye por debajo de A(r), des-aplicar exactamente el exceso con referencias explícitas; luego actualizar cobertura. Puede quedar venta ya entregada con deuda/retorno pendiente: eso se registra y bloquea nueva entrega al contado, sin borrar entrega ni convertirla a crédito. No forzar modificación de CPE ni retorno físico.
 

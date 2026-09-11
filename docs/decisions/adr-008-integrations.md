@@ -7,14 +7,14 @@ Fecha: 2026-09-10. **Estado autoritativo por alcance.** ACCEPTED acepta el contr
 | Adaptadores, hechos versionados e intención durable necesaria | ACCEPTED | Estado empresarial en su dueño; efectos externos fuera de la transacción crítica |
 | Foundation Amendment: Jumpseller inicial, stock autoritativo CasPro y Resend inicial detrás de puerto email | ACCEPTED | Mandato del propietario posterior a Gate 1; solo esos proveedores, sin conexiones habilitadas |
 | Documents conserva archivo y entrega; CPE emitido externamente; acquire → link/verify → deliver | ACCEPTED | Sin Document Vault ni emisión/envío CPE a SUNAT desde CasPro; AUTO_WITH_APPROVAL operativo inicial, modos/HOLD según contrato |
-| Backend outbox/inbox/jobs PostgreSQL, representación y worker concretos | PROVISIONAL | [SP2](../specs/integrations.md) concreta comandos/registros; falta evidencia ejecutable de caída/reanudación/deduplicación, sin framework genérico previo |
+| Backend outbox/inbox/jobs PostgreSQL, representación y worker concretos | PROVISIONAL | [SP2](../specs/flows/jumpseller-external-work.md) concreta comandos/registros; falta evidencia ejecutable de caída/reanudación/deduplicación, sin framework genérico previo |
 | Activación de proveedores, política publicable y política documental concreta | PROVISIONAL | Permisos/cuentas/API reales, carreras del stock, artefactos/retención, aprobación/HOLD, destinatarios seguros y resultados ambiguos; adquisición masiva SOL no verificada |
 
 ## Context
 
 Las integraciones fallan, repiten mensajes y pueden producir resultados ambiguos. Accounting necesita hechos sin acoplar el ledger a ventas.
 
-El propietario concretó el primer período operativo después del cierre de Gate 1: canal Jumpseller, archivo y entrega con Resend, sin emisión CPE desde CasPro. El amendment amplía esos alcances y conserva las restantes decisiones de Gate 1; fuentes técnicas [S21–S25](sources.md), no evidencia de operación.
+El propietario concretó el primer período operativo después del cierre de Gate 1: canal Jumpseller, archivo y entrega con Resend, sin emisión CPE desde CasPro. El amendment amplía esos alcances y conserva las restantes decisiones de Gate 1; fuentes técnicas [S21–S25](../research/technical-sources.md), no evidencia de operación.
 
 ## Decision
 
@@ -22,7 +22,7 @@ Adaptadores externos separados, hechos versionados e intención durable cuando e
 
 ## Alternatives
 
-Broker/Celery inicial añade componentes sin necesidad demostrada. HTTP dentro del lock extiende la transacción. Django Tasks no reemplaza por sí mismo worker/backend productivo [S10](sources.md). Document Vault separado duplicaría ownership de Documents; CRM/Customer adicional, engine de workflows y framework multicanal no se justifican por los casos pedidos.
+Broker/Celery inicial añade componentes sin necesidad demostrada. HTTP dentro del lock extiende la transacción. Django Tasks no reemplaza por sí mismo worker/backend productivo [S10](../research/technical-sources.md). Document Vault separado duplicaría ownership de Documents; CRM/Customer adicional, engine de workflows y framework multicanal no se justifican por los casos pedidos.
 
 ## Consequences
 

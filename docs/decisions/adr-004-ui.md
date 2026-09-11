@@ -21,4 +21,4 @@ CSS propio es viable pero requiere más mantenimiento de convenciones. React int
 
 ## Consequences
 
-Se acepta build de assets y navegador moderno, con Node solo en construcción. La UI no decide dinero ni permisos. WCAG 2.2 AA es objetivo a demostrar, no conformidad actual. Fuentes: [S02/S11–S14](sources.md).
+Se acepta build de assets y navegador moderno, con Node solo en construcción. La UI no decide dinero ni permisos. WCAG 2.2 AA es objetivo a demostrar, no conformidad actual. Fuentes: [S02/S11–S14](../research/technical-sources.md).

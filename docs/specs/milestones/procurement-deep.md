@@ -1,6 +1,6 @@
 # M05 — Procure-to-Pay: contrato ejecutable futuro
 
-Estado: **SPECIFIED — candidato; políticas tributarias/operativas pendientes según hechos**. Owner Procurement, con Inventory/Treasury/Documents/Accounting/Tax participantes. Hereda [CM0 extendido](economic-facts.md), [P2P](../domain/procure-to-pay.md) y [costeo](inventory-deep.md). No vende servicios ni crea stock para servicios comprados.
+Estado: **SPECIFIED — candidato; políticas tributarias/operativas pendientes según hechos**. Owner Procurement, con Inventory/Treasury/Documents/Accounting/Tax participantes. Hereda [CM0 extendido](../cross-cutting/economic-facts.md), [P2P](../../domain/procure-to-pay.md) y [costeo](inventory-deep.md). No vende servicios ni crea stock para servicios comprados.
 
 ## Dimensiones separadas
 
@@ -37,7 +37,7 @@ Recibir mercancía sin factura puede activar valoración estimada documentada y 
 
 Servicio contratado por doce meses requiere período/cobertura, conformidad y calendario de consumo. Prepago no es gasto completo al pagar. Coste adicional admisible se asigna con base explícita (cantidad/peso/valor según política), residual reproducible y vínculos a recepciones; su validación NPIF distingue flete de compra de interés/FX y descuentos posteriores. No activar landed cost arbitrario.
 
-Impuestos aplicables (IGV, SPOT, retención, percepción, no domiciliado) son determinaciones Tax versionadas con evidencia del hecho. Un pago puede dividirse entre proveedor/depósito/autoridad según obligación verificada; las piernas deben sumar la liquidación y seguir identidades distintas, sin neteo oculto. Un servicio SaaS extranjero activa revisión temprana [RS 047-2026](../research/tax-current-review.md), aunque M09 todavía no tenga UI.
+Impuestos aplicables (IGV, SPOT, retención, percepción, no domiciliado) son determinaciones Tax versionadas con evidencia del hecho. Un pago puede dividirse entre proveedor/depósito/autoridad según obligación verificada; las piernas deben sumar la liquidación y seguir identidades distintas, sin neteo oculto. Un servicio SaaS extranjero activa revisión temprana [RS 047-2026](../../research/normative/tax-current-review.md), aunque M09 todavía no tenga UI.
 
 ## Lecturas, UX y aceptación
 

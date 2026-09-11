@@ -1,6 +1,6 @@
 # Master Capability Map
 
-Este mapa asigna propósito, dueño, dependencias, hito y trigger; no conserva otra readiness. La matriz vigente vive únicamente en [deep-spec-index](../specs/deep-spec-index.md), el estado global en [review](../review.md) y los pendientes en [gaps](decisions-gaps.md). El mapa no autoriza tablas, carpetas ni implementación.
+Este mapa asigna propósito, dueño, dependencias, hito y trigger; no conserva otra readiness. La matriz vigente vive únicamente en [deep-spec-index](../specs/index.md), el estado global en [review](../review.md) y los pendientes en [gaps](decisions-gaps.md). El mapa no autoriza tablas, carpetas ni implementación.
 
 | Capability / purpose | Owner | Inputs → outputs | Dependencies | Value / risk / regulatory sensitivity | Phase / required spec / expansion trigger |
 |---|---|---|---|---|---|
@@ -43,7 +43,7 @@ Este mapa asigna propósito, dueño, dependencias, hito y trigger; no conserva o
 
 ## Capacidades contables explícitas del primer paquete
 
-Este desglose hereda owner Accounting, M07 para medición/registro y M08 para presentación, contratos de diseño y gates de activación C01/C03 de [M07](../specs/accounting-deep.md), [NPIF](../accounting/npif-policy-catalog.md) y [M08](../specs/reporting-goldens.md). No exige activos, trabajadores o contratos ficticios: cuando no existe el hecho, se conserva trigger y se documenta inaplicabilidad. Los datos fuente los aportan los dueños indicados; ningún auxiliar crea dinero ni stock.
+Este desglose hereda owner Accounting, M07 para medición/registro y M08 para presentación, contratos de diseño y gates de activación C01/C03 de [M07](../specs/milestones/accounting-deep.md), [NPIF](../accounting/npif-policy-catalog.md) y [M08](../specs/acceptance/reporting-goldens.md). No exige activos, trabajadores o contratos ficticios: cuando no existe el hecho, se conserva trigger y se documenta inaplicabilidad. Los datos fuente los aportan los dueños indicados; ningún auxiliar crea dinero ni stock.
 
 | Capability / purpose | Inputs / dependency → outputs | Trigger / valor / riesgo y política |
 |---|---|---|
