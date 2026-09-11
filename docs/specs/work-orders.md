@@ -117,7 +117,7 @@ Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** PREPARED, e
 | Required behavior | C13 de apertura/ajuste/condición, identidad de origen única, cantidades/costes y UNKNOWN explicables, lectura de disponibilidad de posiciones |
 | Invariants | Stock no negativo, no duplicar apertura con otra clave; no float; no recalcular coste total desde unitario redondeado |
 | Acceptance criteria | Casos de VP-SP2-04 para inventario base y nuevas carreras de apertura/ajuste; R es cero porque no hay consumidor de reserva construido, no afirmar probados escenarios de reserva |
-| Validation Profile | VP-SP2-04 + extensión de aislamiento; HP3 real debe estar aprobada para operación, fixture sintética no la sustituye |
+| Validation Profile | VP-SP2-04 + extensión de aislamiento; promedio móvil/UNKNOWN/retorno no vendible provienen de HP3, mientras posiciones/buffer/publicación exigen su gate propio |
 | Security impact | Capacidad opening/adjust, motivo/evidencia y auditoría crítica; sin edición directa del saldo |
 | Data/migration impact | Movimientos/posiciones/seriales/costes necesarios, no Procurement/recepciones inventadas ni tablas futuras de compromisos |
 | Documentation impact | Límites de apertura y existencia construida; reservas permanecen especificadas hasta su WO con Sales real |
@@ -162,4 +162,4 @@ Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** PREPARED, e
 | Explicit non-goals | C14/aceptación, entrega física, escritura de stock, Resend/SUNAT, devolución, CRM/otros canales y framework de colas universal |
 | Review específico | Refutar replay, headers no firmados, A→B→A, página perdida y generación tardía; comprobar que webhook PAID no puede crear dinero |
 
-Primera WO recomendada: **WO-SP2-01**, porque las evidencias de aislamiento y de todos los dueños necesitan runtime/runner/configuración identificables. No se ejecuta por estar recomendada. Antes de iniciar cualquier WO posterior se confirma autorización, candidato/base Git y evidencia de dependencias; no se copia una etiqueta PASS sin contrato de equivalencia.
+Estas seis WOs quedan como insumos preparados de M01–M04 y deben reordenarse o dividirse durante el freeze de cada hito del [programa maestro](../roadmap/program.md). **WO-SP2-01** continúa siendo la primera dependencia técnica candidata, pero este archivo ya no constituye por sí solo la recomendación de ejecución siguiente. Ninguna WO se ejecuta por estar preparada; cada una requiere autorización, candidato/base Git y evidencia de dependencias, sin copiar una etiqueta PASS fuera de su contrato de equivalencia.

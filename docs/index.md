@@ -27,13 +27,17 @@ Fecha de corte: 2026-09-10. Los documentos describen la fundación, no acreditan
 | Tenancy, autenticación y autorización | [Tenancy/access](architecture/tenancy-access.md) |
 | Comandos, bloqueos y reversión | [Transactions](architecture/transactions.md) |
 | Integraciones, eventos y trabajo durable | [Integrations](architecture/integrations.md) |
+| Compra a pago, Treasury e Inventory/costeo | [P2P](domain/procure-to-pay.md), [Treasury](domain/treasury-finance.md), [Inventory](domain/inventory-costing.md) |
+| Accounting, NPIF, Tax y Corporate | [Accounting](accounting/architecture.md), [reporte NPIF](accounting/npif-reporting.md), [Tax](tax/architecture.md), [Corporate](corporate/architecture.md) |
 | Frontend, sistema visual y UX | [UI](architecture/ui.md) |
+| Asistencia IA en producto | [Arquitectura IA](architecture/ai-assistance.md) |
 | Taxonomía, perfiles y evidencia | [Quality](quality/strategy.md) |
 | Amenazas y controles | [Threat model](security/threat-model.md) |
 | CI/CD, recuperación y observabilidad | [Delivery](operations/delivery.md) |
-| Decisiones y fuentes primarias | [ADRs](decisions/index.md), [fuentes](decisions/sources.md) |
-| Extracción de V1 | [Política](v1-reference/policy.md) |
+| Decisiones, fuentes y aplicabilidad normativa | [ADRs](decisions/index.md), [fuentes técnicas](decisions/sources.md), [registro normativo](research/normative-register.md), [matriz NIIF](research/ifrs-applicability.md) |
+| Extracción de Wbpro y benchmark ERP | [Política V1](v1-reference/policy.md), [clasificación Wbpro](research/wbpro-knowledge.md), [benchmark](research/erp-benchmark.md) |
 | IA y contexto local | [Protocolo](../.ai/README.md), [flujo](../.ai/workflow.md) |
+| Capability map, gaps y cuatro roadmaps | [Capabilities](roadmap/capabilities.md), [decisiones/gaps](roadmap/decisions-gaps.md), [programa](roadmap/program.md) |
 | Pendientes y revisión de la fundación | [Review](review.md) |
 
 ## Mantenimiento mínimo

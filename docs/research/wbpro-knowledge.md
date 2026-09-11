@@ -1,0 +1,39 @@
+# Extracción de conocimiento Wbpro
+
+Fuente interna: documentación **actual** de `C:\Mathew\Proyectos\ERP\Wbpro-ERP`, leída en modo solo lectura al corte 2026-09-10. Se excluyeron `archive`, `15-history`, legacy y Webrax. Este documento no importa decisiones, IDs, aprobaciones ni estado construido. Cada idea se contrasta con CasPro y, si es normativa o inspirada en otro ERP, requiere la fuente externa indicada.
+
+Clasificaciones: `ADOPT`, `ADAPT`, `RESEARCH AGAIN`, `REJECT`, `OBSOLETE`, `REGULATORY REVALIDATION REQUIRED`.
+
+Lectura de columnas: “concepto/propósito y evidencia” reúne la razón original observable; “problema” registra límites conocidos; la flecha de clasificación identifica relevancia, destino y revalidación CasPro. Estado de fuente: todos son documentos actuales de Wbpro al corte; `09-web-research/2026-09-09-patrones-erp-aplicables-a-wbpro.md` declara además `IN_REVIEW`. Ese estado no se importa como aprobación. Inspiración externa documentada: el research ERP cita SAP/Oracle y otras suites; los documentos de arquitectura/QA/UI citan sus fuentes técnicas; las demás ideas son internas o regulatorias y se revalidan en las fuentes CasPro enlazadas. No se atribuye a un tercero una idea sin procedencia expresa.
+
+| Wbpro source | Concepto/propósito y evidencia | Problema conocido | Clasificación → destino CasPro / revalidación |
+|---|---|---|---|
+| `01-enterprise/wbpro-constitution.md` | Separar TILMUX, socio, RUC personal y otras entidades; hechos requieren evidencia | Sus hechos empresariales no prueban el estado actual de CasPro | ADOPT → charter/acceso; verificar documentos reales |
+| `00-governance/principios.md` | Fuente→evento→ledger→reporte↔evidencia; incertidumbre explícita | Taxonomía/IDs Wbpro no pertenecen a CasPro | ADOPT → Accounting/Research; no copiar registros |
+| `09-web-research/2026-09-09-patrones-erp-aplicables-a-wbpro.md` | Bloqueo de pago, tolerancias, document flow derivado, cockpit, drillback, reglas antes de IA | Estado IN_REVIEW y algunas fuentes deben reconsultarse | ADAPT → P2P/UI/Accounting/AI; benchmark oficial actualizado |
+| `07-functional-modules/spec-contabilidad.md` | Único Accounting interpreta eventos mediante reglas versionadas; asientos trazables y reversibles | Tabla de cuentas/asientos demasiado concreta; prohíbe todo asiento manual y mezcla gerencial NIIF sin necesidad | ADAPT → arquitectura Accounting; permitir ajustes tipificados/aprobados, no asientos libres operativos |
+| `04-accounting/marco-contable.md` | Separa marco financiero y régimen, promedio móvil y PCGE versionado | Cita RCNC 002-2021 derogada, usa `<150` en vez de `≤150`, afirma silencios NPIF falsos y NIC 24 automática | REGULATORY REVALIDATION REQUIRED; corregido por N001–N005 y lectura NPIF |
+| `04-accounting/casos-dorados.md` | Casos contables de punta a punta con asientos/EEFF esperados | Políticas y cuentas de Wbpro no son CasPro | ADAPT → futuro dataset de aceptación, después de políticas profesionales |
+| `07-functional-modules/spec-valorizacion-inventario.md` | Pareja cantidad/valor, promedio móvil, origen y distribución con residuo exacto | “saldo 0→costo 0” no sirve para UNKNOWN; reglas físicas y contables se acercan demasiado | ADAPT → inventory-costing; preservar desconocido y separar VNR/cierre |
+| `07-functional-modules/spec-inventario-extendido.md` | Conteo ciego, ajustes, seriales, tránsito y evidencia | Declara obligación anual RER/inventario y GRE con hechos locales no revalidados; fuerza cuenta 20 | RESEARCH AGAIN/ADAPT → conteo y roadmap; Tax/GRE profesional antes de activar |
+| `07-functional-modules/spec-compras-extendido.md` | Recepciones parciales, factura, three-way match, anticipo y devolución origen | RFQ y sustitución avanzada serían prematuros; “matching no se salta” no cubre compra directa/servicio | ADAPT → P2P; rutas por riesgo, servicios no inventariables |
+| `07-functional-modules/spec-tesoreria.md` | Movimiento/aplicación separados, dedupe material, statement adjustment, pago del socio fuera de cuenta TILMUX | Algunos umbrales y clasificaciones necesitan vigencia; contraparte obligatoria banco no generaliza | ADAPT → Treasury; regla fiscal en Tax y esquema por tipo |
+| `06-corporate-legal/partes-relacionadas-y-mutuo.md` | Separa dimensiones societaria, fiscal y contable; mutuo no desembolsado | Concluye sin base suficiente que 50/50=no control, NIC 24 obligatoria bajo NPIF y mutuo gratis/a la vista→4411/NIIF9 | REJECT esas conclusiones; ADAPT ownership → Corporate; validación profesional |
+| `05-tax-peru/rer.md` y `transicion-y-perfiles-de-regimen.md` | Perfil tributario con vigencia y monitoreo de salida | Datos empresariales y algunos requisitos no son transferibles | REGULATORY REVALIDATION REQUIRED → Tax; RUC y normas actuales |
+| `05-tax-peru/libros-y-declaraciones.md` | SIRE ≠ PLE; preparación ≠ presentación | Afirma DJ anual inventario RER y casillas/tasas sin revalidar; cronogramas cambiaron | RESEARCH AGAIN → Tax; solo conservar capability/inputs |
+| `05-tax-peru/detracciones-retenciones-percepciones.md` | Evaluación por operación, saldos/constancias trazables | Agente, catálogo, tasas y FIFO de aplicación no son universales | ADAPT → Tax; padrón/norma por período |
+| `05-tax-peru/comprobantes-electronicos.md` | CPE, notas, contingencia y evidencia separados; no editar comprobante | Wbpro preparaba expediente de emisión; CasPro inicial no emite/presenta | ADAPT → acquire/link/verify/deliver; REJECT emisión interna inicial |
+| `09-web-research/2026-08-23-patrones-pedido-despacho-cpe.md` | Pedido, despacho, factura, reserva y nota como documentos separados | Investigación antigua/incompleta de locks y API SUNAT | ADOPT separaciones; RESEARCH AGAIN capacidad externa |
+| `09-web-research/2026-08-22-rtf-jurisprudencia.md` | Costo/IGV requieren cadena probatoria más allá del kardex | Usa fuentes P3 y atribuciones de RTF sin texto/alcance completo | REGULATORY REVALIDATION REQUIRED; no trasladar números/criterios sin P1 |
+| `09-web-research/2026-08-22-jumpseller.md` | Webhooks, REST, paginación, reconciliación y límites | Proveedor vivo; configuración y eventos pueden cambiar | ADAPT → integración SP2; validación con cuenta/sandbox futura |
+| `11-architecture/arquitectura-tecnica.md` | Monolito modular, contratos, outbox, PostgreSQL y contexto empresarial | Contiene stack y límites propios; código existente no se porta | ADOPT patrones compatibles; CasPro ADRs siguen autoridad |
+| `12-testing/estrategia-de-calidad.md` | Evidencia por riesgo/candidato y PostgreSQL real; verde no prueba semántica | Números/perfiles/puertas son Wbpro | ADAPT → calidad; contrato de equivalencia CasPro independiente |
+| `11-architecture/sistema-de-diseno-ui.md` | Tokens semánticos, densidad, teclado, cifras tabulares, estado no solo color | Dark-only, texto 10px y targets compactos generan riesgo; no Tailwind contradice CasPro | ADAPT principios; REJECT paleta/herramienta exactas → UI CasPro LIGHT/DARK/SYSTEM |
+
+## Lecciones de fallos ejecutables
+
+Wbpro documenta defectos que suites verdes no detectaron: guardas evaluadas antes de lock; lectura de control que falla abierta; fecha con techo sin suelo; idempotencia definida por “irreversibilidad”; devolución reconstruida con unitario redondeado; prefetch que no evita N+1; defaults globales y controles visuales inaccesibles. CasPro adopta los contraejemplos, no las reglas sintácticas exactas. La evidencia futura debe probar carrera, conservación, aislamiento, semántica de fechas y resultado repetido.
+
+## Conclusión
+
+El valor transferible de Wbpro está en separaciones, trazabilidad, casos adversariales y patrones de operación. Sus hechos, estados, cuentas, umbrales, aprobaciones y código no son autoridad CasPro. Las contradicciones contables/corporativas anteriores justifican el nuevo registro normativo y mantienen Accounting, Tax y Mutuo fuera de implementación hasta su spec profesional.

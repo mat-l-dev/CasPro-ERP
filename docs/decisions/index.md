@@ -16,7 +16,7 @@ ACCEPTED acepta el contrato de diseño de ese alcance, no acredita software ejec
 | [008 Eventos/integraciones](adr-008-integrations.md) | [Integrations](../architecture/integrations.md) | Propietarios durables y backend técnico |
 | [009 QA](adr-009-quality.md) | [Quality](../quality/strategy.md) | Equivalencia de evidencia y mecanismo de selección |
 | [010 Entrega/operación](adr-010-delivery.md) | [Delivery](../operations/delivery.md) | Artefacto/recuperación y topología contratada |
-| [011 Desarrollo con IA](adr-011-ai.md) | [Protocolo IA](../../.ai/README.md) | Autoridad de roles y adecuación de herramientas |
+| [011 Desarrollo con IA](adr-011-ai.md) | [Protocolo IA](../../.ai/README.md), [arquitectura de asistencia](../architecture/ai-assistance.md) | Autoridad de roles, frontera de producto y adecuación de herramientas |
 
 Gate 1 desagrega los estados globales iniciales en alcances dentro de los ADRs existentes, preservando sus motivos. Un principio aceptado no promueve sus detalles provisionales. Las decisiones posteriores que sustituyan una elección conservarán su antecedente. No se crean ADRs para nombres de carpetas triviales.
 

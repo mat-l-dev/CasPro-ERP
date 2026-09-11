@@ -1,6 +1,6 @@
 # Revisión y condición de avance
 
-Fecha: 2026-09-10. **Gate 1: CLOSED, PASS documental. Foundation Amendment: PASS documental.** Este archivo es la fuente del estado global; cada ADR conserva la autoridad sobre sus alcances. Esos cierres no acreditan software construido, desplegado o production-ready ni sustituyen aprobaciones empresariales. SUPERPROMPT 2 fue autorizado por un mandato posterior y se registra al final; los cierres anteriores no fueron por sí mismos su autorización.
+Fecha de corte de investigación: 2026-09-10. Revisión: 2026-09-11. **Gate 1: CLOSED. Foundation Amendment: PASS documental. SUPERPROMPT 2: PASS documental. Grand Master Program: PASS documental / READY FOR EXTERNAL REVIEW.** Este archivo es la fuente del estado global; cada ADR conserva la autoridad sobre sus alcances. Esos cierres no acreditan software construido, desplegado o production-ready ni sustituyen aprobaciones empresariales.
 
 ## Refutación del diseño
 
@@ -35,7 +35,7 @@ Conservan pendientes humanos en los alcances indicados; el amendment concretó p
 
 | ID | Decisión | Recomendación / qué condiciona |
 |---|---|---|
-| H1 | Políticas empresariales exigibles al primer uso; circuito seleccionado por SUPERPROMPT 2 | Venta B2C por Jumpseller, Treasury, entrega física, CPE externo y Documents/Resend quedan especificados. HP1–HP5 delimitan decisiones productivas pendientes; margen básico no sustituye Accounting |
+| H1 | Políticas empresariales exigibles al primer uso; circuito seleccionado por SUPERPROMPT 2 | HP1 cerró venta B2C al contado con cobertura íntegra; HP2/HP3 cerraron autoridad y costeo base con parámetros pendientes; HP4/HP5, CPE/retención/recuperación conservan decisión profesional/operativa. Margen básico no sustituye Accounting |
 | H2 | Presupuesto de hosting, almacenamiento, soporte y región/condiciones de tratamiento de datos | Managed inicialmente; candidato Render+Supabase, sin contratación en esta fase |
 | H3 | RPO, RTO y retención empresarial/regulatoria | Decidir pérdida/interrupción tolerable antes de seleccionar plan de backups y continuidad |
 | H4 | Excepción de segregación y acciones que requieren aprobación adicional | Mostrar autoaprobación; no simular dos personas; limitar devoluciones/elevaciones/cierres conforme al riesgo aceptado |
@@ -134,6 +134,42 @@ Contradicción externa conservada: documentación oficial Jumpseller discrepa so
 
 **SUPERPROMPT 2: PASS documental.** Se revisaron las fichas, transiciones, permisos, orden común y contraejemplos del circuito; no se identificaron contradicciones internas residuales en este alcance. Comprobaciones estáticas: 17 archivos Markdown (7 nuevos y 10 existentes), 218 referencias locales resueltas, incluidas 49 a anchors explícitos; 37 fichas completas y coincidentes con la matriz; 110 escenarios y seis WOs sin IDs duplicados, referencias a fuentes reconocidas entre S01–S28. El grafo de 11 módulos permanece acíclico, sin nuevas dependencias empresariales; no hay archivos vacíos, patrones de secretos detectados o cambios fuera de la lista autorizada. Diff completo revisado y comprobación de whitespace sin errores; son comprobaciones documentales, no pruebas de aplicación.
 
-No se ejecutaron tests de aplicación, Docker, builds, CI ni infraestructura; tampoco se consultó Wbpro/legacy ni cuentas privadas o se enviaron correos. La revisión del diseño no demuestra locks, RLS, precisión, recuperación ni semántica de proveedores ejecutables. Workspace/RLS, mecanismos de concurrencia y durabilidad, rangos numéricos y activación de proveedores conservan sus condiciones provisionales; HP1–HP5 condicionan operación, no la preparación independiente de WO-SP2-01.
+No se ejecutaron tests de aplicación, Docker, builds, CI ni infraestructura; tampoco se consultó Wbpro/legacy ni cuentas privadas o se enviaron correos durante SP2. La revisión del diseño no demuestra locks, RLS, precisión, recuperación ni semántica de proveedores ejecutables. Workspace/RLS, mecanismos de concurrencia y durabilidad, rangos numéricos, activación de proveedores y los parámetros aún abiertos de HP2–HP5 conservan sus condiciones provisionales; ninguna WO queda autorizada por esta spec.
 
-La preparación siguiente está delimitada por [WO-SP2-01](specs/work-orders.md#wo-sp2-01): runtime/calidad mínima identificables para poder demostrar después aislamiento. Las seis WOs permanecen sin ejecutar y requieren autorización nueva; no SUPERPROMPT 3 ni operación real por cerrar esta especificación.
+Las seis WOs permanecen sin ejecutar y requieren autorización nueva. El Grand Master Program posterior sustituye la idea de una WO automáticamente siguiente por un freeze coordinado de arquitectura, producto, documentación y entrega; no SUPERPROMPT 3 ni operación real por cerrar esta especificación.
+
+## Grand Master Program — investigación y rediseño, 2026-09-11
+
+El mandato posterior amplía la visión antes de código. Se extrajo y clasificó conocimiento actual de Wbpro sin tocarlo ni leer legacy; se revalidaron patrones ERP con documentación oficial; se investigaron NPIF/NIIF/PCGE y temas tributarios/corporativos peruanos; y se diseñaron P2P, Treasury, Inventory/Accounting, Tax, Corporate, UX e IA. El [registro de cambios y gaps](roadmap/decisions-gaps.md) conserva `OLD → NEW → WHY/EVIDENCE → IMPACT`; Gate 1 continúa cerrado.
+
+### Refutación adversarial
+
+| Intento de refutación | Resultado y límite conservado |
+|---|---|
+| EEFF completos requieren Excel o no llegan al hecho fuente | Accounting define paquete reproducible, cuatro estados+notas, comparativos y `rubro → cuenta → asiento → hecho → evidencia`; Excel no es dependencia. Políticas/apertura reales siguen pendientes |
+| Migrar de NPIF a PYMES/NIIF o adoptar NIIF 18 exige rehacer operación | Sales/Inventory publican hechos neutrales y Accounting versiona marco, interpretación y presentación. Transición y mapeos necesitan spec/casos antes del trigger |
+| PCGE queda hardcodeado o `pcge-peru` decide asientos | Plan aplicado y versión son datos de Accounting; la librería valida/navega catálogo y no elige postabilidad, reconocimiento o cuenta |
+| Promedio, VNR o devolución duplican/cambian historia física | Inventory conserva promedio operativo, `UNKNOWN`, dirección/original/ciclo y coste atribuible; Accounting registra VNR/deterioro separado. Backdating/coste tardío requiere spec |
+| Mutuo o pago personal aparece como ingreso/capital por etiqueta | Corporate, Treasury, Accounting y Tax conservan hechos distintos; el mutuo gratuito rotativo queda bloqueado hasta revisión legal/tributaria/contable |
+| P2P fuerza SKU/recepción ficticios o three-way match universal | Procurement soporta bienes y servicios, conformidad y compra directa controlada; matching se selecciona por ruta y tolerancias, con bloqueo de pago separado |
+| Document flow/bandeja se convierten en WorkflowEngine | Son proyecciones autorizadas de relaciones y excepciones; resolver invoca al propietario. No poseen hechos ni un estado universal |
+| IA alucina y crea dinero, stock, asientos, impuestos o envíos | El puerto solo devuelve candidatos; validación determinista/humana y ausencia de comandos críticos. Proveedor, VPS y piloto siguen provisionales |
+| Caída externa duplica envío/pago o borra causalidad | Intención/inbox durables, dedupe, conciliación y I/O fuera de locks; exactamente una vez externo no se promete y debe probarse por proveedor |
+| UI oscura, mouse-only o atajo peligroso impide operación diaria | LIGHT/DARK/SYSTEM, contraste, teclado, foco, densidad/vistas y confirmación semántica están en contrato; usabilidad/accesibilidad real sigue sin evidencia ejecutable |
+| SP2 y roadmap ordenan trabajos incompatibles | HP1–HP5 se actualizaron; SP2 alimenta M01–M04 y ya no recomienda automáticamente una WO. La ruta explícita llega a P2P, ledger y EEFF |
+| Skills o agentes copian la verdad documental | AGENTS sigue como router y las skills solo se derivan tras freeze; modelo/rol no cambia specs. La preferencia de una sesión puede limitar subagentes sin alterar la arquitectura futura |
+
+Los contraejemplos no destruyen la arquitectura ni la secuencia; sí refutan que los dominios estén listos para código u operación. El diseño conserva esas diferencias:
+
+| Alcance | Readiness |
+|---|---|
+| Arquitectura empresarial y master roadmap | **PASS documental / READY FOR EXTERNAL REVIEW** |
+| SP2 B2C | SPECIFIED; requiere políticas restantes y gates ejecutables |
+| Inventory, Treasury y P2P | ARCHITECTED; requieren deep specs y evidencia por hito |
+| Accounting NPIF y EEFF | ARCHITECTED; bloqueados para implementación por elegibilidad, políticas, apertura y aprobación profesional |
+| Tax y Corporate/Mutuo | RESEARCHED/ARCHITECTED; reglas/hechos reales y validación profesional pendientes |
+| IA asistida | PROVISIONAL; sin proveedor, runtime, VPS ni piloto seleccionado |
+
+La revisión estática comprobó documentos/tablas, referencias y anchors locales, unicidad de definiciones de registros, cobertura de 11 hitos y separación de fuentes. No encontró secretos, archivos vacíos, código funcional ni cambios fuera de documentación/protocolo. Wbpro y `pcge-peru` permanecieron de solo lectura. No se ejecutaron tests, builds, Docker, base de datos, UI, integraciones ni skills.
+
+**Grand Master Program: PASS documental.** El programa puede convertirse en candidato canónico mediante PR y revisión externa; M00 no queda aprobado por el mero PASS del autor. El siguiente trabajo documental es congelar M01 —runtime, acceso, auditoría y recuperación— contra sus gates, sin ejecutar WO-SP2 ni iniciar implementación por esta conclusión.

@@ -32,6 +32,8 @@ flowchart TD
 
 El diagrama muestra responsabilidades, no paquetes existentes. Ningún worker ni módulo está implementado.
 
+El [programa maestro](../roadmap/program.md) extiende esta composición a Procurement/P2P, Documents, Corporate, Accounting y Tax. Los módulos operativos publican hechos neutrales; Accounting interpreta y Tax concilia sin llamadas de retorno. Corporate conserva ownership conceptual sin exigir todavía una aplicación. El diagrama sigue mostrando la forma de coordinación, no el inventario completo de capabilities.
+
 Un flujo que solo afecta a un módulo vive en su aplicación. Un flujo transversal tiene un coordinador nombrado, por ejemplo entrega o devolución, en workflows. El coordinador no vuelve a calcular reglas privadas: solicita decisiones y cambios a los propietarios mediante contratos. No existe un CommandBus genérico ni un registro mutable de callbacks.
 
 ## Estructura futura, no materializada

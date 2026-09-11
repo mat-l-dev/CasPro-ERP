@@ -8,20 +8,23 @@ CasPro administra la operación de TILMUX S.A.C. con cifras explicables y separa
 |---|---|
 | El propietario pide un proyecto nuevo y una fundación previa al software | Mandato de esta fase |
 | Wbpro describe TILMUX constituida, operación centrada en bienes y trabajo con un operador | Contexto interno reutilizable; no acredita RUC, régimen, cuentas ni operaciones reales |
-| Venta de bienes como foco inicial | Alcance recomendado; servicios vendidos fuera de la primera especificación |
+| Venta de bienes como foco inicial | Alcance confirmado; los servicios vendidos quedan fuera y los servicios/gastos comprados entran por Procurement sin SKU de stock |
 | Varias entidades del ecosistema del propietario | Separación desde el inicio, sin activar entidades ficticias ni consolidación automática |
-| Contabilidad interna completa como objetivo previo | Se conserva como objetivo de producto; el alcance requerido al primer uso se ratifica en H1 de la revisión |
-| Régimen, marco contable, capital, mutuos, casillas y supuestos tributarios | PENDING DOMAIN/REGULATORY VALIDATION; ninguna decisión dudosa de V1 se hereda como norma |
+| Contabilidad interna y estados financieros completos | Objetivo del programa: cuatro estados, notas, comparativos y trazabilidad; NPIF es el candidato inicial sujeto a elegibilidad y validación profesional |
+| RER como régimen inicial declarado por el propietario | Hipótesis empresarial pendiente de ficha RUC/acogimiento y reglas vigentes; no convierte tasas, casillas o tratamientos heredados en norma |
+| Capital, mutuos y otros supuestos societarios/tributarios | PENDING DOMAIN/REGULATORY VALIDATION; ninguna conclusión dudosa de V1 se hereda como norma |
 
 Un usuario puede actuar para varias entidades mediante membresías. Mathew persona natural, TILMUX, otra sociedad y cualquier RUC personal nunca representan la misma propiedad empresarial. Un depósito del socio no se clasifica automáticamente como capital, ingreso o dividendo.
 
-## Primera capacidad empresarial objetivo
+## Programa empresarial objetivo
 
-Un circuito pequeño y completo: identificar bienes/contrapartes → comprar y recibir → vender y preparar evidencia → cobrar/aplicar → entregar → devolver bienes y/o dinero con sus consecuencias → conciliar y explicar el cierre. Su especificación completa será posterior. Garantía comercial e importaciones comerciales se activan por necesidad y encargo, no por existir en V1.
+La secuencia completa es: plataforma aislada y recuperable → maestros → stock/dinero/pedido durable → primera venta B2C → compra a pago → control financiero/corporate → ledger y cierre → EEFF NPIF → operación tributaria preparada. El [programa maestro](../roadmap/program.md) coordina esas entregas; ninguna fila autoriza código. Garantía comercial, importaciones comerciales y servicios vendidos se activan por necesidad y encargo.
 
 El Foundation Amendment del propietario incorpora Jumpseller como primer canal ecommerce real de TILMUX: pedidos entrantes y publicación del stock disponible calculado por CasPro. Incorpora también archivo privado en Documents y entrega documental por email mediante Resend, empezando con AUTO_WITH_APPROVAL. El [contrato de integraciones](../architecture/integrations.md) delimita autoridad, automatización y capacidades externas comprobadas; estos proveedores iniciales están elegidos, sus conexiones no están implementadas ni validadas.
 
 Los primeros meses incluyen bandeja de pendientes/excepciones y discrepancias del canal, ajustes con motivo/auditoría, búsqueda global autorizada, importación CSV/Excel con validate → preview → confirm y coste/margen bruto básico trazable. Se resuelven mediante los propietarios existentes, sin CRM completo ni motor general de workflows. Preservar hechos para Accounting no equivale a haber construido el cierre contable requerido en H1.
+
+El primer circuito comercial vende únicamente bienes y exige pago íntegro confirmado antes de cualquier despacho. Los pagos parciales pueden registrarse, pero no habilitan despacho. Inventory usa promedio ponderado móvil para el coste operativo; un coste no sustentado permanece `UNKNOWN`, y toda devolución de cliente entra inicialmente como no vendible hasta revisión. Accounting conserva separadamente valoración financiera, VNR, deterioro y cierre.
 
 Los recorridos deben tolerar parcialidades, anulaciones, reintentos y errores del operador. El saldo bancario, el dinero aplicado, el valor entregado y la obligación comercial son hechos distintos. El panel los muestra por su nombre y con su origen.
 
