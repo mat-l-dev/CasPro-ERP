@@ -56,7 +56,7 @@ Documents sigue siendo el propietario existente del archivo y de las intenciones
 
 El contrato distingue comandos completos y operaciones participantes de un workflow. Web, imports y workers solo invocan comandos completos; las operaciones participantes se publican exclusivamente para coordinadores identificados y exigen su frontera transaccional. No existe un segundo comando público que permita devolver dinero, cambiar un objetivo comercial o despachar omitiendo a los otros propietarios necesarios. Cada participante conserva la validación de pertenencia y sus guardas; la composición restringe llamadores y el plan común determina los locks. Esta disciplina dentro de un proceso requiere revisión/verificación posterior: una marca de contexto no constituye aislamiento frente a código malicioso.
 
-Treasury conserva una proyección versionada del importe liquidable, no una segunda factura. Modificarla exige el flujo coordinado de su dueño comercial. Si no puede sincronizarse, la operación económica no confirma; nunca continúa usando un límite desactualizado. Sales ya concreta esa obligación en SP2; Procurement la especificará en M05. Accounting consume ambos hechos mediante su [arquitectura propia](../accounting/architecture.md).
+Treasury conserva una proyección versionada del importe liquidable, no una segunda factura. Modificarla exige el flujo coordinado de su dueño comercial. Si no puede sincronizarse, la operación económica no confirma; nunca continúa usando un límite desactualizado. Sales concreta esa obligación en SP2 y Procurement en [M05](../specs/procurement-deep.md). Accounting consume ambos hechos mediante su [arquitectura propia](../accounting/architecture.md).
 
 ## Contratos y persistencia
 

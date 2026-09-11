@@ -1,4 +1,4 @@
-# Evaluación tecnológica al 2026-09-10
+# Evaluación tecnológica al 2026-09-11
 
 Recomendaciones independientes del stack de V1. Las capacidades citadas se contrastaron con [fuentes oficiales](../decisions/sources.md). Las ventajas de productividad/operación son juicio de diseño para este producto; no benchmarks realizados.
 
@@ -27,6 +27,10 @@ La página oficial identifica 6.1.1 como versión principal actual, 5.2.17 como 
 Se propone 6.1 como combinación candidata de ADR-002: CasPro no tiene dependencias ni código heredado que migrar; las capacidades nativas de CSP y fragmentos de templates encajan con SSR/HTMX sin añadir paquetes para esas funciones [S02](../decisions/sources.md). No se elige 6.0 cuando ya existe 6.1, ni 5.2 solo por ser la versión de V1. 5.2 sería aceptable si una dependencia esencial no soportara 6.1 o si se priorizara expresamente evitar la actualización prevista.
 
 Revisar 6.2 cuando sea estable y compatible; no basar el diseño en APIs futuras. La versión exacta de cada paquete se fijará en lockfiles durante una fase autorizada de código. No se han generado lockfiles ni instalado dependencias.
+
+Revalidación Astra: [Django6.1](https://docs.djangoproject.com/en/6.1/releases/6.1/) añade fetch modes y acciones de borrado en DB; CSP/fragments ya proceden de6.0. Las cascadas de DB no son mecanismo de auditoría porque no ejecutan necesariamente señales de aplicación. [Compatibilidad DB](https://docs.djangoproject.com/en/6.1/ref/databases/) exige PostgreSQL15+ y psycopg3.1.12+; 17 sigue selección propia, no mínimo del framework. El [calendario Django](https://www.djangoproject.com/download/) prevé6.2LTS en2027 y transición posterior de nomenclatura: no planear una supuesta7.0 sin revalidar.
+
+MFA queda concretado como candidato en [M01](../specs/runtime-masters.md). Las [notas allauth](https://docs.allauth.org/en/latest/release-notes/recent.html) verificadas al corte declaran soporte Django6.1 desde65.19.0 y65.19.3 publicado2026-09-11 corrige carreras TOTP/recovery y limitación concurrente. No fijar65.19.0 solo por compatibilidad; elegir parche soportado al autorizar código y probar esos contraejemplos. Es investigación de dependencia, sin instalación CasPro.
 
 ## Servicios de Supabase por separado
 

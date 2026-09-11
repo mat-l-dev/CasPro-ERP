@@ -10,7 +10,7 @@ Propietario: Product/Architecture. Estado: programa documental ampliado por [ADR
 | M01 | Plataforma aislada y recuperable | Runtime/access/audit/operations specs congeladas | Bootstrap + entidad/acceso/audit + restore base | Sol 5.6 orquesta WOs; Astra checkpoint de seguridad |
 | M02 | Maestros confiables | Parties/Catalog/import specs | Party, bienes/SKU/precios, import preview | IA no necesaria |
 | M03 | Stock/dinero observables y pedido externo durable | Inventory/Treasury/Jumpseller specs | Apertura, movimientos/cobros base, inbox/propuesta | IA no confirma; evaluación futura recopila casos |
-| M04 | Primera venta B2C segura | SP2 actualizado + CPE/delivery/UX policy | Pedido→pago íntegro→reserva→despacho→CPE externo→email | Solo explicación de excepción, si existe piloto separado |
+| M04 | Primera venta B2C segura | SP2 actualizado + CPE/delivery/UX policy | Pedido, cobro íntegro y reserva habilitan despacho; CPE externo se obtiene en su oportunidad legal, incluso antes del despacho; entrega documental por aprobación | Solo explicación de excepción, si existe piloto separado |
 | M05 | Compra a pago controlado | P2P + Tax de compra + conteo specs | PO/receipt/service/CPE/match/payable/payment | Matching IA solo candidato después del determinista |
 | M06 | Control financiero y corporate | Treasury reconciliation + Corporate/Mutuo validation | Extractos, conciliación, cash position; expediente corporate | Primer piloto de candidatos bancarios, humano obligatorio |
 | M07 | Ledger y cierre | Accounting policies/R2R/PCGE specs + revisión profesional | Posting, GL, conciliaciones, períodos, ajustes/cierre | Sugerencia contable opcional sin escritura |
@@ -64,7 +64,7 @@ Ruta explícita de entrega: **repositorio documental (M00) → primer ERP ejecut
 |---|---|
 | Business outcome / why now | Identidades, bienes y precios versionados antes de pedidos/stock |
 | Dependencies | M01 |
-| Canonical docs | model, boundaries, data, charter, futuro master-data spec |
+| Canonical docs | model, boundaries, data, charter y [maestros profundos](../specs/runtime-masters.md) |
 | Research / human decisions | atributos reales mínimos y unidades; no crear Customer duplicado |
 | Regulatory / technical / security gates | PII/identidad fiscal, exactitud Decimal, bulk validate→preview→confirm |
 | UX deliverable / AI role | selectores, búsqueda, import preview; IA fuera |

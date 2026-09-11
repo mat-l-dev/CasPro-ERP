@@ -18,7 +18,11 @@ El puerto inbound traduce a `ObservedOrder`: conexión/ID opaco, estado comercia
 
 El puerto outbound stock recibe destino/resolución remota validada, entero no negativo, revisión del objetivo, generación de reconciliación y attempt ID. El puerto email recibe remitente autorizado, destinatario efectivo, contenido/adjuntos congelados, propósito, clave idempotente y correlación opaca. Respuesta común tipada: CONFIRMED(external ID/observación), REJECTED_KNOWN, TRANSIENT_NOT_SENT o UNKNOWN. Error del SDK no define por sí mismo si se ejecutó el efecto.
 
+ProductsLocations requiere location_id, product_id, stock_unlimited y stock en el esquema leído; variant_id según destino comprobado. El adapter de stock finito fija `stock_unlimited=false` explícitamente y verifica esa condición al reconciliar; nunca copia el `true` del ejemplo oficial. No manda campos de precio/descripción ni adopta credenciales de los ejemplos.
+
 Las páginas oficiales describen reducción al pasar New→Pending, sin otro descuento al pagar, y reposición por abandono/cancelación; otra página habla de descuento al fulfillment. También hay cifras de retries incompatibles entre secciones. Se registra la discrepancia [S21/S26](../decisions/sources.md). No se fija una semántica de stock por intuición: cuenta/plan/checkout/ubicación y transiciones deben comprobarse en una validación autorizada posterior.
+
+Revalidación documental 2026-09-11: [OpenAPI oficial](https://api.jumpseller.com/swagger.json), enlazado desde [API support](https://jumpseller.com/support/api/), versión declarada1.0.0, SHA256 del JSON descargado `51f95c9c2586ea3980894b79f360d1f04e0db1974ab4eba0ec2ebacd63b2697d`. PUT producto/variante/ProductsLocations documenta stock y scope `write_products`; esas operaciones no documentan parámetro/encabezado de precondición de versión. Búsqueda de If-Match/ETag/compare-and-set en ese artefacto sin coincidencias: prueba ausencia en el contrato leído, **no imposibilidad universal del proveedor**. [Locations](https://jumpseller.com/support/locations/) sigue describiendo descuento al fulfillment y [webhooks](https://jumpseller.com/support/webhooks/) conserva firma HMAC/raw body y cifras de retry contradictorias. Se mantiene PENDING VALIDATION del protocolo de stock; no se hizo petición autenticada, PUT ni prueba contra tienda.
 
 ## Recepción y selección de pedidos
 

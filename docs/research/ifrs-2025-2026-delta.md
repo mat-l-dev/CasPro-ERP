@@ -39,7 +39,27 @@ Los [términos oficiales](https://www.ifrs.org/supporting-implementation/support
 
 **CASPRO DECISION**: plantillas, miembros de rubro, función/naturaleza, políticas y comparativos llevan versión de marco. No crear dos ledgers operativos ni prometer cumplimiento NIIF 18 a un paquete NPIF. Antes de primera salida NIIF, política profesional debe fijar transición, información comparativa y efectos de NIC 7; conservar esa capacidad hoy evita reconstrucción.
 
-## PYMES: marco autónomo, no subconjunto de códigos NIIF
+## Cotejo de la transición NIIF 18
+
+### Cotejo adicional del texto NIIF18
+
+Se descargó el [texto oficial español NIIF18 del set2025](https://cdn.www.gob.pe/uploads/document/file/9033228/7425575-niif18-presentacion-de-informacion-a-revelar-en-los-estados-financieros.pdf?v=1763743542),96p, SHA-256 `b5b9610aa5e95e2762c8dd262b56d46e79dce06bbccd2827aa3c7ed3f51380a7`. Lectura selectiva, incluido apéndiceC completo pp92–93: C1 efectiva2027/anticipable; C2 retroactiva con excepción informativa específica; C3 exige conciliación por partida del resultado del comparativo inmediato entre importes NIIF18 y los antes presentados con NIC1. C4–C5 precisan intermedios NIC34 del primer año; C6 permite conciliaciones adicionales; C7 contiene elección limitada para ciertas inversiones, no permiso general de cambiar medición; C8 sustituye NIC1.
+
+CasPro preserva membresía de rubros y versión previa para producir esa conciliación; guardar únicamente PDF no basta. El apéndiceD de este volumen remite a cambios ya incorporados en otras normas: no se declara aquí leído todo el texto NIC7 enmendado. Antes de activar NIIF completas se cotejarán clasificación de intereses/dividendos y arranque del método indirecto; el EFE directo NPIF actual conserva naturaleza del flujo y no usa categorías de resultados como equivalencia automática.
+
+El cotejo selectivo incluye §§41–43,69–73,78–83,117–125. Consecuencias para el contrato de reporting, condicionadas a activar NIIF completas:
+
+| Requisito verificado | Información que CasPro conserva |
+|---|---|
+| Resultado operativo, resultado antes de financiación/impuesto y resultado total; excepción específica §73 | Categoría de cada partida y política del negocio principal; no subtotal universal calculado por prefijo PCGE |
+| Agregar por características compartidas y separar diferencias materiales | Dimensión/naturaleza, juicio de materialidad, membresía y etiquetas explicativas; “otros” no oculta partidas |
+| Gastos operativos por naturaleza, función o combinación pertinente | Atribución conservada por naturaleza/función. Si presenta función, evaluar nota de depreciación, amortización, empleados, deterioro y rebajas de inventario con sus reversiones |
+| MPM definidas por uso externo y contenido; nota única con conciliaciones | Fórmula/versiones, subtotal comparable, ajustes, efectos fiscales y participación no controladora cuando exista; motivos de cambio y comparativos. Un dashboard interno no dispara la nota |
+| Reubicación de requisitos antes en NIC1 | Referencias por edición a NIC8 (bases de preparación) y NIIF7; no diseñar un validador futuro que busque todo en NIC1 |
+
+Estos datos pertenecen a interpretación/auxiliares/reporting; no obligan a Sales a decidir categorías NIIF ni a reconstruir transacciones previas.
+
+## Transición PYMES por edición
 
 Se leyeron los cuatro folios de la [RCNC 005-2025-EF/30](https://cdn.www.gob.pe/uploads/document/file/9018597/7415104-rcnc005_2023ef30.pdf?v=1763562685): resolución 10-11-2025; art.2 remite a fecha propia. El nombre del archivo contiene “2023”, pero su contenido es 005-2025; no usar el filename como fecha normativa. Se adquirió el [texto oficial español 2025](https://cdn.www.gob.pe/uploads/document/file/9018598/7415104-niif-para-las-pymes.pdf?v=1763562777), 360 páginas, SHA-256 `f1db148625db28d236ff7933817b0a8588a609f89c20efdbc9a65bd33b212fc4`; lectura selectiva de secciones aplicables, no afirmación de lectura integral del volumen.
 

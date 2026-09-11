@@ -19,6 +19,8 @@ EFE utiliza movimientos brutos y asignaciones aprobadas por naturaleza; transfer
 
 Descarga y drill-through verifican autorización por dueño. Usuario con permiso de paquete pero sin expediente privado ve cifra y referencia permitida, no obtiene acceso al contrato por seguir un enlace. Pérdida de detalle autorizado se explica sin filtrar datos ajenos.
 
+R02/R03 son un caso coordinado por Accounting: entrega a Documents un snapshot/mandato autorizado por valor y recibe identidad/hash de la representación. Documents no consulta el mayor ni llama hacia Accounting para reconstruir cifras. Render/lectura de bytes ocurren fuera de locks; la fase corta final verifica snapshot/revisión y vincula el artefacto. Una representación tardía de un paquete sustituido permanece identificada como tal, no vuelve a publicarlo como vigente.
+
 ## Golden G1: período completo y comparativo
 
 Fixture PEN, moneda funcional/presentación PEN, cifras a centavos. Comparativo P0 es un snapshot contable de prueba provisto como entrada, con soporte sintético; no se infiere una exoneración fiscal real de sus cifras. P1 tiene operaciones gravadas hipotéticas con IGV18% e inputs de crédito plenamente elegible **solo para este caso**. RER1.5% se usa como cálculo fiscal; su clasificación de gasto en este golden es candidata y requiere H1. No deducir regla legal de una columna de prueba.

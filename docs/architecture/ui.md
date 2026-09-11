@@ -41,6 +41,20 @@ Objetivo WCAG 2.2 AA: etiquetas y errores asociados, teclado completo, foco visi
 
 ## Teclado y seguridad de acciones
 
+### Iconos, emojis y tokens
+
+Selección de diseño candidata: Lucide SVG, una sola familia de trazo/tamaño y nombres semánticos internos; servir solo el subconjunto usado como assets locales. La [licencia oficial](https://lucide.dev/license) es ISC y conserva avisos MIT para iconos derivados de Feather: mantener ambos avisos aplicables en la distribución. No usar SF Symbols ni assets propietarios Apple. Un icono decorativo es oculto al lector de pantalla; un botón solo con icono tiene nombre accesible visible mediante ayuda, sin depender exclusivamente del tooltip.
+
+Emojis ocasionales y profesionales acompañan texto en navegación/ayuda o identificación de una sección (p.ej. 📦 Inventario, 📎 Evidencia). No reemplazan estado, importe, error ni acción; no llenan cada fila o botón. Evitar dependencia del color/glifo de un sistema, y comprobar lectura/contraste en LIGHT/DARK/SYSTEM. Imprimir/exportar mantiene significado textual aun sin glifo.
+
+Tokens obligatorios: fondo/superficie/texto primario-secundario/borde/foco/selección y estados success/warning/danger/info; tipografía y números tabulares; escala de espacio, objetivo interactivo y densidad; movimiento normal/reduced. Cada tema mapea roles, no invierte colores mecánicamente. Target WCAG AA con zoom/reflow, foco no tapado por panel fijo y errores anunciados; valores cromáticos finales se eligen y miden al construir componentes, no se declaran accesibles por nombre.
+
+### Registro de atajos y foco
+
+Registro único por acción: ID, combinación configurable, alcance global/página/dialog/modal/tabla, etiqueta/ayuda, prioridad, condición de disponibilidad y manejo de conflicto. Paleta y búsqueda tienen botón visible; proponer Ctrl/Cmd+K solo tras probar conflictos del navegador/lector. Escape cierra el panel superior y devuelve foco a su invocador, sin descartar un formulario sucio sin aviso. Dentro de edición de texto no capturar letras, flechas o atajos nativos globalmente. Atajos de una tecla se pueden desactivar/remapear y no están activos mientras se escribe.
+
+Tabla de lectura usa HTML table con enlaces/botones y Tab normal. Solo una tabla realmente interactiva adopta [patrón grid WAI-ARIA](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) y su contrato completo de foco/celdas; añadir role=grid no crea navegación accesible. Selección, paginación y edición son estados distintos. Tras filtro/swap restaurar foco a control estable, anunciar número de resultados y conservar selección solo si las filas siguen válidas. Ayuda muestra atajos disponibles en ese contexto.
+
 Todo recorrido frecuente debe completarse con teclado y foco predecible. Se respetan atajos del navegador/sistema; los atajos CasPro se limitan a navegación, búsqueda y comandos frecuentes, se muestran junto a la acción y pueden descubrirse desde ayuda. Una sola tecla no confirma despacho, pago, ajuste, cierre, CPE, email o borrado. El atajo puede abrir/preparar el formulario; la misma revisión, permiso, idempotencia y confirmación semántica del control visible siguen aplicando. Los cambios HTMX restauran foco por identidad y anuncian resultados.
 
 ## Tablas, edición y cifras

@@ -31,7 +31,7 @@ Pruebas habilitantes M01: PostgreSQL real para RLS/FKs/roles y pooling; revocaci
 
 Party identifica persona/organización; los roles cliente/proveedor/socio no crean duplicados por sí solos. Identificador fiscal requiere país/tipo/valor normalizado y estado de verificación; no inventar RUC a consumidores anónimos. Un nombre o cuenta bancaria no demuestra identidad. Relación entre pagador y cliente se acredita en Treasury/Corporate, no mediante merge silencioso de Party.
 
-SKU vendible inicial es un bien. Separar bienes inventariables, bienes no stock y servicios comprados; una unidad de servicio no entra al kardex. Unidad base y política de serial son contratos del SKU; tras movimientos no se cambian para reinterpretar cantidades históricas. Unidades alternativas requieren conversión exacta/versionada. Lotes se activan por trazabilidad real; no columna obligatoria vacía para todos.
+SKU vendible inicial es un bien. Catalog posee bienes; Procurement posee conceptos de servicios comprados y líneas no inventariables, sin crear un SKU de servicio vendido. Una unidad de servicio no entra al kardex. Unidad base y política de serial son contratos del SKU; tras movimientos no se cambian para reinterpretar cantidades históricas. Unidades alternativas requieren conversión exacta/versionada. Lotes se activan por trazabilidad real; no columna obligatoria vacía para todos.
 
 | Caso / capacidad / clase | Reads / locks | Writes / pre-post / corrección |
 |---|---|---|
