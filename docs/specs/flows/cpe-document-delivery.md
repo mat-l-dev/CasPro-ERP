@@ -1,6 +1,6 @@
 # SP2 — CPE externo, archivo y entrega documental
 
-Propietarios: Sales conserva CPE de venta/vínculo comercial; Documents conserva archivo, disponibilidad, política e intención de entrega. Adaptadores SUNAT/Resend ejecutan consultas/envíos concretos fuera de transacción. No nuevo Document Vault ni plataforma CRM/email. Estas son las fuentes locales de estados; [CM0](../cross-cutting/command-matrix.md#cm0) completa fichas, [integraciones](jumpseller-external-work.md) posee jobs y protocolo externo. HP4/HP5 de [alcance](first-operational-circuit.md) delimitan decisiones de política.
+Propietarios: Sales conserva CPE de venta/vínculo comercial; Documents conserva archivo, disponibilidad, política e intención/historia de entrega. Adaptadores ejecutan consultas/envíos concretos fuera de transacción; Resend es proveedor inicial opcional. No nuevo Document Vault ni plataforma CRM/email. Estas son las fuentes locales de estados; [CM0](../cross-cutting/command-matrix.md#cm0) completa fichas, [integraciones](jumpseller-external-work.md) posee jobs y protocolo externo. HP4/HP5 de [alcance](first-operational-circuit.md) delimitan decisiones de política. La sección de registro externo/C40 es delta del [amendment pendiente](../../evidence/b2b-financing-amendment.md).
 
 ## Identificar, adquirir, vincular y verificar
 
@@ -105,6 +105,25 @@ Antes de C07 se materializan adjuntos/render necesarios fuera de DB bajo autoriz
 
 Una intención preparada que cambió antes de dispatch se puede volver a presentar: en MANUAL, C34 REQUEST_MANUAL_DISPATCH referencia esa intención y revisión con autorización de envío nueva; en AUTO_WITH_APPROVAL, C35 aprueba la revisión nueva; AUTO reevalúa el mandato de política. Se conserva la identidad empresarial original o de reenvío, sin otro original ni otro intento mientras exista uno en vuelo/UNKNOWN. C39 por sí solo nunca solicita dispatch.
 
+## Entrega externa registrada y proveedor opcional
+
+**DOCUMENT DELIVERY ≠ RESEND.** Documents permite (A) envío por adaptador Resend habilitado, (B) otro adaptador futuro autorizado, (C) registro de envío realizado externamente por el operador. MANUAL significa solicitud de envío desde CasPro; C40 registra un hecho externo ya ocurrido y no envía nada. Resend deshabilitado no impide archivo, consulta, preparación o C40. DISABLED/HOLD siguen bloqueando cualquier nuevo dispatch desde CasPro, pero no la conservación de hechos externos ocurridos, incluso como excepción a política.
+
+Registrar purpose, documento/CPE, versión/hash **cuando se conozcan**, destinatario utilizado, remitente/canal observados, fecha/hora de envío y precisión/zona conocida, fecha de registro, actor, evidencia/referencia, notas y alcance del estado. No inventar hash, hora exacta, ID de proveedor o identidad de destinatario: dato no acreditado queda desconocido y restringe qué puede concluirse. La evidencia puede ser correo original/exportación, referencia verificable o declaración del operador, con fuerza/procedencia diferenciadas y bytes privados. Si ni siquiera se identifica el documento/finalidad, se conserva evidencia pendiente de asociación, sin afirmar entrega de un CPE concreto.
+
+| Evidencia conocida | Presentación/efecto |
+|---|---|
+| Operador registra que lo envió, con fuente/alcance | «Envío externo registrado»; no callback técnico ni recepción probada |
+| Constancia de proveedor/servidor externo | Estado observado y fuente exacta, sin fabricar attempt Resend |
+| Acuse del destinatario | «Recepción acreditada por evidencia externa», con versión conocida/limitaciones; no validación fiscal ni aceptación comercial automática |
+| Datos insuficientes, contradictorios o envío incierto | «Resultado externo incierto» y revisión/HOLD, no NOT_SENT por ausencia de callback |
+
+El registro se asocia al dossier/primera finalidad existente o crea su historial protegido por la misma unicidad. Si existe intención preparada, conserva esa identidad y registra la observación sin inventar ejecución de su contenido. El envío conocido/alegado del mismo CPE/finalidad impide nueva primera entrega automática aunque falte hash o solo conste «enviado». Ambigüedad bloquea automatismo hasta resolución. Un reenvío posterior usa C37, motivo, resultado previo resuelto, contenido y aprobación actuales; puede referenciar historia original externa sin attempt interno.
+
+C40 y C07 compiten por las raíces C/D/N del dossier. Registro externo confirmado antes de autorizar dispatch invalida aprobación/primera entrega pendiente. Si el envío CasPro ya fue autorizado, no puede deshacerse la llamada en vuelo: conservar ambos hechos, señalar posible duplicidad y detener reintentos. Una corrección del registro externo crea revisión/motivo/evidencia; nunca borra protección ni convierte historia desconocida en «nunca enviado». Cambiar proveedor tampoco reinicia identidad de entrega o política de deduplicación.
+
+No se construye integración de correo entrante, importador universal de mensajes ni conector WhatsApp para C40. Sus campos de propósito/canal/procedencia son evidencia neutral mínima.
+
 ## Resend: resultado e incertidumbre
 
 Retry mantiene intención, clave, destinatario y contenido exactos; solo se habilita tras prueba de no ejecución o resolución reconciliada compatible. Timeout o proceso caído después de registrar dispatch → UNKNOWN/HOLD y consulta/revisión antes de repetir; no retry ciego dentro ni fuera de las 24 h del proveedor. Vencida esa ventana, la unicidad local sigue viva; si no puede determinarse el resultado, no fabricar otro original ni despejar HOLD por tiempo transcurrido.
@@ -132,6 +151,17 @@ LOCAL/CI: adaptador de captura local sin SDK/credenciales/transporte Resend real
 PRODUCTION usa destinatario empresarial permitido por política. Ningún modo/reenvío elude la guardia de entorno. Cambio de allowlist/remitente/configuración relevante invalida payload/aprobación pendientes y obliga a preparar nuevamente; jamás cambiar solo el transporte manteniendo aprobación del contenido anterior. La configuración de restore empieza con efectos desactivados. Gate EMAIL-ENV debe demostrar estas negativas antes de habilitar proveedor; no enviar email real en LOCAL/CI para probarlo.
 
 ## Fichas documentales (CM0)
+
+<a id="c40"></a>
+### C40 — Registrar o corregir entrega externa conocida
+
+- **OWNER / PURPOSE:** Documents; preservar observación y evidencia externa, sin solicitud de envío. Capacidad `documents.record_external_delivery`; corregir requiere esa capacidad, motivo y revisión esperada.
+- **INPUT / READS:** documento/CPE/finalidad, datos realmente conocidos de envío/recepción, fuente, evidencia versionada, actor, alcance y original corregido si procede; historial, primera intención y dispatch/aprobación actuales. Verificar pertenencia, acceso y correspondencia, sin exigir entregabilidad actual para capturar un hecho pasado.
+- **LOCKS / LOCK ORDER:** I → S/C si CPE vinculado → D → N → J si invalida trabajo pendiente; UNIQUE de identidad de registro y primera finalidad. Para otro documento se omiten raíces Sales/CPE. El documento todavía no identificado queda evidencia pendiente, no historial de entrega confirmado.
+- **WRITES / PRE / POST:** observación/historia/auditoría/idempotencia atómicas; detener nueva primera entrega o marcar carrera ya autorizada. Sin dato suficiente no afirmar recepción ni disponibilidad de bytes. No crear callback, intento técnico, dinero, estado fiscal ni job de envío.
+- **IDEMPOTENCY / RETRY / FAILURES:** D/CM0; mismo registro devuelve resultado; identidad externa fuerte se reconcilia dentro de su origen/cuenta; coincidencia email/fecha no fusiona. AUTH_DENIED/WRONG_OWNER/REVISION_CONFLICT/INSUFFICIENT_LINK_EVIDENCE; incertidumbre se conserva.
+- **EVENTS / AUDIT:** ExternalDocumentDeliveryRecorded/Corrected, quién/qué/cuándo/fuente/motivo/versión; cambio relevante invalida aprobación. Es evidencia documental, no hecho económico de venta.
+- **EXTERNAL I/O / REVERSAL/CORRECTION:** ninguno; lectura de bytes fuera de TX según C31/C32. Rectificación nueva conserva original y protección de entrega; resultado ambiguo requiere resolución autorizada antes de reenvío C37.
 
 <a id="c30"></a>
 ### C30 — Registrar identidad de CPE externo
@@ -214,7 +244,7 @@ PRODUCTION usa destinatario empresarial permitido por política. Ningún modo/re
 ### C37 — Solicitar reenvío explícito
 
 - **OWNER / PURPOSE:** Documents; nueva intención ligada al original, no CPE nuevo.
-- **INPUT / READS:** CPE/original, destinatario/contenido/artefactos elegidos, razón y clave nueva; resultado anterior conocido/reconciliado, política, permiso y HOLD efectivo.
+- **INPUT / READS:** CPE/original interno o historia original externa de C40, destinatario/contenido/artefactos elegidos, razón y clave nueva; resultado anterior conocido/reconciliado, política, permiso y HOLD efectivo. Una historia externa no requiere inventar intento técnico previo.
 - **LOCKS / LOCK ORDER:** I → S → C → D → N → J; original consultado bajo el mismo dossier y nueva intención por identidad única.
 - **WRITES / PRE / POST:** intención RESEND nueva y aprobación según modo; CPE inalterado. UNKNOWN previo no se resuelve creando reenvío; insumos completos y hold liberado con evidencia. Dispatch MANUAL exige solicitud explícita y documents.send además de documents.resend; la creación y aprobación automática siguen las mismas guardas de C34/C35.
 - **IDEMPOTENCY / RETRY / FAILURES:** D; CM0; ORIGINAL_OUTCOME_UNKNOWN/HOLD/RECIPIENT_INVALID/NOT_DELIVERABLE; doble click con misma clave devuelve mismo reenvío.
