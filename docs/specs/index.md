@@ -48,6 +48,6 @@ Las nueve filas tienen entradas/salidas, propietarios, estados/comandos, guardas
 
 ## Handoff posterior
 
-La secuencia obligatoria es aceptación independiente del freeze → investigación dedicada de skills útiles → regeneración de WOs acotadas → autorización explícita de implementación. Las [seis WOs SP2](../history/work-orders-sp2.md) son insumos históricos NEEDS REGENERATION AFTER FREEZE: incorporar hechos tempranos, pool/revisiones, CM0 extendido, CPE, UX y gates locales antes de encargarlas.
+El freeze y la revisión independiente de arquitectura de información ya están aceptados conforme a [review](../review.md). La siguiente fase es investigación dedicada de skills útiles → skills → regeneración de WOs acotadas → autorización explícita del propietario → implementación. Las [seis WOs SP2](../history/work-orders-sp2.md) son insumos históricos NEEDS REGENERATION AFTER FREEZE: incorporar hechos tempranos, pool/revisiones, CM0 extendido, CPE, UX y gates locales antes de encargarlas.
 
 Contexto futuro: AGENTS → review → tarjeta de hito → spec y dependencias concretas → gates/perfil de evidencia. Sol orquesta; implementador y reviewer trabajan separados; Astra revisa arquitectura, dinero/stock, Accounting/Tax/Legal, seguridad o contraejemplo transversal. Ninguna etiqueta de readiness ni skill autoriza funciones, migraciones, pruebas o despliegues.
