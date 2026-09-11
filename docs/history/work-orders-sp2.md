@@ -12,7 +12,7 @@ Esta tranche permite empezar sin crear todos los modelos económicos en un solo 
 
 ## Perfiles de evidencia
 
-Son selección de propiedades, no arquitectura quick/full/risk3 ni comandos del runner actual. Identidades de escenarios viven en [aceptación](acceptance.md). Las WOs referencian estos perfiles y sus recortes explícitos. Se deduplica la unión de casos/configuraciones según QA; sin manifiesto/equivalencia demostrada no se reutiliza parcialmente por «módulo sin cambios».
+Son selección de propiedades, no arquitectura quick/full/risk3 ni comandos del runner actual. Identidades de escenarios viven en [aceptación](../specs/acceptance/operational-scenarios.md). Las WOs referencian estos perfiles y sus recortes explícitos. Se deduplica la unión de casos/configuraciones según QA; sin manifiesto/equivalencia demostrada no se reutiliza parcialmente por «módulo sin cambios».
 
 | Perfil | Categorías y escenarios mínimos | Configuración/evidencia y límite |
 |---|---|---|
@@ -38,7 +38,7 @@ Resultado reutilizable: manifestar candidato/insumos, casos/subafirmaciones, par
 | RUNTIME | Cierre WO-SP2-01: compatibilidad/locks y separación de categorías demostradas, sin afirmar todos los mecanismos aceptados |
 | ISOLATION | Cierre WO-SP2-02, antes de implementar operaciones sensibles de WO-SP2-03 en adelante. Evidencia runtime, inventario/policies/grants, negativas de configuración, conexión/rollback y frontera construida conforme ADR-005 |
 | ISOLATION-EXTENSION | Cada nueva tabla/entrypoint requiere su evidencia antes de habilitarlo; gate anterior no cubre workers/imports/exports inexistentes. Fallo detiene ese alcance, no manager como sustituto silencioso de RLS |
-| STOCK-PUBLISH | Antes de escritura de stock positiva desatendida; demostrar condiciones y carreras de [integraciones](integrations.md#stock-publication). No es parte cumplida por WO-SP2-06 inbound |
+| STOCK-PUBLISH | Antes de escritura de stock positiva desatendida; demostrar condiciones y carreras de [integraciones](../specs/flows/jumpseller-external-work.md#stock-publication). No es parte cumplida por WO-SP2-06 inbound |
 | EMAIL-ENV | Antes de habilitar transporte Resend; casos negativos LOCAL/CI/STAGING/HOLD/ambigüedad de VP-SP2-DOC y activación autorizada |
 | OPERATION | Políticas HP aplicables, UI crítica, recuperación y circuito completo con evidencia; terminar esta spec o estas seis WOs no lo cierra |
 
@@ -54,7 +54,7 @@ Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** NEEDS REGEN
 | Campo | Encargo preparado |
 |---|---|
 | WO-ID / Goal | WO-SP2-01; runtime Django mínimo instalable y selección de evidencia aislada, sin negocio |
-| Canonical spec | [Alcance](first-operational-circuit.md), [tecnología](../architecture/technology.md), [QA](../quality/strategy.md), ADR-002/009 |
+| Canonical spec | [Alcance](../specs/flows/first-operational-circuit.md), [tecnología](../architecture/technology.md), [QA](../quality/strategy.md), ADR-002/009 |
 | Context required | Esas secciones + AGENTS; no cargar specs CPE/Inventory para bootstrap |
 | Files expected | Futuros pyproject.toml/uv.lock y configuración mínima necesaria en src/caspro/config; tests de configuración/UNIT aislados y documentación breve de uso real. Solo directorios con archivos que tengan consumidor |
 | Required behavior | Instalar/runtime fijados, configuración falla explícitamente si incompleta; seleccionar UNIT sin importar Django/DB, distinguir categorías y producir identidad de evidencia |
@@ -73,7 +73,7 @@ Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** NEEDS REGEN
 | Campo | Encargo preparado |
 |---|---|
 | WO-ID / Goal | WO-SP2-02; después WO-SP2-01, identidad/selección de entidad/membresía y aislamiento ejecutable habilitante |
-| Canonical spec | [Workspace/C00](first-operational-circuit.md#c00), [acceso](../architecture/tenancy-access.md), ADR-001/005 y [CM0](command-matrix.md#cm0) |
+| Canonical spec | [Workspace/C00](../specs/flows/first-operational-circuit.md#c00), [acceso](../architecture/tenancy-access.md), ADR-001/005 y [CM0](../specs/cross-cutting/command-matrix.md#cm0) |
 | Context required | Separación Identity/Organization/Access, excepciones globales mínimas y gate ISOLATION; no cargar circuito entero |
 | Files expected | Futuros modules/workspace y audit mínimos con APIs/queries/migraciones reales; config de roles/contexto y pruebas PostgreSQL/entrypoints construidos; sin modelos económicos de ejemplo |
 | Required behavior | C00, bootstrap administrativo acotado, selección solo entre membresías; perfil/establecimientos empresariales protegidos, denegar sin contexto/capacidad y materializar lecturas antes de salir de transacción |
@@ -92,7 +92,7 @@ Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** NEEDS REGEN
 | Campo | Encargo preparado |
 |---|---|
 | WO-ID / Goal | WO-SP2-03; después ISOLATION, crear/consultar/corregir Party y Product/SKU mínimos de la slice |
-| Canonical spec | [Parties/Catalog y C11/C12](first-operational-circuit.md), [modelo](../domain/model.md), [datos](../architecture/data.md) |
+| Canonical spec | [Parties/Catalog y C11/C12](../specs/flows/first-operational-circuit.md), [modelo](../domain/model.md), [datos](../architecture/data.md) |
 | Context required | Maestros/snapshots/identidades, acceso y contratos públicos; no Resend/colas |
 | Files expected | Futuros modules/parties y catalog con APIs/queries/constraints/migraciones y pruebas propias/consumidores de acceso; config solo al conectar los módulos reales |
 | Required behavior | Identidad tipada/contactos/versiones, SKU/unidad/paso/estado y precio con base explícita; no fusión por email, no stock en Catalog |
@@ -111,7 +111,7 @@ Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** NEEDS REGEN
 | Campo | Encargo preparado |
 |---|---|
 | WO-ID / Goal | WO-SP2-04; después WO-SP2-03, posiciones/movimientos de apertura y ajustes trazables, sin venta aún |
-| Canonical spec | [Inventory/C13](sales-stock-treasury.md#c13), [cantidades/coste](sales-stock-treasury.md), [matriz](command-matrix.md) |
+| Canonical spec | [Inventory/C13](../specs/flows/sales-stock-treasury.md#c13), [cantidades/coste](../specs/flows/sales-stock-treasury.md), [matriz](../specs/cross-cutting/command-matrix.md) |
 | Context required | P/N/A, apertura, serial/posesión y coste de origen; cláusulas de reservas como contrato a respetar cuando exista su consumidor |
 | Files expected | Futuros modules/inventory con APIs/queries/migraciones y pruebas de posición/apertura/ajuste/serial/coste; sin tablas Sales ficticias |
 | Required behavior | C13 de apertura/ajuste/condición, identidad de origen única, cantidades/costes y UNKNOWN explicables, lectura de disponibilidad de posiciones |
@@ -130,7 +130,7 @@ Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** NEEDS REGEN
 | Campo | Encargo preparado |
 |---|---|
 | WO-ID / Goal | WO-SP2-05; después WO-SP2-03, registrar cuenta y cobro con evidencia sin crear dinero desde canal |
-| Canonical spec | [Treasury/C16](sales-stock-treasury.md#c16), [C17](sales-stock-treasury.md#c17), [C23](sales-stock-treasury.md#c23) y [dinero](../domain/invariants.md) |
+| Canonical spec | [Treasury/C16](../specs/flows/sales-stock-treasury.md#c16), [C17](../specs/flows/sales-stock-treasury.md#c17), [C23](../specs/flows/sales-stock-treasury.md#c23) y [dinero](../domain/invariants.md) |
 | Context required | HP2, cuentas/propuestas/referencias/confirmación, datos exactos y auditoría; no construir objetivos de Sales inexistentes |
 | Files expected | Futuros modules/treasury mínimos con APIs/queries/migraciones y pruebas de cuenta/propuesta/cobro; Documents solo contrato de referencia a evidencia, sin archivo funcional anticipado |
 | Required behavior | Cuenta tipada, propuesta que no suma dinero, confirmación humana con referencia/evidencia suficiente y U íntegro sin aplicar; dedupe por referencia además de request |
@@ -149,7 +149,7 @@ Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** NEEDS REGEN
 | Campo | Encargo preparado |
 |---|---|
 | WO-ID / Goal | WO-SP2-06; después WO-SP2-03/04/05, recibir/reconciliar pedidos y mostrar propuesta pendiente con referencias locales |
-| Canonical spec | [C01–C04/C06–C10](integrations.md), [resolución comercial](sales-stock-treasury.md), [C11/C12 mapping](first-operational-circuit.md) y matriz |
+| Canonical spec | [C01–C04/C06–C10](../specs/flows/jumpseller-external-work.md), [resolución comercial](../specs/flows/sales-stock-treasury.md), [C11/C12 mapping](../specs/flows/first-operational-circuit.md) y matriz |
 | Context required | Contratos de conexión/HMAC/Decimal/orden/generaciones, estados de propuesta, maestros y lectura de stock/dinero; no cargar CPE/email |
 | Files expected | Futuros integrations/jumpseller, caso observado de modules/sales, correspondencias neutrales Parties/Catalog y backend worker simple solo para refresh/procesamiento; pruebas de frontera/rol/recuperación; UI mínima de pendiente si se autoriza en esta WO |
 | Required behavior | Inbox antes de 2xx; firma y entidad correctas, deduplicación por recurso/identidad, lecturas paginadas/individuales con generaciones, mapping explícito y resolución de propuesta; ninguna venta/reserva/dinero por webhook |
@@ -162,4 +162,4 @@ Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** NEEDS REGEN
 | Explicit non-goals | C14/aceptación, entrega física, escritura de stock, Resend/SUNAT, devolución, CRM/otros canales y framework de colas universal |
 | Review específico | Refutar replay, headers no firmados, A→B→A, página perdida y generación tardía; comprobar que webhook PAID no puede crear dinero |
 
-Estas seis WOs quedan como insumos históricos de M01–M04. Se regeneran **después** de aceptación del freeze e investigación dedicada de skills, con las [deep specs M01–M09](deep-spec-index.md), el contexto mínimo y los [gates pertinentes](../roadmap/decisions-gaps.md). Runtime/acceso siguen siendo primeras dependencias técnicas, sin convertir WO-SP2-01 en próximo encargo automático. Cada nueva WO necesita autorización, candidato/base Git y evidencia de dependencias, sin heredar un PASS fuera de su contrato de equivalencia.
+Estas seis WOs quedan como insumos históricos de M01–M04. Se regeneran **después** de aceptación del freeze e investigación dedicada de skills, con las [deep specs M01–M09](../specs/index.md), el contexto mínimo y los [gates pertinentes](../roadmap/decisions-gaps.md). Runtime/acceso siguen siendo primeras dependencias técnicas, sin convertir WO-SP2-01 en próximo encargo automático. Cada nueva WO necesita autorización, candidato/base Git y evidencia de dependencias, sin heredar un PASS fuera de su contrato de equivalencia.

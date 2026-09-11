@@ -1,6 +1,6 @@
 # M06 — Treasury, conciliación y Corporate
 
-Estado: **SPECIFIED — candidato; financiación PENDING PROFESSIONAL VALIDATION**. Hereda [contrato común](economic-facts.md), [Treasury](../domain/treasury-finance.md), [Corporate](../corporate/architecture.md) y [mutuo investigado](../research/mutuo-tax-corporate.md). La validación del mutuo precede al primer contrato/desembolso, aunque su UI sea M06.
+Estado: **SPECIFIED — candidato; financiación PENDING PROFESSIONAL VALIDATION**. Hereda [contrato común](../cross-cutting/economic-facts.md), [Treasury](../../domain/treasury-finance.md), [Corporate](../../corporate/architecture.md) y [mutuo investigado](../../research/normative/mutuo-tax-corporate.md). La validación del mutuo precede al primer contrato/desembolso, aunque su UI sea M06.
 
 ## Dinero y conciliación son dimensiones distintas
 
@@ -49,7 +49,7 @@ Instrumento financiero: propuesta→validado legal/tributario/contable→autoriz
 | CO04 registrar capitalización / corporate.record_capitalization / D | Acuerdo, formalidades aplicables, deuda confirmada y aprobación I→M→O→T→R→D | Hecho societario y extinción de obligación por mecanismo acreditado; no movimiento ficticio de caja. Accounting determina fecha/clasificación; cancelación posterior necesita acto/corrección, no editar capital |
 | CO05 preparar beneficiario final / corporate.prepare_beneficial_owner / D | Cadena propiedad/control y fechas, perfil de obligación I→M→O→D | Expediente/versiones y propuesta de declaración; envío fuera del ERP inicialmente. Constancia preservada por acto separado; no inferir persona final del representante |
 
-Investigación y validación de mutuo son gate de activación temprano antes de contratar/financiar, incluso si ocurre durante M03/M04; no esperar UI M06. No bloquean diseñar Treasury/Corporate ni construir M01–M05 sin activar financiación. RTF 08044-1-2022 se usa con sus hechos/límites y no como aprobación de tasa0. No aplicar automáticamente artículos26 y32-A simultáneamente. Capitalización, dividendos, fondos para futuro aporte y préstamo mantienen evidencia y evaluación propias; [C06/DH2](../roadmap/decisions-gaps.md#dh2) conserva la pregunta profesional.
+Investigación y validación de mutuo son gate de activación temprano antes de contratar/financiar, incluso si ocurre durante M03/M04; no esperar UI M06. No bloquean diseñar Treasury/Corporate ni construir M01–M05 sin activar financiación. RTF 08044-1-2022 se usa con sus hechos/límites y no como aprobación de tasa0. No aplicar automáticamente artículos26 y32-A simultáneamente. Capitalización, dividendos, fondos para futuro aporte y préstamo mantienen evidencia y evaluación propias; [C06/DH2](../../roadmap/decisions-gaps.md#dh2) conserva la pregunta profesional.
 
 ## Aceptación, UX y handoff
 
@@ -57,4 +57,4 @@ Vista dividida banco/Treasury con selección N:M, saldo de cada fila, diferencia
 
 Casos: dos cobros60/40 contra línea100; dos líneas50/50 contra cobro100; neto97/cobro100/comisión3; mismo nombre/importe dos días, referencias incompatibles; pareja paga por cliente con evidencia; dos usuarios consumen última línea; import solapado con pagos idénticos legítimos; desconciliar no cambia dinero; cobro revocado afecta cobertura/dispatch; cuenta ajena rechazada; ingreso de socio no ventas; capitalización sin caja; gratuidad sin dictamen bloquea autorización; cierre con cargo desconocido visible; IA maliciosa no dispone de puerto de escritura.
 
-DOMAIN conservación/asignaciones; PostgreSQL/CONCURRENCY para consumo único y correcciones; CONTRACT parser; golden financiación con Accounting/Tax; E2E de conciliación y RECOVERY de replay. Astra checkpoint de financiación/conciliación; Sol orquesta; implementador/reviewer distintos. Prohibido inventar formato BBVA, facultades, neutralidad fiscal o tolerancias que creen dinero. [DH2](../roadmap/decisions-gaps.md#dh2)/[DH3](../roadmap/decisions-gaps.md#dh3) y profesionales cierran hechos antes de uso; M06 opcional IA no bloquea la alternativa manual.
+DOMAIN conservación/asignaciones; PostgreSQL/CONCURRENCY para consumo único y correcciones; CONTRACT parser; golden financiación con Accounting/Tax; E2E de conciliación y RECOVERY de replay. Astra checkpoint de financiación/conciliación; Sol orquesta; implementador/reviewer distintos. Prohibido inventar formato BBVA, facultades, neutralidad fiscal o tolerancias que creen dinero. [DH2](../../roadmap/decisions-gaps.md#dh2)/[DH3](../../roadmap/decisions-gaps.md#dh3) y profesionales cierran hechos antes de uso; M06 opcional IA no bloquea la alternativa manual.

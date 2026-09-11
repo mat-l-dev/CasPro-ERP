@@ -21,4 +21,4 @@ VPS inicial es posible si se acepta operación propia. Desplegar código latest 
 
 ## Consequences
 
-Build once/deploy same artifact; rollback condicionado por compatibilidad de schema. Presupuesto/región, RPO/RTO y restore pendientes antes de producción. No Docker ni infraestructura real durante la fundación. Fuentes: [S16/S19/S20](sources.md).
+Build once/deploy same artifact; rollback condicionado por compatibilidad de schema. Presupuesto/región, RPO/RTO y restore pendientes antes de producción. No Docker ni infraestructura real durante la fundación. Fuentes: [S16/S19/S20](../research/technical-sources.md).

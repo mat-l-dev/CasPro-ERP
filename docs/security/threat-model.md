@@ -2,7 +2,7 @@
 
 Activos: dinero/stock, identidad y permisos, expedientes fiscales, evidencias privadas, secretos, releases y posibilidad de recuperación. Fronteras: navegador→Django, aplicación→DB, worker→proveedor, aplicación→objetos, CI→entorno y operador→privilegio.
 
-Todos los controles son **diseñados, no implementados**. OWASP ASVS 5.0 es referencia para seleccionar comprobaciones aplicables, no declaración de certificación [S18](../decisions/sources.md).
+Todos los controles son **diseñados, no implementados**. OWASP ASVS 5.0 es referencia para seleccionar comprobaciones aplicables, no declaración de certificación [S18](../research/technical-sources.md).
 
 | Amenaza / frontera | Abuso representativo | Control de diseño | Evidencia posterior y residual |
 |---|---|---|---|

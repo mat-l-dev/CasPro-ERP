@@ -12,11 +12,11 @@ Runtime futuro: proceso Django WSGI persistente con servidor de producción, pro
 
 Construir imagen OCI una vez, con runtime y assets, publicar por digest y desplegar ese mismo digest en staging/producción. Un contenedor favorece la salida a VPS, pero no se necesita Docker durante esta fase documental. Node 24 LTS/npm solo en build; Python/uv/lock y librerías fijados; ejecución sin privilegios y sin secretos dentro de capas de imagen.
 
-Render soporta imágenes por digest. Selección regional candidata: Virginia para app y DB, verificando conectividad real entre proveedores y latencia desde Perú; estar en la misma región no crea una red privada común [S16](../decisions/sources.md). Conexión TLS verificada, permisos y restricciones de red acordes al plan. No fijar capacidad de máquinas sin datos de carga.
+Render soporta imágenes por digest. Selección regional candidata: Virginia para app y DB, verificando conectividad real entre proveedores y latencia desde Perú; estar en la misma región no crea una red privada común [S16](../research/technical-sources.md). Conexión TLS verificada, permisos y restricciones de red acordes al plan. No fijar capacidad de máquinas sin datos de carga.
 
 ## CI/CD y supply chain
 
-GitHub Actions como orquestador: PR no confiable sin secretos, permisos mínimos por job, Actions por SHA completo, locks revisados, escaneo de secretos/vulnerabilidades y revisión de nuevas dependencias. Nueva dependencia runtime requiere necesidad, mantenimiento, licencia, alternativa, superficie de seguridad y coste de actualización. No aprobarla solo porque el código generado la importa [S19](../decisions/sources.md).
+GitHub Actions como orquestador: PR no confiable sin secretos, permisos mínimos por job, Actions por SHA completo, locks revisados, escaneo de secretos/vulnerabilidades y revisión de nuevas dependencias. Nueva dependencia runtime requiere necesidad, mantenimiento, licencia, alternativa, superficie de seguridad y coste de actualización. No aprobarla solo porque el código generado la importa [S19](../research/technical-sources.md).
 
 OIDC y credenciales breves donde el proveedor lo soporte; no presumirlo para Render. Si hacen falta tokens, limitar alcance, caducidad/rotación y uso por entorno. El despliegue productivo tiene identidad y aprobación empresarial explícita; un merge no es un permiso de presentar documentos o mover dinero.
 
@@ -39,7 +39,7 @@ Credencial de migración separada; ejecución única coordinada, no al arranque 
 
 ## Backup y disaster recovery
 
-DB: combinar capacidades de backup/PITR contratadas con exportación/restauración portable cuando proceda. Objects: copia/versionado y manifiesto independientes; secretos/roles/configuración/artefactos también se recuperan. Los backups de DB de Supabase no incluyen blobs de Storage y no restauran automáticamente passwords de roles personalizados [S20](../decisions/sources.md).
+DB: combinar capacidades de backup/PITR contratadas con exportación/restauración portable cuando proceda. Objects: copia/versionado y manifiesto independientes; secretos/roles/configuración/artefactos también se recuperan. Los backups de DB de Supabase no incluyen blobs de Storage y no restauran automáticamente passwords de roles personalizados [S20](../research/technical-sources.md).
 
 Retención y frecuencia deben cubrir RPO/RTO elegidos por el propietario, más requisitos documentales verificados. No hay números inventados en esta fase. Copias cifradas, acceso separado de producción y credenciales de recuperación disponibles de forma controlada. No declarar recuperabilidad sin restore probado.
 

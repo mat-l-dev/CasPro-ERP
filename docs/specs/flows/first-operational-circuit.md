@@ -1,6 +1,6 @@
 # SP2 — Primer circuito operativo B2C
 
-Propósito: especificación implementable de venta de mercadería existente por Jumpseller, dinero confirmado en Treasury, entrega física, CPE emitido externamente y entrega documental por Resend. Mandato: SUPERPROMPT 2, 2026-09-10. Especificar y publicar esta rama está autorizado; implementar, ejecutar WOs o activar cuentas no lo está. Estado documental de la fase: [review](../review.md). Gate 1 y el amendment conservan su cierre.
+Propósito: especificación implementable de venta de mercadería existente por Jumpseller, dinero confirmado en Treasury, entrega física, CPE emitido externamente y entrega documental por Resend. Mandato: SUPERPROMPT 2, 2026-09-10. Especificar y publicar esta rama está autorizado; implementar, ejecutar WOs o activar cuentas no lo está. Estado documental de la fase: [review](../../review.md). Gate 1 y el amendment conservan su cierre.
 
 ## Lectura local y autoridad
 
@@ -9,18 +9,18 @@ Propósito: especificación implementable de venta de mercadería existente por 
 | Alcance, decisiones humanas, maestros, capacidades y operación | Este archivo |
 | Aceptación comercial, reservas, dinero, entrega y correcciones | [Sales/Inventory/Treasury](sales-stock-treasury.md) |
 | CPE, archivo, aprobación y entrega documental | [CPE/Documents](cpe-document-delivery.md) |
-| Jumpseller, Resend, inbox/jobs, reconciliación y fallos externos | [Integraciones](integrations.md) |
-| Orden común, atomicidad y catálogo de comandos | [Matriz](command-matrix.md) |
-| Casos futuros verificables | [Aceptación](acceptance.md) |
-| Primeros encargos y evidencia requerida | [Work Orders](work-orders.md) |
+| Jumpseller, Resend, inbox/jobs, reconciliación y fallos externos | [Integraciones](jumpseller-external-work.md) |
+| Orden común, atomicidad y catálogo de comandos | [Matriz](../cross-cutting/command-matrix.md) |
+| Casos futuros verificables | [Aceptación](../acceptance/operational-scenarios.md) |
+| Primeros encargos y evidencia requerida | [Work Orders](../../history/work-orders-sp2.md) |
 
-La spec concreta la fundación; no sustituye [invariantes](../domain/invariants.md), [ownership](../architecture/boundaries.md), [acceso](../architecture/tenancy-access.md) ni [QA](../quality/strategy.md). Las fichas de comandos viven junto a su dueño y heredan únicamente CM0 de la matriz. No hay tablas de estados duplicadas en ADRs o WOs. Los IDs de comando identifican contratos, no clases o tablas obligatorias.
+La spec concreta la fundación; no sustituye [invariantes](../../domain/invariants.md), [ownership](../../architecture/boundaries.md), [acceso](../../architecture/tenancy-access.md) ni [QA](../../quality/strategy.md). Las fichas de comandos viven junto a su dueño y heredan únicamente CM0 de la matriz. No hay tablas de estados duplicadas en ADRs o WOs. Los IDs de comando identifican contratos, no clases o tablas obligatorias.
 
 ## Resultado y límites
 
 Un pedido observado puede quedar pendiente o rechazado sin crear venta, reserva ni dinero. Aceptarlo explícitamente confirma snapshots, compromiso, reserva completa y objetivo de liquidación en una sola transacción. Treasury registra evidencia de un cobro real y sus aplicaciones. La entrega consume reserva y stock bajo cobertura vigente. Documents vincula artefactos al CPE de Sales, congela una intención aprobada y ejecuta email fuera de la transacción. Reconciliación y correcciones conservan historia.
 
-El orden de esos pasos es causal, no una regla fiscal: el CPE puede adquirirse antes del despacho. La condición CPE previa a entrega se decide en HP4; no se presume legal emitir después de entregar. El circuito soporta entregas parciales solo después de cobertura total y registra pagos parciales sin despachar; no incluye crédito automático, contracargos bancarios automatizados, compras, garantías completas, multiempresa consolidada ni otro canal. Procurement pertenece a M05 del [programa maestro](../roadmap/program.md), sin paquetes o contratos ficticios en esta tranche.
+El orden de esos pasos es causal, no una regla fiscal: el CPE puede adquirirse antes del despacho. La condición CPE previa a entrega se decide en HP4; no se presume legal emitir después de entregar. El circuito soporta entregas parciales solo después de cobertura total y registra pagos parciales sin despachar; no incluye crédito automático, contracargos bancarios automatizados, compras, garantías completas, multiempresa consolidada ni otro canal. Procurement pertenece a M05 del [programa maestro](../../roadmap/program.md), sin paquetes o contratos ficticios en esta tranche.
 
 Supuestos visibles: una conexión Jumpseller activa de TILMUX y un destino publicable inicial; las posiciones internas pueden ser varias. Son límites de activación de esta slice, no unicidades globales de CasPro. IDs externos siempre incluyen conexión/entidad. Mercadería de unidad discreta para publicación inicial; una SKU fraccionaria se conserva en Catalog pero queda BLOCKING para este canal hasta contrato de conversión validado. No se inventan existencias, costes, RUC, cuentas o operaciones reales.
 
@@ -34,7 +34,7 @@ Supuestos visibles: una conexión Jumpseller activa de TILMUX y un destino publi
 
 ## Cinco decisiones humanas pendientes
 
-Estas son las únicas elevaciones nuevas del circuito; precisan H1 y se relacionan con H2–H5 de [review](../review.md), sin sustituirlos. No requieren respuesta para terminar esta spec. Una política desconocida produce POLICY_UNRESOLVED en la operación indicada; un implementador puede usar una política sintética explícita para aceptación futura, nunca presentarla como aprobación productiva.
+Estas son las únicas elevaciones nuevas del circuito; precisan H1 y se relacionan con H2–H5 de [review](../../review.md), sin sustituirlos. No requieren respuesta para terminar esta spec. Una política desconocida produce POLICY_UNRESOLVED en la operación indicada; un implementador puede usar una política sintética explícita para aceptación futura, nunca presentarla como aprobación productiva.
 
 | ID | Decisión / estado | Qué queda bloqueado hasta resolverla |
 |---|---|---|

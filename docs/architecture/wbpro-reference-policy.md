@@ -27,6 +27,6 @@ Documentar: propiedad empresarial correcta; encaje en fronteras; deuda accidenta
 
 Un portado sucede solamente dentro de una WO autorizada en CasPro, con diff y perfil propios. No ejecutar suites V1 para acreditar el portado. No hacer de una prueba anterior la fuente canónica de negocio: si contradice la spec se revisa, no se fuerza CasPro a reproducirla.
 
-La auditoría fundacional previa fue estática. Sus carreras identificadas son contraejemplos a cubrir, no ejecuciones realizadas. En la generación inicial solo se volvió a la constitución actual. El Grand Master Program posterior autorizó una lectura más profunda de documentación vigente y la clasificó en [extracción de conocimiento](../research/wbpro-knowledge.md); no consultó legacy ni convirtió conclusiones contables/tributarias de Wbpro en normas CasPro.
+La auditoría fundacional previa fue estática. Sus carreras identificadas son contraejemplos a cubrir, no ejecuciones realizadas. En la generación inicial solo se volvió a la constitución actual. El Grand Master Program posterior autorizó una lectura más profunda de documentación vigente y la clasificó en [extracción de conocimiento](../evidence/wbpro-knowledge.md); no consultó legacy ni convirtió conclusiones contables/tributarias de Wbpro en normas CasPro.
 
 Las rutas exactas de documentación actual consultada quedan en esa extracción. CasPro debe poder funcionar y especificarse sin acceso al repositorio Wbpro; las fuentes regulatorias externas sostienen cualquier afirmación normativa.

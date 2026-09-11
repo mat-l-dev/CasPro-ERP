@@ -1,6 +1,6 @@
 # SP2 — Contrato común y matriz de comandos
 
-Propietario: arquitectura del circuito; reglas privadas en las fichas de [alcance](first-operational-circuit.md), [negocio](sales-stock-treasury.md), [Documents](cpe-document-delivery.md) e [integraciones](integrations.md). Concreta la hipótesis de [transacciones](../architecture/transactions.md), sin declarar locks/constraints implementados. El mecanismo conserva PROVISIONAL en ADR-007 hasta evidencia de intercalación y creación concurrente.
+Propietario: arquitectura del circuito; reglas privadas en las fichas de [alcance](../flows/first-operational-circuit.md), [negocio](../flows/sales-stock-treasury.md), [Documents](../flows/cpe-document-delivery.md) e [integraciones](../flows/jumpseller-external-work.md). Concreta la hipótesis de [transacciones](../../architecture/transactions.md), sin declarar locks/constraints implementados. El mecanismo conserva PROVISIONAL en ADR-007 hasta evidencia de intercalación y creación concurrente.
 
 <a id="cm0"></a>
 ## CM0 — Herencia explícita de cada ficha
@@ -27,7 +27,7 @@ Coordinadores por caso de uso nombrado, junto a sus contratos; no un mega servic
 | V | Edición/estado con revisión esperada y valor solicitado: misma revisión aplicada y mismo cambio devuelve resultado; otra revisión/contenido en conflicto. No duplica hechos/jobs al repetir |
 | D | Repetición puede duplicar efectos: unicidad durable `(entidad, operación, clave)` y fingerprint de inputs normalizados + versión de contrato. Clave no vacía; resultado se conserva/reautoriza antes de devolverlo. Mandato/conexión restringe quién puede consultar esa intención |
 
-Una clave nueva tampoco evade unicidades naturales: pedido por conexión, referencia bancaria identificada, fila de apertura/import, consumo de reserva, primera entrega CPE. La deduplicación D se confirma junto al efecto local. Para filas aún inexistentes: INSERT protegido por UNIQUE o creación bajo raíz existente que todas las operaciones comparten; la colisión relee resultado/pertenencia, no captura IntegrityError para continuar a medias. No SELECT FOR UPDATE de una inexistencia como protección. Las FKs compuestas/pertenencia, índices y traducción ORM se demostrarán posteriormente [S28](../decisions/sources.md).
+Una clave nueva tampoco evade unicidades naturales: pedido por conexión, referencia bancaria identificada, fila de apertura/import, consumo de reserva, primera entrega CPE. La deduplicación D se confirma junto al efecto local. Para filas aún inexistentes: INSERT protegido por UNIQUE o creación bajo raíz existente que todas las operaciones comparten; la colisión relee resultado/pertenencia, no captura IntegrityError para continuar a medias. No SELECT FOR UPDATE de una inexistencia como protección. Las FKs compuestas/pertenencia, índices y traducción ORM se demostrarán posteriormente [S28](../../research/technical-sources.md).
 
 Retención: identidad de efecto confirmado permanece al menos mientras su hecho y la posibilidad de replay/restore; purgar payload/PII no elimina la protección (conservar identidad mínima/tombstone si procede). HP5 fija plazos. Sin política aprobada no hay purga de esos registros. Tras rechazo sin commit no existe efecto: la misma solicitud idéntica puede revalidarse cuando se resuelva el bloqueo; para cambiar inputs se exige intención nueva. Intención en curso devuelve pendiente/BUSY, no otro ejecutor concurrente.
 
@@ -57,7 +57,7 @@ Orden ascendente; dentro de clase, identidad canónica `(entidad, tipo de raíz,
 | 90 N | Intención/aprobación/HOLD de entrega documental | Primera intención bajo C/D y UNIQUE de entidad+CPE+finalidad; reenvío nuevo bajo mismo dossier. No nueva tabla «familia» obligatoria |
 | 100 J | Inbox/job/attempt técnico que se procesa o confirma | Claim corto solo sobre J; liberar antes de abrir transacción empresarial, que vuelve a tomar J al final |
 
-Claim J es una fase aislada que no confirma negocio ni toma después recursos de rango menor. FOR UPDATE SKIP LOCKED es candidato para cola, nunca para omitir stock/cobros ocupados; ofrece una vista incompleta [S28](../decisions/sources.md). El lease no es fence remoto. Publicación/email reautorizan en C07 y registran resultado en otra transacción C08.
+Claim J es una fase aislada que no confirma negocio ni toma después recursos de rango menor. FOR UPDATE SKIP LOCKED es candidato para cola, nunca para omitir stock/cobros ocupados; ofrece una vista incompleta [S28](../../research/technical-sources.md). El lease no es fence remoto. Publicación/email reautorizan en C07 y registran resultado en otra transacción C08.
 
 El plan incluye locks implícitos de FK/UNIQUE y orden de INSERT/UPDATE, no solo llamadas explícitas. Si el ORM/constraint exige otro recurso o cambia este orden, se actualiza la matriz y su evidencia antes de aceptar el comando. Triggers/servicios no pueden tomar locks empresariales ocultos. No exclusión global de todas las ventas de una entidad.
 
@@ -67,43 +67,43 @@ Todas las filas heredan I si D; se listan los demás recursos potenciales en ord
 
 | Comando / fuente | Capacidad de actuación | Recursos competidos después de I |
 |---|---|---|
-| [C00](first-operational-circuit.md#c00) Acceso | organization.manage o access.manage según objeto | A |
-| [C01](integrations.md#c01) Conexión | integration.manage_connection | K |
-| [C02](integrations.md#c02) Recibir webhook | principal autenticado integration.receive de conexión | K, J |
-| [C03](integrations.md#c03) Reconciliar | integration.reconcile o mandato equivalente | K, E, M, J; HTTP en fase separada |
-| [C04](integrations.md#c04) Observar pedido | integration.process, limitado a observaciones | K, E, M, J |
-| [C05](integrations.md#c05) Planificar stock | inventory.view + integration.reconcile o mandato de publicación | K, E, M, S, P, U, V, J |
-| [C06](integrations.md#c06) Claim | mandato de consumidor/entidad | J únicamente |
-| [C07](integrations.md#c07) Autorizar/despachar efecto | mandato específico: publicar stock / documents.send / consultar | K, E, M, S, P, U, V, C, D, N, J según efecto |
-| [C08](integrations.md#c08) Registrar resultado | mismo mandato y attempt token | K, E, S, C, D, N, J según efecto |
-| [C09](integrations.md#c09) Observación email | integration.process limitado a conexión Resend | K, D, N, J |
-| [C10](integrations.md#c10) Replay/resolución | integration.replay + capacidad del efecto si se solicita nuevamente | K, D, N, J; efecto posterior por su comando |
-| [C11](first-operational-circuit.md#c11) Party | parties.manage | K, M |
-| [C12](first-operational-circuit.md#c12) Catalog/mapping | catalog.manage / catalog.map según operación | K, M, J |
-| [C13](sales-stock-treasury.md#c13) Apertura/ajuste | inventory.opening / inventory.adjust | K, M, P, U, V, J |
-| [C14](sales-stock-treasury.md#c14) Aceptar pedido | sales.accept_external_order | K, E, M, S, T, P, U, V, J |
-| [C15](sales-stock-treasury.md#c15) Revisar/corregir/cancelar | sales.correct; treasury.apply si hay des-aplicación | K, E, M, S, T, R, P, U, V, C, J |
-| [C16](sales-stock-treasury.md#c16) Proponer cobro | treasury.propose_receipt | F, R |
-| [C17](sales-stock-treasury.md#c17) Confirmar cobro | treasury.confirm_receipt | F, R, D si evidencia de archivo |
-| [C18](sales-stock-treasury.md#c18) Aplicar/des-aplicar | treasury.apply | S, T, R |
-| [C19](sales-stock-treasury.md#c19) Preparar entrega | sales.prepare_delivery + inventory.prepare | K, E, S, T, R, P, U, V |
-| [C20](sales-stock-treasury.md#c20) Confirmar entrega | sales.confirm_delivery + inventory.confirm_delivery | K, E, S, T, R, P, U, V, C, J |
-| [C21](sales-stock-treasury.md#c21) Retorno físico | sales.accept_return + inventory.receive_return; CORRECT_RETURN añade sales.correct + inventory.adjust | K, S, P, U, V, J |
-| [C22](sales-stock-treasury.md#c22) Refund/corrección de cobro | treasury.refund / treasury.correct + treasury.apply cuando proceda | S, T, F, R, D si evidencia |
-| [C23](sales-stock-treasury.md#c23) Cuenta financiera | treasury.manage_account | F, D si evidencia |
-| [C24](first-operational-circuit.md#c24) Preview import | imports.prepare + lectura de dueños | B |
-| [C25](first-operational-circuit.md#c25) Confirmar import | imports.confirm + capacidad de cada participante | K, B, M, P, U, V, J |
-| [C26](first-operational-circuit.md#c26) Reporte | reports.view/snapshot + permisos de fuentes | D, J; dataset fuera de locks económicos |
-| [C30](cpe-document-delivery.md#c30) Identidad CPE | sales.register_cpe / sales.correct_cpe | E si caso previo, S si venta, C |
-| [C31](cpe-document-delivery.md#c31) Adquirir artefacto | documents.upload | D, J |
-| [C32](cpe-document-delivery.md#c32) Disponibilidad | documents.verify_artifact o mandato de análisis | D, J |
-| [C33](cpe-document-delivery.md#c33) Vincular/verificar CPE | sales.verify_cpe + documents.view; sales.correct_cpe además para retractar/corregir | S, C, D, J |
-| [C34](cpe-document-delivery.md#c34) Preparar original / dispatch manual | documents.prepare_delivery; documents.send además si solicita dispatch MANUAL | S, C, D, N, J |
-| [C35](cpe-document-delivery.md#c35) Aprobar | documents.approve_delivery | S, C, D, N, J |
-| [C36](cpe-document-delivery.md#c36) Política/HOLD | documents.manage_policy / documents.hold / documents.release_hold | D, N, J |
-| [C37](cpe-document-delivery.md#c37) Reenvío | documents.resend; documents.send además para dispatch MANUAL | S, C, D, N, J |
-| [C38](cpe-document-delivery.md#c38) Preview/descarga | documents.view y permiso del hecho vinculado | D en fase corta; no lock durante bytes |
-| [C39](cpe-document-delivery.md#c39) Cambiar insumos | documents.prepare_delivery | S, C, D, N, J si reevaluación |
+| [C00](../flows/first-operational-circuit.md#c00) Acceso | organization.manage o access.manage según objeto | A |
+| [C01](../flows/jumpseller-external-work.md#c01) Conexión | integration.manage_connection | K |
+| [C02](../flows/jumpseller-external-work.md#c02) Recibir webhook | principal autenticado integration.receive de conexión | K, J |
+| [C03](../flows/jumpseller-external-work.md#c03) Reconciliar | integration.reconcile o mandato equivalente | K, E, M, J; HTTP en fase separada |
+| [C04](../flows/jumpseller-external-work.md#c04) Observar pedido | integration.process, limitado a observaciones | K, E, M, J |
+| [C05](../flows/jumpseller-external-work.md#c05) Planificar stock | inventory.view + integration.reconcile o mandato de publicación | K, E, M, S, P, U, V, J |
+| [C06](../flows/jumpseller-external-work.md#c06) Claim | mandato de consumidor/entidad | J únicamente |
+| [C07](../flows/jumpseller-external-work.md#c07) Autorizar/despachar efecto | mandato específico: publicar stock / documents.send / consultar | K, E, M, S, P, U, V, C, D, N, J según efecto |
+| [C08](../flows/jumpseller-external-work.md#c08) Registrar resultado | mismo mandato y attempt token | K, E, S, C, D, N, J según efecto |
+| [C09](../flows/jumpseller-external-work.md#c09) Observación email | integration.process limitado a conexión Resend | K, D, N, J |
+| [C10](../flows/jumpseller-external-work.md#c10) Replay/resolución | integration.replay + capacidad del efecto si se solicita nuevamente | K, D, N, J; efecto posterior por su comando |
+| [C11](../flows/first-operational-circuit.md#c11) Party | parties.manage | K, M |
+| [C12](../flows/first-operational-circuit.md#c12) Catalog/mapping | catalog.manage / catalog.map según operación | K, M, J |
+| [C13](../flows/sales-stock-treasury.md#c13) Apertura/ajuste | inventory.opening / inventory.adjust | K, M, P, U, V, J |
+| [C14](../flows/sales-stock-treasury.md#c14) Aceptar pedido | sales.accept_external_order | K, E, M, S, T, P, U, V, J |
+| [C15](../flows/sales-stock-treasury.md#c15) Revisar/corregir/cancelar | sales.correct; treasury.apply si hay des-aplicación | K, E, M, S, T, R, P, U, V, C, J |
+| [C16](../flows/sales-stock-treasury.md#c16) Proponer cobro | treasury.propose_receipt | F, R |
+| [C17](../flows/sales-stock-treasury.md#c17) Confirmar cobro | treasury.confirm_receipt | F, R, D si evidencia de archivo |
+| [C18](../flows/sales-stock-treasury.md#c18) Aplicar/des-aplicar | treasury.apply | S, T, R |
+| [C19](../flows/sales-stock-treasury.md#c19) Preparar entrega | sales.prepare_delivery + inventory.prepare | K, E, S, T, R, P, U, V |
+| [C20](../flows/sales-stock-treasury.md#c20) Confirmar entrega | sales.confirm_delivery + inventory.confirm_delivery | K, E, S, T, R, P, U, V, C, J |
+| [C21](../flows/sales-stock-treasury.md#c21) Retorno físico | sales.accept_return + inventory.receive_return; CORRECT_RETURN añade sales.correct + inventory.adjust | K, S, P, U, V, J |
+| [C22](../flows/sales-stock-treasury.md#c22) Refund/corrección de cobro | treasury.refund / treasury.correct + treasury.apply cuando proceda | S, T, F, R, D si evidencia |
+| [C23](../flows/sales-stock-treasury.md#c23) Cuenta financiera | treasury.manage_account | F, D si evidencia |
+| [C24](../flows/first-operational-circuit.md#c24) Preview import | imports.prepare + lectura de dueños | B |
+| [C25](../flows/first-operational-circuit.md#c25) Confirmar import | imports.confirm + capacidad de cada participante | K, B, M, P, U, V, J |
+| [C26](../flows/first-operational-circuit.md#c26) Reporte | reports.view/snapshot + permisos de fuentes | D, J; dataset fuera de locks económicos |
+| [C30](../flows/cpe-document-delivery.md#c30) Identidad CPE | sales.register_cpe / sales.correct_cpe | E si caso previo, S si venta, C |
+| [C31](../flows/cpe-document-delivery.md#c31) Adquirir artefacto | documents.upload | D, J |
+| [C32](../flows/cpe-document-delivery.md#c32) Disponibilidad | documents.verify_artifact o mandato de análisis | D, J |
+| [C33](../flows/cpe-document-delivery.md#c33) Vincular/verificar CPE | sales.verify_cpe + documents.view; sales.correct_cpe además para retractar/corregir | S, C, D, J |
+| [C34](../flows/cpe-document-delivery.md#c34) Preparar original / dispatch manual | documents.prepare_delivery; documents.send además si solicita dispatch MANUAL | S, C, D, N, J |
+| [C35](../flows/cpe-document-delivery.md#c35) Aprobar | documents.approve_delivery | S, C, D, N, J |
+| [C36](../flows/cpe-document-delivery.md#c36) Política/HOLD | documents.manage_policy / documents.hold / documents.release_hold | D, N, J |
+| [C37](../flows/cpe-document-delivery.md#c37) Reenvío | documents.resend; documents.send además para dispatch MANUAL | S, C, D, N, J |
+| [C38](../flows/cpe-document-delivery.md#c38) Preview/descarga | documents.view y permiso del hecho vinculado | D en fase corta; no lock durante bytes |
+| [C39](../flows/cpe-document-delivery.md#c39) Cambiar insumos | documents.prepare_delivery | S, C, D, N, J si reevaluación |
 
 ## Intercalaciones que deberán demostrar compatibilidad
 
@@ -121,4 +121,4 @@ Todas las filas heredan I si D; se listan los demás recursos potenciales en ord
 | C09 tardío contra C08 | K/D/N/J | Observaciones preservadas, sin regresión ciega de estado ni dinero/CPE alterados |
 | Restore contra cualquier job antiguo | entorno/epoch de recuperación y permisos | Cero efectos externos hasta reconciliación y reactivación autorizadas |
 
-Esto es análisis estático del diseño, no evidencia de DB. Las [familias de aceptación](acceptance.md) y [perfiles](work-orders.md) determinan las pruebas posteriores y el gate habilitante de RLS.
+Esto es análisis estático del diseño, no evidencia de DB. Las [familias de aceptación](../acceptance/operational-scenarios.md) y [perfiles](../../history/work-orders-sp2.md) determinan las pruebas posteriores y el gate habilitante de RLS.

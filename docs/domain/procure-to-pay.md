@@ -1,6 +1,6 @@
 # Procure-to-Pay objetivo
 
-Propietarios: Procurement para compromiso/obligación/CPE proveedor; Inventory para recepción; Treasury para pago; Accounting y Tax para sus interpretaciones; Documents para artefactos. Estado: arquitectura con [deep spec M05 candidata](../specs/procurement-deep.md); aprobación de políticas pendiente.
+Propietarios: Procurement para compromiso/obligación/CPE proveedor; Inventory para recepción; Treasury para pago; Accounting y Tax para sus interpretaciones; Documents para artefactos. Estado: arquitectura con [deep spec M05 candidata](../specs/milestones/procurement-deep.md); aprobación de políticas pendiente.
 
 ```text
 necesidad aprobada → orden → recepción o conformidad de servicio
@@ -36,4 +36,4 @@ Procurement publica obligación versionada y estado de bloqueo. Treasury program
 
 Duplicado de factura por emisor/tipo/serie/número; factura sin recepción; exceso de cantidad/precio; servicio sin conformidad; impuesto/detracción pendiente; CPE inválido/no verificable; pago en HOLD; recepción con costo desconocido; período cerrado. Cada excepción tiene severidad WARNING/BLOCKING, recurso afectado, causa, responsable, edad y siguiente acción permitida.
 
-M05 concreta rutas de compra directa, conformidad, tolerancias propuestas, aprobaciones, obligaciones parciales, notas/devoluciones y corte. El gate de políticas aplicables sigue abierto; [Tax M09](../specs/tax-deep.md) gobierna determinaciones. RFQ, portal proveedor, sourcing, contratos avanzados y recurring engine quedan fuera hasta caso real.
+M05 concreta rutas de compra directa, conformidad, tolerancias propuestas, aprobaciones, obligaciones parciales, notas/devoluciones y corte. El gate de políticas aplicables sigue abierto; [Tax M09](../specs/milestones/tax-deep.md) gobierna determinaciones. RFQ, portal proveedor, sourcing, contratos avanzados y recurring engine quedan fuera hasta caso real.

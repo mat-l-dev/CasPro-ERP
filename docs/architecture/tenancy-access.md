@@ -25,13 +25,13 @@ La revocación impide nuevas operaciones tras confirmarse. Una operación corta 
 
 - Esquema empresarial privado, fuera de Data API. Usar rol runtime dedicado, sin propiedad de tablas, superusuario ni BYPASSRLS; sin credencial postgres/service_role en el servidor web.
 - Las tablas con propiedad empresarial exigen legal_entity_id, políticas de lectura/escritura y protección de la pertenencia. FORCE RLS donde corresponda; el rol de migración es distinto y no se distribuye al runtime.
-- La frontera abre una transacción corta, establece la entidad mediante SET LOCAL y ejecuta todas las lecturas protegidas dentro de ese alcance. El valor expira al terminar la transacción [S06](../decisions/sources.md).
+- La frontera abre una transacción corta, establece la entidad mediante SET LOCAL y ejecuta todas las lecturas protegidas dentro de ese alcance. El valor expira al terminar la transacción [S06](../research/technical-sources.md).
 - No usar SET persistente por sesión. No devolver QuerySets perezosos ni cargar relaciones al render fuera de la transacción; materializar DTOs/páginas limitadas antes de salir.
 - Sin contexto, la aplicación lanza un error explícito. RLS por sí sola puede devolver cero filas, no necesariamente una excepción: el contrato no confunde ambos comportamientos.
 - Conexión directa o pool de sesión inicial. Pool transaccional no se activa sin validar contexto, cursores, prepared statements y reutilización de conexiones.
 - La evolución del esquema debe impedir habilitar acceso empresarial a una tabla nueva sin protección y clasificación explícita. La aceptación requiere inventariar todas las tablas de negocio y excepciones, y detectar permisos/políticas que amplíen acceso. La presencia de legal_entity_id o de una política cualquiera no demuestra aislamiento; el verificador futuro y su integración en entrega siguen pendientes.
 
-Superusuarios y roles BYPASSRLS evaden RLS; los propietarios también pueden hacerlo según configuración. Las comprobaciones referenciales tienen particularidades que RLS no elimina [S07](../decisions/sources.md). Por eso la prueba debe usar el rol runtime real y comprobar referencias entre entidades, no solo el propietario usado por migraciones.
+Superusuarios y roles BYPASSRLS evaden RLS; los propietarios también pueden hacerlo según configuración. Las comprobaciones referenciales tienen particularidades que RLS no elimina [S07](../research/technical-sources.md). Por eso la prueba debe usar el rol runtime real y comprobar referencias entre entidades, no solo el propietario usado por migraciones.
 
 ## Excepciones globales limitadas
 

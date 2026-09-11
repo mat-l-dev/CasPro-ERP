@@ -12,7 +12,7 @@ La evidencia estática permite continuar la revisión documental. No demuestra u
 
 ## B. REPOSITORY TRUTH
 
-La [auditoría de repositorios](repository-audit.md) distingue el estado real del relato previo. CasPro comenzó limpio en `docs/grand-master-program`, HEAD/origin `cd01a361f3491dc7114988f670b098eb3fc06bb0`; base `main`/`origin/main` `5c925e2acb1487c68dab2738e969cef6afe33539`. El diff original de PR2 abarcaba 34 archivos Markdown, 1.027 inserciones y 45 eliminaciones. Se revisaron cambios y documentos propietarios; no había aplicación CasPro cuya ejecución pudiera certificar esta auditoría.
+La [auditoría de repositorios](../evidence/repository-audit.md) distingue el estado real del relato previo. CasPro comenzó limpio en `docs/grand-master-program`, HEAD/origin `cd01a361f3491dc7114988f670b098eb3fc06bb0`; base `main`/`origin/main` `5c925e2acb1487c68dab2738e969cef6afe33539`. El diff original de PR2 abarcaba 34 archivos Markdown, 1.027 inserciones y 45 eliminaciones. Se revisaron cambios y documentos propietarios; no había aplicación CasPro cuya ejecución pudiera certificar esta auditoría.
 
 Wbpro se consultó selectivamente con baseline **`5cc50696d896a35c12875dfb530c6ccb8d30dd84`**. Los 73 modificados y 9 no seguidos conocidos son evidencia no aprobada. Se separaron COMMITTED WBPRO, UNCOMMITTED WBPRO, EXTERNAL VERIFIED SOURCE y CASPRO DECISION; no se normalizó el árbol. Los cotejos del manifiesto de 643 rutas no detectaron nuevos cambios ni cambio de HEAD. No se escribió en Wbpro ni se ejecutó su aplicación. La revisión no equivale a auditar íntegramente esas 643 rutas; los hashes controlan estabilidad, no corrección del contenido.
 
@@ -22,7 +22,7 @@ Comprobación estática del candidato de cierre: **77 archivos Markdown, 543 enl
 
 ## C. CODE AUDIT
 
-La [auditoría pcge-peru](pcge-code-audit.md) examinó código real, tests, metadatos y ambos catálogos de `v0.2.0`, commit **`ade8ea1505c0841a586a7e310314e76df623fe20`**. Se ejecutó la suite externa autorizada: **413 passed, 4,52 s, Python 3.14.6**. No se repitió para acumular resultados ni se confundió con evidencia de CasPro.
+La [auditoría pcge-peru](../evidence/pcge-code-audit.md) examinó código real, tests, metadatos y ambos catálogos de `v0.2.0`, commit **`ade8ea1505c0841a586a7e310314e76df623fe20`**. Se ejecutó la suite externa autorizada: **413 passed, 4,52 s, Python 3.14.6**. No se repitió para acumular resultados ni se confundió con evidencia de CasPro.
 
 | Hallazgo comprobado | Consecuencia |
 |---|---|
@@ -40,25 +40,25 @@ Para 2027 se recomienda provisionalmente PCGE 2019, sujeto a aprobación del pla
 | Error o insuficiencia material | Corrección y fuente propietaria |
 |---|---|
 | PASS histórico se podía leer como permiso de implementar o congelar solo M01 | [ADR012](../decisions/adr-012-global-documentation-freeze.md), review y WOs exigen freeze global previo |
-| Evidencia Wbpro mezclaba committed/uncommitted y premisas fiscales propias | [Extracción V2](wbpro-knowledge.md), autoridad y contradicciones explícitas |
+| Evidencia Wbpro mezclaba committed/uncommitted y premisas fiscales propias | [Extracción V2](../evidence/wbpro-knowledge.md), autoridad y contradicciones explícitas |
 | NPIF supuestamente callaba sobre errores/moneda; seis dígitos se consideraban siempre extensión | [Catálogo NPIF](../accounting/npif-policy-catalog.md) y auditoría de código corrigen ambas premisas |
-| NIC1 contaba dentro del set2026; se mezclaba nueva emisión con entrada en vigor | [Delta](ifrs-2025-2026-delta.md) y matriz62 separan anexos, edición, vigencia y transición |
+| NIC1 contaba dentro del set2026; se mezclaba nueva emisión con entrada en vigor | [Delta](../research/normative/ifrs-2025-2026-delta.md) y matriz62 separan anexos, edición, vigencia y transición |
 | Fechas PYMES/PCGE podían adelantar obligación a2027 por mera oficialización | Registro normativo distingue PYMES2025 efectiva2027 y PCGE2026 obligatorio2028, anticipable |
-| Un residuo Wbpro podía desaparecer al forzar saldo final cero | [INV](../specs/inventory-deep.md) exige última salida por valor remanente; contraejemplo aritmético, no incidente productivo demostrado |
-| Backfill por mayor ID podía omitir una transacción confirmada tarde | [Hechos](../specs/economic-facts.md): manifest, anti-join y barrera de corte |
-| Unicidad de posting que incluye versión permite nuevo ingreso completo con otra versión | [A03](../specs/accounting-deep.md) añade exclusión de consumo económico por libro/hecho/componente y corrección coordinada |
+| Un residuo Wbpro podía desaparecer al forzar saldo final cero | [INV](../specs/milestones/inventory-deep.md) exige última salida por valor remanente; contraejemplo aritmético, no incidente productivo demostrado |
+| Backfill por mayor ID podía omitir una transacción confirmada tarde | [Hechos](../specs/cross-cutting/economic-facts.md): manifest, anti-join y barrera de corte |
+| Unicidad de posting que incluye versión permite nuevo ingreso completo con otra versión | [A03](../specs/milestones/accounting-deep.md) añade exclusión de consumo económico por libro/hecho/componente y corrección coordinada |
 | Compra, conteo o cambio de condición podían dejar publicable un objetivo de stock obsoleto | Regla transversal K→raíces→J para todas las rutas que alteran disponibilidad |
 | Conteo humano podía interpretarse como larga transacción bloqueada | Bloqueo de negocio persistente por posición, revisado por cada movimiento/reserva; transacciones cortas |
-| Roadmap lineal situaba CPE después de despacho y un dossier por venta podía impedir anticipos | M04 y [CPE](../specs/cpe-document-delivery.md) permiten oportunidad legal previa, varios CPE/asignaciones, sin duplicar dinero |
+| Roadmap lineal situaba CPE después de despacho y un dossier por venta podía impedir anticipos | M04 y [CPE](../specs/flows/cpe-document-delivery.md) permiten oportunidad legal previa, varios CPE/asignaciones, sin duplicar dinero |
 | Accounting genérico ocultaba PPE, provisiones, intangibles, leases y transición | M07/M08 y [capabilities](../roadmap/capabilities.md) hacen explícitas medición, auxiliares y notas |
-| Deuda disputada se confundía con deuda inexistente; servicio con recepción de almacén | [P2P](../specs/procurement-deep.md) separa hecho, match, payability, conformidad y stock |
+| Deuda disputada se confundía con deuda inexistente; servicio con recepción de almacén | [P2P](../specs/milestones/procurement-deep.md) separa hecho, match, payability, conformidad y stock |
 | Referencias ERP/IA antiguas podían volverse política actual | Benchmark por proveedor; versiones/precios/licencias/recursos revalidados, sin selección automática |
 
 Los hallazgos fueron corregidos en contratos o quedaron expresamente bloqueados cuando requieren datos/decisión. No se ocultaron contradicciones externas para declarar un PASS.
 
 ## E. NORMATIVE UPDATE
 
-El [registro normativo](normative-register.md) conserva N001–N029, fechas/fuentes y clasificación. Incluye elegibilidad NPIF independiente de RER, guía NPIF, PYMES, sets NIIF, PCGE y tratamientos tributarios/corporativos. La [revisión fiscal](tax-current-review.md) precisa:
+El [registro normativo](../research/normative/normative-register.md) conserva N001–N029, fechas/fuentes y clasificación. Incluye elegibilidad NPIF independiente de RER, guía NPIF, PYMES, sets NIIF, PCGE y tratamientos tributarios/corporativos. La [revisión fiscal](../research/normative/tax-current-review.md) precisa:
 
 - RER: cuota sobre ingresos netos; no confundir con caja ni utilidad. El art.124-A menciona inventario anual y la cartilla de SUNAT consultada declaraba su falta de reglamentación/exigibilidad en su horizonte. No extrapolar esa cartilla como garantía eterna.
 - CPE: el anticipo/cobro puede adelantar la oportunidad respecto de entrega; identificación, XML/PDF/CDR y notas dependen de tipo/SEE y finalidad. CasPro adquiere y preserva, no emite a SUNAT.
@@ -72,13 +72,13 @@ Se leyó íntegramente NPIF (31 páginas), guía (40), resoluciones PYMES/set202
 
 Los anexos peruanos contienen **18 NIIF + 24 NIC + 15 CINIIF + 5 SIC = 62**, sin cambio de integrantes entre2025 y2026. NIC1 no aparece en ninguno; permanece referencia LEGACY/TRANSITION fuera del conteo. Marco Conceptual no es una fila63.
 
-El [delta verificado](ifrs-2025-2026-delta.md) separa enmiendas efectivas2026 ya emitidas en2024 de novedades issued2026: NIIF19, moneda de presentación hiperinflacionaria y comentario gerencial. Ejemplos de incertidumbre, propuestas y NIIF20 posterior al corte no reciben vigencia/aplicación peruana por inferencia.
+El [delta verificado](../research/normative/ifrs-2025-2026-delta.md) separa enmiendas efectivas2026 ya emitidas en2024 de novedades issued2026: NIIF19, moneda de presentación hiperinflacionaria y comentario gerencial. Ejemplos de incertidumbre, propuestas y NIIF20 posterior al corte no reciben vigencia/aplicación peruana por inferencia.
 
-NIIF18 efectiva2027 sustituye NIC1; categorías/subtotales, agregación, gastos por naturaleza/función, MPM y conciliación del comparativo exigen datos y presentación versionada. PYMES tercera edición2025 tiene transición propia; no activa NIIF18 en NPIF. La [matriz completa](ifrs-applicability.md) clasifica cada norma con versión, horizonte de vigencia, oficialización, trigger/razón, datos, dueño/salida, política, transición y fuente. No certifica toda la historia de fechas de cada párrafo; cada activación requiere cotejo específico.
+NIIF18 efectiva2027 sustituye NIC1; categorías/subtotales, agregación, gastos por naturaleza/función, MPM y conciliación del comparativo exigen datos y presentación versionada. PYMES tercera edición2025 tiene transición propia; no activa NIIF18 en NPIF. La [matriz completa](../research/normative/ifrs-applicability.md) clasifica cada norma con versión, horizonte de vigencia, oficialización, trigger/razón, datos, dueño/salida, política, transición y fuente. No certifica toda la historia de fechas de cada párrafo; cada activación requiere cotejo específico.
 
 ## G. ACCOUNTING/NPIF
 
-[M07](../specs/accounting-deep.md) define plan aplicado, políticas, hechos, interpretaciones, propuestas, posting, auxiliares, ajustes/reversiones, período/cierre, apertura y transición. [M08](../specs/reporting-goldens.md) exige cuatro EEFF, notas, comparativos y navegación hasta evidencia, sin Excel obligatorio.
+[M07](../specs/milestones/accounting-deep.md) define plan aplicado, políticas, hechos, interpretaciones, propuestas, posting, auxiliares, ajustes/reversiones, período/cierre, apertura y transición. [M08](../specs/acceptance/reporting-goldens.md) exige cuatro EEFF, notas, comparativos y navegación hasta evidencia, sin Excel obligatorio.
 
 Se cubren expresamente PPE/depreciación/componentes, intangibles/amortización, devengos/prepagos, provisiones/contingencias, leases, empleados, FX, instrumentos, capital/resultados acumulados, relacionadas, impuesto corriente/diferido cuando corresponda, errores y revelaciones. La ausencia de un hecho permite NOT TRIGGERED sustentado; no elimina la capability ni inventa datos.
 
@@ -88,7 +88,7 @@ NPIF gobierna sus errores, moneda y leases; no se trasplanta NIC8/NIIF16 por def
 
 ## H. TAX/LEGAL/MUTUO
 
-El [memorando temprano](mutuo-tax-corporate.md) distingue préstamo, aporte, reembolso, capitalización y pago personal por tercero. En SAC sin directorio se verifican gerente/facultades/conflictos y acuerdos; autoaprobación visible en UI no subsana representación inválida.
+El [memorando temprano](../research/normative/mutuo-tax-corporate.md) distingue préstamo, aporte, reembolso, capitalización y pago personal por tercero. En SAC sin directorio se verifican gerente/facultades/conflictos y acuerdos; autoaprobación visible en UI no subsana representación inválida.
 
 Gratuidad civil no significa neutralidad fiscal. LIR26 y32-A tienen ámbitos diferentes; relación, domicilio, comparabilidad, imputación y obligaciones formales se resuelven por ambos sujetos. El PDF consolidado de32-A(a) presenta una discrepancia editorial con orientación SUNAT; se conserva, sin usar su omisión para excluir regímenes preferenciales. No se prescribe tasa ni tratamiento final del contrato propuesto.
 
@@ -98,15 +98,15 @@ El gate legal/tributario/contable precede a autorizar financiación, incluso ant
 
 ## I. ERP/WBPRO FINDINGS
 
-El [benchmark revisado](erp-benchmark.md) compara SAP, Oracle Financials, Dynamics365, NetSuite, Odoo y ERPNext por problema, técnica, coste/riesgo y ADOPT/ADAPT/REJECT. Se adoptan relaciones documentales, bloqueo de pago separado, asignaciones N:M, conciliación con auxiliares y reversión trazable.
+El [benchmark revisado](../research/erp-benchmark.md) compara SAP, Oracle Financials, Dynamics365, NetSuite, Odoo y ERPNext por problema, técnica, coste/riesgo y ADOPT/ADAPT/REJECT. Se adoptan relaciones documentales, bloqueo de pago separado, asignaciones N:M, conciliación con auxiliares y reversión trazable.
 
 No se copian write-offs automáticos, tolerancias por defecto, Quick Close sin evidencias, workflow engine, stock negativo o todo el alcance de una suite. Dynamics no acredita el replay de costes propuesto por CasPro: su moving average trata diferencias tardías de otra manera. Odoo sí documenta automatización de contrapartidas; la generalización interna de “solo manual” no se usa como verdad externa.
 
-La [matriz Wbpro V2](wbpro-knowledge.md) conserva para cada técnica la evidencia committed/uncommitted, contradicción, corroboración externa y decisión candidata CasPro. No transfiere control societario, marco, tasas, neutralidad de mutuo o QA histórico por confianza en el repositorio anterior.
+La [matriz Wbpro V2](../evidence/wbpro-knowledge.md) conserva para cada técnica la evidencia committed/uncommitted, contradicción, corroboración externa y decisión candidata CasPro. No transfiere control societario, marco, tasas, neutralidad de mutuo o QA histórico por confianza en el repositorio anterior.
 
 ## J. ARCHITECTURE CHANGES
 
-Los [hechos neutrales](../specs/economic-facts.md) se preservan desde su productor, antes de construir Accounting. Se versionan interpretaciones y se coordinan correcciones con raíces comunes; no se construye un bus vacío ni event sourcing global. Corporate tiene frontera lógica propia que consume Organization/Parties; Documents recibe snapshots/mandatos y no reconstruye GL consultando hacia Accounting.
+Los [hechos neutrales](../specs/cross-cutting/economic-facts.md) se preservan desde su productor, antes de construir Accounting. Se versionan interpretaciones y se coordinan correcciones con raíces comunes; no se construye un bus vacío ni event sourcing global. Corporate tiene frontera lógica propia que consume Organization/Parties; Documents recibe snapshots/mandatos y no reconstruye GL consultando hacia Accounting.
 
 [AI](../architecture/ai-assistance.md): heurísticas/manual como baseline; modelo solo candidato estructurado, sin autoridad ni herramientas críticas. Se distingue Hermes Agent de los modelos Hermes y API DeepSeek de pesos/licencias. Precios/alias y recursos OCI fueron revalidados; una oferta gratuita no acredita capacidad de la cuenta ni latencia. No hubo piloto, contratación o envío de datos empresariales.
 
@@ -126,15 +126,15 @@ Todas las filas heredan revisión separada pendiente y prohibición de código a
 
 | Hito | Contrato candidato entregado | Readiness y pendiente material |
 |---|---|---|
-| M01 | [Runtime/acceso/recuperación](../specs/runtime-masters.md) | SPECIFIED; revisable. Hosting/retención/targets y evidencia futura de roles/restore |
-| M02 | [Maestros/import](../specs/runtime-masters.md) | SPECIFIED; revisable. Datos mínimos reales, revisión de identidad/unidades y demostración futura |
-| M03 | [Inventory](../specs/inventory-deep.md), Treasury base e [integraciones](../specs/integrations.md) | SPECIFIED CANDIDATE; pool/precisión/coste/evidencia y protocolo Jumpseller pendientes |
-| M04 | SP2 y [CPE](../specs/cpe-document-delivery.md) | SPECIFIED CANDIDATE; oportunidad/artefactos por SEE, recuperación y pruebas del circuito |
-| M05 | [P2P](../specs/procurement-deep.md) | SPECIFIED CANDIDATE; tolerancias/aprobaciones/servicios y Tax por operación |
-| M06 | [Treasury/Corporate](../specs/treasury-corporate-deep.md) | SPECIFIED CANDIDATE; formato BBVA, evidencia y dictamen de financiación; IA opcional |
-| M07 | [Accounting](../specs/accounting-deep.md) y catálogo NPIF | SPECIFIED / PENDING PROFESSIONAL VALIDATION; elegibilidad, plan, políticas y apertura |
-| M08 | [Reporting/goldens](../specs/reporting-goldens.md) | SPECIFIED; aritmética G1 comprobada; paquete real, notas y revisión profesional no demostrados |
-| M09 | [Tax](../specs/tax-deep.md) | SPECIFIED / PENDING FACT; perfil, reglas activas y calendario por RUC/operación |
+| M01 | [Runtime/acceso/recuperación](../specs/milestones/runtime-masters.md) | SPECIFIED; revisable. Hosting/retención/targets y evidencia futura de roles/restore |
+| M02 | [Maestros/import](../specs/milestones/runtime-masters.md) | SPECIFIED; revisable. Datos mínimos reales, revisión de identidad/unidades y demostración futura |
+| M03 | [Inventory](../specs/milestones/inventory-deep.md), Treasury base e [integraciones](../specs/flows/jumpseller-external-work.md) | SPECIFIED CANDIDATE; pool/precisión/coste/evidencia y protocolo Jumpseller pendientes |
+| M04 | SP2 y [CPE](../specs/flows/cpe-document-delivery.md) | SPECIFIED CANDIDATE; oportunidad/artefactos por SEE, recuperación y pruebas del circuito |
+| M05 | [P2P](../specs/milestones/procurement-deep.md) | SPECIFIED CANDIDATE; tolerancias/aprobaciones/servicios y Tax por operación |
+| M06 | [Treasury/Corporate](../specs/milestones/treasury-corporate-deep.md) | SPECIFIED CANDIDATE; formato BBVA, evidencia y dictamen de financiación; IA opcional |
+| M07 | [Accounting](../specs/milestones/accounting-deep.md) y catálogo NPIF | SPECIFIED / PENDING PROFESSIONAL VALIDATION; elegibilidad, plan, políticas y apertura |
+| M08 | [Reporting/goldens](../specs/acceptance/reporting-goldens.md) | SPECIFIED; aritmética G1 comprobada; paquete real, notas y revisión profesional no demostrados |
+| M09 | [Tax](../specs/milestones/tax-deep.md) | SPECIFIED / PENDING FACT; perfil, reglas activas y calendario por RUC/operación |
 
 ## M. HUMAN DECISIONS
 

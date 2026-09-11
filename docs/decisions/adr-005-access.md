@@ -21,4 +21,4 @@ Solo aplicación tiene menos configuración pero conserva el bypass accidental. 
 
 ## Consequences
 
-La lectura empresarial también necesita frontera transaccional y resultados materializados. Se asume coste de roles/políticas/pruebas por una defensa concreta. REQUIRES LATER VALIDATION; no se habilita negocio sensible sobre una aproximación no probada. Si falla, revisar diseño antes de degradar garantías. Fuentes: [S06–S09](sources.md).
+La lectura empresarial también necesita frontera transaccional y resultados materializados. Se asume coste de roles/políticas/pruebas por una defensa concreta. REQUIRES LATER VALIDATION; no se habilita negocio sensible sobre una aproximación no probada. Si falla, revisar diseño antes de degradar garantías. Fuentes: [S06–S09](../research/technical-sources.md).

@@ -5,7 +5,7 @@ Fecha de corte: 2026-09-11. Este encabezado es la **única fuente del estado glo
 **GLOBAL DOCUMENTATION FREEZE: ACCEPTED.**
 **IMPLEMENTATION: NOT AUTHORIZED.**
 
-El [expediente final A–W](research/final-documentation-closure.md) documenta reconciliación UX, cierre transversal/G1 y handoff de candidato exacto. La readiness individual vive en [deep-spec-index](specs/deep-spec-index.md); decisiones abiertas, pruebas futuras y activaciones en [decisions-gaps](roadmap/decisions-gaps.md). El [memo UX](research/ux-reconciliation.md) registra el input externo y DDR-01–12; [UI](architecture/ui.md) conserva el contrato.
+El [expediente final A–W](history/final-documentation-closure.md) documenta reconciliación UX, cierre transversal/G1 y handoff de candidato exacto. La readiness individual vive en [deep-spec-index](specs/index.md); decisiones abiertas, pruebas futuras y activaciones en [decisions-gaps](roadmap/decisions-gaps.md). El [memo UX](evidence/ux-reconciliation.md) registra el input externo y DDR-01–12; [UI](architecture/ui.md) conserva el contrato.
 
 Resultado de revisión independiente comunicado por el propietario: **PASS WITH ONE MINOR EDITORIAL CHANGE** sobre commit `f6b64ae8c0734f7eed38ebdbcc02c7ce5d1ab5fb`, tree `0185e76655154dfcac80e39e3d58b3b5878d3525`. Se aplica la única corrección solicitada: el caso adversarial02 identifica mediante enlace el comando SP2 C15, distinto de los gates de activación. Este registro incorpora el resultado suministrado; no simula una nueva revisión independiente.
 
@@ -13,7 +13,7 @@ Permanecen abiertos **B16/C13/D6**; las validaciones profesionales siguen siendo
 
 ## Alcance del registro histórico siguiente
 
-Todos los apartados que siguen registran Foundation, Amendment, SP2 y Grand Master anteriores al cierre actual. Sus PASS, números de QA, H1–H5, riesgos y pendientes son históricos y no definen el estado ni el triage actual. La [auditoría Astra anterior](research/astra-master-audit.md) conserva evidencia y límites; el cierre A–W y el registro de gaps sustituyen su clasificación de bloqueos. No releer un “pendiente” histórico como nueva autorización o como decisión A actual.
+Todos los apartados que siguen registran Foundation, Amendment, SP2 y Grand Master anteriores al cierre actual. Sus PASS, números de QA, H1–H5, riesgos y pendientes son históricos y no definen el estado ni el triage actual. La [auditoría Astra anterior](history/astra-master-audit.md) conserva evidencia y límites; el cierre A–W y el registro de gaps sustituyen su clasificación de bloqueos. No releer un “pendiente” histórico como nueva autorización o como decisión A actual.
 
 ## Refutación del diseño
 
@@ -44,7 +44,7 @@ Todos los apartados que siguen registran Foundation, Amendment, SP2 y Grand Mast
 
 ## Decisiones realmente humanas
 
-Conservan pendientes humanos en los alcances indicados; el amendment concretó parte de H1 y SUPERPROMPT 2 eligió el circuito B2C. Las cinco políticas del circuito se precisan únicamente en [HP1–HP5](specs/first-operational-circuit.md). Los ADRs distinguen principios aceptados y mecanismos provisionales; estos últimos conservan incertidumbre técnica, que no se traslada al propietario como si fuera una decisión empresarial.
+Conservan pendientes humanos en los alcances indicados; el amendment concretó parte de H1 y SUPERPROMPT 2 eligió el circuito B2C. Las cinco políticas del circuito se precisan únicamente en [HP1–HP5](specs/flows/first-operational-circuit.md). Los ADRs distinguen principios aceptados y mecanismos provisionales; estos últimos conservan incertidumbre técnica, que no se traslada al propietario como si fuera una decisión empresarial.
 
 | ID | Decisión | Recomendación / qué condiciona |
 |---|---|---|
@@ -84,7 +84,7 @@ Todas son REQUIRES LATER VALIDATION. No son una orden para ejecutarlas ahora ni 
 | Entrega, migración, operación y recuperación | [Delivery](operations/delivery.md) |
 | Cinco verdades y documentación local | [Índice](index.md) |
 | Roles IA, autoridad, revisión y WO | [Protocolo](../.ai/README.md) |
-| Extracción y coste de V1 | [Política](v1-reference/policy.md) |
+| Extracción y coste de V1 | [Política](architecture/wbpro-reference-policy.md) |
 
 ## Evidencia y cierre correctivo de Gate 1
 
@@ -128,7 +128,7 @@ Revisión estática del cambio: referencias locales afectadas resueltas, fuentes
 
 Mandato posterior explícito: especificar y publicar la rama documental; no implementar ni ejecutar WOs. Preflight: árbol limpio, main/HEAD/origin/main idénticos tras fetch en `e89f344fc76cc70092962764e626f48ef80b6e90`, remoto CasPro ya publicado, sin archivos ajenos. Se creó `spec/superprompt-2-first-operational-circuit` desde ese origin/main; no se reescribe historia ni se trabaja directamente sobre main.
 
-La [spec de entrada](specs/first-operational-circuit.md) distribuye siete archivos por contexto: alcance/maestros/operación, negocio, CPE/Documents, integración, matriz de comandos, aceptación y WOs/perfiles. No se crean nuevos módulos, ADRs, motores de workflow, identidad Customer duplicada ni código. Los documentos fundacionales afectados solo actualizan enlaces, estado de fase y pendientes ya concretados; Gate 1 no se reaudita.
+La [spec de entrada](specs/flows/first-operational-circuit.md) distribuye siete archivos por contexto: alcance/maestros/operación, negocio, CPE/Documents, integración, matriz de comandos, aceptación y WOs/perfiles. No se crean nuevos módulos, ADRs, motores de workflow, identidad Customer duplicada ni código. Los documentos fundacionales afectados solo actualizan enlaces, estado de fase y pendientes ya concretados; Gate 1 no se reaudita.
 
 | Refutación del primer circuito | Respuesta incorporada y límite |
 |---|---|
@@ -143,7 +143,7 @@ La [spec de entrada](specs/first-operational-circuit.md) distribuye siete archiv
 | Staging filtra CC/BCC, timeout/lease/restore repite original | Guardia de entorno sobre todos los destinatarios, UNKNOWN/HOLD y conciliación, registro antes de I/O, efectos desactivados al restaurar |
 | WO necesita inventar evidencia o seis WOs aparentan terminar el ERP | Seis encargos PREPARED con perfiles/recortes/gates; UNIT aislado y RLS habilitante en WO-SP2-02. No atribuir a evidencia parcial un escenario completo |
 
-Contradicción externa conservada: documentación oficial Jumpseller discrepa sobre momento de descuento de stock y calendario de retries; [S21/S26](decisions/sources.md). El contrato bloquea la activación dependiente hasta comprobar la tienda/flujo real. No se trasladan esas afirmaciones a invariantes internas. SUNAT solo acredita la consulta documentada de un CPE identificado, no descarga total SOL; el baseline manual sigue disponible según política.
+Contradicción externa conservada: documentación oficial Jumpseller discrepa sobre momento de descuento de stock y calendario de retries; [S21/S26](research/technical-sources.md). El contrato bloquea la activación dependiente hasta comprobar la tienda/flujo real. No se trasladan esas afirmaciones a invariantes internas. SUNAT solo acredita la consulta documentada de un CPE identificado, no descarga total SOL; el baseline manual sigue disponible según política.
 
 **SUPERPROMPT 2: PASS documental.** Se revisaron las fichas, transiciones, permisos, orden común y contraejemplos del circuito; no se identificaron contradicciones internas residuales en este alcance. Comprobaciones estáticas: 17 archivos Markdown (7 nuevos y 10 existentes), 218 referencias locales resueltas, incluidas 49 a anchors explícitos; 37 fichas completas y coincidentes con la matriz; 110 escenarios y seis WOs sin IDs duplicados, referencias a fuentes reconocidas entre S01–S28. El grafo de 11 módulos permanece acíclico, sin nuevas dependencias empresariales; no hay archivos vacíos, patrones de secretos detectados o cambios fuera de la lista autorizada. Diff completo revisado y comprobación de whitespace sin errores; son comprobaciones documentales, no pruebas de aplicación.
 

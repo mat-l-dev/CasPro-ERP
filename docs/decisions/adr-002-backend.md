@@ -21,4 +21,4 @@ Django 5.2 LTS es válido para priorizar soporte extendido; 6.0 ya no es la rama
 
 ## Consequences
 
-Se aprovechan capacidades nativas recientes sin copiar V1. Se acepta una actualización planificada hacia 6.2 cuando sea estable, no una dependencia de su roadmap. Locks y compatibilidad con psycopg/tipado/QA: REQUIRES LATER VALIDATION antes del primer código. Fuentes: [S01–S03](sources.md).
+Se aprovechan capacidades nativas recientes sin copiar V1. Se acepta una actualización planificada hacia 6.2 cuando sea estable, no una dependencia de su roadmap. Locks y compatibilidad con psycopg/tipado/QA: REQUIRES LATER VALIDATION antes del primer código. Fuentes: [S01–S03](../research/technical-sources.md).

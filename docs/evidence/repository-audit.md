@@ -1,6 +1,6 @@
 # Auditoría de repositorios — Astra 2026-09-11
 
-Estado: auditoría documental concluida con [informe A–R](astra-master-audit.md); hallazgos comprobados a continuación. La aceptación del programa se decide en [review](../review.md), no mediante este inventario. No hay autorización de implementación.
+Estado: auditoría documental concluida con [informe A–R](../history/astra-master-audit.md); hallazgos comprobados a continuación. La aceptación del programa se decide en [review](../review.md), no mediante este inventario. No hay autorización de implementación.
 
 ## CasPro
 

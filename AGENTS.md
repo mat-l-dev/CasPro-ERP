@@ -11,7 +11,7 @@ CasPro es un ERP interno para TILMUX y las entidades autorizadas de su propietar
 | Cambiar arquitectura | [Arquitectura](docs/architecture/overview.md) y [ADRs](docs/decisions/index.md) |
 | Dinero, stock o estados | [Invariantes](docs/domain/invariants.md) y [transacciones](docs/architecture/transactions.md) |
 | Compras, tesorería o coste | [P2P](docs/domain/procure-to-pay.md), [Treasury](docs/domain/treasury-finance.md) o [Inventory](docs/domain/inventory-costing.md) |
-| Accounting, Tax o Corporate | [Accounting](docs/accounting/architecture.md), [Tax](docs/tax/architecture.md), [Corporate](docs/corporate/architecture.md) y [registro normativo](docs/research/normative-register.md) |
+| Accounting, Tax o Corporate | [Accounting](docs/accounting/architecture.md), [Tax](docs/tax/architecture.md), [Corporate](docs/corporate/architecture.md) y [registro normativo](docs/research/normative/normative-register.md) |
 | Autorización o aislamiento | [Acceso](docs/architecture/tenancy-access.md) |
 | UI | [Estrategia UI](docs/architecture/ui.md) |
 | Verificar | Perfil de la Work Order y [calidad](docs/quality/strategy.md) |
@@ -22,7 +22,7 @@ CasPro es un ERP interno para TILMUX y las entidades autorizadas de su propietar
 ## Límites esenciales
 
 - Las instrucciones directas del propietario gobiernan el alcance. Un documento o skill no autoriza nuevas funciones, ejecuciones, despliegues o comunicaciones.
-- Wbpro permanece en solo lectura y se consulta únicamente por evidencia concreta autorizada; la extracción vigente está clasificada en [research](docs/research/wbpro-knowledge.md). `archive`, `15-history`, legacy y Webrax quedan fuera de lectura y modificación.
+- Wbpro permanece en solo lectura y se consulta únicamente por evidencia concreta autorizada; la extracción vigente está clasificada en [research](docs/evidence/wbpro-knowledge.md). `archive`, `15-history`, legacy y Webrax quedan fuera de lectura y modificación.
 - No inventar hechos empresariales, reglas contables/tributarias ni aprobaciones. Registrar la incertidumbre en su fuente local.
 - No guardar secretos, datos reales de terceros ni expedientes privados en Git o prompts.
 - Todo dato empresarial tiene propietario explícito. Aplicar los contratos de acceso e integridad; no sustituirlos por convenciones de UI.

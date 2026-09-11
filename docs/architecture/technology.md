@@ -1,6 +1,6 @@
 # Evaluación tecnológica al 2026-09-11
 
-Recomendaciones independientes del stack de V1. Las capacidades citadas se contrastaron con [fuentes oficiales](../decisions/sources.md). Las ventajas de productividad/operación son juicio de diseño para este producto; no benchmarks realizados.
+Recomendaciones independientes del stack de V1. Las capacidades citadas se contrastaron con [fuentes oficiales](../research/technical-sources.md). Las ventajas de productividad/operación son juicio de diseño para este producto; no benchmarks realizados.
 
 GOOD/ACCEPTABLE/QUESTIONABLE son juicios comparativos, no estados de aceptación. Los alcances autoritativos viven en los [ADRs](../decisions/index.md): combinaciones/versiones concretas, configuración de acceso, backend de trabajo y proveedores de infraestructura conservan sus condiciones provisionales. Jumpseller y Resend son elecciones iniciales del propietario en ADR-008, con activación técnica pendiente.
 
@@ -22,15 +22,15 @@ GOOD/ACCEPTABLE/QUESTIONABLE son juicios comparativos, no estados de aceptación
 
 ## Django: elección entre ramas actuales
 
-La página oficial identifica 6.1.1 como versión principal actual, 5.2.17 como LTS y 6.0.8 como rama anterior. 5.2 conserva soporte extendido hasta abril de 2028; 6.1 hasta diciembre de 2027. 6.2 LTS está prevista para abril de 2027 [S01](../decisions/sources.md).
+La página oficial identifica 6.1.1 como versión principal actual, 5.2.17 como LTS y 6.0.8 como rama anterior. 5.2 conserva soporte extendido hasta abril de 2028; 6.1 hasta diciembre de 2027. 6.2 LTS está prevista para abril de 2027 [S01](../research/technical-sources.md).
 
-Se propone 6.1 como combinación candidata de ADR-002: CasPro no tiene dependencias ni código heredado que migrar; las capacidades nativas de CSP y fragmentos de templates encajan con SSR/HTMX sin añadir paquetes para esas funciones [S02](../decisions/sources.md). No se elige 6.0 cuando ya existe 6.1, ni 5.2 solo por ser la versión de V1. 5.2 sería aceptable si una dependencia esencial no soportara 6.1 o si se priorizara expresamente evitar la actualización prevista.
+Se propone 6.1 como combinación candidata de ADR-002: CasPro no tiene dependencias ni código heredado que migrar; las capacidades nativas de CSP y fragmentos de templates encajan con SSR/HTMX sin añadir paquetes para esas funciones [S02](../research/technical-sources.md). No se elige 6.0 cuando ya existe 6.1, ni 5.2 solo por ser la versión de V1. 5.2 sería aceptable si una dependencia esencial no soportara 6.1 o si se priorizara expresamente evitar la actualización prevista.
 
 Revisar 6.2 cuando sea estable y compatible; no basar el diseño en APIs futuras. La versión exacta de cada paquete se fijará en lockfiles durante una fase autorizada de código. No se han generado lockfiles ni instalado dependencias.
 
 Revalidación Astra: [Django6.1](https://docs.djangoproject.com/en/6.1/releases/6.1/) añade fetch modes y acciones de borrado en DB; CSP/fragments ya proceden de6.0. Las cascadas de DB no son mecanismo de auditoría porque no ejecutan necesariamente señales de aplicación. [Compatibilidad DB](https://docs.djangoproject.com/en/6.1/ref/databases/) exige PostgreSQL15+ y psycopg3.1.12+; 17 sigue selección propia, no mínimo del framework. El [calendario Django](https://www.djangoproject.com/download/) prevé6.2LTS en2027 y transición posterior de nomenclatura: no planear una supuesta7.0 sin revalidar.
 
-MFA queda concretado como candidato en [M01](../specs/runtime-masters.md). Las [notas allauth](https://docs.allauth.org/en/latest/release-notes/recent.html) verificadas al corte declaran soporte Django6.1 desde65.19.0 y65.19.3 publicado2026-09-11 corrige carreras TOTP/recovery y limitación concurrente. No fijar65.19.0 solo por compatibilidad; elegir parche soportado al autorizar código y probar esos contraejemplos. Es investigación de dependencia, sin instalación CasPro.
+MFA queda concretado como candidato en [M01](../specs/milestones/runtime-masters.md). Las [notas allauth](https://docs.allauth.org/en/latest/release-notes/recent.html) verificadas al corte declaran soporte Django6.1 desde65.19.0 y65.19.3 publicado2026-09-11 corrige carreras TOTP/recovery y limitación concurrente. No fijar65.19.0 solo por compatibilidad; elegir parche soportado al autorizar código y probar esos contraejemplos. Es investigación de dependencia, sin instalación CasPro.
 
 ## Servicios de Supabase por separado
 
@@ -41,14 +41,14 @@ MFA queda concretado como candidato en [M01](../specs/runtime-masters.md). Las [
 | Storage | Object storage requerido inicialmente; Supabase Storage es candidato, proveedor aún sin elegir | Elegir retención, coste y API para Documents; metadata en PostgreSQL, bytes privados separados. Migrar blobs y ACLs es trabajo separado |
 | Realtime | No adoptar inicialmente | No hay consumidor que justifique nueva entrega/seguridad de eventos al navegador |
 | Edge Functions | No adoptar | Evita un segundo runtime para reglas que pertenecen a Django |
-| Data API | Deshabilitar al provisionar CasPro | No se prevé acceso directo del navegador a tablas; la documentación permite desactivarla [S08](../decisions/sources.md) |
+| Data API | Deshabilitar al provisionar CasPro | No se prevé acceso directo del navegador a tablas; la documentación permite desactivarla [S08](../research/technical-sources.md) |
 
 Migrar PostgreSQL no migra automáticamente Storage, Auth, Realtime, Edge Functions, secretos, políticas de plataforma o configuración. Se elige A; cualquier B necesita un consumidor y ADR de servicio concreto.
 
 ## Portabilidad y hosting
 
-Conexión directa en backend persistente; pool de sesión si la red solo permite IPv4. Migración/backup usan conexión administrativa separada; pool transaccional no es el valor por defecto [S09](../decisions/sources.md).
+Conexión directa en backend persistente; pool de sesión si la red solo permite IPv4. Migración/backup usan conexión administrativa separada; pool transaccional no es el valor por defecto [S09](../research/technical-sources.md).
 
-Render permite imágenes preconstruidas por digest. Virginia está disponible tanto allí como en Supabase; es el par inicial candidato para reducir distancia aplicación-DB, no evidencia de red privada o baja latencia garantizada [S16](../decisions/sources.md). Validar latencia desde Perú, egress, IP estable y restricciones de red antes de contratar. Región de datos y términos quedan en H2, no se infieren de la cercanía geográfica.
+Render permite imágenes preconstruidas por digest. Virginia está disponible tanto allí como en Supabase; es el par inicial candidato para reducir distancia aplicación-DB, no evidencia de red privada o baja latencia garantizada [S16](../research/technical-sources.md). Validar latencia desde Perú, egress, IP estable y restricciones de red antes de contratar. Región de datos y términos quedan en H2, no se infieren de la cercanía geográfica.
 
 Una VPS futura ejecutaría el mismo artefacto con proxy TLS y supervisión de procesos, más responsabilidad por parches y recuperación. PostgreSQL puede seguir managed. Self-hostear toda Supabase no se justifica cuando solo se usa PostgreSQL; un PostgreSQL estándar basta para ese destino.

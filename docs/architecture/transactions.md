@@ -6,7 +6,7 @@ Contrato de [ADR-007](../decisions/adr-007-transactions.md). Propiedades empresa
 
 El punto público de un comando declara si es una operación propia de módulo o un workflow transversal. Este propietario abre la transacción exterior; los participantes no confirman por separado. No existe ATOMIC_REQUESTS global: la autorización, la carga controlada de datos, el render y el trabajo externo tienen límites explícitos.
 
-La futura implementación usará atomic con garantía de frontera exterior para comandos críticos (durable cuando corresponda); una llamada con transacción exterior desconocida se rechaza o utiliza un participante interno explícito. Así puede saberse cuándo terminó realmente el commit y cuándo persistir un rechazo. Savepoints internos no constituyen confirmaciones empresariales [S04](../decisions/sources.md).
+La futura implementación usará atomic con garantía de frontera exterior para comandos críticos (durable cuando corresponda); una llamada con transacción exterior desconocida se rechaza o utiliza un participante interno explícito. Así puede saberse cuándo terminó realmente el commit y cuándo persistir un rechazo. Savepoints internos no constituyen confirmaciones empresariales [S04](../research/technical-sources.md).
 
 Protocolo: autenticar y verificar membresía/capacidad inicial mediante Workspace → abrir contexto/transacción → cargar datos protegidos y verificar autorización sobre el recurso → tomar exclusiones necesarias → releer y validar guardas y revisiones relevantes → persistir estado + hechos + auditoría crítica + intención durable necesaria → commit → responder. La comprobación inicial no autoriza lecturas empresariales antes de establecer el contexto de DB. Un ID de correlación enlaza todo; no contiene PII.
 
@@ -35,7 +35,7 @@ La revisión es humana en el caso interactivo; un modo automático solo puede co
 
 Una restricción UNIQUE resuelve identidad/deduplicación; CHECK, propiedades de la fila; FK, pertenencia y referencia. Una suma que cruza varias filas necesita serializar el recurso que limita esa suma. Dos requests válidas individualmente no justifican aceptar ambas.
 
-SUPERPROMPT 2 concreta los recursos competidos del primer circuito en su [matriz local](../specs/command-matrix.md). Esa matriz es la fuente del orden candidato para esos comandos y sustituye la hipótesis ilustrativa anterior; sigue PROVISIONAL, pendiente de validación ejecutable conforme ADR-007.
+SUPERPROMPT 2 concreta los recursos competidos del primer circuito en su [matriz local](../specs/cross-cutting/command-matrix.md). Esa matriz es la fuente del orden candidato para esos comandos y sustituye la hipótesis ilustrativa anterior; sigue PROVISIONAL, pendiente de validación ejecutable conforme ADR-007.
 
 El orden aceptable se deriva de comandos y recursos concretos compartidos, con desempate estable entre recursos de la misma clase. Debe incluir la identidad de intención cuando exista deduplicación, restricciones/FKs relevantes y creación concurrente de raíces: no se puede bloquear una fila todavía inexistente. El mecanismo para ese caso se especifica y valida, no se inventa aquí. La matriz debe ser compatible entre todos los comandos que compitan; después necesita evidencia ejecutable de intercalación, rollback y retry. Su orden puede cambiar con esa evidencia sin abandonar estos principios.
 
@@ -43,7 +43,7 @@ Una operación que descubre otra raíz no la añade violando el orden acordado: 
 
 Aplicar dinero bloquea el objetivo Y el movimiento: objetivos distintos siguen compitiendo por el mismo cobro. Entregar y devolver dinero deben usar los mismos recursos de liquidación si afectan su elegibilidad. Un lock exclusivo sobre el pedido no protege por sí solo un cambio concurrente de Treasury.
 
-Las políticas puras y lecturas informativas no necesitan locks. Edición de borradores puede usar versión esperada y conflicto optimista. Deadlocks/timeouts se tratan como fallos transitorios acotados, reejecutando toda la intención idempotente; no como aprobación ni como bucle infinito [S05](../decisions/sources.md).
+Las políticas puras y lecturas informativas no necesitan locks. Edición de borradores puede usar versión esperada y conflicto optimista. Deadlocks/timeouts se tratan como fallos transitorios acotados, reejecutando toda la intención idempotente; no como aprobación ni como bucle infinito [S05](../research/technical-sources.md).
 
 ## Idempotencia real
 
@@ -57,7 +57,7 @@ La decisión depende del efecto de repetir una intención, no de que el hecho pu
 
 Cada comando documenta su clasificación y contraejemplo. Cuando requiere deduplicación, persiste en la misma transacción identidad única, fingerprint canónico y resultado estable. Misma intención y contenido devuelve el efecto ya confirmado; contenido diferente produce conflicto. Se revalida autorización al consultar ese resultado. El fingerprint usa entradas solicitadas normalizadas y versión de contrato; el resultado conserva las decisiones ya aplicadas, sin recalcular el pasado al reintentar.
 
-El caso concreto delimita entidad/operación y, cuando corresponda, principal o mandato. [CM0 de SP2](../specs/command-matrix.md#cm0) especifica identidad, solicitudes en curso, rechazo y protección de efectos del primer circuito; plazos de retención y mecanismo ejecutable conservan pendientes explícitos. No se reutiliza una clave caducada para duplicar un hecho confirmado. Un mecanismo incompleto no se declara naturalmente idempotente para evitar ese trabajo.
+El caso concreto delimita entidad/operación y, cuando corresponda, principal o mandato. [CM0 de SP2](../specs/cross-cutting/command-matrix.md#cm0) especifica identidad, solicitudes en curso, rechazo y protección de efectos del primer circuito; plazos de retención y mecanismo ejecutable conservan pendientes explícitos. No se reutiliza una clave caducada para duplicar un hecho confirmado. Un mecanismo incompleto no se declara naturalmente idempotente para evitar ese trabajo.
 
 La deduplicación se resuelve junto con los locks/constraints, no solo mediante una consulta anterior al bloqueo. No asumir que on_commit garantiza entrega de trabajo externo: un fallo del proceso después del commit puede perder ese callback. La intención que deba sobrevivir queda persistida dentro de la transacción.
 

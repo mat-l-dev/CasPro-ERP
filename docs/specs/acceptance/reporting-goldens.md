@@ -1,6 +1,6 @@
 # M08 — Cuatro estados, notas y goldens de aceptación
 
-Estado: **SPECIFIED — candidato; aritmética documental contrastable, software NO demostrado**. Owner Accounting. Hereda [M07](accounting-deep.md) y [NPIF reporting](../accounting/npif-reporting.md). Estas cifras son enteramente sintéticas; no representan TILMUX ni una política tributaria aprobada.
+Estado: **SPECIFIED — candidato; aritmética documental contrastable, software NO demostrado**. Owner Accounting. Hereda [M07](../milestones/accounting-deep.md) y [NPIF reporting](../../accounting/npif-reporting.md). Estas cifras son enteramente sintéticas; no representan TILMUX ni una política tributaria aprobada.
 
 ## Contrato de paquete
 
@@ -23,7 +23,7 @@ R02/R03 son un caso coordinado por Accounting: entrega a Documents un snapshot/m
 
 ## Golden G1: período completo y comparativo
 
-Fixture PEN, moneda funcional/presentación PEN, cifras a centavos. Comparativo P0 es un snapshot contable de prueba provisto como entrada, con soporte sintético; no se infiere una exoneración fiscal real de sus cifras. P1 tiene operaciones gravadas hipotéticas con IGV18% e inputs de crédito plenamente elegible **solo para este caso**. RER1.5% se usa como cálculo fiscal; su clasificación de gasto en este golden es candidata y requiere [DH1](../roadmap/decisions-gaps.md#dh1). No deducir regla legal de una columna de prueba.
+Fixture PEN, moneda funcional/presentación PEN, cifras a centavos. Comparativo P0 es un snapshot contable de prueba provisto como entrada, con soporte sintético; no se infiere una exoneración fiscal real de sus cifras. P1 tiene operaciones gravadas hipotéticas con IGV18% e inputs de crédito plenamente elegible **solo para este caso**. RER1.5% se usa como cálculo fiscal; su clasificación de gasto en este golden es candidata y requiere [DH1](../../roadmap/decisions-gaps.md#dh1). No deducir regla legal de una columna de prueba.
 
 P0: aportes8000, préstamo4000, ventas/cobros5000, compras5000 de las que se pagan4000, PPE pagado3000, COGS3000 y depreciación600. Resultado1400; inventario2000, PPE neto2400, AP1000, banco10000, deuda4000 y patrimonio9400. Constituye apertura conciliada de P1; todos los eventos del fixture tienen IDs sintéticos, sin documentos reales.
 

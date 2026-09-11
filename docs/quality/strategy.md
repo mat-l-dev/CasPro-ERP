@@ -2,7 +2,7 @@
 
 Contrato de [ADR-009](../decisions/adr-009-quality.md). **Esta fase no ejecuta tests de CasPro ni construye un runner.** Se revisan estáticamente los documentos candidatos. Toda evidencia de software CasPro descrita aquí está pendiente; la suite externa pcge-peru autorizada por el propietario se documenta separadamente en su auditoría y no acredita este ERP.
 
-Los [Validation Profiles y WOs de SP2](../specs/work-orders.md) concretan la selección futura para el primer circuito y sus gates habilitantes; no sustituyen el contrato de equivalencia e invalidación de esta fuente.
+Los [Validation Profiles y WOs de SP2](../history/work-orders-sp2.md) concretan la selección futura para el primer circuito y sus gates habilitantes; no sustituyen el contrato de equivalencia e invalidación de esta fuente.
 
 ## Categorías ortogonales
 
@@ -33,8 +33,8 @@ Esta correspondencia conserva una taxonomía de ejecución única. Las etiquetas
 | Provider contracts | CONTRACT: firma/replay/paginación, snapshot y estados Jumpseller, resultado ambiguo de correo, stock remoto concurrente; sandbox autorizado aparte de mocks |
 | E2E crítico | BROWSER + INTEGRATION de una tarea completa: venta íntegramente pagada a entrega/documentos; P2P servicio sin stock; período sintético a cuatro EEFF |
 | UI / accesibilidad | BROWSER: teclado, foco/lector, errores, LIGHT/DARK/SYSTEM y contraste WCAG2.2AA; atajo no confirma dinero/stock; revisión manual complementaria |
-| ACCOUNTING GOLDEN | UNIT + INTEGRATION/CONTRACT: [G1–G7](../specs/reporting-goldens.md), cifras esperadas externas al algoritmo, asiento→rubro→cuatro estados/notas, comparativos y drill-through |
-| TAX GOLDEN | UNIT + CONTRACT/INTEGRATION: [TX1–TX9](../specs/tax-deep.md), vigencia y evidencia legal fijadas, base fiscal/RER/IGV/SPOT/ND/reconciliación sin alterar GL |
+| ACCOUNTING GOLDEN | UNIT + INTEGRATION/CONTRACT: [G1–G7](../specs/acceptance/reporting-goldens.md), cifras esperadas externas al algoritmo, asiento→rubro→cuatro estados/notas, comparativos y drill-through |
+| TAX GOLDEN | UNIT + CONTRACT/INTEGRATION: [TX1–TX9](../specs/milestones/tax-deep.md), vigencia y evidencia legal fijadas, base fiscal/RER/IGV/SPOT/ND/reconciliación sin alterar GL |
 | MIGRATION / clean install / upgrade | MIGRATION: instalación vacía y actualización desde artefacto previo, plan por versión, datos y restricciones conservados; no ejecutar por una corrección de redacción |
 | RECOVERY | NON-FUNCTIONAL + TRANSACTIONAL: restaurar DB+objetos+roles, detectar objetos ausentes, medir RPO/RTO, impedir reenvíos/publicaciones antes de conciliación |
 | Performance / calidad del runner | NON-FUNCTIONAL + STATIC: perfil real de colección/DB/setup/consultas y dependencia; unión deduplicada por afirmación, sin rerun global ceremonial de 45 minutos |
@@ -91,12 +91,12 @@ Un PR→main con contenido e insumos equivalentes conserva evidencia; un merge q
 
 ## Diseño de pruebas
 
-- Hypothesis para conservación, particiones/redondeo y secuencias receive/apply/refund/reverse/retry. El modelo de referencia se deriva de la spec, no copia el algoritmo productivo. Conservar ejemplos reducidos de fallos [S15](../decisions/sources.md).
+- Hypothesis para conservación, particiones/redondeo y secuencias receive/apply/refund/reverse/retry. El modelo de referencia se deriva de la spec, no copia el algoritmo productivo. Conservar ejemplos reducidos de fallos [S15](../research/technical-sources.md).
 - PostgreSQL real para locks, RLS, constraints e idempotencia. Pruebas con rol runtime distinto al propietario de migraciones. SQLite y mocks no prueban esas propiedades.
 - Concurrencia con conexiones independientes y puntos controlados de lectura/espera/commit. Comprobar recursos persistidos, agregados y trazas; demostrar que la prueba detecta una inversión relevante. Repetición sirve para diagnóstico, no sustituye el diseño de la carrera.
 - Factories/builders locales de datos mínimos. Una prueba de precio no crea compra/recepción; un recorrido integral sí puede usar esa cadena.
 - DB de pruebas aislada por ejecución/worker. Reutilización local posible con huella de schema y reconstrucción explícita; clean-install y upgrade conservan bases limpias dedicadas. Nunca crear/dropear bases mediante un nombre inferido del entorno productivo.
-- Playwright en recorridos de alto valor. Trazas/imágenes retenidas al fallar, con datos sintéticos [S17](../decisions/sources.md). Evaluación manual de accesibilidad donde la automatización no basta.
+- Playwright en recorridos de alto valor. Trazas/imágenes retenidas al fallar, con datos sintéticos [S17](../research/technical-sources.md). Evaluación manual de accesibilidad donde la automatización no basta.
 
 ## Coste, flakiness y observación
 

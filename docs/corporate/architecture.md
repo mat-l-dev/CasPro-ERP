@@ -1,6 +1,6 @@
 # Corporate/Legal y mutuos
 
-Propietario conceptual: Corporate capability para hechos societarios, distinta de la identidad administrativa de Organization. [M06](../specs/treasury-corporate-deep.md) concreta el contrato candidato; no crea una aplicación Django `legal`. MUTUO NEEDS LEGAL-TAX-ACCOUNTING VALIDATION.
+Propietario conceptual: Corporate capability para hechos societarios, distinta de la identidad administrativa de Organization. [M06](../specs/milestones/treasury-corporate-deep.md) concreta el contrato candidato; no crea una aplicación Django `legal`. MUTUO NEEDS LEGAL-TAX-ACCOUNTING VALIDATION.
 
 ## Propiedad y límites
 
@@ -42,4 +42,4 @@ Reglas ya sustentadas:
 
 Preguntas para el gate profesional: mutuante/relación real; facultades y acuerdo; monto/límite/moneda/plazo/disponibilidad; interés civil y tratamiento fiscal de valor de mercado; eventos de desembolso/devolución; documentación y bancarización; medición NPIF; revelaciones; modificación/conversión/condonación; obligaciones de precios de transferencia/beneficiario final.
 
-El cronograma de beneficiario final de RS 000168-2025 incluye cohortes por ingresos y sujetos nuevos/activados; [N029](../research/normative-register.md) y el memo fiscal delimitan su alcance. Debe determinarse cohorte/vencimiento con RUC y hechos reales; CasPro prepara expediente, sin presentación automática a SUNAT.
+El cronograma de beneficiario final de RS 000168-2025 incluye cohortes por ingresos y sujetos nuevos/activados; [N029](../research/normative/normative-register.md) y el memo fiscal delimitan su alcance. Debe determinarse cohorte/vencimiento con RUC y hechos reales; CasPro prepara expediente, sin presentación automática a SUNAT.

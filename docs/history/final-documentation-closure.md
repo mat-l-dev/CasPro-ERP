@@ -1,6 +1,6 @@
 # Cierre final documental — expediente para revisión independiente
 
-Corte: 2026-09-11. Registro histórico de la evaluación del autor del candidato `f6b64ae8c0734f7eed38ebdbcc02c7ce5d1ab5fb`, previo al resultado independiente suministrado por el propietario y registrado en [review](../review.md). Se conserva la evidencia y el handoff de esa evaluación, con la aclaración editorial del caso02 solicitada por el reviewer. Este expediente no es dictamen profesional; review conserva el estado global vigente, [deep specs](../specs/deep-spec-index.md) la readiness del candidato y [gaps](../roadmap/decisions-gaps.md) los pendientes.
+Corte: 2026-09-11. Registro histórico de la evaluación del autor del candidato `f6b64ae8c0734f7eed38ebdbcc02c7ce5d1ab5fb`, previo al resultado independiente suministrado por el propietario y registrado en [review](../review.md). Se conserva la evidencia y el handoff de esa evaluación, con la aclaración editorial del caso02 solicitada por el reviewer. Este expediente no es dictamen profesional; review conserva el estado global vigente, [deep specs](../specs/index.md) la readiness del candidato y [gaps](../roadmap/decisions-gaps.md) los pendientes.
 
 ## A. Veredicto ejecutivo
 
@@ -12,11 +12,11 @@ Preflight conforme al encargo: rama `docs/grand-master-program`, HEAD/origin `38
 
 ## C. Disposición del blueprint
 
-Se leyó el archivo completo y se identificó por hash en el [memo UX](ux-reconciliation.md). ADOPT: continuidad segura, anatomía de tarea/evidencia/error, selección explícita, cockpit, modos visuales y PREPARE ≠ EXECUTE. ADAPT: patrones ERP, paneles, Document Flow, linaje de EEFF, Inbox, foco/teclado y emojis. ALREADY CANONICAL: autoridad del servidor, estados por dueño, capabilities, accesibilidad objetivo y AI candidato. REJECT: reglas empresariales por analogía visual, veto de confirmación deliberada por teclado y prototipo ejecutado como requisito del freeze documental. DEFER–VALIDATE DURING IMPLEMENTATION: medidas, colores/tiempos y combinaciones exactas. UI sigue en un único contrato; el archivo externo no es spec ni autorización.
+Se leyó el archivo completo y se identificó por hash en el [memo UX](../evidence/ux-reconciliation.md). ADOPT: continuidad segura, anatomía de tarea/evidencia/error, selección explícita, cockpit, modos visuales y PREPARE ≠ EXECUTE. ADAPT: patrones ERP, paneles, Document Flow, linaje de EEFF, Inbox, foco/teclado y emojis. ALREADY CANONICAL: autoridad del servidor, estados por dueño, capabilities, accesibilidad objetivo y AI candidato. REJECT: reglas empresariales por analogía visual, veto de confirmación deliberada por teclado y prototipo ejecutado como requisito del freeze documental. DEFER–VALIDATE DURING IMPLEMENTATION: medidas, colores/tiempos y combinaciones exactas. UI sigue en un único contrato; el archivo externo no es spec ni autorización.
 
 ## D. DDR-01–DDR-12
 
-Las doce preguntas quedan **CLOSED BY EXISTING CONTRACT**, con las precisiones de este cierre en la fuente canónica: DDR01 Sales/canal;02 Procurement;03 Treasury;04 Inventory;05 Accounting posting;06 Accounting cierre;07 Reporting;08 CPE/Documents;09 Inbox proyectado;10 Access;11 Transactions/integraciones;12 Maestros. La [tabla DDR](ux-reconciliation.md) enlaza cada respuesta y su límite de validación/activación. No se confunde cierre semántico con pruebas de interfaz o aprobación de perfiles reales.
+Las doce preguntas quedan **CLOSED BY EXISTING CONTRACT**, con las precisiones de este cierre en la fuente canónica: DDR01 Sales/canal;02 Procurement;03 Treasury;04 Inventory;05 Accounting posting;06 Accounting cierre;07 Reporting;08 CPE/Documents;09 Inbox proyectado;10 Access;11 Transactions/integraciones;12 Maestros. La [tabla DDR](../evidence/ux-reconciliation.md) enlaza cada respuesta y su límite de validación/activación. No se confunde cierre semántico con pruebas de interfaz o aprobación de perfiles reales.
 
 ## E. Triage A/B/C/D
 
@@ -30,15 +30,15 @@ PREPARE ≠ EXECUTE conserva los modos automáticos de entrega documental ya aut
 
 ## G. M01–M09
 
-Cada hito figura **READY_FOR_FREEZE_REVIEW** en la [matriz canónica](../specs/deep-spec-index.md). No hay aceptación parcial de M01 para empezar código ni se exige construir los nueve módulos simultáneamente después de freeze. La futura entrega es incremental y cada alcance debe superar sus gates B/C pertinentes.
+Cada hito figura **READY_FOR_FREEZE_REVIEW** en la [matriz canónica](../specs/index.md). No hay aceptación parcial de M01 para empezar código ni se exige construir los nueve módulos simultáneamente después de freeze. La futura entrega es incremental y cada alcance debe superar sus gates B/C pertinentes.
 
 ## H. Accounting y G1
 
-[G1](../specs/reporting-goldens.md) ahora identifica hechos/componentes, interpretación, asientos/líneas simbólicas, saldos y mapping por estado. P0 tiene nueve entradas de soporte y movimiento por lado37600; P1 tiene21 y movimiento por lado14997, balance de comprobación18441 por lado. Cálculo editorial independiente con Decimal, fuera de CasPro, reprodujo resultado163, activo15540, pasivo5977, patrimonio9563, efectivo9480 y EFE−312/−708/+500. Es aritmética de documentos, no software contable ejecutado.
+[G1](../specs/acceptance/reporting-goldens.md) ahora identifica hechos/componentes, interpretación, asientos/líneas simbólicas, saldos y mapping por estado. P0 tiene nueve entradas de soporte y movimiento por lado37600; P1 tiene21 y movimiento por lado14997, balance de comprobación18441 por lado. Cálculo editorial independiente con Decimal, fuera de CasPro, reprodujo resultado163, activo15540, pasivo5977, patrimonio9563, efectivo9480 y EFE−312/−708/+500. Es aritmética de documentos, no software contable ejecutado.
 
 Devengo/cobro, retorno comercial/físico/refund, recepción/factura y préstamo/capital se separan. Cierre de resultados no suma163 dos veces. EFE consume piernas de efectivo, no variaciones netas de saldos; notas y fórmulas conservan evidencia y operandos. Anti-joins/manifiestos y casos de omisión/duplicación/circularidad deben rechazar un paquete aunque cuadre. Símbolos G1 no son cuentas PCGE inventadas.
 
-La auditoría [pcge-peru](pcge-code-audit.md) se reutiliza: v0.2.0, commit `ade8ea1505c0841a586a7e310314e76df623fe20`, 413 pruebas externas previas. No se repitieron. Representación de ambas versiones pertenece al adapter B07; procedencia2026/70992 a C02; adopción por TILMUX y fecha a C01. Hash distinto no prueba incorrección semántica. Políticas/ESFA/estimaciones reales requieren DH1 antes de activarlas, dentro de la superficie tipada M07; una nueva semántica exige amendment.
+La auditoría [pcge-peru](../evidence/pcge-code-audit.md) se reutiliza: v0.2.0, commit `ade8ea1505c0841a586a7e310314e76df623fe20`, 413 pruebas externas previas. No se repitieron. Representación de ambas versiones pertenece al adapter B07; procedencia2026/70992 a C02; adopción por TILMUX y fecha a C01. Hash distinto no prueba incorrección semántica. Políticas/ESFA/estimaciones reales requieren DH1 antes de activarlas, dentro de la superficie tipada M07; una nueva semántica exige amendment.
 
 ## I. Tax y CPE
 
@@ -76,12 +76,12 @@ Resultados de análisis estático contra contratos, **no tests ejecutados**. En 
 
 | Caso adversarial | Dueño / hechos preservados y desenlace | UX y replay/efecto externo |
 |---|---|---|
-| 01. Webhook duplicado o fuera de orden | Integrations preserva observación/conexión, revisión/generación; Sales conserva aceptación. [Canal](../specs/integrations.md) rechaza promover lectura vieja | Mostrar antigüedad/discrepancia; mismo hecho no crea otra venta. ABA legítimo no se pierde por hash eterno |
-| 02. Venta aceptada100; nueva versión externa120 | Sales conserva snapshot100; cambio requiere el comando SP2 [C15](../specs/sales-stock-treasury.md#c15) con cobertura/documentación, no update por canal | Comparar cambio propuesto; no nuevo cobro/reserva por replay |
+| 01. Webhook duplicado o fuera de orden | Integrations preserva observación/conexión, revisión/generación; Sales conserva aceptación. [Canal](../specs/flows/jumpseller-external-work.md) rechaza promover lectura vieja | Mostrar antigüedad/discrepancia; mismo hecho no crea otra venta. ABA legítimo no se pierde por hash eterno |
+| 02. Venta aceptada100; nueva versión externa120 | Sales conserva snapshot100; cambio requiere el comando SP2 [C15](../specs/flows/sales-stock-treasury.md#c15) con cobertura/documentación, no update por canal | Comparar cambio propuesto; no nuevo cobro/reserva por replay |
 | 03. Canal PAID, Treasury sin cobro | Treasury es dueño de dinero; observación no cumple HP1 | Advertir “pago por confirmar”; bloquear despacho dependiente; retry webhook no confirma caja |
-| 04. Pago confirmado después del corte | Treasury preserva fecha económica y conocimiento; [hechos](../specs/economic-facts.md)/Accounting mantienen corte publicado y revisión/ajuste posterior | Paquete histórico no cambia; nueva recepción del hecho no backdatea silenciosamente el asiento |
+| 04. Pago confirmado después del corte | Treasury preserva fecha económica y conocimiento; [hechos](../specs/cross-cutting/economic-facts.md)/Accounting mantienen corte publicado y revisión/ajuste posterior | Paquete histórico no cambia; nueva recepción del hecho no backdatea silenciosamente el asiento |
 | 05. Despacho parcial de venta100 con cobro40 | Sales/Inventory/Treasury revalidan cobertura íntegra100 antes de cualquier parcial | Preparar no despacha; mostrar faltante60; concurrencia con refund usa recursos comunes |
-| 06. CPE anticipo antes del despacho | Sales/CPE conserva identidad/fin y deducción, Treasury cobro independiente; [CPE](../specs/cpe-document-delivery.md) permite evidencia previa | Mostrar rama anticipada, sin venta/reserva inventada; documento no duplica ingreso/caja |
+| 06. CPE anticipo antes del despacho | Sales/CPE conserva identidad/fin y deducción, Treasury cobro independiente; [CPE](../specs/flows/cpe-document-delivery.md) permite evidencia previa | Mostrar rama anticipada, sin venta/reserva inventada; documento no duplica ingreso/caja |
 | 07. Dos CPE para una venta | Sales asigna porciones/anticipos/notas sin doble cobertura; cada CPE/entrega mantiene identidad | Flow N:M y revisión del conjunto; reenvío de uno no envía los demás |
 | 08. Refund tras posting | Treasury corrige dinero y Sales cobertura; Accounting interpreta hecho nuevo/delta/reversión según período | Original/asiento visibles; no editar posted ni autoanular CPE/stock |
 | 09. Factura proveedor antes de recepción | Procurement preserva documento y HOLD/revisión; Accounting distingue anticipo/obligación/prematuro según contrato | No mostrar recibido ni crear Inventory al cargar factura; replay no registra AP dos veces |
@@ -89,7 +89,7 @@ Resultados de análisis estático contra contratos, **no tests ejecutados**. En 
 | 11. PO10, recepción6, factura10 | P2P asigna6 y deja diferencia4 en excepción; liberación exige decisión válida | Comparación por línea/remanente, sin “resolver” genérico ni crédito fiscal inventado |
 | 12. Coste tardío con período cerrado | Inventory replay completo versiona deltas; Accounting ajusta período permitido o reabre formalmente | Mostrar valoración original/revisada y paquete sustituido; no sobrescribir cierre ni aplicar delta dos veces |
 | 13. Conteo y movimiento concurrentes | Inventory persiste freeze por posiciones, revalida en movimientos/reservas y finaliza con nueva TX corta | Explicar acción temporalmente bloqueada; no lock DB durante conteo humano ni borrar reservas |
-| 14. Banco N:M con remanentes | Treasury consume asignación firmada una vez por línea/movimiento, misma cuenta/moneda; [T04–T06](../specs/treasury-corporate-deep.md) | Mostrar miembros/saldos; retirar candidato no desconcilia; no comisión inventada para cero |
+| 14. Banco N:M con remanentes | Treasury consume asignación firmada una vez por línea/movimiento, misma cuenta/moneda; [T04–T06](../specs/milestones/treasury-corporate-deep.md) | Mostrar miembros/saldos; retirar candidato no desconcilia; no comisión inventada para cero |
 | 15. Confirmación bancaria de resultado incierto | Treasury consulta intención persistida y evidencia; si hay efecto externo desconocido queda pendiente, no otro pago | “Resultado por verificar”, seguimiento del mismo intento; no API BBVA supuesta ni botón Retry monetario ciego |
 | 16. Fondos del socio sin clasificación | Treasury conserva ingreso bancario; Corporate expediente pendiente; Accounting no presume venta/aporte | Excepción y revisión C06; replay mantiene hecho, no completa contrato por inferencia |
 | 17. Cambio de marco o perfil fiscal | Accounting/Tax versionan interpretación/vigencia con transición; hechos productores intactos | Mostrar marco/período/corte; no recalcular informe histórico con regla nueva |
@@ -127,12 +127,12 @@ Se modificaron26 archivos respecto de la baseline de misión, todos Markdown;24 
 | Propiedad | Archivos cambiados |
 |---|---|
 | Estado global | `docs/review.md` |
-| Readiness por hito / incógnitas | `docs/specs/deep-spec-index.md`; `docs/roadmap/decisions-gaps.md` |
+| Readiness por hito / incógnitas | `docs/specs/index.md`; `docs/roadmap/decisions-gaps.md` |
 | Contratos transversales | `docs/architecture/ui.md`; `docs/architecture/transactions.md`; `docs/architecture/data.md`; `docs/domain/invariants.md` |
-| Contratos profundos y G1 | `docs/specs/inventory-deep.md`; `docs/specs/accounting-deep.md`; `docs/specs/treasury-corporate-deep.md`; `docs/specs/reporting-goldens.md` |
-| Políticas y evidencia | `docs/accounting/npif-policy-catalog.md`; `docs/accounting/npif-reporting.md`; `docs/research/normative-register.md`; `docs/research/pcge-code-audit.md`; `docs/research/astra-master-audit.md` (histórico) |
-| Gobierno y navegación | `README.md`; `docs/index.md`; `docs/decisions/index.md`; `docs/decisions/adr-012-global-documentation-freeze.md`; `docs/roadmap/program.md`; `docs/roadmap/capabilities.md`; `.ai/README.md`; `docs/specs/work-orders.md` |
-| Nuevos registros de reconciliación/evaluación, no specs paralelas | `docs/research/ux-reconciliation.md`; `docs/research/final-documentation-closure.md` |
+| Contratos profundos y G1 | `docs/specs/milestones/inventory-deep.md`; `docs/specs/milestones/accounting-deep.md`; `docs/specs/milestones/treasury-corporate-deep.md`; `docs/specs/acceptance/reporting-goldens.md` |
+| Políticas y evidencia | `docs/accounting/npif-policy-catalog.md`; `docs/accounting/npif-reporting.md`; `docs/research/normative/normative-register.md`; `docs/evidence/pcge-code-audit.md`; `docs/history/astra-master-audit.md` (histórico) |
+| Gobierno y navegación | `README.md`; `docs/index.md`; `docs/decisions/index.md`; `docs/decisions/adr-012-global-documentation-freeze.md`; `docs/roadmap/program.md`; `docs/roadmap/capabilities.md`; `.ai/README.md`; `docs/history/work-orders-sp2.md` |
+| Nuevos registros de reconciliación/evaluación, no specs paralelas | `docs/evidence/ux-reconciliation.md`; `docs/history/final-documentation-closure.md` |
 
 ADR012 explica el criterio y remite al estado global. Catálogo NPIF y registro normativo distinguen contrato de política real; mapas/índices/WOs dirigen a sus fuentes. El informe anterior conserva su evidencia histórica sin competir con el triage vigente.
 

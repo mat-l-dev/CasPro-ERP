@@ -21,4 +21,4 @@ Suite universal por edición, E2E para cada formulario y porcentaje de coverage 
 
 ## Consequences
 
-Fixtures locales, propiedades donde aportan, carreras controladas y candidato trazable. Primero instrumentación/baseline, luego presupuestos de tiempo. No se ejecuta evidencia dinámica en esta fase. Fuentes: [S15/S17](sources.md) y auditoría previa.
+Fixtures locales, propiedades donde aportan, carreras controladas y candidato trazable. Primero instrumentación/baseline, luego presupuestos de tiempo. No se ejecuta evidencia dinámica en esta fase. Fuentes: [S15/S17](../research/technical-sources.md) y auditoría previa.

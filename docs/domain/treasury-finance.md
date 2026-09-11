@@ -1,6 +1,6 @@
 # Treasury y finanzas objetivo
 
-Propietario: Treasury. Estado: arquitectura con [deep spec M06 candidata](../specs/treasury-corporate-deep.md), formatos y políticas reales pendientes. El circuito B2C existente sigue siendo el primer alcance; este documento ordena su evolución.
+Propietario: Treasury. Estado: arquitectura con [deep spec M06 candidata](../specs/milestones/treasury-corporate-deep.md), formatos y políticas reales pendientes. El circuito B2C existente sigue siendo el primer alcance; este documento ordena su evolución.
 
 ## Hechos separados
 

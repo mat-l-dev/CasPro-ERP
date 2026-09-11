@@ -21,4 +21,4 @@ Float pierde exactitud; UUID para cada fila añade coste sin consumidor; JSON un
 
 ## Consequences
 
-Las escalas/políticas comerciales candidatas deben contrastarse al especificar operaciones, sin convertirse en normas fiscales. Relaciones compuestas y rangos físicos requieren validación posterior. Fuente técnica de UUID: [S03](sources.md); reglas empresariales: [invariantes](../domain/invariants.md).
+Las escalas/políticas comerciales candidatas deben contrastarse al especificar operaciones, sin convertirse en normas fiscales. Relaciones compuestas y rangos físicos requieren validación posterior. Fuente técnica de UUID: [S03](../research/technical-sources.md); reglas empresariales: [invariantes](../domain/invariants.md).

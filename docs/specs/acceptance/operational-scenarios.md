@@ -1,6 +1,6 @@
 # SP2 — Escenarios de aceptación futuros
 
-No son tests escritos o ejecutados. Propietarios de comportamiento: [alcance](first-operational-circuit.md), [negocio](sales-stock-treasury.md), [CPE/Documents](cpe-document-delivery.md), [integraciones](integrations.md) y [matriz](command-matrix.md). Cada escenario usa sus comandos/guardas; los [perfiles](work-orders.md) seleccionan evidencia por propiedad, sin repetir suites por nombres de módulos.
+No son tests escritos o ejecutados. Propietarios de comportamiento: [alcance](../flows/first-operational-circuit.md), [negocio](../flows/sales-stock-treasury.md), [CPE/Documents](../flows/cpe-document-delivery.md), [integraciones](../flows/jumpseller-external-work.md) y [matriz](../cross-cutting/command-matrix.md). Cada escenario usa sus comandos/guardas; los [perfiles](../../history/work-orders-sp2.md) seleccionan evidencia por propiedad, sin repetir suites por nombres de módulos.
 
 Fixtures sintéticas: entidades A/B, miembros/principales distintos, moneda PEN salvo indicación, documentos/IDs/cuentas ficticios identificados como tales. Las pruebas aplican HP1–HP3 según su estado vigente y políticas sintéticas explícitas para los parámetros todavía pendientes de HP2–HP5; un fixture no aprueba esos parámetros ni acredita una regla fiscal. Proveedor simulado con respuestas de contrato para pruebas ordinarias; cuentas/efectos reales solo en una validación futura expresamente autorizada, nunca LOCAL/CI. Las carreras usan conexiones separadas y barreras controladas, verificando también auditoría/eventos/intenciones persistidas.
 
@@ -151,4 +151,4 @@ Fixtures sintéticas: entidades A/B, miembros/principales distintos, moneda PEN 
 
 ## Refutación documental de esta entrega
 
-La revisión final debe recorrer especialmente SP2-AC-003, 034, 045, 057–061, 068, 080–085, 094–096 y 100–105 contra las fichas/matriz, buscando un paso sin dueño/guarda/evidencia. Una secuencia plausible sin garantía queda como mecanismo pendiente y gate de activación; no se convierte en prueba pasada. El estado real de revisión y sus límites se registra en [review](../review.md), sin reauditar Gate 1.
+La revisión final debe recorrer especialmente SP2-AC-003, 034, 045, 057–061, 068, 080–085, 094–096 y 100–105 contra las fichas/matriz, buscando un paso sin dueño/guarda/evidencia. Una secuencia plausible sin garantía queda como mecanismo pendiente y gate de activación; no se convierte en prueba pasada. El estado real de revisión y sus límites se registra en [review](../../review.md), sin reauditar Gate 1.

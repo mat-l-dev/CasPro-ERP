@@ -1,6 +1,6 @@
 # Arquitectura Tax Perú
 
-Propietario: Tax. Estado: investigación y [policy spec M09 candidata](../specs/tax-deep.md), PENDING FACT / PENDING PROFESSIONAL VALIDATION. Tax no es Accounting ni un generador de hechos operativos.
+Propietario: Tax. Estado: investigación y [policy spec M09 candidata](../specs/milestones/tax-deep.md), PENDING FACT / PENDING PROFESSIONAL VALIDATION. Tax no es Accounting ni un generador de hechos operativos.
 
 ## Frontera
 
@@ -44,4 +44,4 @@ El contrato gratuito y el tratamiento fiscal son dimensiones distintas. Para vin
 
 Antes de primera operación: RUC/régimen, obligaciones CPE y SIRE, afectación IGV por catálogo real, adquisiciones sujetas a SPOT/percepción/retención, calendario, tratamiento de CPE externos y evidencia. Antes del mutuo: dictamen legal-tributario-contable. Antes de RMT/General: base fiscal, pagos a cuenta, DJ anual, libros, activos/depreciación y diferencias. Todas las salidas son `PREPARED` hasta revisión; la IA puede explicar/anotar candidatos, nunca determinar ni presentar.
 
-Fuentes canónicas: [registro normativo](../research/normative-register.md), [revisión tributaria actual](../research/tax-current-review.md) y [memorando mutuo](../research/mutuo-tax-corporate.md). La spec M09 cita esas fuentes; cada activación fija texto/vigencia, hechos, alcance, carácter vinculante y límites. La investigación documental no aprueba el perfil empresarial real.
+Fuentes canónicas: [registro normativo](../research/normative/normative-register.md), [revisión tributaria actual](../research/normative/tax-current-review.md) y [memorando mutuo](../research/normative/mutuo-tax-corporate.md). La spec M09 cita esas fuentes; cada activación fija texto/vigencia, hechos, alcance, carácter vinculante y límites. La investigación documental no aprueba el perfil empresarial real.
