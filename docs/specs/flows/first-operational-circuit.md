@@ -12,7 +12,7 @@ Propósito: especificación implementable de venta de mercadería existente por 
 | Jumpseller, Resend, inbox/jobs, reconciliación y fallos externos | [Integraciones](jumpseller-external-work.md) |
 | Orden común, atomicidad y catálogo de comandos | [Matriz](../cross-cutting/command-matrix.md) |
 | Casos futuros verificables | [Aceptación](../acceptance/operational-scenarios.md) |
-| Primeros encargos y evidencia requerida | [Work Orders](../../history/work-orders-sp2.md) |
+| Primeros encargos y evidencia requerida | [Work Orders históricas](../../history/work-orders-sp2.md) y [perfiles de evidencia](../acceptance/validation-profiles.md) |
 
 La spec concreta la fundación; no sustituye [invariantes](../../domain/invariants.md), [ownership](../../architecture/boundaries.md), [acceso](../../architecture/tenancy-access.md) ni [QA](../../quality/strategy.md). Las fichas de comandos viven junto a su dueño y heredan únicamente CM0 de la matriz. No hay tablas de estados duplicadas en ADRs o WOs. Los IDs de comando identifican contratos, no clases o tablas obligatorias.
 

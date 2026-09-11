@@ -2,7 +2,7 @@
 
 Contrato de [ADR-009](../decisions/adr-009-quality.md). **Esta fase no ejecuta tests de CasPro ni construye un runner.** Se revisan estáticamente los documentos candidatos. Toda evidencia de software CasPro descrita aquí está pendiente; la suite externa pcge-peru autorizada por el propietario se documenta separadamente en su auditoría y no acredita este ERP.
 
-Los [Validation Profiles y WOs de SP2](../history/work-orders-sp2.md) concretan la selección futura para el primer circuito y sus gates habilitantes; no sustituyen el contrato de equivalencia e invalidación de esta fuente.
+Los [Validation Profiles](../specs/acceptance/validation-profiles.md) y [WOs históricas de SP2](../history/work-orders-sp2.md) concretan la selección futura para el primer circuito y sus gates habilitantes; no sustituyen el contrato de equivalencia e invalidación de esta fuente.
 
 ## Categorías ortogonales
 

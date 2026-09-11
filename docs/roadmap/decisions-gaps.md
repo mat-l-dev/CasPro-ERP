@@ -102,7 +102,7 @@ Cada WO concreta el fixture/candidato/configuración y evidencia de los gates pe
 
 ## Máximo cinco grupos humanos y profesionales
 
-DH1–DH5 son agrupaciones de preguntas de activación, no aprobación solicitada ahora ni sustitución de HP1–HP5. Referencias históricas H1–H5 en review no son IDs actuales. No se pide al propietario decidir locks, tablas, librerías ni cómo probar RLS.
+DH1–DH5 son agrupaciones de preguntas de activación, no aprobación solicitada ahora ni sustitución de HP1–HP5. Referencias históricas H1–H5 en [review histórico](../history/reviews.md) no son IDs actuales. No se pide al propietario decidir locks, tablas, librerías ni cómo probar RLS.
 
 <a id="dh1"></a>
 ### DH1 — Contabilidad, apertura y valoración

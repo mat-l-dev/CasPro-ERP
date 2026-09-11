@@ -121,4 +121,4 @@ Todas las filas heredan I si D; se listan los demás recursos potenciales en ord
 | C09 tardío contra C08 | K/D/N/J | Observaciones preservadas, sin regresión ciega de estado ni dinero/CPE alterados |
 | Restore contra cualquier job antiguo | entorno/epoch de recuperación y permisos | Cero efectos externos hasta reconciliación y reactivación autorizadas |
 
-Esto es análisis estático del diseño, no evidencia de DB. Las [familias de aceptación](../acceptance/operational-scenarios.md) y [perfiles](../../history/work-orders-sp2.md) determinan las pruebas posteriores y el gate habilitante de RLS.
+Esto es análisis estático del diseño, no evidencia de DB. Las [familias de aceptación](../acceptance/operational-scenarios.md) y [perfiles](../acceptance/validation-profiles.md) determinan las pruebas posteriores y el gate habilitante de RLS.
