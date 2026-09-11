@@ -4,11 +4,27 @@ Propietarios: Sales conserva CPE de venta/vínculo comercial; Documents conserva
 
 ## Identificar, adquirir, vincular y verificar
 
-Baseline: operador prepara contexto de venta en CasPro, emite fuera por SOL/u otra vía autorizada, registra identidad/evidencia de esa emisión, importa artefactos disponibles y registra verificación oficial cuando aplique. CasPro no emite, presenta ni tiene botón para enviar CPE a SUNAT. El orden documental no prescribe momento fiscal: HP4 gobierna esa condición y no se asume resuelta por un diagrama.
+Baseline: operador prepara contexto de venta en CasPro, emite fuera por SOL/u otra vía autorizada, registra identidad/evidencia de esa emisión, importa artefactos disponibles y registra verificación oficial cuando aplique. CasPro no emite, presenta ni tiene botón para enviar CPE a SUNAT. La [revisión RCP](../research/tax-current-review.md) exige separar oportunidad de emisión, otorgamiento, pago y despacho: un diagrama que muestre CPE después de dispatch no prescribe ese orden legal. Conformidad del medio de pago/anticipo puede generar obligación antes de que Treasury confirme o Sales acepte internamente. Preservar observación y fecha externa; la demora de captura no desplaza el nacimiento legal.
 
 La identidad externa de CPE es `(RUC emisor, tipo, serie, número)`, bajo entidad propietaria; conservar valores recibidos y normalización de contrato, sin colisiones por quitar ceros/formatos arbitrariamente. Para el CPE de esta venta: emisor corresponde a Organization acreditada, fecha/moneda/importes/componentes compatibles con el expediente, identidad del adquirente compatible cuando exista/se exija y evidencia que lo relaciona con esa venta. Una identidad externa conocida no se asigna a dos ventas por error.
 
-La slice vincula un CPE primario a una venta; más de un candidato primario → AMBIGUOUS hasta resolver. Correcciones externas se pueden conservar como expediente/evidencia relacionada con el original, pero no se automatiza su tratamiento tributario ni su entrega sin política explícita. Fraccionar una venta en varios CPE principales requiere contrato adicional; no se implementa como relación N:M libre por anticipación.
+**Corrección Astra de cardinalidad:** una venta puede tener varios CPE por anticipos, liquidación y notas; cada CPE mantiene identidad única y vínculo a una sola venta en el alcance inicial. No se confunde multiplicidad legítima con ambigüedad: AMBIGUOUS indica correspondencia no resuelta. Un CPE que agrupe varias ventas queda registrado sin aplicación automática, fuera de este contrato hasta ampliación explícita. No se parte artificialmente una operación para evitar identificación del adquirente.
+
+El expediente de emisión puede existir antes de la venta aceptada: se vincula provisionalmente al caso externo identificado o queda UNLINKED con evidencia y actor. C30 no exige inventar aceptación/reserva para registrar un documento real. La aceptación C14 no adopta automáticamente esos CPE; C33 confirma su correspondencia con la venta y conserva el antecedente.
+
+## Asignaciones documentales de anticipos y correcciones
+
+Sales conserva por versión de vínculo: identidad CPE, finalidad ADVANCE/SETTLEMENT/SALE/CREDIT_NOTE/DEBIT_NOTE, líneas originales, moneda, importes brutos/base/impuestos, porción atribuida a líneas/episodios comerciales y referencias a anticipos deducidos o documento modificado. Los nombres son roles internos, no códigos SUNAT inventados. Se requiere desglose fuente, no inferencia por total. La selección aprobada debe explicar `importe nuevo documentado = operación documentada − anticipos deducidos`, sin sumar de nuevo un anticipo que el documento final ya descuenta.
+
+Guardas de C33: misma entidad/emisor/moneda y adquirente compatible; una porción fuente no se asigna dos veces; importes asignados no exceden el documento/episodio neto; toda nota identifica documento modificado y motivo real. Un anticipo aplicado documentalmente no confirma dinero, liquida Treasury ni reconoce ingreso Accounting. CPE emitido por toda la operación puede cubrir documentalmente el total con varios cobros; la multiplicidad se permite cuando hay documentos reales, no se exige emitir uno nuevo por cada registro de Treasury.
+
+C33 publica una revisión de conciliación con importes por CPE, deducciones, notas, diferencia explicada/no explicada y obligaciones de emisión/otorgamiento pendientes. Una corrección o cambio de asignación invalida esa revisión y las aprobaciones de entrega afectadas. Retraer vínculo conserva CPE/bytes; anulación tributaria requiere evidencia externa. Una nota de crédito no devuelve stock ni dinero y no reduce el compromiso comercial sin C15.
+
+Antes de C20, el operador ve la lista completa de CPE/obligaciones y evidencia de traslado aplicable; se revalida cumplimiento HP4 del acto, nunca un booleano de “hay expediente”. C17 conserva el cobro real aunque haya incumplimiento documental: el hecho durable permite abrir pendiente urgente, con fecha original, sin ocultar dinero ni declarar cumplimiento retrospectivo. Si el origen/operación aún es desconocido, se conserva esa incertidumbre y Tax evalúa el trigger cuando se identifique.
+
+Lecturas: dossier por venta con anticipos/liquidación/notas y drill-through a cobro/evidencia; lista de CPE no vinculados; obligaciones vencidas por causa/fecha; vista individual de cada entrega documental. La unicidad de primera entrega sigue siendo **por CPE/finalidad**, por lo que enviar un CPE no marca enviados los restantes. C33 no envía documentos ni cambia aprobación de otra identidad sin explicar el impacto.
+
+Aceptación adicional obligatoria: cobros40+60 para venta100 no habilitan despacho con40; CPE anticipo40 y liquidación con deducción40 suman100 de cobertura documental, no140; CPE único100 con dos cobros sigue siendo válido si corresponde a emisión real/política; dos identidades legítimas no son AMBIGUOUS; nota posterior conserva original y no refund automático; CPE previo a aceptación se registra sin reserva/venta ficticia; reenviar CPE-A no envía CPE-B; falta de guía exigible bloquea nuevo despacho, no captura del hecho monetario ocurrido.
 
 Si el CPE contiene referencia de pedido/venta, se contrasta. Si no la contiene, el operador debe aportar contexto de emisión trazable y corroborar identidad/desglose contra la venta, registrando selección/atestación y evidencia; CasPro no afirma que SUNAT certificó esa relación. Solo «mismo monto + hora», destinatario de email coincidente o nombres parecidos → AMBIGUOUS, no LINKED. Un comprador sin identidad fiscal solo se admite conforme HP4 y con otra evidencia suficiente de correspondencia, nunca documento ficticio.
 
@@ -121,8 +137,8 @@ PRODUCTION usa destinatario empresarial permitido por política. Ningún modo/re
 ### C30 — Registrar identidad de CPE externo
 
 - **OWNER / PURPOSE:** Sales; registrar expectativa/emisión observada o retractar identidad errónea, sin emitir CPE.
-- **INPUT / READS:** venta/revisión, identidad externa, fecha/moneda/importes/adquirente presentes, evidencia/contexto de emisión, acción y motivo; entidad emisora acreditada y candidatos/vínculos existentes.
-- **LOCKS / LOCK ORDER:** I → S → C; alta bajo S y UNIQUE de identidad externa; misma identidad en otra venta → conflicto, no duplicación.
+- **INPUT / READS:** venta/revisión si existe, caso externo identificado si procede, identidad externa, finalidad, fecha/moneda/importes/adquirente presentes, evidencia/contexto de emisión, acción y motivo; entidad emisora acreditada y candidatos/vínculos existentes. Sin venta/caso mantiene UNLINKED.
+- **LOCKS / LOCK ORDER:** I → E si caso previo → S si venta → C; creación por identidad natural protegida en I y UNIQUE; misma identidad no crea otra raíz aunque cambie la venta propuesta. No bloquear filas inexistentes.
 - **WRITES / PRE / POST:** expediente y emisión OBSERVED o vínculo RETRACTED con revisión; identidad/contexto explícitos; no declaración de validez por guardar datos. Corrección conserva anterior y bloquea entregabilidad/aprobación derivadas.
 - **IDEMPOTENCY / RETRY / FAILURES:** D; CM0; CPE_IDENTITY_CONFLICT/ISSUER_MISMATCH/INSUFFICIENT_LINK_EVIDENCE. Identidad ya usada no se edita en sitio.
 - **EVENTS / AUDIT:** ExternalCpeRecorded/CpeLinkRetracted, actor/evidencia/revisiones; no CpeIssuedByCasPro.
@@ -154,9 +170,9 @@ PRODUCTION usa destinatario empresarial permitido por política. Ningún modo/re
 ### C33 — Vincular CPE y registrar/solicitar verificación
 
 - **OWNER / PURPOSE:** coordinador Sales/Documents; Sales decide correspondencia y resultado CPE, Documents vincula artefactos compatibles.
-- **INPUT / READS:** venta/CPE/artefactos/revisiones, evidencia de correspondencia y resultado oficial manual o solicitud de consulta; emisor/adquirente/identidad/desglose y política HP4.
+- **INPUT / READS:** venta, conjunto de CPE/artefactos/revisiones afectados, asignaciones documentales/anticipos/notas, evidencia de correspondencia y resultado oficial manual o solicitud de consulta; emisor/adquirente/identidad/desglose y política HP4. Se descubren todos los documentos que limitan las asignaciones antes de bloquearlos.
 - **LOCKS / LOCK ORDER:** I → S → C → D → J; plan completo de versiones antes de tomar locks.
-- **WRITES / PRE / POST:** LINKED solo si correspondencia inequívoca y pertenencia; resultado de verificación ligado a inputs exactos o PENDING + job de lectura. Mismatch/ambigüedad conserva bloqueo y evidencia, nunca heurística monto/hora.
+- **WRITES / PRE / POST:** LINKED solo si correspondencia inequívoca, pertenencia y límites de asignación; revisión de conciliación documental con referencias exactas. Resultado de verificación ligado a inputs exactos o PENDING + job de lectura. Mismatch/ambigüedad conserva bloqueo y evidencia, nunca heurística monto/hora. Aplicaciones documentales y nuevas revisiones se confirman juntas; no cambio Treasury/GL.
 - **IDEMPOTENCY / RETRY / FAILURES:** D; CM0; CPE_MISMATCH/CPE_AMBIGUOUS/POLICY_UNRESOLVED/CAPABILITY_UNVERIFIED; red caída queda UNAVAILABLE, no verificado. Retraer/corregir un vínculo exige además sales.correct_cpe.
 - **EVENTS / AUDIT:** CpeLinked/CpeVerificationRecorded/Requested, fuente, actor y contenido de consulta referenciado; aprobación posterior consume revisión relevante.
 - **EXTERNAL I/O / REVERSAL/CORRECTION:** ninguno en transacción; consulta por C07/C08 posterior o evidencia manual. Retraer/corregir vínculo con historia; no modificar bytes para hacerlos coincidir.

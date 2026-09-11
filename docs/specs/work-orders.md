@@ -1,6 +1,6 @@
 # SP2 — Primera tranche y Validation Profiles
 
-Contrato: [.ai/work-order](../../.ai/work-order.md), [roles](../../.ai/README.md) y [QA](../quality/strategy.md). Se preparan exactamente seis WOs, **no ejecutadas ni autorizadas para implementación por este documento**. La misión actual solo especifica/valida documentos y publica su rama. No SUPERPROMPT 3 implícito.
+Contrato: [.ai/work-order](../../.ai/work-order.md), [roles](../../.ai/README.md) y [QA](../quality/strategy.md). Las seis WOs SP2 son antecedentes de entrega, **NEEDS REGENERATION AFTER FREEZE** para cada WO-SP2-01–06. No están ejecutadas ni autorizadas. Incorporar hechos/componentes tempranos, CM0 extendido, pool/replay, CPE, UX y gates A/B/C/D al regenerarlas después de aceptación independiente e investigación de skills. Conservar los IDs históricos como referencia; no ejecutar estas fichas tal cual.
 
 ## Dependencias y alcance de la tranche
 
@@ -44,9 +44,9 @@ Resultado reutilizable: manifestar candidato/insumos, casos/subafirmaciones, par
 
 RLS permanece PROVISIONAL en ADR-005 hasta revisión trazable de sus alcances demostrados. Si WO-SP2-02 falla, no se ejecutan las dependientes sensibles. Si una entrada posterior falla, se corrige o se eleva contradicción concreta; no se reabre toda la fundación ni se degrada aislamiento por conveniencia.
 
-## WOs preparadas
+## WOs históricas pendientes de regeneración
 
-Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** PREPARED, ejecución pendiente de un nuevo encargo humano que autorice la WO concreta; las pruebas indicadas son futuras. **Files forbidden:** Wbpro/legacy completos, otras specs/reglas por conveniencia, módulos fuera de alcance, cuentas/credenciales reales, infraestructura/cloud/CI y efectos externos no autorizados. **Review:** candidato exacto, reviewer separado del implementador conforme .ai; refutación de riesgo indicada. **Return format:** efecto logrado, diff/archivos, comandos y evidencia realmente ejecutados con identidad/manifiesto, criterios/subafirmaciones pendientes/fallidas, impactos y veredicto; no PASSED supuesto ni cambio unilateral de spec. Cada fila siguiente completa esos campos, no los sustituye.
+Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** NEEDS REGENERATION AFTER FREEZE; ejecución exige ficha regenerada, revisión y nuevo encargo humano. Las pruebas indicadas son futuras. **Files forbidden:** Wbpro/legacy completos, otras specs/reglas por conveniencia, módulos fuera de alcance, cuentas/credenciales reales, infraestructura/cloud/CI y efectos externos no autorizados. **Review:** candidato exacto, reviewer separado del implementador conforme .ai; refutación de riesgo indicada. **Return format:** efecto logrado, diff/archivos, comandos y evidencia realmente ejecutados con identidad/manifiesto, criterios/subafirmaciones pendientes/fallidas, impactos y veredicto; no PASSED supuesto ni cambio unilateral de spec. Las tablas siguientes conservan el diseño histórico de sus campos, subordinado a esta condición.
 
 <a id="wo-sp2-01"></a>
 ### WO-SP2-01 — Runtime y calidad mínima
@@ -117,7 +117,7 @@ Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** PREPARED, e
 | Required behavior | C13 de apertura/ajuste/condición, identidad de origen única, cantidades/costes y UNKNOWN explicables, lectura de disponibilidad de posiciones |
 | Invariants | Stock no negativo, no duplicar apertura con otra clave; no float; no recalcular coste total desde unitario redondeado |
 | Acceptance criteria | Casos de VP-SP2-04 para inventario base y nuevas carreras de apertura/ajuste; R es cero porque no hay consumidor de reserva construido, no afirmar probados escenarios de reserva |
-| Validation Profile | VP-SP2-04 + extensión de aislamiento; HP3 real debe estar aprobada para operación, fixture sintética no la sustituye |
+| Validation Profile | VP-SP2-04 + extensión de aislamiento; promedio móvil/UNKNOWN/retorno no vendible provienen de HP3, mientras posiciones/buffer/publicación exigen su gate propio |
 | Security impact | Capacidad opening/adjust, motivo/evidencia y auditoría crítica; sin edición directa del saldo |
 | Data/migration impact | Movimientos/posiciones/seriales/costes necesarios, no Procurement/recepciones inventadas ni tablas futuras de compromisos |
 | Documentation impact | Límites de apertura y existencia construida; reservas permanecen especificadas hasta su WO con Sales real |
@@ -162,4 +162,4 @@ Campos comunes, incorporados a las seis WOs: **Authorization/Mode:** PREPARED, e
 | Explicit non-goals | C14/aceptación, entrega física, escritura de stock, Resend/SUNAT, devolución, CRM/otros canales y framework de colas universal |
 | Review específico | Refutar replay, headers no firmados, A→B→A, página perdida y generación tardía; comprobar que webhook PAID no puede crear dinero |
 
-Primera WO recomendada: **WO-SP2-01**, porque las evidencias de aislamiento y de todos los dueños necesitan runtime/runner/configuración identificables. No se ejecuta por estar recomendada. Antes de iniciar cualquier WO posterior se confirma autorización, candidato/base Git y evidencia de dependencias; no se copia una etiqueta PASS sin contrato de equivalencia.
+Estas seis WOs quedan como insumos históricos de M01–M04. Se regeneran **después** de aceptación del freeze e investigación dedicada de skills, con las [deep specs M01–M09](deep-spec-index.md), el contexto mínimo y los [gates pertinentes](../roadmap/decisions-gaps.md). Runtime/acceso siguen siendo primeras dependencias técnicas, sin convertir WO-SP2-01 en próximo encargo automático. Cada nueva WO necesita autorización, candidato/base Git y evidencia de dependencias, sin heredar un PASS fuera de su contrato de equivalencia.

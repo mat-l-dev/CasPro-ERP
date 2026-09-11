@@ -2,7 +2,7 @@
 
 No son tests escritos o ejecutados. Propietarios de comportamiento: [alcance](first-operational-circuit.md), [negocio](sales-stock-treasury.md), [CPE/Documents](cpe-document-delivery.md), [integraciones](integrations.md) y [matriz](command-matrix.md). Cada escenario usa sus comandos/guardas; los [perfiles](work-orders.md) seleccionan evidencia por propiedad, sin repetir suites por nombres de módulos.
 
-Fixtures sintéticas: entidades A/B, miembros/principales distintos, moneda PEN salvo indicación, documentos/IDs/cuentas ficticios identificados como tales. Políticas HP1–HP5 pueden ser políticas de prueba explícitas (por ejemplo prepago completo); no son aprobación empresarial. Proveedor simulado con respuestas de contrato para pruebas ordinarias; cuentas/efectos reales solo en una validación futura expresamente autorizada, nunca LOCAL/CI. Las carreras usan conexiones separadas y barreras controladas, verificando también auditoría/eventos/intenciones persistidas.
+Fixtures sintéticas: entidades A/B, miembros/principales distintos, moneda PEN salvo indicación, documentos/IDs/cuentas ficticios identificados como tales. Las pruebas aplican HP1–HP3 según su estado vigente y políticas sintéticas explícitas para los parámetros todavía pendientes de HP2–HP5; un fixture no aprueba esos parámetros ni acredita una regla fiscal. Proveedor simulado con respuestas de contrato para pruebas ordinarias; cuentas/efectos reales solo en una validación futura expresamente autorizada, nunca LOCAL/CI. Las carreras usan conexiones separadas y barreras controladas, verificando también auditoría/eventos/intenciones persistidas.
 
 ## Circuito completo y propuesta
 

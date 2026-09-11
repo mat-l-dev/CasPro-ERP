@@ -6,6 +6,7 @@ Fecha: 2026-09-10. **Estado autoritativo por alcance.** ACCEPTED acepta el contr
 |---|---|---|
 | Monolito modular, propiedad explícita y coordinación transversal | ACCEPTED | Contratos pequeños y sin ownership empresarial en workflows |
 | Workspace como agrupación de Identity, Organization y Access | PROVISIONAL | Especificar los recorridos administrativos y su visibilidad sin ciclos; validar acceso en una fase ejecutable autorizada |
+| Ownership de hechos Corporate | ACCEPTED | Corporate posee hechos societarios; su ubicación física como subárea o módulo permanece PROVISIONAL hasta el primer consumidor |
 
 ## Context
 
@@ -13,7 +14,7 @@ Un operador y desarrollo asistido por IA; dinero/stock necesitan transacciones c
 
 ## Decision
 
-Un monolito modular con APIs pequeñas y workflows transversales explícitos. Workspace agrupa provisionalmente Identity/Organization/Access sin fusionar sus propietarios ni políticas; Configuration deja de ser módulo genérico. Audit no llama negocio. [Matriz y límites](../architecture/boundaries.md) es el contrato detallado.
+Un monolito modular con APIs pequeñas y workflows transversales explícitos. Workspace agrupa provisionalmente Identity/Organization/Access sin fusionar sus propietarios ni políticas; Configuration deja de ser módulo genérico. Corporate posee acuerdos, relaciones y financiamientos sin exigir todavía una aplicación propia. Audit no llama negocio. [Matriz y límites](../architecture/boundaries.md) es el contrato detallado.
 
 ## Alternatives
 

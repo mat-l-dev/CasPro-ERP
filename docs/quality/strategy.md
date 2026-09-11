@@ -1,6 +1,6 @@
 # Calidad por riesgo, alcance y evidencia
 
-Contrato de [ADR-009](../decisions/adr-009-quality.md). **Esta fase no ejecuta tests ni construye un runner.** Solo se realiza revisión estática de los documentos nuevos. Toda evidencia de software descrita aquí está pendiente.
+Contrato de [ADR-009](../decisions/adr-009-quality.md). **Esta fase no ejecuta tests de CasPro ni construye un runner.** Se revisan estáticamente los documentos candidatos. Toda evidencia de software CasPro descrita aquí está pendiente; la suite externa pcge-peru autorizada por el propietario se documenta separadamente en su auditoría y no acredita este ERP.
 
 Los [Validation Profiles y WOs de SP2](../specs/work-orders.md) concretan la selección futura para el primer circuito y sus gates habilitantes; no sustituyen el contrato de equivalencia e invalidación de esta fuente.
 
@@ -19,6 +19,27 @@ Los [Validation Profiles y WOs de SP2](../specs/work-orders.md) concretan la sel
 | NON-FUNCTIONAL | Carga representativa, límites, latencia, recuperación y controles de seguridad | Cumplimiento empresarial automático | Alto/variable; cambio de riesgo, revisión periódica o incidente |
 
 Categoría de ejecución y etiqueta de propiedad son distintas. Un test de DB no se vuelve unitario por llamarse unit. Un caso puede cubrir varias propiedades, pero se ejecuta una vez por configuración requerida. Fixtures y configuración de pytest se organizan para que UNIT no arranque Django por importación global de conftest.
+
+## Cobertura explícita del programa M01–M09
+
+Esta correspondencia conserva una taxonomía de ejecución única. Las etiquetas del encargo no crean suites duplicadas. Todo lo siguiente es diseño de evidencia futura, sin ejecución CasPro en esta fase.
+
+| Necesidad explícita | Categoría / afirmación y ejemplo mínimo significativo |
+|---|---|
+| DOMAIN / reglas puras | UNIT + PROPERTY: HP1 cobertura íntegra, residuos de última salida, política de fechas, bases fiscales; modelos de referencia independientes |
+| PostgreSQL integration | INTEGRATION: constraints reales, FKs por entidad, rollback de hecho+estado+intención; nunca SQLite como prueba sustituta |
+| CONCURRENCY | TRANSACTIONAL: refund frente a despacho, coste tardío frente a cierre, consumo AP simultáneo, posting frente a cierre y commit tardío de backfill |
+| RLS / SECURITY | INTEGRATION + CONTRACT + TRANSACTIONAL + NON-FUNCTIONAL: roles efectivos, joins/exports/jobs, referencias cruzadas, revocación y reciclado de conexiones; contenido hostil no recibe autoridad |
+| Provider contracts | CONTRACT: firma/replay/paginación, snapshot y estados Jumpseller, resultado ambiguo de correo, stock remoto concurrente; sandbox autorizado aparte de mocks |
+| E2E crítico | BROWSER + INTEGRATION de una tarea completa: venta íntegramente pagada a entrega/documentos; P2P servicio sin stock; período sintético a cuatro EEFF |
+| UI / accesibilidad | BROWSER: teclado, foco/lector, errores, LIGHT/DARK/SYSTEM y contraste WCAG2.2AA; atajo no confirma dinero/stock; revisión manual complementaria |
+| ACCOUNTING GOLDEN | UNIT + INTEGRATION/CONTRACT: [G1–G7](../specs/reporting-goldens.md), cifras esperadas externas al algoritmo, asiento→rubro→cuatro estados/notas, comparativos y drill-through |
+| TAX GOLDEN | UNIT + CONTRACT/INTEGRATION: [TX1–TX9](../specs/tax-deep.md), vigencia y evidencia legal fijadas, base fiscal/RER/IGV/SPOT/ND/reconciliación sin alterar GL |
+| MIGRATION / clean install / upgrade | MIGRATION: instalación vacía y actualización desde artefacto previo, plan por versión, datos y restricciones conservados; no ejecutar por una corrección de redacción |
+| RECOVERY | NON-FUNCTIONAL + TRANSACTIONAL: restaurar DB+objetos+roles, detectar objetos ausentes, medir RPO/RTO, impedir reenvíos/publicaciones antes de conciliación |
+| Performance / calidad del runner | NON-FUNCTIONAL + STATIC: perfil real de colección/DB/setup/consultas y dependencia; unión deduplicada por afirmación, sin rerun global ceremonial de 45 minutos |
+
+Los goldens publicados son especificaciones sintéticas, no tests aprobados ni pruebas de cumplimiento de TILMUX. Una comprobación aritmética editorial puede detectar un total errado; no acredita motor contable, generación de PDF, ni pipeline CasPro.
 
 ## Validation Profile de la Work Order
 

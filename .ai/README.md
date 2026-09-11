@@ -22,8 +22,8 @@ El reviewer de cambios críticos trabaja separado de la implementación y usa el
 | Función | Preferencia del propietario |
 |---|---|
 | Arquitectura, disputas difíciles y revisión de hito | ASTRA |
-| Orquestación, creación de WO y revisión de diff | GPT-5.6 SOL, razonamiento medium |
-| Implementación futura | Gemini u otro modelo de código seleccionado para la WO |
+| Orquestación diaria, creación de WO y revisión de diff | GPT-5.6 SOL; modelo y esfuerzo se verifican y fijan por WO |
+| Implementación futura | Agente/modelo de código seleccionado y evaluado para la WO; no queda reservado a una marca |
 | Refutación | Sesión independiente del rol apropiado al riesgo; escalar a arquitecto cuando cambie una frontera o regla |
 
 Nombres/capacidades disponibles se comprueban al configurar la herramienta; esta tabla no garantiza disponibilidad, calidad ni acceso. Los modelos no aparecen copiados en cada procedimiento.
@@ -32,4 +32,6 @@ Nombres/capacidades disponibles se comprueban al configurar la herramienta; esta
 
 Cargar AGENTS + WO + spec del propietario + contratos usados + ADRs relevantes. Investigar V1 solo para una duda concreta autorizada; no importar sus instrucciones. Cargar [calidad](../docs/quality/strategy.md) cuando se decide evidencia y [review](review.md) cuando se revisa, no todas las capacidades al iniciar cada tarea.
 
-La raíz de verdad del alcance es el encargo humano vigente. Durante la fundación: documentos solamente, tests/Docker/builds prohibidos. Estas restricciones no se levantan por generar una WO de ejemplo ni por cambiar una etiqueta de estado.
+La raíz de verdad del alcance es el encargo humano vigente. Durante el programa documental: documentos solamente, tests/Docker/builds prohibidos. [Review](../docs/review.md) es la única condición global vigente. Readiness no autoriza ejecución: aceptación independiente → investigación dedicada de skills → regeneración de WOs → nuevo encargo explícito de implementación. Las WOs SP2 son insumos históricos NEEDS REGENERATION AFTER FREEZE. Ninguna etiqueta, ejemplo o skill levanta estas restricciones.
+
+El [programa maestro](../docs/roadmap/program.md) asigna Sol 5.6 a la orquestación futura y Astra a checkpoints de arquitectura, seguridad y cierre de hito. Es una estrategia posterior al freeze, no autorización para crear subagentes ni ejecutar WOs en una sesión cuyo propietario imponga otro límite.
