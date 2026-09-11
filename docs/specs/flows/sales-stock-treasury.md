@@ -4,6 +4,8 @@ Propietarios: Sales (propuesta/venta/acto comercial), Inventory (posiciones/rese
 
 ## De observado a aceptado
 
+Este circuito conserva entrada Jumpseller/primera venta B2C. El [incremento B2B propuesto](b2b-commercial-dossier.md) reutiliza pedido, reservas, objetivos, cobros y parcialidades mediante entrada comercial local con OC/cotización opcionales; no crea una conexión ficticia ni habilita crédito. Es delta pendiente de revisión del amendment, sin alterar la cobertura íntegra exigida aquí.
+
 Sales conserva un caso por `(entidad, conexión, external order ID)` y sus observaciones inmutables. Tiene revisión local monotónica y puntero a observación seleccionada; el tiempo externo no es versión confiable. Recibos/inbox son de integración, no la venta. Las etapas técnicas y de recepción están en [integraciones](jumpseller-external-work.md); aquí solo vive la decisión comercial.
 
 | Dimensión / estado | Significado |

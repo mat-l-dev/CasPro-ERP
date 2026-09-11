@@ -20,6 +20,8 @@ Cuenta financiera, línea de extracto, movimiento interno confirmado, objetivo p
 
 ## Conciliación por capas
 
+Delta propuesto del [amendment](../evidence/b2b-financing-amendment.md): [M06 financiación](../specs/flows/financing-events-statements.md) separa desembolso, pago personal al proveedor, reembolso y principal devuelto. Treasury registra la extinción acreditada de obligación por tercero sin crear movimiento en cuenta propia; conserva remanentes y evita pagar dos veces al proveedor. El reembolso posterior sí es otro movimiento real de la empresa, asignado al derecho reconocido por Corporate. Estado mensual es cálculo Corporate con referencias Treasury, no extracto bancario ni saldo editable.
+
 1. **Deterministic match:** identificadores inequívocos y reglas exactas.
 2. **Heuristic candidates:** importe, ventana, referencia, pagador asociado, comisión y cardinalidad, con versión y explicación.
 3. **AI suggestion:** candidatos estructurados, confianza, coincidencias, diferencias y contraevidencia; datos mínimos/redactados.

@@ -26,6 +26,8 @@ Devolver dinero no borra una entrega pasada. Debe reducir disponibilidad futura 
 
 Contraejemplos que deberán refutar la implementación: un cobro 100 aplicado 80+80 a dos obligaciones; dos cobros que exceden una obligación; entregar mientras se devuelve su cobro; repetir el mismo refund; corregir el importe comercial mientras otro proceso aplica dinero.
 
+**Extensión semántica propuesta de liquidación por tercero:** para objetivos por pagar de Procurement, [M06/pagos por cuenta](../specs/flows/financing-events-statements.md) añade un componente explícito de extinción acreditada por tercero, separado de A de pagos propios. Suma de aplicaciones monetarias y extinciones autorizadas ≤ obligación vigente; cada fuente conserva remanente, entidad, moneda, prueba y corrección. No existe movimiento de cuenta TILMUX por esa extinción ni se altera N/A/U de sus cobros. Reducir obligación o corregir extinción exige resolver conjuntamente exceso y objetivos relacionados; no doble pago al proveedor ni doble derecho de reembolso. Este delta del amendment está pendiente de revisión independiente.
+
 ## Stock y parcialidades
 
 - Existencia por posición = entradas confirmadas − salidas confirmadas, incluidas correcciones vinculadas. La primera política rechaza stock físico negativo; cualquier excepción requiere decisión y escenario propio.

@@ -33,6 +33,8 @@ P07 no debe crear una segunda AP por cada repetición de match: identidad natura
 
 ## AP, coste, devengo e impuesto
 
+La [extensión M06 propuesta](../flows/financing-events-statements.md) añade liquidación acreditada por pago de tercero: el pendiente AP deriva de aplicaciones propias **y extinciones autorizadas por tercero separadas**, cada una con fuente/porciones/remanentes. P07 y todo pago/corrección posterior deben releer esas asignaciones para no pagar dos veces. Pagar por cuenta no borra HOLD ni prueba deducibilidad; el hecho ocurrido se registra como excepción si faltó aprobación. Corregirlo puede reabrir obligación proveedor y ajustar derecho socio, preservando reembolso ya ocurrido. Este delta no cambia la naturaleza de la OC Procurement ni la confunde con OC Sales.
+
 Recibir mercancía sin factura puede activar valoración estimada documentada y devengo Accounting; “sin factura” no implica coste cero ni ausencia de pasivo. Invoice-before-receipt puede representar anticipo, obligación o documento prematuro según contrato: revisión específica, no posting genérico a inventario. Parte del impuesto recuperable pendiente se conserva separada hasta decisión Tax; importe bruto pagado sigue siendo un hecho.
 
 Servicio contratado por doce meses requiere período/cobertura, conformidad y calendario de consumo. Prepago no es gasto completo al pagar. Coste adicional admisible se asigna con base explícita (cantidad/peso/valor según política), residual reproducible y vínculos a recepciones; su validación NPIF distingue flete de compra de interés/FX y descuentos posteriores. No activar landed cost arbitrario.

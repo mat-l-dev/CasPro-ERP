@@ -28,6 +28,10 @@ El primer circuito comercial vende únicamente bienes y exige pago íntegro conf
 
 Los recorridos deben tolerar parcialidades, anulaciones, reintentos y errores del operador. El saldo bancario, el dinero aplicado, el valor entregado y la obligación comercial son hechos distintos. El panel los muestra por su nombre y con su origen.
 
+**Delta de producto propuesto — B2B y financiación:** el [amendment semántico](../evidence/b2b-financing-amendment.md), pendiente de revisión independiente, añade venta B2B general de bienes como incremento posterior a M04. [Sales](../specs/flows/b2b-commercial-dossier.md) posee cotización/OC cliente/revisión aceptada y expediente; tipo de cliente y condiciones de pago se separan. Inicialmente B2B conserva prepago íntegro antes de cualquier despacho; crédito y contraentrega siguen trigger D03. No se limita a un adjunto ni exige OC/cotización para toda venta.
+
+M06 concreta [hechos individuales de financiación](../specs/flows/financing-events-statements.md), pagos personales por cuenta de la empresa, reembolsos separados de principal y estado mensual derivado. El contrato gratuito rotativo sigue propuesta bajo C06. Documents permite entrega por Resend opcional, otro adaptador futuro o registro externo conocido; WhatsApp Business permanece diferido D03/M10. Estas ampliaciones no aceptan el amendment ni habilitan código, WOs o operación real.
+
 ## Non-goals iniciales
 
 - ERP genérico, plugins, multi-país, consolidación/intercompany automática, marketplace y personalización por cliente.

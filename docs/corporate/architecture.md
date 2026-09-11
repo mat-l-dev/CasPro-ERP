@@ -22,6 +22,10 @@ Las referencias cruzadas usan IDs/contratos públicos para evitar un ciclo Organ
 
 ## Mutuo del socio o parte relacionada
 
+Delta del [amendment propuesto](../evidence/b2b-financing-amendment.md): [hechos/estado periódico M06](../specs/flows/financing-events-statements.md) concreta disposiciones, pagos por cuenta, reembolso y principal separados. El [research ampliado](../research/normative/b2b-financing-evidence.md) no identifica una obligación mensual general llamada «liquidación»; propone estado derivado con alcance de firma expreso. C06 conserva validación de la modalidad/actos reales.
+
+Constitución/pacto social, estatuto y adendas, escritura, partida/constancias registrales, libro de actas, matrícula de acciones, accionistas, acuerdos, poderes, contratos/mutuos, vinculaciones y BF tienen significado, sujetos, fechas y vigencia bajo Corporate. Documents conserva cada original/copia, versión, procedencia y evidencia de firma/presentación. Registro de acto, otorgamiento, firma, inscripción y constancia son hechos distintos; un PDF no sustituye el libro formal ni prueba inscripción. La búsqueda/navegación usa Corporate→Documents, sin Document Vault nuevo ni módulo «legal» universal.
+
 El “Contrato Marco de Mutuo Dinerario a Título Gratuito con línea rotativa” es una propuesta, no hecho ni diseño aprobado. Antes de usarlo, asesor legal/tributario/contable debe validar que la estructura representa la realidad, límites, disponibilidad, desembolsos, devoluciones, modificaciones, terminación, acuerdos societarios y facultades.
 
 ```text
