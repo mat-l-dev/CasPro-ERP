@@ -1,6 +1,8 @@
 # Revisión y condición de avance
 
-Fecha de corte de investigación: 2026-09-10. Revisión: 2026-09-11. **Gate 1: CLOSED. Foundation Amendment: PASS documental. SUPERPROMPT 2: PASS documental. Grand Master Program: PASS documental / READY FOR EXTERNAL REVIEW.** Este archivo es la fuente del estado global; cada ADR conserva la autoridad sobre sus alcances. Esos cierres no acreditan software construido, desplegado o production-ready ni sustituyen aprobaciones empresariales.
+Fecha de corte y revisión: 2026-09-11. **Astra Master Audit: EN CURSO. GLOBAL DOCUMENTATION FREEZE: NOT ACHIEVED. IMPLEMENTACIÓN: NO AUTORIZADA.** Los PASS de Foundation, SP2 y el primer Grand Master Program que se conservan debajo son antecedentes históricos, no aceptación del candidato actual. El [ADR-012](decisions/adr-012-global-documentation-freeze.md) exige deep specs coordinadas M01–M09 antes del freeze global; después vendrán skills y autorización de delivery. No congelar M01 para iniciar código mientras los dominios posteriores permanezcan sin especificar.
+
+Evidencia nueva: [realidad de repositorios](research/repository-audit.md), [auditoría ejecutada de pcge-peru](research/pcge-code-audit.md), [catálogo NPIF](accounting/npif-policy-catalog.md), [delta NIIF verificado](research/ifrs-2025-2026-delta.md) e [índice de deep specs](specs/deep-spec-index.md). Ningún resultado externo o comprobación estática acredita software CasPro construido ni revisión independiente/profesional concluida.
 
 ## Refutación del diseño
 
@@ -172,4 +174,4 @@ Los contraejemplos no destruyen la arquitectura ni la secuencia; sí refutan que
 
 La revisión estática comprobó documentos/tablas, referencias y anchors locales, unicidad de definiciones de registros, cobertura de 11 hitos y separación de fuentes. No encontró secretos, archivos vacíos, código funcional ni cambios fuera de documentación/protocolo. Wbpro y `pcge-peru` permanecieron de solo lectura. No se ejecutaron tests, builds, Docker, base de datos, UI, integraciones ni skills.
 
-**Grand Master Program: PASS documental.** El programa puede convertirse en candidato canónico mediante PR y revisión externa; M00 no queda aprobado por el mero PASS del autor. El siguiente trabajo documental es congelar M01 —runtime, acceso, auditoría y recuperación— contra sus gates, sin ejecutar WO-SP2 ni iniciar implementación por esta conclusión.
+**Resultado histórico del primer Grand Master Program: PASS documental.** Su recomendación de congelar M01 como siguiente paso fue sustituida por el mandato posterior del propietario y el ADR-012. El estado vigente está al inicio de este archivo; M00 requiere ahora investigación, deep specs M01–M09, gates de dominio y revisión global antes de cualquier código.

@@ -34,7 +34,7 @@ Sales, Procurement, Inventory, Treasury y Corporate publican hechos neutrales; n
 
 ## PCGE y `pcge-peru` v0.2.0
 
-Se inspeccionó la release/tag `v0.2.0`, commit pelado `ade8ea1505c0841a586a7e310314e76df623fe20`, del repositorio del propietario. Distribución `pcge-peru`, namespace `pcge`, Python `>=3.14,<3.15`, sin dependencias runtime. API pública verificada: `PCGECatalog`, modelos/enums/errores y `available_versions()`/`load_catalog(version)`. Versiones: `2019` y `2026`; no hay “latest” automático. Catálogo es inmutable y ofrece navegación/búsqueda/anomalías; el loader valida estructura, duplicados, padres/ciclos y hash del dataset.
+La [auditoría de código y distribución](../research/pcge-code-audit.md) fija identidad, API, datasets, prueba externa y límites de `pcge-peru` 0.2.0. Ofrece navegación/búsqueda/anomalías y valores congelados; el objeto catálogo mantiene estructuras internas mutables, por lo que no se presenta como profundamente inmutable. El loader valida integridad estructural y hash de entries, no autentica el PDF oficial. El adapter encapsula esos límites.
 
 Contrato del adaptador CasPro:
 

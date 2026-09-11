@@ -1,12 +1,12 @@
 # CasPro Master Program
 
-Propietario: Product/Architecture. Estado: programa coordinado, no autorización de implementación. Cada hito requiere encargo humano y candidato Git propio. Los IDs ordenan dependencias, no fechas prometidas.
+Propietario: Product/Architecture. Estado: programa documental ampliado por [ADR-012](../decisions/adr-012-global-documentation-freeze.md), no autorización de implementación. **Deep specs M01–M09 → GLOBAL DOCUMENTATION FREEZE → skills justificadas → entrega mediante WOs autorizadas.** IDs ordenan dependencias de entrega, no aplazan especificación ni prometen fechas. El [índice profundo](../specs/deep-spec-index.md) dirige revisión transversal.
 
 ## Cuatro vistas coordinadas
 
 | ID | Product outcome | Documentation gate | Delivery increment | AI execution |
 |---|---|---|---|---|
-| M00 | Visión completa y secuencia acordada | Grand Master research/review; este programa | Solo documentación | Astra/arquitecto cierra contradicciones; sin runtime IA |
+| M00 | Visión y contratos completos antes de código | Auditoría/research y deep specs M01–M09; freeze GLOBAL pendiente | Solo documentación | Astra analiza/refuta; aceptación independiente por riesgo; sin runtime IA |
 | M01 | Plataforma aislada y recuperable | Runtime/access/audit/operations specs congeladas | Bootstrap + entidad/acceso/audit + restore base | Sol 5.6 orquesta WOs; Astra checkpoint de seguridad |
 | M02 | Maestros confiables | Parties/Catalog/import specs | Party, bienes/SKU/precios, import preview | IA no necesaria |
 | M03 | Stock/dinero observables y pedido externo durable | Inventory/Treasury/Jumpseller specs | Apertura, movimientos/cobros base, inbox/propuesta | IA no confirma; evaluación futura recopila casos |
@@ -39,14 +39,14 @@ Ruta explícita de entrega: **repositorio documental (M00) → primer ERP ejecut
 | Orchestrator / implementer / reviewer / Astra | Architect actual / editor documental / revisión adversarial independiente futura / Astra obligatorio |
 | Canonical inputs / allowed / forbidden | Docs actuales+fuentes; corregir arquitectura con evidencia; prohibido código/skills finales |
 | Validation profile | STATIC-GMP: referencias, fuente/fecha, ownership, diff y refutación |
-| Exit criteria / remains | PASS documental y PR abierto; dominios quedan para deep specs |
+| Exit criteria / remains | Deep specs M01–M09 revisadas, blockers resueltos y freeze global aceptado sobre candidato exacto; PR abierto. Arquitectura sola no cierra M00 |
 
 ### M01 — Runtime, access and recoverability
 
 | Campo | Contrato |
 |---|---|
 | Business outcome / why now | Base donde ninguna entidad ve o modifica otra y un candidato puede restaurarse |
-| Dependencies | M00 aprobado; WO-SP2-01/02 rediseñadas si el freeze lo exige |
+| Dependencies | GLOBAL DOCUMENTATION FREEZE M01–M09 aceptado y WO autorizada; WO-SP2-01/02 ajustadas al candidato |
 | Canonical docs | technology, tenancy-access, security, quality, operations, data |
 | Research / human decisions | Hosting/storage, RPO/RTO; no política contable |
 | Regulatory / technical / security gates | RLS PROVISIONAL demostrado con rol no-owner/no-BYPASS y entry paths; DB+objects restore; secret isolation |
@@ -133,7 +133,7 @@ Ruta explícita de entrega: **repositorio documental (M00) → primer ERP ejecut
 | Business outcome / why now | Control diario de bancos y expediente societario/financiación sin confusiones |
 | Dependencies | M04; P2P payment consumers for full AP path |
 | Canonical docs | treasury-finance, corporate architecture, AI assistance, normative N016–N019 |
-| Research / human decisions | bank format/evidence; mutuo professional decision; provider/VPS only for optional pilot |
+| Research / human decisions | formato/evidencia bancaria; mutuo validado profesionalmente durante documentación y antes de financiación, aunque su implementación sea M06; provider/VPS solo piloto separado |
 | Regulatory / technical / security gates | bancarization, related-party facts, beneficial owner, data minimization, no AI writes |
 | UX deliverable / AI role | reconciliation split view, candidates/contraevidence; first synthetic AI pilot |
 | WO family | STATEMENT-IMPORT, RECONCILIATION, CASH-POSITION, CORPORATE-RECORDS; MUTUO only after approval |
@@ -213,4 +213,4 @@ Ruta explícita de entrega: **repositorio documental (M00) → primer ERP ejecut
 
 ## Future skill derivation, after freeze
 
-No skill is created in this program. After a domain spec and gate freeze, derive a short skill only if repeated execution benefits from it. Candidate families: orchestration, Accounting, Tax, P2P, Inventory, Treasury, Sales/Documents/Integrations, security/QA, UI and AI assistance. Each skill links canonical docs, names allowed decisions/escalations and contains no copied business or regulatory rules. AGENTS remains the router. Changing a skill never changes the domain truth.
+No skill is created in this program. After the **GLOBAL DOCUMENTATION FREEZE of M01–M09**, derive a short skill only if repeated execution benefits from it. Candidate families: orchestration, Accounting, Tax, P2P, Inventory, Treasury, Sales/Documents/Integrations, security/QA, UI and AI assistance. Each skill links canonical docs, names allowed decisions/escalations and contains no copied business or regulatory rules. AGENTS remains the router. Changing a skill never changes the domain truth.

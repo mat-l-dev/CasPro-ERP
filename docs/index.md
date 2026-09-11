@@ -39,6 +39,8 @@ Fecha de corte: 2026-09-10. Los documentos describen la fundación, no acreditan
 | IA y contexto local | [Protocolo](../.ai/README.md), [flujo](../.ai/workflow.md) |
 | Capability map, gaps y cuatro roadmaps | [Capabilities](roadmap/capabilities.md), [decisiones/gaps](roadmap/decisions-gaps.md), [programa](roadmap/program.md) |
 | Pendientes y revisión de la fundación | [Review](review.md) |
+| Auditoría Astra y especificación global M01–M09 | [Repositorios](research/repository-audit.md), [pcge-peru](research/pcge-code-audit.md), [deep specs](specs/deep-spec-index.md) |
+| NPIF completa y delta NIIF 2025/2026 | [Catálogo de políticas](accounting/npif-policy-catalog.md), [delta oficial](research/ifrs-2025-2026-delta.md) |
 
 ## Mantenimiento mínimo
 

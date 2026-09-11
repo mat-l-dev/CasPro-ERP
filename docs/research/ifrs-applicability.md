@@ -35,7 +35,6 @@ Los campos compactos significan: **trigger; datos; dueño/salida; política**. F
 
 | Norma | Estado TILMUX | Trigger, datos a conservar, propietario/salida y política requerida |
 |---|---|---|
-| NIC 1 Presentación | Transición | Sigue vigente hasta NIIF 18; no fijar rótulos. Conservar comparativos, materialidad y clasificación; Accounting/EEFF |
 | NIC 2 Inventarios | IF/PRO | Bienes; coste fuente, descuentos, transformación, fórmula, VNR; Inventory→Accounting/balance y coste; promedio consistente y deterioro separado |
 | NIC 7 Flujos de efectivo | IF/PRO | Efectivo/equivalentes y movimientos; cuenta, naturaleza, contraparte; Treasury/Accounting/EFE; clasificación y cambios NIIF 18 |
 | NIC 8 Políticas, estimaciones y errores | IF/PRO | Política/cambio/estimación/error; período, versión, materialidad; Accounting/EEFF/notas; tratamiento retrospectivo/prospectivo según caso |
@@ -93,8 +92,9 @@ Los campos compactos significan: **trigger; datos; dueño/salida; política**. F
 
 ## Pronunciamientos fuera de las 62 filas
 
+- **NIC 1 — LEGACY / TRANSITION**: no integra los anexos Perú 2025 ni 2026. Su contenido sigue siendo referencia para períodos anteriores a aplicar NIIF 18; conservar comparativos, juicios de presentación y la conciliación de transición. No contarla como NIC 25 del set. El [delta cotejado](ifrs-2025-2026-delta.md) explica los tres relojes de vigencia.
 - El Marco Conceptual orienta políticas NIIF cuando una norma lo requiere; no es una norma que autorice asientos por analogía indiscriminada.
-- NIIF para PYMES 2025 es un marco autónomo efectivo y oficializado desde 2027; sus cambios principales afectan conceptos, control, instrumentos, valor razonable, combinaciones e ingresos. Su transición se especificará si TILMUX deja NPIF.
+- NIIF para PYMES 2025 es un marco autónomo **oficializado en Perú en 2025 y efectivo desde 2027**, anticipable; sus cambios principales afectan conceptos, control, instrumentos, valor razonable, combinaciones e ingresos. La transición exige política por marco; las dos fechas no son intercambiables.
 - NIIF 20 fue emitida después del corte del set peruano y rige internacionalmente en 2029: `NOT CURRENTLY APPLICABLE`, adopción Perú pendiente.
 - NIIF S1/S2 tienen gate peruano 2029 para entidades no supervisadas ≥2.300 UIT. Se controla el trigger, sin crear Sustainability hoy.
 
