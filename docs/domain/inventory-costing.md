@@ -6,7 +6,7 @@ Propietario: Inventory para realidad física/coste operativo; Accounting para me
 
 Cada entrada elegible actualiza cantidad y coste acumulado exactos; el promedio se deriva sin `float`. Cada salida confirmada toma el coste operativo vigente de la posición/lote de valoración definido. Escala y redondeo se decidirán con datos reales; el reparto conserva total y residuo. Costo ausente queda `UNKNOWN`, bloquea cualquier cifra que requiera certeza y nunca equivale a cero.
 
-Recepciones tardías, costes adicionales y movimientos retroactivos no reescriben filas confirmadas silenciosamente. Una especificación posterior decidirá recalculo controlado o ajuste desde una fecha, con versión, impacto y reconciliación. Un cierre Accounting no cierra por sí solo el almacén, pero una fecha contable protegida limita el efecto financiero de backdating.
+Recepciones tardías, costes adicionales y movimientos retroactivos no reescriben filas confirmadas silenciosamente. La [deep spec M03](../specs/inventory-deep.md) define secuencia confirmada, pool candidato y recalculo controlado por revisiones con deltas; política pendiente de revisión profesional/ejecutable. Un cierre Accounting no cierra por sí solo el almacén, pero una fecha contable protegida limita el efecto financiero de backdating.
 
 ## Condición, devolución y conteo
 

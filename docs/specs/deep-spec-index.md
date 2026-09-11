@@ -6,17 +6,17 @@ Propietario: Architecture con dueños de dominio. Mandato [ADR-012](../decisions
 
 | Hito | Contrato local profundo | Contenido de cierre documental |
 |---|---|---|
-| M01 | Runtime/access/audit/operations | Runtime fijable, bootstrap, aislamiento/revocación, documentos privados, recuperación y ensayo habilitante |
-| M02 | Maestros e importación | Identidades/referencias/versiones, servicio comprado separado, preview invalidable y corrección |
-| M03 | Inventory/costeo, Treasury base e integraciones SP2 | Apertura/UNKNOWN, secuencia de valoración, dinero confirmado y propuesta externa |
-| M04 | SP2 + hechos + UX/documentos | HP1–HP5, correcciones coordinadas, oportunidad CPE/adquisición externa, preservación para Accounting |
-| M05 | Procure-to-Pay | Mercancía/servicios, PO/recepción/conformidad/factura, match/hold, anticipo, devolución y payability |
-| M06 | Conciliación bancaria y Corporate | Import/duplicado/N:M/reversión, financiación/actos/relaciones y gate profesional temprano |
-| M07 | Accounting y políticas NPIF | Interpretación, PCGE aplicado, posting/revisión, ledger, subcontroles, cierre y apertura |
-| M08 | Paquete financiero y goldens | Cuatro estados+notas, comparativos, transición, integridad y drill-through |
-| M09 | Tax Perú | Perfiles/vigencias, base fiscal, CPE/IGV/SIRE/SPOT, no domiciliados, registros/conciliación |
+| M01 | [Runtime/access/audit/operations](runtime-masters.md) | Runtime fijable, bootstrap, aislamiento/revocación, documentos privados, recuperación y ensayo habilitante |
+| M02 | [Maestros e importación](runtime-masters.md) | Identidades/referencias/versiones, servicio comprado separado, preview invalidable y corrección |
+| M03 | [Inventory/costeo](inventory-deep.md), [Treasury SP2](sales-stock-treasury.md), [integraciones](integrations.md) | Apertura/UNKNOWN, secuencia de valoración, dinero confirmado y propuesta externa |
+| M04 | [B2C profundo](inventory-deep.md), [CPE](cpe-document-delivery.md), [hechos](economic-facts.md) | HP1–HP5, correcciones coordinadas, oportunidad CPE/adquisición externa, preservación para Accounting |
+| M05 | [Procure-to-Pay](procurement-deep.md) | Mercancía/servicios, PO/recepción/conformidad/factura, match/hold, anticipo, devolución y payability |
+| M06 | [Conciliación bancaria y Corporate](treasury-corporate-deep.md) | Import/duplicado/N:M/reversión, financiación/actos/relaciones y gate profesional temprano |
+| M07 | [Accounting](accounting-deep.md) y [políticas NPIF](../accounting/npif-policy-catalog.md) | Interpretación, PCGE aplicado, posting/revisión, ledger, subcontroles, cierre y apertura |
+| M08 | [Paquete financiero y goldens](reporting-goldens.md) | Cuatro estados+notas, comparativos, transición, integridad y drill-through |
+| M09 | [Tax Perú](tax-deep.md) | Perfiles/vigencias, base fiscal, CPE/IGV/SIRE/SPOT, no domiciliados, registros/conciliación |
 
-La matriz se completa con enlaces a los documentos entregados; una fila sin contrato no se considera especificada. Capabilities/programa conservan propósito, dependencias y roles, sin duplicar estados de comandos.
+Las nueve filas tienen contrato candidato. SPECIFIED describe contenido, no aceptación: conservan gates profesionales y ejecutables expresos. El [contrato transversal](economic-facts.md) es obligatorio y extiende el orden de CM0 para P2P, conciliación, valoración y libros. Capabilities/programa conservan propósito, dependencias y roles, sin duplicar estados de comandos.
 
 ## Criterios de revisión transversal
 

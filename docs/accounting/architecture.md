@@ -1,6 +1,6 @@
 # Arquitectura objetivo de Accounting
 
-Propietario: Accounting. Estado: arquitectura de programa, lista para especificación profunda; no es implementación ni política profesional aprobada. Fuentes normativas: [registro](../research/normative-register.md), [matriz NIIF](../research/ifrs-applicability.md) y [reporte NPIF](npif-reporting.md).
+Propietario: Accounting. Estado: arquitectura con [deep spec M07](../specs/accounting-deep.md) y [M08/goldens](../specs/reporting-goldens.md) candidatas; no es implementación ni política profesional aprobada. Fuentes normativas: [registro](../research/normative-register.md), [matriz NIIF](../research/ifrs-applicability.md) y [reporte NPIF](npif-reporting.md).
 
 ## Cadena y ownership
 
@@ -63,4 +63,4 @@ El primer producto contable usable genera situación financiera, resultados, cam
 
 Antes de código de Accounting: elegibilidad/marco de TILMUX; adopción PCGE; catálogo inicial de políticas; eventos de los hitos construidos; precisión; períodos/apertura; tratamiento RER; matriz de escenarios; aprobación profesional. Antes de operar: apertura reconciliada, balance de prueba, paquetes sintéticos completos sin Excel obligatorio, reversión/cierre/reapertura, aislamiento, concurrencia, actualización de reglas y trazabilidad hasta evidencia.
 
-No están listos para implementación profunda: activos fijos, provisiones, FX, instrumentos, consolidación e impuestos diferidos sin hechos/spec. Su arquitectura se conserva como capabilities con triggers, no como tablas anticipadas.
+M07 especifica contratos de activos, provisiones, FX, instrumentos, devengos y demás auxiliares por trigger; requiere aprobar políticas/hechos antes de activarlos. Consolidación y otras expansiones M10 conservan estado CONCEPT/TRIGGERED. Ninguna spec declara tablas construidas ni tratamiento profesional aprobado.

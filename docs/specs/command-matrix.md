@@ -33,6 +33,8 @@ Retención: identidad de efecto confirmado permanece al menos mientras su hecho 
 
 ## Recursos reales y orden local candidato
 
+Las deep specs M01–M09 añaden recursos y precisiones mediante [extensiones canónicas](economic-facts.md#recursos-adicionales-y-orden). Cualquier comando SP2 que confirme movimiento físico o coste toma también W55 antes de P60; W protege valoración, P protege cantidades/reservas. Los comandos de mera reserva/lectura de disponibilidad no toman W salvo que consuman valoración. La tabla SP2 enumera su ámbito original y se lee con esta ampliación, no como permiso para omitirla.
+
 Orden ascendente; dentro de clase, identidad canónica `(entidad, tipo de raíz, ID estable)` o clave natural normalizada, nunca orden recibido del cliente. Bloqueo exclusivo para recursos que limitan sumas/transiciones; lectura protegida de maestros puede usar SHARE si no hay upgrade, con evidencia de compatibilidad. En esta matriz «lock» no implica bloqueo en cada SELECT informativo.
 
 | Rango / símbolo | Recurso que existe en esta spec | Creación y exclusión |
@@ -50,7 +52,7 @@ Orden ascendente; dentro de clase, identidad canónica `(entidad, tipo de raíz,
 | 60 P | Posición de stock y asignaciones de coste de Inventory | Alta de posición bajo SKU M + UNIQUE de dimensiones. Posición limita saldo y reservas |
 | 61 U | Unidad serial, cuando el SKU lo exige | Alta bajo M/P + UNIQUE de identidad compatible; posesión y movimiento original explícitos |
 | 62 V | Reserva de Inventory por línea/posición | Creación bajo S/P y unicidad; su remanente se cambia con la posición que limita disponibilidad |
-| 70 C | Expediente/identidad CPE de Sales | Creación bajo S + UNIQUE de identidad externa; nunca lock de CPE inexistente |
+| 70 C | Expediente/identidad CPE de Sales; documentos de proveedor pertenecen a Procurement | Identidad natural protegida en I + UNIQUE; puede preceder a aceptación Sales. Vínculo/asignación posterior bajo S/C; nunca lock de CPE inexistente |
 | 80 D | Documento/artefactos/versiones y política de Documents | Nuevo archivo por intención; dossier de entrega por CPE bajo C y unicidad de vínculo. Versiones se bloquean por ID estable |
 | 90 N | Intención/aprobación/HOLD de entrega documental | Primera intención bajo C/D y UNIQUE de entidad+CPE+finalidad; reenvío nuevo bajo mismo dossier. No nueva tabla «familia» obligatoria |
 | 100 J | Inbox/job/attempt técnico que se procesa o confirma | Claim corto solo sobre J; liberar antes de abrir transacción empresarial, que vuelve a tomar J al final |
@@ -92,7 +94,7 @@ Todas las filas heredan I si D; se listan los demás recursos potenciales en ord
 | [C24](first-operational-circuit.md#c24) Preview import | imports.prepare + lectura de dueños | B |
 | [C25](first-operational-circuit.md#c25) Confirmar import | imports.confirm + capacidad de cada participante | K, B, M, P, U, V, J |
 | [C26](first-operational-circuit.md#c26) Reporte | reports.view/snapshot + permisos de fuentes | D, J; dataset fuera de locks económicos |
-| [C30](cpe-document-delivery.md#c30) Identidad CPE | sales.register_cpe / sales.correct_cpe | S, C |
+| [C30](cpe-document-delivery.md#c30) Identidad CPE | sales.register_cpe / sales.correct_cpe | E si caso previo, S si venta, C |
 | [C31](cpe-document-delivery.md#c31) Adquirir artefacto | documents.upload | D, J |
 | [C32](cpe-document-delivery.md#c32) Disponibilidad | documents.verify_artifact o mandato de análisis | D, J |
 | [C33](cpe-document-delivery.md#c33) Vincular/verificar CPE | sales.verify_cpe + documents.view; sales.correct_cpe además para retractar/corregir | S, C, D, J |
