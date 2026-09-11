@@ -11,6 +11,7 @@ NON-AUTHORITATIVE RESEARCH. Estas fuentes conservan su fecha de consulta, edici�
 | Cambios oficiales identificados 2025–2026 | [Delta NIIF](normative/ifrs-2025-2026-delta.md) |
 | Tributos Perú y validaciones locales | [Research Tax](normative/tax-current-review.md) |
 | Financiación, mutuo y Corporate | [Research Mutuo/Tax/Corporate](normative/mutuo-tax-corporate.md) |
+| Amendment B2B, pago por tercero y estado mensual | [Fuentes oficiales N030–N043 y hallazgo liquidación](normative/b2b-financing-evidence.md); límites de lectura y activación explícitos |
 | Procedencia y límites del catálogo PCGE | [Auditoría pcge-peru](../evidence/pcge-code-audit.md), como evidencia reutilizable, sin convertir códigos en política contable |
 
 ## Fuentes técnicas y comparación

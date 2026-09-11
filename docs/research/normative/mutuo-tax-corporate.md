@@ -4,6 +4,8 @@ Responsables: Corporate/Legal, Tax y Accounting; Treasury acredita movimientos y
 
 ## Qué puede concluirse y qué falta
 
+Ampliación del amendment propuesto: [N030–N043 y hallazgo «liquidación»](b2b-financing-evidence.md) profundiza pago de tercero/reembolso (SUNAT038-2022), estado mensual, representación, NPIF y obligaciones formales. Se preservan las limitaciones de la lectura RTF previa y la alerta editorial32-A(a); no se acepta contrato ni tasa por esta ampliación.
+
 Un abono del socio puede corresponder a préstamo, aporte, reembolso u otro hecho: el nombre del banco no decide su naturaleza. Deben acreditarse dirección, obligación de devolución, sujeto que entrega, facultades, moneda, fechas, condiciones y finalidad. Tampoco una capitalización posterior convierte retroactivamente todos los desembolsos en capital.
 
 | Eje y clasificación | Conclusión delimitada / fuente | Consecuencia de diseño |
