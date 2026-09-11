@@ -7,6 +7,7 @@ Fecha de corte: 2026-09-11. **Única fuente del estado global vigente.**
 **GLOBAL DOCUMENTATION FREEZE: ACCEPTED.**
 **IMPLEMENTATION: NOT AUTHORIZED.**
 **POST-FREEZE DOCUMENTATION INFORMATION ARCHITECTURE: ACCEPTED.**
+**AGENT SYSTEM AND SKILLS: ACCEPTED.**
 
 El freeze documental no significa producción preparada ni aprobación de políticas o datos reales. La enmienda **POST-FREEZE NON-SEMANTIC DOCUMENTATION IA AMENDMENT** fue aceptada mediante revisión independiente; el [informe IA](evidence/documentation-ia.md) conserva el expediente histórico del autor.
 
@@ -30,9 +31,9 @@ Resultado independiente comunicado por el propietario: **PASS — INFORMATION AR
 
 ## Next process
 
-La misión autorizada ahora abarca investigación dedicada de harnesses, sistema de agentes/skills y evaluación documental en `ai/agent-system-and-skills`. El [expediente de agentes](evidence/agent-system-research.md) presenta el candidato del autor: **PENDING INDEPENDENT REVIEW**, sin aceptación implícita del nuevo sistema. [PR3](https://github.com/mat-l-dev/CasPro-ERP/pull/3) está MERGED; su aceptación no se extiende a este candidato.
+Resultado independiente comunicado por el propietario: **PASS — AGENT SYSTEM ACCEPTED**. Candidato corregido aceptado: `e1582bf4bd67b7b5097c7f8bc222ec1c38cc9572`, tree `93ac3dbfa46b93368727a8fea9f0e1354caa89be`. El hallazgo de acoplamiento a la fase temporal quedó resuelto; no se solicitó otra corrección antes del merge. El [expediente de agentes](evidence/agent-system-research.md) conserva la evidencia histórica del autor.
 
-Siguiente proceso: revisión independiente → merge autorizado del sistema de agentes → regeneración de Work Orders acotadas → autorización explícita del propietario → implementación. [ADR-012](decisions/adr-012-global-documentation-freeze.md) conserva el contrato del freeze. Esta misión no regenera WOs ni implementa código.
+Siguiente fase: regeneración de Work Orders acotadas → autorización explícita del propietario → implementación. Aceptar el sistema de agentes no autoriza implementación. [ADR-012](decisions/adr-012-global-documentation-freeze.md) conserva el contrato del freeze. Este cierre no regenera WOs ni implementa código.
 
 ## Canonical links
 
