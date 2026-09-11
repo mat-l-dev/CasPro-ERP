@@ -2,6 +2,20 @@
 
 Propietario: Architecture con dueños de dominio. Este archivo conserva la matriz de readiness con la que M01–M09 se presentaron a revisión; la aceptación independiente posterior del freeze se registra únicamente en [review](../review.md), y [gaps](../roadmap/decisions-gaps.md) conserva los pendientes. Las etiquetas READY_FOR_FREEZE_REVIEW siguientes describen el candidato revisado, no una aceptación todavía pendiente ni evidencia de software, políticas reales aprobadas o permiso de implementación.
 
+## Navegar por función
+
+| Grupo | Fuentes y alcance |
+|---|---|
+| FLOW SPECS | [Primer circuito B2C](flows/first-operational-circuit.md), [Sales/Stock/Treasury](flows/sales-stock-treasury.md), [Jumpseller y trabajo externo durable](flows/jumpseller-external-work.md), [CPE y entrega documental](flows/cpe-document-delivery.md) |
+| DEEP / MILESTONE SPECS | La matriz M01–M09 siguiente enlaza cada contrato; runtime-masters cubre M01–M02 e inventory-deep M03–M04. No hay un archivo por hito artificial |
+| CROSS-CUTTING SPECS | [CM0 y matriz de comandos](cross-cutting/command-matrix.md), [hechos económicos](cross-cutting/economic-facts.md) |
+| ACCEPTANCE / GOLDENS | [Escenarios operativos](acceptance/operational-scenarios.md), [perfiles de validación existentes](acceptance/validation-profiles.md), [M08: contrato del paquete financiero y goldens](acceptance/reporting-goldens.md). M08 incluye el contrato completo, no solo ejemplos |
+| HISTORICAL DELIVERY MATERIAL | [WOs SP2](../history/work-orders-sp2.md): antecedentes pendientes de regeneración, fuera de las specs actuales |
+
+Para preparar M03: [estado](../review.md) → [Inventory y costeo](../domain/inventory-costing.md) → [spec M03–M04](milestones/inventory-deep.md) → CM0/hechos y las fichas Sales/Treasury/Jumpseller que el alcance concreto referencie → escenarios/perfil pertinente y [gates](../roadmap/decisions-gaps.md). Revisar dependencias M01–M02 en la matriz; esta ruta no autoriza implementar.
+
+Las etiquetas locales SPECIFIED/CANDIDATE y READY_FOR_FREEZE_REVIEW conservan el corte y alcance de las fuentes. Consultar el estado global para la aceptación del freeze; ninguna etiqueta acredita ejecución ni promueve mecanismos provisionales.
+
 ## Matriz de cobertura y readiness
 
 | Hito | Readiness | Contrato local profundo | Gates pertinentes del registro |

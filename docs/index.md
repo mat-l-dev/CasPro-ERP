@@ -1,47 +1,48 @@
 # Índice y autoridad documental
 
-Los documentos describen contratos y evidencia documental, no acreditan implementación. [Review](review.md) es la única fuente del estado global; [deep-spec-index](specs/index.md) de readiness por hito y [gaps](roadmap/decisions-gaps.md) de pendientes A/B/C/D. El [registro](decisions/index.md) enlaza cada ADR, cuya tabla de alcances posee el estado de esa decisión. Los PASS históricos no aceptan un candidato posterior.
+CasPro es un ERP interno para TILMUX y entidades autorizadas del propietario. Empieza por [producto](product/charter.md) y [estado vigente](review.md): allí están el freeze, sus identidades, los gates abiertos y el proceso aún requerido para implementar. Este índice selecciona fuentes; no mantiene otro estado global.
 
-## Cinco fuentes de verdad
+## Rutas de lectura por función
 
-| Verdad | Fuente canónica | No puede sustituirse por |
-|---|---|---|
-| BUSINESS — qué debe ocurrir | [Producto](product/charter.md), [modelo](domain/model.md), [invariantes](domain/invariants.md); [spec del primer circuito](specs/flows/first-operational-circuit.md) | Un test, un prompt o una interpretación del implementador |
-| ARCHITECTURE — organización y motivos | [Arquitectura](architecture/overview.md), contratos enlazados y ADRs | Un árbol de carpetas o una instrucción histórica |
-| IMPLEMENTATION — qué existe | Futuro código, migraciones y configuración; hoy no existen | Una decisión ACCEPTED |
-| VERIFICATION — qué se ha demostrado | Futuras pruebas y evidencia vinculada al candidato; hoy solo [revisión estática documental](review.md) | Generación de IA, coverage o una checklist rellenada |
-| OPERATIONAL — qué está desplegado | Futuro manifiesto de release y registro por entorno | HEAD, un merge o una imagen construida |
+Cada secuencia es un punto de entrada. Cargar las dependencias concretas que cite la spec local, no todo el repositorio.
 
-## Rutas de lectura
-
-| Tema | Documento |
+| Función | Contexto mínimo y siguiente lectura |
 |---|---|
-| Producto, hechos y non-goals | [Charter](product/charter.md) |
-| Agregados y ciclos | [Modelo conceptual](domain/model.md) |
-| Conservación y estados | [Invariantes](domain/invariants.md) |
-| Primer circuito Jumpseller–venta–cobro–entrega–CPE–email | [Spec local](specs/flows/first-operational-circuit.md), con matriz, aceptación y primeras WOs enlazadas |
-| Principios y estructura futura | [Overview](architecture/overview.md) |
-| Ownership y dependencias | [Boundaries](architecture/boundaries.md) |
-| Comparación tecnológica | [Technology](architecture/technology.md) |
-| Dinero, cantidades, fechas e identidad | [Data](architecture/data.md) |
-| Tenancy, autenticación y autorización | [Tenancy/access](architecture/tenancy-access.md) |
-| Comandos, bloqueos y reversión | [Transactions](architecture/transactions.md) |
-| Integraciones, eventos y trabajo durable | [Integrations](architecture/integrations.md) |
-| Compra a pago, Treasury e Inventory/costeo | [P2P](domain/procure-to-pay.md), [Treasury](domain/treasury-finance.md), [Inventory](domain/inventory-costing.md) |
-| Accounting, NPIF, Tax y Corporate | [Accounting](accounting/architecture.md), [reporte NPIF](accounting/npif-reporting.md), [Tax](tax/architecture.md), [Corporate](corporate/architecture.md) |
-| Frontend, sistema visual y UX | [UI](architecture/ui.md) |
-| Asistencia IA en producto | [Arquitectura IA](architecture/ai-assistance.md) |
-| Taxonomía, perfiles y evidencia | [Quality](quality/strategy.md) |
-| Amenazas y controles | [Threat model](security/threat-model.md) |
-| CI/CD, recuperación y observabilidad | [Delivery](operations/delivery.md) |
-| Decisiones, fuentes y aplicabilidad normativa | [ADRs](decisions/index.md), [fuentes técnicas](research/technical-sources.md), [registro normativo](research/normative/normative-register.md), [matriz NIIF](research/normative/ifrs-applicability.md) |
-| Extracción de Wbpro y benchmark ERP | [Política V1](architecture/wbpro-reference-policy.md), [clasificación Wbpro](evidence/wbpro-knowledge.md), [benchmark](research/erp-benchmark.md) |
-| IA y contexto local | [Protocolo](../.ai/README.md), [flujo](../.ai/workflow.md) |
-| Capability map, gaps y cuatro roadmaps | [Capabilities](roadmap/capabilities.md), [decisiones/gaps](roadmap/decisions-gaps.md), [programa](roadmap/program.md) |
-| Pendientes y revisión de la fundación | [Review](review.md) |
-| Cierre documental y reconciliación UX | [Expediente A–W](history/final-documentation-closure.md), [memo UX/DDR](evidence/ux-reconciliation.md), [deep specs](specs/index.md) |
-| Evidencia de la auditoría Astra anterior | [Informe histórico A–R](history/astra-master-audit.md), [repositorios](evidence/repository-audit.md), [pcge-peru](evidence/pcge-code-audit.md) |
-| NPIF completa y delta NIIF 2025/2026 | [Catálogo de políticas](accounting/npif-policy-catalog.md), [delta oficial](research/normative/ifrs-2025-2026-delta.md) |
+| NEW CONTRIBUTOR | [Producto](product/charter.md) → [estado](review.md) → [arquitectura](architecture/overview.md); este mapa resuelve la autoridad restante |
+| IMPLEMENTER | [Estado/autorización](review.md) → [hito/spec local](specs/index.md) → contrato del dueño y dependencias citadas → [gates](roadmap/decisions-gaps.md) / [calidad](quality/strategy.md) / [contrato de WO](../.ai/work-order.md). No hay WO regenerada ni autorización de implementación; [M03 tiene una ruta concreta](specs/index.md#navegar-por-función) |
+| REVIEWER | [Estado e identidad](review.md) → contrato y delta del alcance → [ADRs pertinentes](decisions/index.md) si necesita motivos → [protocolo de revisión](../.ai/review.md) / [calidad](quality/strategy.md). Para esta enmienda: [informe IA](evidence/documentation-ia.md) |
+| ACCOUNTING / FINANCE | [Estado](review.md) → [Accounting](accounting/architecture.md) → [políticas NPIF](accounting/npif-policy-catalog.md) / [reporting](accounting/npif-reporting.md) según tarea → [M07](specs/milestones/accounting-deep.md) / [M08 y goldens](specs/acceptance/reporting-goldens.md) → [gates](roadmap/decisions-gaps.md). Para movimientos financieros: [Treasury](domain/treasury-finance.md) / [M06](specs/milestones/treasury-corporate-deep.md). Procedencia: [research](research/index.md) |
+| TAX / COMPLIANCE | [Estado](review.md) → [Tax](tax/architecture.md) → [M09](specs/milestones/tax-deep.md) → [registro normativo](research/normative/normative-register.md) y fuente aplicable → [gates](roadmap/decisions-gaps.md). Financiación: añadir [Corporate](corporate/architecture.md) / [Mutuo](research/normative/mutuo-tax-corporate.md) |
+| DOMAIN OWNER | [Estado](review.md) → [modelo](domain/model.md) / [invariantes](domain/invariants.md) → dueño local: [P2P](domain/procure-to-pay.md), [Inventory](domain/inventory-costing.md), [Treasury](domain/treasury-finance.md) u otro módulo → [spec del hito](specs/index.md) / [gates](roadmap/decisions-gaps.md) |
+| SECURITY / OPERATIONS | [Estado](review.md) → [acceso](architecture/tenancy-access.md) / [amenazas](security/threat-model.md) o [operación](operations/delivery.md) según tarea → [M01–M02](specs/milestones/runtime-masters.md) → [calidad](quality/strategy.md) / [gates](roadmap/decisions-gaps.md) |
+| AI ORCHESTRATOR | [AGENTS](../AGENTS.md) → [estado](review.md) → [protocolo](../.ai/README.md) / [flujo](../.ai/workflow.md) → [programa](roadmap/program.md) → spec y gates de la tarea. Research dedicado de skills es una fase futura |
+
+## Mapa de autoridad
+
+| Verdad | Fuente canónica | Fuentes secundarias | Qué no la puede sustituir |
+|---|---|---|---|
+| GLOBAL STATUS | [Review](review.md) | Expediente de aceptación, [historia](history/index.md) | Un PASS anterior, readiness local, este índice o un merge |
+| BUSINESS | [Producto](product/charter.md) | Capabilities, contexto de specs | Un prompt, test o interpretación del implementador |
+| ARCHITECTURE | [Overview](architecture/overview.md) y contratos de arquitectura enlazados | ADRs para motivos/alcances | Árbol de carpetas o instrucción histórica |
+| DOMAIN | [Modelo](domain/model.md), [invariantes](domain/invariants.md), contrato del dueño y [spec local](specs/index.md) | Resúmenes de UI, roadmap y ejemplos | Estado importado del canal, conveniencia técnica o evidencia normativa convertida en regla |
+| DECISIONS | Cada ADR y su tabla de alcances en [decisions](decisions/index.md) | Fuentes técnicas y contrato detallado | Un resumen que convierta PROVISIONAL en demostrado |
+| IMPLEMENTATION | Futuro código, migraciones y configuración; todavía no existen | Specs describen lo que deberá ocurrir | Una decisión ACCEPTED o un documento generado |
+| VERIFICATION | [Calidad](quality/strategy.md) para el contrato; evidencia vinculada al candidato para lo demostrado | [Evidence](evidence/index.md), perfiles y criterios de aceptación | Checklist, coverage, generación de IA o PASS fuera de equivalencia |
+| OPERATION | [Delivery](operations/delivery.md) para contrato; futuro manifiesto de release/registro por entorno para despliegue real | Evidencia operativa futura | HEAD, merge o imagen construida |
+| NORMATIVE EVIDENCE | [Registro normativo](research/normative/normative-register.md) y fuentes/edición/vigencia enlazadas | [Research](research/index.md), procedencia PCGE | Benchmarks o historia como prueba de vigencia; research no decide la política CasPro |
+| ROADMAP / GATES | [Programa](roadmap/program.md), [capabilities](roadmap/capabilities.md), [gaps A/B/C/D](roadmap/decisions-gaps.md) | Matriz M01–M09 y resúmenes locales | WO histórica, calendario supuesto o skill como autorización |
+| HISTORY | [Registros de historia](history/index.md), solo para hechos de su período | Git y expedientes de evidencia | Reinterpretación de un pendiente histórico como estado vigente |
+
+## Contratos por tema
+
+| Tema | Fuentes |
+|---|---|
+| Arquitectura | [Ownership/boundaries](architecture/boundaries.md), [tecnología](architecture/technology.md), [datos](architecture/data.md), [transacciones](architecture/transactions.md), [integraciones](architecture/integrations.md), [acceso](architecture/tenancy-access.md) |
+| Experiencia y asistencia | [UI](architecture/ui.md), [IA en producto](architecture/ai-assistance.md) |
+| Accounting, Tax y Corporate | Los contratos permanecen en [accounting](accounting/architecture.md), [tax](tax/architecture.md) y [corporate](corporate/architecture.md); no se trasladan a research |
+| Reutilización Wbpro | [Política de referencia](architecture/wbpro-reference-policy.md) y [evidencia clasificada](evidence/wbpro-knowledge.md); nunca dependencia runtime |
+| Decisiones y criterios | [ADRs](decisions/index.md), [specs/aceptación](specs/index.md), [calidad](quality/strategy.md) |
+| Procedencia y trazabilidad | [Research](research/index.md), [evidence](evidence/index.md), [history](history/index.md), cada uno con función distinta |
 
 ## Mantenimiento mínimo
 
