@@ -46,6 +46,8 @@ Cada secuencia es un punto de entrada. Cargar las dependencias concretas que cit
 
 ## Mantenimiento mínimo
 
+Amendment semántico en revisión: [expediente B2B/financiación](evidence/b2b-financing-amendment.md) → [Sales B2B](specs/flows/b2b-commercial-dossier.md), [M06 hechos/estados](specs/flows/financing-events-statements.md), [Documents entrega externa](specs/flows/cpe-document-delivery.md#c40), [research oficial](research/normative/b2b-financing-evidence.md). Estado y autorización únicamente en [review](review.md); estas rutas no aceptan el delta ni habilitan código.
+
 Una regla vive una vez, en el documento de su propietario. Un ADR explica la elección y enlaza su contrato detallado. Un resumen enlaza ese contenido; no mantiene otra versión de la regla.
 
 Un cambio actualiza la fuente afectada y sus referencias. Cualquier reutilización de evidencia sigue el contrato de equivalencia de [calidad](quality/strategy.md); el índice no define una excepción alternativa. Las decisiones históricas se sustituyen mediante un ADR explícito, no se reescribe su motivo. La desagregación de estados de esta fundación durante Gate 1 se registra en el índice de decisiones.
