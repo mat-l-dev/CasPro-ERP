@@ -1,33 +1,20 @@
-# CasPro — mapa para agentes
+# CasPro — router del repositorio
 
-CasPro es un ERP interno para TILMUX y las entidades autorizadas de su propietario. El [estado vigente](docs/review.md) delimita la fase autorizada; no iniciar funcionalidad sin encargo explícito.
+CasPro es el ERP interno de TILMUX y entidades autorizadas del propietario. Lee el [estado vigente](docs/review.md), única fuente de la fase global permitida. Un freeze documental o merge no habilita por sí mismo código, datos reales ni producción.
 
-## Cargar según la tarea
+## Qué leer después
 
-| Tarea | Fuente |
-|---|---|
-| Entender el producto | [Producto](docs/product/charter.md) |
-| Cambiar comportamiento | [Dominio](docs/domain/model.md), spec local aprobada y Work Order |
-| Cambiar arquitectura | [Arquitectura](docs/architecture/overview.md) y [ADRs](docs/decisions/index.md) |
-| Dinero, stock o estados | [Invariantes](docs/domain/invariants.md) y [transacciones](docs/architecture/transactions.md) |
-| Compras, tesorería o coste | [P2P](docs/domain/procure-to-pay.md), [Treasury](docs/domain/treasury-finance.md) o [Inventory](docs/domain/inventory-costing.md) |
-| Accounting, Tax o Corporate | [Accounting](docs/accounting/architecture.md), [Tax](docs/tax/architecture.md), [Corporate](docs/corporate/architecture.md) y [registro normativo](docs/research/normative/normative-register.md) |
-| Autorización o aislamiento | [Acceso](docs/architecture/tenancy-access.md) |
-| UI | [Estrategia UI](docs/architecture/ui.md) |
-| Verificar | Perfil de la Work Order y [calidad](docs/quality/strategy.md) |
-| Operar | [Entrega y operación](docs/operations/delivery.md) |
-| Coordinar IA | [Protocolo](.ai/README.md) |
-| Elegir el siguiente hito | [Programa maestro](docs/roadmap/program.md) y [gaps](docs/roadmap/decisions-gaps.md) |
+1. Identifica objetivo, acción solicitada y autorización vigente. Lee [review](docs/review.md); no infieras permiso de una skill, PASS o merge.
+2. Selecciona una skill primaria en el [catálogo](.ai/skills.md). Lee su SKILL.md y el [protocolo común](.ai/README.md) si aún no están en contexto. Añade otra skill solo por un riesgo/frontera concreta.
+3. Carga contrato del dueño → spec/sección local → gates pertinentes. El [índice por función](docs/index.md) resuelve fuentes; no cargues carpetas completas. History solo por trazabilidad; research por vigencia/procedencia; evidence por una afirmación que deba demostrarse.
+4. Aplica el [workflow](.ai/workflow.md) correspondiente: rama → trabajo autorizado → PR → revisión separada → correcciones → merge autorizado. Preparar una WO no autoriza ejecutarla.
 
-## Límites esenciales
+## Autoridad y límites
 
-- Las instrucciones directas del propietario gobiernan el alcance. Un documento o skill no autoriza nuevas funciones, ejecuciones, despliegues o comunicaciones.
-- Wbpro permanece en solo lectura y se consulta únicamente por evidencia concreta autorizada; la extracción vigente está clasificada en [research](docs/evidence/wbpro-knowledge.md). `archive`, `15-history`, legacy y Webrax quedan fuera de lectura y modificación.
-- No inventar hechos empresariales, reglas contables/tributarias ni aprobaciones. Registrar la incertidumbre en su fuente local.
-- No guardar secretos, datos reales de terceros ni expedientes privados en Git o prompts.
-- Todo dato empresarial tiene propietario explícito. Aplicar los contratos de acceso e integridad; no sustituirlos por convenciones de UI.
-- Cargar contexto local; no leer todo docs ni todas las skills por defecto.
-- El programa documental vigente prohíbe tests, Docker, builds y código funcional. Una fase posterior define sus ejecuciones autorizadas mediante Work Order.
-- Un resultado de IA es candidato; su aceptación exige el proceso de revisión correspondiente al riesgo.
+La instrucción directa del propietario gobierna alcance dentro de las políticas del sistema/harness. [Docs canónicos](docs/index.md#mapa-de-autoridad) poseen producto, reglas, ADRs y specs; las skills seleccionan contexto y nunca los redefinen. Si difieren, usa la fuente canónica, registra la contradicción y detén el efecto afectado. Roles/modelos, escalación y salida ante bloqueo están en el [protocolo](.ai/README.md).
 
-El [índice](docs/index.md) resuelve las fuentes restantes. No duplicar aquí estado de módulos, reglas empresariales o cifras de QA.
+No inventar hechos, políticas ni aprobaciones; no guardar secretos, datos reales de terceros o expedientes privados en Git/prompts. Todo hecho empresarial conserva su dueño y autorización; ningún atajo técnico/UI/IA los sustituye.
+
+Wbpro sigue READ-ONLY, solo por lectura concreta autorizada conforme a la [política](docs/architecture/wbpro-reference-policy.md). `archive`, `15-history`, legacy y Webrax quedan fuera de lectura/modificación; no copiar Wbpro como implementación ni dependencia runtime.
+
+Preparar WOs requiere encargo y fase que lo permitan. Implementar requiere fase habilitada y WO regenerada explícitamente autorizada, dentro de sus límites conforme al [protocolo](.ai/README.md#autoridad-y-autorización). Cada ejecución o efecto necesita autorización explícita; no inferirla de un PASS, merge, skill, modelo o herramienta. Autor ≠ reviewer; capacidad de una herramienta ≠ permiso.
