@@ -107,7 +107,7 @@ PR #2 se fusionó mediante merge commit `dbb1224d99f4dbdac61da25daf32f1fed872b4f
 
 ## C. Problemas de organización
 
-Research mezclaba cinco fuentes normativas, benchmark, auditorías y relatos de sesiones. Specs mezclaba flujos, contratos transversales, hitos, aceptación y WOs históricas. Review y README exigían atravesar historia para encontrar el estado. `v1-reference/policy.md` podía interpretarse como versión de CasPro; `integrations.md` no distinguía fácilmente arquitectura de fichas operativas. Las repeticiones útiles de invariantes en fichas no se eliminan: conservan su contexto y dueño. No se reabre el diseño.
+Research mezclaba cinco fuentes normativas, benchmark, auditorías y relatos de sesiones. Specs mezclaba flujos, contratos transversales, hitos, aceptación y WOs históricas. Review y README concentraban estado e historia en la misma superficie de entrada. `v1-reference/policy.md` podía interpretarse como versión de CasPro; `integrations.md` no distinguía fácilmente arquitectura de fichas operativas. Las repeticiones útiles de invariantes en fichas no se eliminan: conservan su contexto y dueño. No se reabre el diseño.
 
 ## D. Taxonomía objetivo
 
@@ -149,6 +149,205 @@ Movimiento mediante git mv, seguido de actualización mecánica de referencias e
 | `docs/specs/deep-spec-index.md` | `docs/specs/index.md` |
 | `docs/specs/work-orders.md` | `docs/history/work-orders-sp2.md` |
 
-## F–I. Autoridad, research, historia y especificaciones
+## F. Documentos canónicos actuales
 
-La clasificación primaria B/J/D identifica contratos, C los motivos/alcances ADR, E estado/roadmap/gates y F evidencia de fuentes sin autoridad para cambiar reglas. G es evidencia de revisión con corte/limitaciones. H nunca autoriza ejecución. A e I dirigen lectura local. Los índices finales enlazan cada documento por función; este inventario no debe cargarse en tareas operativas ordinarias.
+El [mapa de autoridad](../index.md#mapa-de-autoridad) identifica fuente canónica, secundaria y qué no la sustituye. Se conservan 20 contratos B, 4 documentos de estado/roadmap/gates E y 4 contratos de calidad/seguridad/operación J: **28 fuentes canónicas actuales en ese recuento estricto**. Los 12 ADRs C, 15 specs D y 7 instrucciones I tienen autoridad en su propio alcance; incluyendo esas clases son 62 documentos, sin contar navegación ni evidencia como reglas. Estas cifras no son readiness ni autorizaciones.
+
+| Clase | Fuente actual | Owner del inventario |
+|---|---|---|
+| B | [docs/accounting/architecture.md](../accounting/architecture.md) | Accounting |
+| B | [docs/accounting/npif-policy-catalog.md](../accounting/npif-policy-catalog.md) | Accounting |
+| B | [docs/accounting/npif-reporting.md](../accounting/npif-reporting.md) | Accounting |
+| B | [docs/architecture/ai-assistance.md](../architecture/ai-assistance.md) | Architecture |
+| B | [docs/architecture/boundaries.md](../architecture/boundaries.md) | Architecture |
+| B | [docs/architecture/data.md](../architecture/data.md) | Architecture |
+| B | [docs/architecture/integrations.md](../architecture/integrations.md) | Architecture |
+| B | [docs/architecture/overview.md](../architecture/overview.md) | Architecture |
+| B | [docs/architecture/technology.md](../architecture/technology.md) | Architecture |
+| J | [docs/architecture/tenancy-access.md](../architecture/tenancy-access.md) | Architecture |
+| B | [docs/architecture/transactions.md](../architecture/transactions.md) | Architecture |
+| B | [docs/architecture/ui.md](../architecture/ui.md) | Architecture |
+| B | [docs/corporate/architecture.md](../corporate/architecture.md) | Corporate |
+| B | [docs/domain/invariants.md](../domain/invariants.md) | Architecture |
+| B | [docs/domain/inventory-costing.md](../domain/inventory-costing.md) | Inventory / Accounting |
+| B | [docs/domain/model.md](../domain/model.md) | Architecture |
+| B | [docs/domain/procure-to-pay.md](../domain/procure-to-pay.md) | Procurement |
+| B | [docs/domain/treasury-finance.md](../domain/treasury-finance.md) | Treasury |
+| J | [docs/operations/delivery.md](../operations/delivery.md) | Operations |
+| B | [docs/product/charter.md](../product/charter.md) | Product |
+| J | [docs/quality/strategy.md](../quality/strategy.md) | Quality |
+| E | [docs/review.md](../review.md) | Architecture / registro del propietario |
+| E | [docs/roadmap/capabilities.md](../roadmap/capabilities.md) | Product / Architecture |
+| E | [docs/roadmap/decisions-gaps.md](../roadmap/decisions-gaps.md) | Product / Architecture |
+| E | [docs/roadmap/program.md](../roadmap/program.md) | Product / Architecture |
+| J | [docs/security/threat-model.md](../security/threat-model.md) | Security |
+| B | [docs/tax/architecture.md](../tax/architecture.md) | Tax |
+| B | [docs/architecture/wbpro-reference-policy.md](../architecture/wbpro-reference-policy.md) | Architecture |
+
+## G. Clasificación del research
+
+F conserva siete documentos: cinco en [research/normative](../research/index.md#evidencia-normativa), fuentes técnicas y benchmark en research. Sus fechas/ediciones/límites se mantienen; no hubo investigación nueva. Accounting, NPIF y Tax conservan sus decisiones en los contratos B y sus specs D. La [auditoría PCGE](pcge-code-audit.md) sigue descubrible directamente desde research, como evidencia G de procedencia, sin pasar por history. Auditorías de repositorios, Wbpro y UX también son G, no normativa ni regla.
+
+## H. Clasificación histórica
+
+[History](../history/index.md) contiene cinco registros H y un índice A: Astra anterior, expediente final del freeze, seis WOs SP2, historial de revisiones y origen del repositorio. Cada entrada identifica qué era, período, razón histórica y fuente vigente. No se borra evidencia única; README/review se dividen y sus bloques históricos se conservan íntegros con referencias migradas. No se crea un segundo contenedor archive.
+
+## I. Clasificación de specs
+
+[Specs](../specs/index.md) separa cuatro flows, seis archivos de hitos, dos contratos transversales y tres de aceptación: **15 specs D**. La matriz original M01–M09, sus criterios y handoff se preservan; M08 sigue siendo contrato financiero completo con goldens. No se fuerzan nueve nombres nuevos para contratos que cubren más de un hito. Los perfiles/gates SP2 existentes se extraen íntegros a aceptación; las seis WOs conservan IDs y tablas históricas, NEEDS REGENERATION AFTER FREEZE.
+
+## J. Refactor de review y estado
+
+[Review](../review.md) responde Current status, Freeze identity, Open gates, Next process y Canonical links. Conserva resultado independiente suministrado, candidato f6b64ae/tree0185 y cierre6bec/tree6618; registra el merge real de PR2. A0/B16/C13/D6 se explicita como los conteos existentes del registro, no cuatro nuevos IDs. La historia anterior se extrae a [reviews](../history/reviews.md); el [origen](../history/repository-origins.md) sale del README. La enmienda IA requiere revisión independiente propia y no modifica la aceptación del freeze ni autoriza implementar.
+
+## K. Repeticiones y autoridad
+
+| Repetición revisada | Clasificación | Tratamiento |
+|---|---|---|
+| README, AGENTS y .ai remiten al estado y límites | USEFUL SUMMARY | README breve; AGENTS solo cambia dos rutas. .ai/CLAUDE/GEMINI conservan instrucciones y enlaces válidos |
+| Architecture/domain/specs repiten invariantes y límites aplicados al caso | USEFUL SUMMARY | Se conserva el texto; las fichas remiten a CM0, dueño y QA. No se elimina una guarda para reducir líneas |
+| Programa, capabilities y matriz de hitos resumen dependencias/gates | USEFUL SUMMARY | Gaps conserva clasificación/IDs/trigger, review el estado y specs/index la readiness del candidato |
+| Review y reportes anteriores contienen varios PASS/pendientes de fechas distintas | HISTORICAL EVIDENCE, no autoridad actual paralela | Extraer y ubicar en history; mantener el corte explícito y la fuente vigente |
+| Perfiles y WOs coexistían bajo una sola entrada | Ambigüedad de navegación/autoridad, sin regla contradictoria demostrada | Una fuente de perfiles en aceptación y fichas históricas enlazadas; sin duplicar el bloque extraído |
+
+**DUPLICATE AUTHORITY actual detectada: 0; residual: 0.** No se inventa un conflicto semántico para justificar la reorganización. Se eliminan superficies editoriales ambiguas mediante separación e índices, no mediante cambios de reglas.
+
+## L. Referencias desde raíz y agentes
+
+README apunta a producto, review e índice; su historia tiene destino explícito. AGENTS migra registro normativo y evidencia Wbpro. CLAUDE, GEMINI y los cuatro documentos .ai ya enlazaban fuentes estables: se revisaron y permanecen sin cambios. Una referencia narrativa a H1–H5 en gaps ahora enlaza el historial de review; no se alteran las filas de gates. No se diseñan skills ni se copia dominio a instrucciones.
+
+## M. Auditoría de no cambio semántico
+
+Baseline: main `dbb1224d99f4dbdac61da25daf32f1fed872b4fa`, tree `66184f5714d0130f6cc14a306160bf7a5472ab6c`. El checkpoint mecánico `2ddafe57d8bce04781e39aab1037f8bf406f3c6d` conserva **79/79 documentos** tras normalizar únicamente destinos de enlaces y paths conocidos.
+
+En el resultado final se comparan los **76 cuerpos fuera de README/index/review** contra esa baseline: iguales al deshacer solamente navegación/metadata enumerada, incluida la reubicación de perfiles. Los tres bloques extraídos —historia de review, origen del README, perfiles/gates SP2— se comparan completos con su origen; las seis tablas WO y los criterios/matriz M01–M09 quedan íntegros. La sección de mantenimiento del índice se conserva. Las tres superficies editoriales reescritas se revisan por retención de identidad, estado, autorización y enlaces al dueño.
+
+| Superficie protegida | Evidencia antes/después |
+|---|---|
+| A0/B16/C13/D6 | Filas y clasificación de gaps intactas; review conserva el resumen de conteos, sin gate nuevo |
+| Contratos M01–M09 | Cuerpos de specs y matriz/criterios originales íntegros; solo navegación añadida |
+| Domain ownership e invariantes | Modelo, boundaries y fuentes de dominio sin cambio de contenido |
+| Commands, estados y atomicidad | Fichas y CM0 intactos; una referencia a perfiles se dirige al bloque extraído |
+| Accounting policy architecture | Arquitectura, políticas NPIF y reporting intactos |
+| NPIF / IFRS conclusions | Catálogo y las cinco fuentes normativas conservan sus conclusiones/ediciones/límites |
+| Tax ownership | Arquitectura Tax y M09 íntegros |
+| Mutuo gates | Corporate/Treasury, investigación y gates conservados |
+| Jumpseller rules | Flow renombrado, cuerpo idéntico salvo rutas |
+| UX safety | Contrato UI y memo DDR conservados |
+| Security principles | Tenancy/access, threat model y controles de arquitectura intactos |
+| Implementation authorization | Review conserva NOT AUTHORIZED, validaciones profesionales y proceso posterior; freeze no acredita producción |
+
+**Resultado: sin cambio semántico identificado en esta comparación editorial.** No es una nueva refutación ni aceptación independiente. No se ejecutaron tests de CasPro, builds, Docker, migraciones, servicios o integraciones; no se leyó ni escribió Wbpro durante esta misión.
+
+## N. Estadísticas y comprobaciones
+
+| Clase primaria | Antes | Después |
+|---|---:|---:|
+| A — navegación | 4 | 7 |
+| B — contrato canónico | 20 | 20 |
+| C — ADR | 12 | 12 |
+| D — specs | 14 | 15 |
+| E — estado/roadmap/gates | 4 | 4 |
+| F — research | 7 | 7 |
+| G — evidencia | 4 | 5 |
+| H — historia | 3 | 5 |
+| I — instrucciones | 7 | 7 |
+| J — calidad/seguridad/operación | 4 | 4 |
+| **Total Markdown** | **79** | **86** |
+
+Las 79 filas del inventario B conservan su única clase primaria en el destino. Los siete documentos añadidos completan la clasificación final sin superposiciones:
+
+| Archivo añadido | Clase | Owner editorial | Autoridad / consumidores / motivo |
+|---|---|---|---|
+| [Research index](../research/index.md) | A | Architecture / Research | Navegación, no regla; profesionales/investigación dirigida; separar fuente de decisión |
+| [Evidence index](index.md) | A | Architecture | Navegación, no regla; reviewers; distinguir evidencia reutilizable |
+| [History index](../history/index.md) | A | Architecture | Navegación, no estado; consulta de trazabilidad; evitar historia sin contexto |
+| [Revisiones históricas](../history/reviews.md) | H | Architecture | Registro de período; reviewer histórico; extracción íntegra |
+| [Origen](../history/repository-origins.md) | H | Architecture | Registro de período; consulta de procedencia; extracción íntegra |
+| [Perfiles de validación](../specs/acceptance/validation-profiles.md) | D | Quality / dueños SP2 | Criterios existentes subordinados a QA; implementador futuro/reviewer; extracción, no WO nueva |
+| [Este informe](documentation-ia.md) | G | Architecture | Evidencia editorial; reviewer IA; inventario y trazabilidad de esta enmienda |
+
+| Control estático | Antes | Final |
+|---|---:|---:|
+| Links locales examinados | 653 | 852 |
+| Referencias a anchors examinadas | 83 | 87 |
+| Broken links / anchors | 0 / 0 | 0 / 0 |
+| Markdown huérfanos, incluidos canónicos | 0 | 0 |
+| Casing incorrecto / archivos vacíos | — | 0 / 0 |
+| Headings duplicados problemáticos | — | 0 |
+| Referencias activas a rutas anteriores | — | 0 |
+| Patrones de secretos detectados | — | 0 |
+| Duplicate current authority | — | 0 |
+| Diff whitespace errors | — | 0 |
+
+Se recorre el grafo desde README, docs/index y entradas de agentes. Todos los documentos son alcanzables; los enlaces recíprocos de índices son navegación deliberada, sin cadena de redirecciones ni ciclo aislado que impida llegar al contrato. La revisión de rutas por función no exige consumir history para llegar a normativa, M03, Accounting o Tax. No se afirma una prueba de usuario cronometrada. Paths originales del inventario B/E son identificadores históricos deliberados, no links muertos. La revisión de datos privados combina inspección del delta y patrones razonables de credenciales; no es certificación de un escáner de seguridad.
+
+## O. Preparación para investigación futura de skills
+
+Las ocho [rutas por función](../index.md#rutas-de-lectura-por-función) son posibles bundles mínimos, no skills creadas ni una decisión sobre su número. Punto común: AGENTS → review → dueño/spec local → dependencias y gates pertinentes. Accounting separa contrato/política, M07/M08 y procedencia normativa; Tax separa contrato M09, fuente aplicable y validación profesional; M03 enlaza Inventory/CM0/hechos y la porción de flujo afectada.
+
+No cargar normalmente este inventario, reportes Astra/cierre, historia de revisiones, origen, WOs antiguas, todas las specs o toda la matriz NIIF. Research/evidence se consultan por una pregunta de procedencia/equivalencia concreta; history nunca sustituye autoridad actual. Escalación: dueño del contrato y [gaps](../roadmap/decisions-gaps.md) para incertidumbres, [ADRs](../decisions/index.md) para alcances/motivos, [protocolo IA](../../.ai/README.md) y [rúbrica](../../.ai/review.md) para revisión; el propietario conserva autorización. La misión futura investiga las fuentes finales reales antes de derivar límites de skills.
+
+## P. Archivos cambiados
+
+El mapa E registra los 29 movimientos explícitos. Se conservan todas las identidades originales; los siete nuevos archivos están en N. Son 73 identidades documentales afectadas: 29 movimientos, 37 cambios en la misma ruta y 7 archivos nuevos. El diff agregado de Git con umbral de renombre por defecto cuenta 74 entradas porque presenta `docs/specs/deep-spec-index.md` → `docs/specs/index.md` como delete/add tras añadir navegación. El checkpoint de movimientos conserva ese rename explícito y la comparación confirma su matriz y criterios intactos; no hay eliminación de contenido.
+
+Archivos conservados en su ruta que recibieron cambios de enlaces o edición autorizada:
+
+- [AGENTS.md](../../AGENTS.md)
+- [README.md](../../README.md)
+- [docs/accounting/architecture.md](../accounting/architecture.md)
+- [docs/accounting/npif-policy-catalog.md](../accounting/npif-policy-catalog.md)
+- [docs/accounting/npif-reporting.md](../accounting/npif-reporting.md)
+- [docs/architecture/boundaries.md](../architecture/boundaries.md)
+- [docs/architecture/data.md](../architecture/data.md)
+- [docs/architecture/integrations.md](../architecture/integrations.md)
+- [docs/architecture/technology.md](../architecture/technology.md)
+- [docs/architecture/tenancy-access.md](../architecture/tenancy-access.md)
+- [docs/architecture/transactions.md](../architecture/transactions.md)
+- [docs/architecture/ui.md](../architecture/ui.md)
+- [docs/corporate/architecture.md](../corporate/architecture.md)
+- [docs/decisions/adr-002-backend.md](../decisions/adr-002-backend.md)
+- [docs/decisions/adr-003-platform.md](../decisions/adr-003-platform.md)
+- [docs/decisions/adr-004-ui.md](../decisions/adr-004-ui.md)
+- [docs/decisions/adr-005-access.md](../decisions/adr-005-access.md)
+- [docs/decisions/adr-006-data.md](../decisions/adr-006-data.md)
+- [docs/decisions/adr-007-transactions.md](../decisions/adr-007-transactions.md)
+- [docs/decisions/adr-008-integrations.md](../decisions/adr-008-integrations.md)
+- [docs/decisions/adr-009-quality.md](../decisions/adr-009-quality.md)
+- [docs/decisions/adr-010-delivery.md](../decisions/adr-010-delivery.md)
+- [docs/decisions/adr-012-global-documentation-freeze.md](../decisions/adr-012-global-documentation-freeze.md)
+- [docs/decisions/index.md](../decisions/index.md)
+- [docs/domain/invariants.md](../domain/invariants.md)
+- [docs/domain/inventory-costing.md](../domain/inventory-costing.md)
+- [docs/domain/procure-to-pay.md](../domain/procure-to-pay.md)
+- [docs/domain/treasury-finance.md](../domain/treasury-finance.md)
+- [docs/index.md](../index.md)
+- [docs/operations/delivery.md](../operations/delivery.md)
+- [docs/quality/strategy.md](../quality/strategy.md)
+- [docs/review.md](../review.md)
+- [docs/roadmap/capabilities.md](../roadmap/capabilities.md)
+- [docs/roadmap/decisions-gaps.md](../roadmap/decisions-gaps.md)
+- [docs/roadmap/program.md](../roadmap/program.md)
+- [docs/security/threat-model.md](../security/threat-model.md)
+- [docs/tax/architecture.md](../tax/architecture.md)
+
+## Q. Checkpoints
+
+| Commit | Alcance |
+|---|---|
+| `0ed51168db4853bc246efcee7a38b0a8d1c81804` | Inventario y clasificación inicial de los 79 documentos |
+| `2ddafe57d8bce04781e39aab1037f8bf406f3c6d` | 29 movimientos y migración mecánica de rutas; 79/79 cuerpos preservados |
+| `83efb684215e19a20a783610fcc9dde9cf50b30f` | Estado, extracciones históricas y perfiles existentes |
+| `93528754b6509ee115dcdd16c22c7bcdc22a560d` | Rutas de lectura, índices y mapa de autoridad |
+| Checkpoint final de este informe | Estadísticas y comprobación IA; su SHA/tree se publican fuera del contenido que identifican, en el PR y la entrega final |
+
+## R. Publicación para revisión independiente
+
+Rama: `docs/final-information-architecture`. Base: main `dbb1224d99f4dbdac61da25daf32f1fed872b4fa`. Título: **Finalize CasPro documentation information architecture**. El nuevo PR debe quedar OPEN, sin merge. Número, head/tree exactos y mergeable state se verifican en GitHub después del push final y se devuelven en la entrega; el informe no se autoatribuye aceptación independiente.
+
+## S. Veredicto
+
+**PASS — INFORMATION ARCHITECTURE READY FOR REVIEW.**
+
+Veredicto del autor limitado a estructura, navegación y preservación editorial. La siguiente etapa es revisión independiente de este PR → merge → investigación dedicada de skills → skills → WOs regeneradas → autorización explícita de implementación → código. No continuar ampliando documentación por rutina.
