@@ -10,6 +10,12 @@ La futura implementación usará atomic con garantía de frontera exterior para 
 
 Protocolo: autenticar y verificar membresía/capacidad inicial mediante Workspace → abrir contexto/transacción → cargar datos protegidos y verificar autorización sobre el recurso → tomar exclusiones necesarias → releer y validar guardas y revisiones relevantes → persistir estado + hechos + auditoría crítica + intención durable necesaria → commit → responder. La comprobación inicial no autoriza lecturas empresariales antes de establecer el contexto de DB. Un ID de correlación enlaza todo; no contiene PII.
 
+## Preparar y ejecutar
+
+**PREPARE ≠ EXECUTE.** Preparar una propuesta, abrir revisión, seleccionar filas, extraer datos o aceptar una sugerencia de IA no confirma un hecho económico ni autoriza un efecto externo. La preparación identifica entidad, intención, entradas/revisiones, impacto, evidencia y acciones del dueño. Puede persistir un borrador o propuesta explícitamente identificados; nunca simula pago, posting, despacho o envío.
+
+Ejecutar exige el comando público del dueño, capacidad actual, revisión explícita del impacto y las guardas/idempotencia anteriores. Una preparación obsoleta se invalida; no se ejecuta reinterpretando silenciosamente sus entradas. La revisión y su activación deliberada deben poder completarse con teclado. El gesto que abre la revisión no puede confirmar también su acción. El resultado incierto conserva la misma intención y conduce a consultar/conciliar su efecto antes de otra ejecución; la UI y la IA no eligen una nueva clave para eludir ese control. El patrón no exige un diálogo adicional para cada edición reversible de maestro; cada comando mantiene su frontera semántica.
+
 ## Ficha de cada comando crítico
 
 | Campo | Qué debe declarar |
