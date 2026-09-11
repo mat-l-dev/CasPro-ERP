@@ -1,6 +1,6 @@
 # Deep specs y gate documental global
 
-Propietario: Architecture con dueños de dominio. Mandato [ADR-012](../decisions/adr-012-global-documentation-freeze.md). **Candidato en elaboración; ningún hito está FROZEN ni autorizado para código.** Las specs SP2 mantienen contratos precisados; las siguientes amplían y resuelven fronteras del programa. IDs de specs/comandos no implican clases/tablas anticipadas.
+Propietario: Architecture con dueños de dominio. Mandato [ADR-012](../decisions/adr-012-global-documentation-freeze.md). **Candidato M01–M09 entregado para revisión; ningún hito está FROZEN ni autorizado para código.** Las specs SP2 mantienen contratos precisados; las siguientes amplían y resuelven fronteras del programa. IDs de specs/comandos no implican clases/tablas anticipadas. [Cierre/readiness](../research/astra-master-audit.md) distingue contenido, aceptación y evidencia.
 
 ## Matriz de cobertura
 

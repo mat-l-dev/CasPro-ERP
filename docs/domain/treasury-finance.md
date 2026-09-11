@@ -1,6 +1,6 @@
 # Treasury y finanzas objetivo
 
-Propietario: Treasury. Estado: ARCHITECTED / NEEDS DEEP SPEC. El circuito B2C existente sigue siendo el primer alcance; este documento ordena su evolución.
+Propietario: Treasury. Estado: arquitectura con [deep spec M06 candidata](../specs/treasury-corporate-deep.md), formatos y políticas reales pendientes. El circuito B2C existente sigue siendo el primer alcance; este documento ordena su evolución.
 
 ## Hechos separados
 
@@ -23,7 +23,7 @@ Cuenta financiera, línea de extracto, movimiento interno confirmado, objetivo p
 1. **Deterministic match:** identificadores inequívocos y reglas exactas.
 2. **Heuristic candidates:** importe, ventana, referencia, pagador asociado, comisión y cardinalidad, con versión y explicación.
 3. **AI suggestion:** candidatos estructurados, confianza, coincidencias, diferencias y contraevidencia; datos mínimos/redactados.
-4. **Human confirmation:** el operador elige asignación e importe; inicialmente obligatorio para casos no inequívocos y para confirmar cobro B2C.
+4. **Human confirmation:** el operador confirma dinero y asignaciones conforme a HP2 y T05; reglas exactas pueden preparar candidatos, pero el modo inicial no confirma conciliación ni movimiento por ausencia de discrepancia.
 5. **Audit/evaluation:** regla/modelo/prompt, entradas, resultado, decisión y reversión.
 
 El candidato nunca altera movimientos, aplicaciones o ledger. El fallback sin IA mantiene matching manual/determinista. Una línea puede corresponder a varios movimientos y viceversa si la política lo permite; los centavos o nombres parecidos no habilitan auto-match. Aprender significa ajustar configuración/evaluación futura, no reescribir decisiones pasadas.
@@ -37,4 +37,4 @@ El candidato nunca altera movimientos, aplicaciones o ledger. El fallback sin IA
 - Pago del socio a proveedor desde cuenta personal no es movimiento bancario de TILMUX: origina evidencia y posible obligación/financiamiento a clasificar por Corporate/Accounting/Tax.
 - Forecast es proyección identificada, separada de posición confirmada.
 
-Primera spec profunda: importación BBVA/CSV, esquema de referencia, dedupe, cobro/aplicación B2C, líneas no identificadas, desconciliación y cierre diario. Pagos automáticos, open banking, FX avanzado, cash pooling y forecasting predictivo permanecen fuera hasta necesidad y proveedor comprobados.
+La spec M06 define importación, esquema versionado, dedupe, aplicaciones, líneas no identificadas, desconciliación y cierre diario; el formato BBVA concreto requiere evidencia autorizada. Pagos automáticos, open banking, FX avanzado, cash pooling y forecasting predictivo permanecen fuera hasta necesidad y proveedor comprobados.

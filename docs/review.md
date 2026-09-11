@@ -1,8 +1,10 @@
 # Revisión y condición de avance
 
-Fecha de corte y revisión: 2026-09-11. **Astra Master Audit: EN CURSO. GLOBAL DOCUMENTATION FREEZE: NOT ACHIEVED. IMPLEMENTACIÓN: NO AUTORIZADA.** Los PASS de Foundation, SP2 y el primer Grand Master Program que se conservan debajo son antecedentes históricos, no aceptación del candidato actual. El [ADR-012](decisions/adr-012-global-documentation-freeze.md) exige deep specs coordinadas M01–M09 antes del freeze global; después vendrán skills y autorización de delivery. No congelar M01 para iniciar código mientras los dominios posteriores permanezcan sin especificar.
+Fecha de corte y revisión: 2026-09-11. **Astra Master Audit: COMPLETED — candidato documental entregado. GLOBAL DOCUMENTATION FREEZE: NOT ACHIEVED. IMPLEMENTACIÓN: NO AUTORIZADA.** Los PASS de Foundation, SP2 y el primer Grand Master Program que se conservan debajo son antecedentes históricos, no aceptación del candidato actual. El [ADR-012](decisions/adr-012-global-documentation-freeze.md) exige deep specs coordinadas M01–M09 y aceptación global; después vendrán skills y autorización de delivery. No congelar M01 para iniciar código mientras sigan abiertos los gates del conjunto.
 
 Evidencia nueva: [realidad de repositorios](research/repository-audit.md), [auditoría ejecutada de pcge-peru](research/pcge-code-audit.md), [catálogo NPIF](accounting/npif-policy-catalog.md), [delta NIIF verificado](research/ifrs-2025-2026-delta.md) e [índice de deep specs](specs/deep-spec-index.md). Ningún resultado externo o comprobación estática acredita software CasPro construido ni revisión independiente/profesional concluida.
+
+El [informe final A–R](research/astra-master-audit.md) contiene errores corregidos, lectura normativa con sus límites, refutación final, readiness por hito, cinco decisiones agrupadas y publicación. M01–M09 tienen contratos candidatos; faltan aceptación profesional/empresarial de políticas y revisión separada. La auto-revisión del autor no se presenta como reviewer independiente. No se crearon skills finales ni se ejecutó una WO de implementación.
 
 ## Refutación del diseño
 

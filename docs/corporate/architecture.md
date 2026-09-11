@@ -1,12 +1,12 @@
 # Corporate/Legal y mutuos
 
-Propietario conceptual: Organization/Corporate capability para hechos de la entidad; no se decide todavía una aplicación Django `legal`. Estado: ARCHITECTED / MUTUO NEEDS LEGAL-TAX-ACCOUNTING VALIDATION.
+Propietario conceptual: Corporate capability para hechos societarios, distinta de la identidad administrativa de Organization. [M06](../specs/treasury-corporate-deep.md) concreta el contrato candidato; no crea una aplicación Django `legal`. MUTUO NEEDS LEGAL-TAX-ACCOUNTING VALIDATION.
 
 ## Propiedad y límites
 
 Organization conserva identidad legal, establecimientos y vigencia administrativa. La capability Corporate posee hechos societarios: socios/acciones y matrícula, capital, acuerdos/actas, poderes, contratos, partes relacionadas, beneficiario final y financiamientos. Parties aporta la identidad común de personas/entidades; Documents conserva artefactos y versiones. Corporate no mueve dinero, no asienta ni decide impuestos.
 
-Las referencias cruzadas usan IDs/contratos públicos para evitar un ciclo Organization↔Parties. La decisión física —subárea de Organization o módulo posterior— se toma al especificar el primer consumidor; el ownership anterior es estable aunque no exista carpeta de código.
+Las referencias cruzadas usan IDs/contratos públicos para evitar un ciclo Organization↔Parties. Corporate consume Organization, Parties, Documents y Audit; Organization no consulta hacia Corporate ni Parties para administrar identidad/acceso. Esta frontera lógica está decidida como candidato; el empaquetado Django se concreta en su WO sin cambiarla ni crear hoy carpetas de código.
 
 ## Hechos societarios
 
@@ -42,4 +42,4 @@ Reglas ya sustentadas:
 
 Preguntas para el gate profesional: mutuante/relación real; facultades y acuerdo; monto/límite/moneda/plazo/disponibilidad; interés civil y tratamiento fiscal de valor de mercado; eventos de desembolso/devolución; documentación y bancarización; medición NPIF; revelaciones; modificación/conversión/condonación; obligaciones de precios de transferencia/beneficiario final.
 
-El cronograma de beneficiario final de RS 000168-2025 probablemente alcanza a personas jurídicas nuevas o activadas hasta noviembre 2026. Debe verificarse contra el RUC/activación real; CasPro solo gestiona expediente y vencimiento, no presenta automáticamente a SUNAT.
+El cronograma de beneficiario final de RS 000168-2025 incluye cohortes por ingresos y sujetos nuevos/activados; [N029](../research/normative-register.md) y el memo fiscal delimitan su alcance. Debe determinarse cohorte/vencimiento con RUC y hechos reales; CasPro prepara expediente, sin presentación automática a SUNAT.

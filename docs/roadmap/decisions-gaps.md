@@ -29,9 +29,9 @@ Este registro explica evidencia nueva posterior a Gate 1 sin reabrirlo por rutin
 | HIGH | RLS sigue provisional | Access/DB | demostrar roles, policies y entry paths | ejecución | no / M01 / aislamiento |
 | HIGH | Escalas, pool y revisión de costes tardíos propuestos, no aceptados/calibrados | [Inventory profundo](../specs/inventory-deep.md) | revisar replay por secuencia y puente a período cerrado; límites/volumen | técnica+contable | freeze de política sí / M03/M07 / márgenes/cierre |
 | HIGH | Retención, RPO/RTO y restore DB+objects sin cifras | Operations/Documents | targets y prueba de restore | owner+ejecución | no / deploy / continuidad |
-| HIGH | P2P candidato completo; tolerancia cero no explicada y excepciones requieren aceptación | [P2P profundo](../specs/procurement-deep.md) | aprobar tolerancias, compra directa y conformidad; SPOT por servicio | owner+professional | freeze de política sí / M05 / pagos seguros |
+| HIGH | P2P candidato completo; tolerancia cero a diferencias inexplicadas y excepciones requieren aceptación | [P2P profundo](../specs/procurement-deep.md) | aprobar tolerancias, compra directa y conformidad; SPOT por servicio | owner+professional | freeze de política sí / M05 / pagos seguros |
 | HIGH | Conciliación especificada; formato BBVA y política de evidencia real no comprobados | [Treasury profundo](../specs/treasury-corporate-deep.md) | validar parser/import y duplicados reales; no inferir de CSV de otro banco | muestra sintética/real autorizada | no para contrato / adapter M06 / control diario |
-| MEDIUM | Corporate placement físico no decidido | Architecture | elegir cuando primer consumidor exista | arquitecto | no / M06 / no |
+| MEDIUM | Corporate tiene frontera lógica definida; empaquetado Django se concretará en delivery | Architecture/M06 | conservar Corporate→Organization/Parties, sin dependencia inversa | decisión técnica de WO | no / empaquetado M06 / no |
 | MEDIUM | IA/VPS/proveedor sin recursos ni evaluación | AI | piloto sintético y benchmark | owner+technical | no / M06 optional / no |
 | MEDIUM | Dispositivo operativo/densidad y browser matrix | UX | prueba de tareas con operadores | owner/research | no / UI / productividad |
 | HIGH | Cohorte de beneficiario final no determinada; calendario 2026 investigado | Corporate/Tax, N029 | verificar RUC/activación/ingresos y período/vencimiento real | business evidence | freeze de perfil sí / expediente / compliance |
@@ -41,8 +41,10 @@ Este registro explica evidencia nueva posterior a Gate 1 sin reabrirlo por rutin
 
 ## Máximo cinco decisiones humanas agrupadas
 
-1. Aprobar con contador el marco/elegibilidad inicial, apertura y políticas NPIF, presentación del RER, pool/precisión/costes tardíos y adopción PCGE 2019 vs anticipada 2026.
-2. Aprobar con asesor legal/tributario/contable la estructura del mutuo antes de contrato o dinero.
-3. Definir evidencia operativa mínima de cobro y formatos de extracto/cuentas reales para Treasury, tolerancias/compra directa/conformidad de Procurement y excepciones de autoaprobación, sin exponer datos privados en Git.
-4. Fijar artefactos/momento CPE y obligaciones SIRE/IGV/SPOT/no domiciliados/beneficiario final con profesional según RUC/operaciones reales.
-5. Fijar RPO/RTO/retención y dispositivos objetivo antes del primer despliegue.
+DH1–DH5 identifican estos grupos actuales. No renumeran las políticas HP1–HP5 de SP2 ni los H1–H5 históricos de review; toda referencia nueva usa DH y enlace al grupo concreto.
+
+1. <a id="dh1"></a>**DH1 — Contabilidad.** Aprobar con contador el marco/elegibilidad inicial, apertura y políticas NPIF, presentación del RER, pool/precisión/costes tardíos y adopción PCGE 2019 vs anticipada 2026.
+2. <a id="dh2"></a>**DH2 — Financiación.** Aprobar con asesor legal/tributario/contable la estructura del mutuo antes de contrato o dinero.
+3. <a id="dh3"></a>**DH3 — Operación y aprobaciones.** Definir evidencia operativa mínima de cobro y formatos de extracto/cuentas reales para Treasury, tolerancias/compra directa/conformidad de Procurement y excepciones de autoaprobación, sin exponer datos privados en Git.
+4. <a id="dh4"></a>**DH4 — Cumplimiento real.** Fijar artefactos/momento CPE y obligaciones SIRE/IGV/SPOT/no domiciliados/beneficiario final con profesional según RUC/operaciones reales.
+5. <a id="dh5"></a>**DH5 — Operación técnica.** Fijar RPO/RTO/retención y dispositivos objetivo antes del primer despliegue.

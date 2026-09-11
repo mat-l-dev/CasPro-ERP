@@ -1,6 +1,6 @@
 # Inventory, kardex y frontera contable
 
-Propietario: Inventory para realidad física/coste operativo; Accounting para medición financiera. Estado: ARCHITECTED; la apertura SP2 se actualiza con la decisión HP3.
+Propietario: Inventory para realidad física/coste operativo; Accounting para medición financiera. Estado: arquitectura con [deep spec M03 candidata](../specs/inventory-deep.md); HP3 fija método, UNKNOWN y condición del retorno, con parámetros de política pendientes.
 
 ## Promedio ponderado móvil
 

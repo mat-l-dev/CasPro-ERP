@@ -57,7 +57,7 @@ Un hash prueba integridad respecto del artefacto esperado, no autoridad normativ
 
 ## Reporting NPIF V1
 
-El primer producto contable usable genera situación financiera, resultados, cambios en patrimonio, flujos de efectivo y notas, con comparativos cuando correspondan, aunque NPIF haga opcionales los dos estados adicionales. El EFE se diseña por método directo como elección de producto pendiente de detalle. Reportes gerenciales no se etiquetan como EEFF formales. Ningún texto de cumplimiento se genera o aprueba automáticamente con IA.
+El primer producto contable usable genera situación financiera, resultados, cambios en patrimonio, flujos de efectivo y notas, con comparativos cuando correspondan, aunque NPIF haga opcionales los dos estados adicionales. El EFE directo se concreta como candidato en [M08](../specs/reporting-goldens.md), incluida conciliación numérica. Reportes gerenciales no se etiquetan como EEFF formales. Ningún texto de cumplimiento se genera o aprueba automáticamente con IA.
 
 ## Gates para especificación y operación
 

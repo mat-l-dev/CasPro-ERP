@@ -17,7 +17,7 @@ Contrato arquitectónico de [ADR-001](../decisions/adr-001-modularity.md). La fl
 | Treasury | Cuentas, movimientos, objetivos de liquidación, aplicaciones/reversiones y conciliación | Parties, Workspace, Audit, Documents | Leer modelos comerciales o generar asientos |
 | Accounting | Plan aplicado, políticas contables versionadas, asientos y cierres futuros | Workspace, Audit, Documents; contrato de hechos económicos | Llamar/escribir módulos operativos |
 | Tax | Perfiles, fuentes/reglas fiscales verificadas, conciliación y expedientes futuros | Accounting, Workspace, Audit, Documents; contrato de hechos | Alterar hechos operativos o emitir/presentar CPE a SUNAT en el alcance inicial |
-| Corporate capability | Socios/tenencias, acuerdos, poderes, contratos, relaciones y financiamientos; ubicación física futura por decidir | Organization/Parties/Documents por contratos; publica hechos a Treasury/Accounting/Tax | Crear ahora una app `legal`, mover dinero, asentar o concluir impuestos/control por una etiqueta |
+| Corporate capability | Socios/tenencias, acuerdos, poderes, contratos, relaciones y financiamientos; frontera lógica separada | Organization/Parties/Documents/Audit por contratos; publica hechos a Treasury/Accounting/Tax | Crear ahora una app `legal`, mover dinero, asentar o concluir impuestos/control por una etiqueta |
 
 Todas las APIs de negocio usan el [contrato de acceso](tenancy-access.md). Audit recibe metadatos explícitos y no consulta Workspace, evitando el ciclo autorización ↔ auditoría.
 
@@ -33,7 +33,7 @@ Access consulta los contratos internos de Identity y Organization; estas subáre
 
 Antes de aceptar la agrupación deben especificarse alta, selección de entidad, revocación y administración de establecimientos, con visibilidad de cada dato y sin ciclos entre subáreas. Su comportamiento de acceso requerirá evidencia ejecutable posterior. Si la agrupación dificulta esos contratos, se revisa ADR-001; no se crean paquetes adicionales de forma preventiva.
 
-Corporate es ownership conceptual, no un duodécimo paquete decidido: su primer consumidor determinará si vive como subárea de Organization o módulo propio sin cambiar qué hechos posee. El [contrato Corporate](../corporate/architecture.md) delimita esa decisión y el mutuo todavía no validado.
+Corporate tiene frontera lógica propia y consume Organization/Parties por contratos; no añade una consulta inversa desde Organization. Su empaquetado físico se concreta al entregar la WO M06 sin cambiar esa dirección. No se crea un duodécimo paquete ahora. El [contrato Corporate](../corporate/architecture.md) y M06 delimitan actos/financiación, con mutuo todavía no validado.
 
 Configuration no es un módulo universal: secretos/settings pertenecen a config; precios a Catalog; perfiles tributarios a Tax; políticas comerciales a su propietario. No se crea un almacén global de claves arbitrarias ni un DSL. Los datos con vigencia tienen esquema y consumidor identificados.
 
