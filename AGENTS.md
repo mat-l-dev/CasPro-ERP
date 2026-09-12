@@ -9,6 +9,8 @@ CasPro es el ERP interno de TILMUX y entidades autorizadas del propietario. Lee 
 3. Carga contrato del dueño → spec/sección local → gates pertinentes. El [índice por función](docs/index.md) resuelve fuentes; no cargues carpetas completas. History solo por trazabilidad; research por vigencia/procedencia; evidence por una afirmación que deba demostrarse.
 4. Aplica el [workflow](.ai/workflow.md) correspondiente: rama → trabajo autorizado → PR → revisión separada → correcciones → merge autorizado. Preparar una WO no autoriza ejecutarla.
 
+Si cambian roles, comandos o permisos, consulta el [registro exacto de capabilities](docs/architecture/capability-registry.md). Para datos personales, usa [privacidad y sus dueños](docs/security/personal-data-lifecycle.md); seguridad técnica → platform, aplicabilidad legal → compliance. La IA del producto se rige por [AIService](docs/architecture/ai-assistance.md); modelos y herramientas de desarrollo, por el protocolo. Carga solo la ruta que active la tarea.
+
 ## Autoridad y límites
 
 La instrucción directa del propietario gobierna alcance dentro de las políticas del sistema/harness. [Docs canónicos](docs/index.md#mapa-de-autoridad) poseen producto, reglas, ADRs y specs; las skills seleccionan contexto y nunca los redefinen. Si difieren, usa la fuente canónica, registra la contradicción y detén el efecto afectado. Roles/modelos, escalación y salida ante bloqueo están en el [protocolo](.ai/README.md).

@@ -17,6 +17,8 @@ Buscar y abrir fuente oficial actual aplicable; separar publicación, entrada en
 
 Cargar solo la matriz/memo de research pertinente y evidencia previa si una afirmación depende de ella. Su fecha antigua no prueba invalidez; tampoco su existencia prueba vigencia hoy. Si no se accede al texto oficial o faltan hechos, marcar PENDING VALIDATION con fuente faltante; no fabricar cita/código/tasa.
 
+Si fuentes oficiales discrepan, registrar ambas, qué afirmación prueba cada una y la conciliación o límite pendiente: texto legal, versión distribuida y página orientativa no son intercambiables. Para software/formulario fiscal distinguir edición normativa y distribución; para componentes tributarios, período de efecto. Clasificar fechas como HISTORICAL_CUTOFF, RESEARCH_CUTOFF, CURRENT_STATUS_DATE, VERSION_EFFECTIVE_DATE, STALE_CURRENTNESS_CLAIM o IRRELEVANT_DATE según su función, sin renovar cortes históricos. En privacidad/IA usar la finalidad y el memo del registro; aplicabilidad legal, diseño listo y activación son evaluaciones distintas.
+
 ## Autoridad, revisión y salida
 
 Producir memo de evidencia acotado y efecto propuesto sobre fuente canónica, nunca política aprobada ni modificación silenciosa de regla congelada. Leer [gaps](../../../docs/roadmap/decisions-gaps.md) para activación profesional y amendment si cambia superficie de diseño. Reviewer independiente del dominio y profesional competente para posición/aplicabilidad real; investigación documental no declara cumplimiento.

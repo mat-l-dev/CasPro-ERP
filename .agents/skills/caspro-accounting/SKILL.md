@@ -1,6 +1,6 @@
 ---
 name: caspro-accounting
-description: "Trabajar contratos de posting, cierre, políticas representadas o estados financieros CasPro; no mover dinero operativo ni resolver vigencia normativa sin investigación específica."
+description: "Trabajar ledger, cierre, EEFF, templates, automatización y Shadow Accounting CasPro; no mover dinero ni sustituir investigación normativa o aprobación profesional."
 ---
 
 # caspro-accounting
@@ -15,6 +15,7 @@ Requiere caso/afirmación, período/marco/política como inputs identificados, c
 - Cierre: secciones de período/corrección/completitud de M07 y políticas afectadas.
 - EEFF: añadir [reporting](../../../docs/accounting/npif-reporting.md) y [M08/G1–G7](../../../docs/specs/acceptance/reporting-goldens.md); no todos los ejemplos por defecto.
 - Cambio PCGE/marco/vigencia: activar normative-research para procedencia/aplicabilidad; [auditoría PCGE](../../../docs/evidence/pcge-code-audit.md) solo si la afirmación depende de ella.
+- Templates/reglas, AI→draft, cuentas aplicadas o comparación shadow: sección correspondiente de [templates y automatización](../../../docs/accounting/templates-automation-shadow.md), en especial [aislamiento](../../../docs/accounting/templates-automation-shadow.md#shadow-accounting-e-aislamiento). Permisos/principales → [registro exacto](../../../docs/architecture/capability-registry.md); proveedor/prompt/datos → [AIService](../../../docs/architecture/ai-assistance.md) y [privacidad](../../../docs/security/personal-data-lifecycle.md). No trasladar autoridad del ledger experimental al oficial ni preferencias del agente de desarrollo al proveedor del producto.
 
 ## Trabajo y límites
 

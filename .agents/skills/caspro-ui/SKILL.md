@@ -13,7 +13,9 @@ Requiere tarea de usuario, superficie/estado, cambio esperado y alcance autoriza
 
 ## Procedimiento y opcionales
 
-Identificar si el cambio es visual o modifica acciones/estados/capabilities. Un atajo de navegación/búsqueda requiere solo el contrato de UI; si prepara o confirma una acción de negocio, leer comando y [transacciones](../../../docs/architecture/transactions.md#preparar-y-ejecutar) del dueño y separar preparación de ejecución según contrato. Si cambia semántica, escalar al dueño/Architecture; no «arreglarla» en UI.
+Identificar si el cambio es visual o modifica acciones/estados/capabilities. Un atajo puramente visual usa el contrato de UI; navegación/búsqueda que revela datos requiere además el contrato de lectura del dueño. Si prepara o confirma una acción de negocio, leer comando y [transacciones](../../../docs/architecture/transactions.md#preparar-y-ejecutar) del dueño y separar preparación de ejecución según contrato. Si cambia semántica, escalar al dueño/Architecture; no «arreglarla» en UI.
+
+Case Flow, vistas parciales, proyecciones stale y preview PDF/XML → [spec de flujo/preview](../../../docs/specs/cross-cutting/case-flow-preview.md), especialmente [disclosure antes del layout](../../../docs/specs/cross-cutting/case-flow-preview.md#proyección-seguridad-y-recuperación). Lectura/preview/download/export o cambio de permisos → [registro exacto](../../../docs/architecture/capability-registry.md); datos personales → [privacidad](../../../docs/security/personal-data-lifecycle.md). Verificar nodos/aristas/conteos ocultos, revalidación y permisos separados en esas fuentes; no añadir un motor ni autoridad al grafo.
 
 Leer [QA](../../../docs/quality/strategy.md) para evidencia proporcional; B09/C12 y acceso/efecto del [registro](../../../docs/roadmap/decisions-gaps.md) solo si aplican. Memo UX es opcional para rastrear un DDR, no fuente alternativa. No prometer a11y/teclado/rendimiento probado desde una maqueta ni ejecutar browser/build no autorizado.
 

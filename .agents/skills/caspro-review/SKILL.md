@@ -15,6 +15,8 @@ Requiere base/head/tree, diff, encargo/WO y claims del autor. Leer [rúbrica](..
 
 Determinar perfiles por riesgo. Separar conformidad de spec, corrección, invariantes, seguridad, evidencia, scope creep y cierre alegado de gates. Seguir consumidores afectados, no todo el ERP. Pedir skill de dominio solo como checklist de lectura cuando no baste el contrato; no activar su modo de escritura. Reutilizar evidencia por afirmación conforme a QA; rerun únicamente por invalidación/incertidumbre autorizada.
 
+Aplicar los checks condicionales de la rúbrica: diff real y candidato inalterado, [ownership canónico](../../../docs/architecture/boundaries.md), [IDs/conjunciones](../../../docs/architecture/capability-registry.md) y [privacidad](../../../docs/security/personal-data-lifecycle.md) solo si afectados. Distinguir corrección factual de arquitectura y comprobar fuentes oficiales cuando sean materiales. Un PASS previo no sustituye esa evaluación; devolver corrección acotada o STOP con requisito faltante, sin reabrir todo el ERP.
+
 Un contraejemplo de dinero/stock, acceso, Accounting/Tax/Corporate, CPE, efectos externos o migración exige contexto canónico y especialista proporcional. Gate permanece pendiente si no hay prueba o aprobación de la función competente. Si el reviewer edita, es autor del delta y necesita otro reviewer.
 
 ## Salida y límites

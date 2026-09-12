@@ -1,6 +1,6 @@
 ---
 name: caspro-platform
-description: "Trabajar runtime M01, maestros M02, acceso/RLS, seguridad o recuperación CasPro; seleccionar el modo concreto sin construir infraestructura o ejecutar restore por defecto."
+description: "Trabajar plataforma M01, maestros M02, acceso/configuración, privacidad técnica y restore CasPro; elegir modo sin construir infraestructura ni ejecutar recuperación por defecto."
 ---
 
 # caspro-platform
@@ -16,7 +16,11 @@ Requiere alcance, componente/entrypoint y WO autorizada antes de implementación
 | Runtime M01 | [Tecnología](../../../docs/architecture/technology.md), [QA](../../../docs/quality/strategy.md); verificar compatibilidad exacta cuando se autorice esa ejecución |
 | Party/Catalog/importación | M02 + [C11/C12/preview](../../../docs/specs/flows/first-operational-circuit.md), [data](../../../docs/architecture/data.md), acceso aplicado al dato |
 | RLS/autorización/seguridad | [Tenancy/access](../../../docs/architecture/tenancy-access.md), [threat model](../../../docs/security/threat-model.md), QA y entrypoints afectados |
+| Roles, comandos o autoridad de configuración | [Registro exacto](../../../docs/architecture/capability-registry.md), [roles/delegación](../../../docs/architecture/roles-delegation.md) y [gobierno](../../../docs/architecture/configuration-governance.md) según efecto; no derivar permisos del puesto |
+| Privacidad/restricciones/incidente | [Ciclo de datos](../../../docs/security/personal-data-lifecycle.md), [dueños](../../../docs/architecture/boundaries.md#propiedad-de-hechos-de-privacidad) y [conjunción de contexto](../../../docs/architecture/capability-registry.md#preparación-de-contexto-por-finalidad); compliance solo por interpretación/aplicabilidad legal |
 | Restore/operación/migración | [Delivery](../../../docs/operations/delivery.md), recuperación M01, QA, entorno/manifiesto y mandato específicos |
+
+Restore con datos personales añade la [barrera de privacidad](../../../docs/security/personal-data-lifecycle.md#restore-sin-reexposición), incluidas lecturas normales OFF hasta reconciliación. Aislamiento del proveedor IA runtime añade [AIService](../../../docs/architecture/ai-assistance.md#frontera); no cargarlo para un alta de maestro sin ese efecto. Para privacidad/configuración fuera de M01–M02, entrar directamente al contrato de la fila, sin cargar ambos hitos.
 
 ## Trabajo y límites
 

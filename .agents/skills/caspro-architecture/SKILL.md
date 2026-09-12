@@ -13,6 +13,8 @@ Requiere pregunta/contraejemplo, fuente afectada, resultado buscado y permiso de
 
 ## Procedimiento por modo
 
+Por frontera: permisos/comandos → [registro exacto](../../../docs/architecture/capability-registry.md); configuración → [gobierno y descriptores](../../../docs/architecture/configuration-governance.md); hechos de privacidad → [ownership canónico](../../../docs/architecture/boundaries.md#propiedad-de-hechos-de-privacidad) y [ciclo](../../../docs/security/personal-data-lifecycle.md#contexto-y-dueños); proyección de expediente → [Case Flow](../../../docs/specs/cross-cutting/case-flow-preview.md). Comprobar dueño del registro/ciclo frente a ejecutor/custodio/coordinador; no crear módulos genéricos para suplir falta de lectura del contrato. Una auditoría del sistema de instrucciones usa protocolo, catálogo y adapters; no reabre negocio salvo contradicción concreta.
+
 - Amendment: identificar OLD/NEW, owner, invariantes/consumidores/evidencia afectados y alternativas; separar propuesta de aceptación. No cambiar una regla congelada sin encargo y revisión de ese cambio; una incompatibilidad real se reporta con owner/impacto, no se oculta en playbook.
 - Trazabilidad: empezar por ADR actual. Leer únicamente el registro/candidato histórico que explique la pregunta, marcado HISTORICAL; no promover su estado a vigente. History es opcional, nunca contexto base.
 - Referencia Wbpro: comprobar [política](../../../docs/architecture/wbpro-reference-policy.md) y autorización concreta antes de cualquier lectura. Copiar implementación o usarlo como runtime no es transferencia autorizada; conservar procedencia committed/uncommitted si se autoriza una consulta.
