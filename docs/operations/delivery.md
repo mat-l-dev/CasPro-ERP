@@ -39,6 +39,8 @@ Credencial de migración separada; ejecución única coordinada, no al arranque 
 
 ## Backup y disaster recovery
 
+F02: aplicar [ciclo de privacidad y barrera de restore](../security/personal-data-lifecycle.md#restore-sin-reexposición). También lecturas normales OFF hasta reconciliar decisiones posteriores al backup desde diario/manifiesto durable fuera del rollback, grants/restricciones, atributos y todos sus derivados. Manifiesto incompleto mantiene aislamiento; ninguna purga económica por restaurar. Los mínimos de copia, integridad, trazabilidad y revisión de privilegios del [reglamento peruano](../research/normative/privacy-current-review.md) delimitan C10; RPO/RTO reales y pruebas B13 continúan pendientes.
+
 DB: combinar capacidades de backup/PITR contratadas con exportación/restauración portable cuando proceda. Objects: copia/versionado y manifiesto independientes; secretos/roles/configuración/artefactos también se recuperan. Los backups de DB de Supabase no incluyen blobs de Storage y no restauran automáticamente passwords de roles personalizados [S20](../research/technical-sources.md).
 
 Retención y frecuencia deben cubrir RPO/RTO elegidos por el propietario, más requisitos documentales verificados. No hay números inventados en esta fase. Copias cifradas, acceso separado de producción y credenciales de recuperación disponibles de forma controlada. No declarar recuperabilidad sin restore probado.

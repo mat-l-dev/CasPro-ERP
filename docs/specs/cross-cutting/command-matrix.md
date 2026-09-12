@@ -72,9 +72,9 @@ Todas las filas heredan I si D; se listan los demás recursos potenciales en ord
 | [C00](../flows/first-operational-circuit.md#c00) Acceso | organization.manage o access.manage según objeto | A |
 | [C01](../flows/jumpseller-external-work.md#c01) Conexión | integration.manage_connection | K |
 | [C02](../flows/jumpseller-external-work.md#c02) Recibir webhook | principal autenticado integration.receive de conexión | K, J |
-| [C03](../flows/jumpseller-external-work.md#c03) Reconciliar | integration.reconcile o mandato equivalente | K, E, M, J; HTTP en fase separada |
+| [C03](../flows/jumpseller-external-work.md#c03) Reconciliar | integration.reconcile; humano R-PLATFORM o T-RECONCILE con mandato acotado | K, E, M, J; HTTP en fase separada |
 | [C04](../flows/jumpseller-external-work.md#c04) Observar pedido | integration.process, limitado a observaciones | K, E, M, J |
-| [C05](../flows/jumpseller-external-work.md#c05) Planificar stock | inventory.view + integration.reconcile o mandato de publicación | K, E, M, S, P, U, V, J |
+| [C05](../flows/jumpseller-external-work.md#c05) Planificar stock | Humano: inventory.view AND integration.reconcile sobre mismos recursos; T-RECONCILE: integration.reconcile + mandato de publicación/DTO mínimo autorizado por Inventory | K, E, M, S, P, U, V, J |
 | [C06](../flows/jumpseller-external-work.md#c06) Claim | mandato de consumidor/entidad | J únicamente |
 | [C07](../flows/jumpseller-external-work.md#c07) Autorizar/despachar efecto | mandato específico: publicar stock / documents.send / consultar | K, E, M, S, P, U, V, C, D, N, J según efecto |
 | [C08](../flows/jumpseller-external-work.md#c08) Registrar resultado | mismo mandato y attempt token | K, E, S, C, D, N, J según efecto |
@@ -95,7 +95,7 @@ Todas las filas heredan I si D; se listan los demás recursos potenciales en ord
 | [C23](../flows/sales-stock-treasury.md#c23) Cuenta financiera | treasury.manage_account | F, D si evidencia |
 | [C24](../flows/first-operational-circuit.md#c24) Preview import | imports.prepare + lectura de dueños | B |
 | [C25](../flows/first-operational-circuit.md#c25) Confirmar import | imports.confirm + capacidad de cada participante | K, B, M, P, U, V, J |
-| [C26](../flows/first-operational-circuit.md#c26) Reporte | reports.view/snapshot + permisos de fuentes | D, J; dataset fuera de locks económicos |
+| [C26](../flows/first-operational-circuit.md#c26) Reporte | reports.view; congelar además reports.snapshot; AND permisos de fuentes y export pertinente | D, J; dataset fuera de locks económicos |
 | [C30](../flows/cpe-document-delivery.md#c30) Identidad CPE | sales.register_cpe / sales.correct_cpe | E si caso previo, S si venta, C |
 | [C31](../flows/cpe-document-delivery.md#c31) Adquirir artefacto | documents.upload | D, J |
 | [C32](../flows/cpe-document-delivery.md#c32) Disponibilidad | documents.verify_artifact o mandato de análisis | D, J |

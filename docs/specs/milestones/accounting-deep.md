@@ -50,6 +50,10 @@ NPIF12 no introduce revaluación corriente por trasladar una opción de transici
 
 ## Comandos y concurrencia
 
+A02 usa accounting.prepare para propuesta, incluida preparación manual anterior a A04. A03 humano exige autorización de accounting.journal.approve sobre propuesta/revisión, además de accounting.post del ejecutor; A07 exige autorización accounting.close.approve del checklist/corte además de accounting.close del ejecutor. accounting.close.prepare prepara el expediente sin cerrar; accounting.reconcile documenta conciliación sin ajuste automático. Scopes/SoD según [registro exacto](../../architecture/capability-registry.md); no confundir duty con comando completo ni alias retirado.
+
+La ruta determinística RULE_AUTO_EXECUTE ya prevista conserva OFF inicial: aprobación separada de regla/mandato por actor con accounting.journal.approve AND accounting.policy.approve/delegación, alcance/revisión y validación profesional pertinentes. A03 comprueba que la propuesta exacta satisface ese mandato aprobado y registra esa evidencia como fuente de autorización; el principal T-RULE solo posee accounting.post, nunca se vuelve checker ni obtiene journal.approve. Cambio manual, salida IA/shadow, revisión o hecho fuera del mandato requiere la ruta humana; no ampliar reglas por esta conciliación.
+
 Heredan CM0. Todo posting/ajuste/cierre toma Q del período; configuración M y libro O antes. D incluye I y unicidad natural de consumo. Preparación pesada fuera de TX conserva manifest; se revalida al aceptar. Efectos externos: ninguno salvo render/preservación posterior vía Documents.
 
 | ID / capacidad / clase | Reads / locks | Writes / guardas / corrección |

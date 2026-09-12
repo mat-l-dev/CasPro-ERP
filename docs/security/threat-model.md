@@ -24,6 +24,8 @@ Todos los controles son **diseñados, no implementados**. OWASP ASVS 5.0 es refe
 
 ## Límites y decisiones proporcionales
 
+F02 amplía el control de datos personales con [finalidad, derechos, incidentes y recuperación](personal-data-lifecycle.md). Restricción rige todas las lecturas/derivados/export/IA, además de comandos; original conservado no equivale a visible. Notificación depende de supuestos del art.34, y todos los incidentes se documentan. B02/B10/B13/B15 deben probar el contrato; C06/C10/C11/C13 retienen hechos/política/validación real.
+
 No confiar en que Supabase esté configurado de forma segura por defecto ni exponer tablas por su Data API. No exigir una plataforma de seguridad empresarial completa para un solo operador. Sí exigir identidad de release, control de acceso, protección de evidencias y recuperación demostrada antes de producción.
 
 Los logs evitan documentos completos, credenciales y números identificadores completos. La auditoría usa IDs y cambios relevantes; la lectura de información fiscal completa deja propósito y actor. Acceso excepcional a secretos/evidencia y operación multiempresa se registra fuera del flujo ordinario.
