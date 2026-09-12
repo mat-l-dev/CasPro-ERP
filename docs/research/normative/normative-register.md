@@ -4,6 +4,8 @@ Propietario: Research/Tax, con aplicación por el dominio indicado. Corte y cons
 
 ## Estados y regla de uso
 
+Suplemento acotado2026-09-12 por F02/F04/F05: [privacidad](privacy-current-review.md), [IA Perú](ai-peru-applicability.md) y [IGV/IPM](igv-ipm-transition.md) registran artículos, vigencia, fuerza, límites y gates. No renumeran N001–N043 ni convierten research en política. Para CPE corresponden N020/N023/N037; N009 permanece NIC21.
+
 `ISSUED` describe emisión internacional; `EFFECTIVE` su vigencia propia; `OFFICIALIZED_PE` la aprobación peruana; `POLICY` una elección de CasPro. Son ejes distintos. Una norma puede estar oficializada y no ser aplicable por marco o hechos. Antes de contabilizar o presentar, Accounting conserva la edición, política y hechos; Tax conserva la regla fiscal, período y fuente. La actualización normativa revisa este registro al cambiar una fuente, al iniciar un ejercicio, al acercarse una vigencia futura o al cambiar marco/régimen/hechos.
 
 | ID | Autoridad y documento | Publicación / vigencia / sustitución | Proposición y alcance CasPro | Estado, incertidumbre y siguiente revisión | Evidencia |

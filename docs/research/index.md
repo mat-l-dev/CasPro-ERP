@@ -4,6 +4,8 @@ NON-AUTHORITATIVE RESEARCH. Estas fuentes conservan su fecha de consulta, edici�
 
 ## Evidencia normativa
 
+Remediación F02/F04/F05 al2026-09-12: [privacidad Perú](normative/privacy-current-review.md), [IA Perú por propósito](normative/ai-peru-applicability.md) y [componentes IGV/IPM](normative/igv-ipm-transition.md). Fuentes verificadas, lecturas parciales y discrepancias explícitas; hechos/política reales permanecen bajo gates.
+
 | Necesidad | Fuente |
 |---|---|
 | Procedencia, edición, vigencia, propietario y validación requerida | [Registro normativo](normative/normative-register.md) |

@@ -35,6 +35,8 @@ Cada secuencia es un punto de entrada. Cargar las dependencias concretas que cit
 
 ## Contratos por tema
 
+Corrección F01–F07: [registro exacto de capabilities](architecture/capability-registry.md), [ciclo de datos personales](security/personal-data-lifecycle.md), [IA por propósito](research/normative/ai-peru-applicability.md) y [transición IGV/IPM](research/normative/igv-ipm-transition.md). [Expediente de remediación](evidence/grand-audit-remediation.md) identifica hallazgos, comprobaciones y revisión pendiente; no autorización de implementación.
+
 Enmienda de gobierno propuesta: [roles/alcances/delegación/SoD](architecture/roles-delegation.md) y [configuración/impacto/UX](architecture/configuration-governance.md) → [TILMUX Policy Register/readiness](product/company-policy-register.md) → [manual contable futuro](accounting/tilmux-policy-manual.md). [Expediente A–AF](evidence/governance-roles-configuration-policies.md) demuestra cobertura documental y [benchmark oficial](research/governance-authorization-benchmark.md) conserva fuentes/límites. Aceptación y autorización solo en review.
 
 | Tema | Fuentes |

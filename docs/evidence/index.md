@@ -1,5 +1,7 @@
 # Evidencia de auditoría y revisión
 
+[Grand audit remediation F01–F07](grand-audit-remediation.md): hallazgos originales y correcciones del autor sobre main post-PR7, con conciliación completa, fuentes y67 contraejemplos documentales. Pendiente de revisión independiente; preserva los expedientes anteriores.
+
 [Gobierno, roles, configuración y políticas — informe A–AF](governance-roles-configuration-policies.md): baseline exacto, delta, matriz de escalabilidad y casos documentales del autor. Propuesta para revisión independiente; sin ejecución, aceptación propia, políticas reales ni merge.
 
 AUDIT / REVIEW EVIDENCE. Cada documento conserva el candidato, corte y límites que identifica; su reutilización se rige por [calidad](../quality/strategy.md). La evidencia no sustituye contratos, no demuestra ejecución ausente ni actualiza por sí sola el [estado global](../review.md).
