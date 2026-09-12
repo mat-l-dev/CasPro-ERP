@@ -2,7 +2,7 @@
 
 Delta confirmado de diseño: [Accounting templates/AI/shadow](../accounting/templates-automation-shadow.md). AI_SUGGEST recomienda cuentas del conjunto aplicado autorizado y tratamiento; humano acepta a DRAFT, nunca post automático. SHADOW_AI_EXECUTE puede postear/corregir únicamente interpretaciones en DB/proceso experimental separados sin acceso de escritura oficial. El diagrama y prohibiciones siguientes rigen efectos oficiales; esta excepción shadow no concede tools del Core. [Benchmark AF](../research/automation-flow-ai-benchmark.md) compara OpenAI/Gemini/DeepSeek/local; D01 controla activación M07–M08, no opcionalidad del diseño confirmado. Decisión posterior del propietario: proveedor inicial DeepSeek API y modelo V4.1-Flash; controles concretos abajo. Pilotos bancarios y demás casos conservan su trigger separado.
 
-Propietario: plataforma de asistencia, con decisiones finales en cada dominio. Estado del delta: diseño pendiente de revisión final conforme [review](../review.md). Proveedor/modelo inicial elegidos; VPS e inferencia local no seleccionados. Activación pendiente. La IA no es fuente de verdad.
+Propietario: plataforma de asistencia, con decisiones finales en cada dominio. Estado del delta: diseño documental aceptado conforme [review](../review.md). Proveedor/modelo inicial elegidos; VPS e inferencia local no seleccionados. Activación pendiente. La IA no es fuente de verdad.
 
 ## Frontera
 

@@ -92,7 +92,7 @@ Este desglose hereda owner Accounting, M07 para medición/registro y M08 para pr
 
 ## Delta de automatización y experiencia de PR #7
 
-Diseño solicitado después del PASS inicial, pendiente re-revisión conforme review; no aceptación ni módulos nuevos. Dependencias son contratos de lectura/coordinadores, no imports entre dueños.
+Diseño solicitado después del PASS inicial, aceptado documentalmente conforme review; sin módulos nuevos. Dependencias son contratos de lectura/coordinadores, no imports entre dueños.
 
 | Capacidad / propósito | Dueño | Inputs → outputs | Dependencias / riesgo | Entrega / spec / trigger |
 |---|---|---|---|---|
@@ -116,7 +116,7 @@ Las filas anteriores identifican las capacidades estables y enlazan sus [seis sp
 
 ## Delta final de proveedor y declaraciones externas
 
-Extiende capacidades existentes, pendiente final conforme review; no módulo nuevo ni permiso de implementación.
+Extiende capacidades existentes, aceptado documentalmente conforme review; no módulo nuevo ni permiso de implementación.
 
 | Capability / purpose | Owner | Inputs → outputs / dependencies | Phase / spec / control |
 |---|---|---|---|

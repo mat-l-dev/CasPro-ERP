@@ -1,6 +1,6 @@
 # External Tax Filing Mirror y conciliación de declaraciones
 
-Owner: Tax. Extensión de [TaxPeriodWorkspace / PreparedPackage / TX5](tax-workspace-books.md) y [M09 X05/X06/X08](../milestones/tax-deep.md), pendiente de revisión final conforme [review](../../review.md). [Fuentes oficiales al 2026-09-12](../../research/deepseek-tax-filing-final-delta.md#sunat-universo-acotado-canales-y-revisión-de-formatos) distinguen familia, canal, versión y aplicabilidad. Accounting interpreta; Treasury posee dinero; Documents conserva artefactos; Tax determina, captura y concilia. No módulo Accountant, Tax DSL, Shadow Tax ni ejecución SUNAT.
+Owner: Tax. Extensión de [TaxPeriodWorkspace / PreparedPackage / TX5](tax-workspace-books.md) y [M09 X05/X06/X08](../milestones/tax-deep.md), aceptada documentalmente conforme [review](../../review.md). [Fuentes oficiales al 2026-09-12](../../research/deepseek-tax-filing-final-delta.md#sunat-universo-acotado-canales-y-revisión-de-formatos) distinguen familia, canal, versión y aplicabilidad. Accounting interpreta; Treasury posee dinero; Documents conserva artefactos; Tax determina, captura y concilia. No módulo Accountant, Tax DSL, Shadow Tax ni ejecución SUNAT.
 
 ## Tres verdades y soporte por familia
 

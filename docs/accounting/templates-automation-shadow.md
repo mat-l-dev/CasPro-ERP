@@ -1,6 +1,6 @@
 # Accounting: plantillas, automatización, sugerencias IA y shadow
 
-Owner: Accounting. Extiende [arquitectura](architecture.md), [M07](../specs/milestones/accounting-deep.md), [política TILMUX](tilmux-policy-manual.md), [IA transversal](../architecture/ai-assistance.md) y [automatización](../architecture/automation.md). Diseño con PASS independiente preservado para5886b821; integración final pendiente de revisión conforme [review](../review.md); no autoriza implementación, llamadas pagadas ni activación. Diseño requerido M07/M08, activación controlada por D01 y gates existentes. Accounting oficial continúa determinístico, auditable y autorizado. Un LLM recomienda cuentas/tratamiento; no determina autoridad, postea ni corrige el libro oficial.
+Owner: Accounting. Extiende [arquitectura](architecture.md), [M07](../specs/milestones/accounting-deep.md), [política TILMUX](tilmux-policy-manual.md), [IA transversal](../architecture/ai-assistance.md) y [automatización](../architecture/automation.md). Diseño con PASS independiente preservado para5886b821; integración final aceptada documentalmente conforme [review](../review.md); no autoriza implementación, llamadas pagadas ni activación. Diseño requerido M07/M08, activación controlada por D01 y gates existentes. Accounting oficial continúa determinístico, auditable y autorizado. Un LLM recomienda cuentas/tratamiento; no determina autoridad, postea ni corrige el libro oficial.
 
 ## Journal templates y reglas determinísticas
 
