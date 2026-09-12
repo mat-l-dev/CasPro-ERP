@@ -9,7 +9,7 @@ Este mapa asigna propósito, dueño, dependencias, hito y trigger; no conserva o
 | Membership/capability | Access | grants→authorized context | Identity, Organization, Audit | deny-by-default; HIGH | M01 / access spec / maker-checker |
 | Audit | Audit | actor+transition→append-only event | access primitives | accountability; HIGH | M01 / audit spec / external archive |
 | Private documents | Documents | bytes+metadata→version/evidence | Access, object storage | evidence; HIGH privacy/retention | M03 / storage spec / volume/retention |
-| Document delivery | Documents | deliverable+approval→email attempt/result | email adapter | CPE delivery; HIGH | M04 / SP2 / new channel |
+| Document delivery | Documents | deliverable+approval→intento/resultado; envío externo conocido→historia sustentada | Resend opcional u otro adaptador autorizado; registro externo sin proveedor | CPE delivery; HIGH | M04 / CPE+C40, delta aceptado / nuevo transporte |
 | Parties | Parties | identity evidence→roles/version | Access, Documents | one counterparty; MEDIUM | M02 / master spec / richer CRM |
 | Goods catalog | Catalog | product/SKU/unit/price→version | Access | commerce; MEDIUM | M02 / SP2 / variants/serials |
 | Purchased service concepts | Procurement | description/period→nonstock line | Parties, Accounting policy later | expenses; MEDIUM tax | M05 / P2P spec / recurring contracts |
@@ -18,7 +18,8 @@ Este mapa asigna propósito, dueño, dependencias, hito y trigger; no conserva o
 | Physical count | Inventory | plan/count→difference/adjustment | inventory, Audit | integrity; HIGH | M03/M05 / inventory-deep / scanners |
 | ATS/publication | Inventory/integration | eligible stock+buffer→Jumpseller quantity | reservations, channel | availability; HIGH external | M03–M04 / SP2, B11/C11 / second channel |
 | External order intake | Sales/Jumpseller | webhook/API→durable proposal | inbox, Parties, Catalog | first sales; HIGH | M03 / SP2 / second channel |
-| B2C sale/dispatch/return | Sales coordinator | order+money+stock→sale/delivery/returns | Treasury, Inventory | operation; CRITICAL | M04 / SP2 / B2B/credit |
+| B2C sale/dispatch/return | Sales coordinator | order+money+stock→sale/delivery/returns | Treasury, Inventory | operation; CRITICAL | M04 / SP2 / crédito bajo D03 |
+| B2B commercial dossier — delta aceptado | Sales | caso/cotización/OC opcional→compromiso revisado y expediente completo | Parties/Catalog/Documents + Treasury/Inventory existentes | necesidad confirmada; HIGH | Incremento posterior M04 / [B2B](../specs/flows/b2b-commercial-dossier.md) / prepago inicial, crédito/contraentrega D03 |
 | Commercial obligation | Sales/Procurement | document terms→receivable/payable | Parties | settlement; HIGH | M04/M05 / domain specs / credit terms |
 | CPE sales/supplier dossiers | Sales/Procurement | external identity+facts→dossier | Documents, Tax | fiscal evidence; HIGH | M04/M05 / CPE y P2P specs, C07 / acquisition API |
 | Purchase order/receipt | Procurement/Inventory | demand→commitment/receipt | Parties, Catalog | replenishment; HIGH | M05 / P2P spec / approvals/RFQ |
@@ -28,6 +29,8 @@ Este mapa asigna propósito, dueño, dependencias, hito y trigger; no conserva o
 | Statement reconciliation | Treasury | statement+movements→matches/exceptions | import, Audit | daily control; CRITICAL | M06 / bank spec / feeds |
 | Corporate records | Corporate capability | acts/contracts→legal facts | Organization, Parties, Documents | governance; HIGH legal | M06 / corporate spec / more shareholders |
 | Related-party financing | Corporate/Treasury | approved contract+bank events→loan lifecycle | Accounting, Tax | funding; CRITICAL | M06 / professional mutuo spec / actual agreement |
+| On-behalf payments / financing statement — delta aceptado | Corporate/Treasury; Procurement obligación | hecho personal→extinción por tercero/derecho; eventos→estado reproducible | Documents, M05 obligación, Accounting/Tax interpretación | financiación sin caja ficticia; CRITICAL | M06 / [hechos/estados](../specs/flows/financing-events-statements.md) / C06 y C04/C05/C08 por efecto |
+| WhatsApp Business future | Adaptador futuro con dueño según propósito | comunicación/documentos referenciados, ninguna acción hoy | Party/caso/propósito/evidencia neutrales | integración diferida | M10/D03 / research/spec/autorización al trigger; sin módulo/SDK |
 | Accounting policies/posting | Accounting | source facts+policy→interpretations/asientos | domains, PCGE adapter | financial truth; CRITICAL | M07 / policy catalog / new fact/framework |
 | GL/subledgers/reconciliation | Accounting | postings→balances/control | policies, periods | explainability; CRITICAL | M07 / R2R spec / scale |
 | Close/adjust/reverse | Accounting | open balances→approved close | reconciliations | reliable period; CRITICAL | M07 / close spec / maker-checker |

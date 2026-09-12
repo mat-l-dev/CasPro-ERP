@@ -23,6 +23,8 @@ Un productor sin el dato obligatorio genera excepción visible que bloquea la in
 
 ## Recursos adicionales y orden
 
+**Delta semántico aceptado:** [B2B](../flows/b2b-commercial-dossier.md) añade fuentes OC/cotización/revisión aceptada bajo Sales. [Financiación](../flows/financing-events-statements.md) separa hecho Corporate de pago por cuenta, obligación Procurement extinguida, asignación Treasury por tercero y derecho al socio; su correlación/componentes evitan duplicar reconocimiento. No emitir un segundo flujo de caja por hecho Corporate que referencia movimiento Treasury; estado mensual es proyección sin contribución económica nueva. No reetiquetar reembolso de adelanto como amortización de principal. La extensión conserva el envelope y orden de recursos siguientes, con todas las raíces afectadas descubiertas antes de confirmar.
+
 Se conserva el orden de CM0. Estas extensiones pertenecen a esa misma matriz, no a un segundo orden:
 
 | Rango | Extensión | Exclusión / creación |

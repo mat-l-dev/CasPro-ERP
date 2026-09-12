@@ -49,6 +49,10 @@ Clasificación de resultados de investigación: VERIFIED RULE (texto normativo),
 
 ## Reglas de interpretación
 
+### N030–N043 — ampliación B2B y financiación, corte2026-09-11
+
+La [matriz oficial del amendment](b2b-financing-evidence.md#ij-fuentes-oficiales-alcance-y-decisión) es el detalle único de estas entradas: N030 civil/reconocimiento/pago tercero; N031 representación LGS; N032 bancarización; N033 Informe038-2022; N034 Informe090-2008; N035 valoración/vinculación; N036 Reporte Local y prórroga2025 por RS113-2026; N037 CPE; N038 crédito IGV; N039 traslado; N040 conservación; N041 RER; N042 NPIF; N043 BF. Precisan N016–N029, sin convertir research en política. Cada fila identifica fuente/fecha/autoridad, alcance/límite, owner y gates; dictámenes y hechos reales siguen pendientes. No se identificó obligación mensual general de «liquidación de mutuo» dentro del corpus revisado; no se declara inexistencia universal.
+
 - El impuesto RER sobre ingresos brutos no se etiqueta automáticamente como “impuesto a las ganancias” bajo un marco financiero; Accounting y Tax deben validar presentación y reconocimiento.
 - Una fuente oficial puede estar desactualizada: se detectó una página histórica de RER con tasas/límites anteriores. Solo N014 enlaza la orientación vigente y exige contraste legal al ejecutar.
 - Resoluciones CNC aprueban marcos; no acreditan hechos de TILMUX. SUNAT orienta y administra; sus informes interpretan preguntas concretas. Una RTF no se generaliza fuera de sus hechos ni se marca de observancia obligatoria sin evidencia expresa.

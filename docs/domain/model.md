@@ -43,6 +43,19 @@ Los maestros pueden evolucionar con trazabilidad; el documento confirmado conser
 | Evento externo / conexión + ID de evento cuando exista | Integración receptora | Mensaje → inbox → caso de uso; deduplicación del receptor atómica con su efecto | Recibido → pendiente/aplicado/rechazado/ambiguo | Si no hay ID fiable, conservar recepción/procedencia y reconciliar; no deduplicar actualizaciones por ID del pedido. Pago/refund del canal es observación, no movimiento Treasury |
 | Evento de auditoría / ID | Audit | Actor, entidad, recurso, transición, correlación y motivo | Append-only en interfaz y permisos ordinarios de DB | Acceso administrativo queda fuera de esa garantía; evidencia externa y recuperación separadas |
 
+## Delta conceptual post-freeze aceptado
+
+Las siguientes extensiones pertenecen al [amendment aceptado](../evidence/b2b-financing-amendment.md); no son tablas finales ni autorización de implementación.
+
+| Concepto | Owner y contrato | Identidad / corrección |
+|---|---|---|
+| Caso B2B / cotización / OC cliente recibida | Sales, [expediente B2B](../specs/flows/b2b-commercial-dossier.md); Parties identidad, Catalog SKU/precio, Documents original | Caso local independiente de conexión; OC por cliente emisor/referencia/revisiones; asignaciones a pedidos/líneas controladas, aceptación no inferida de recepción |
+| Condiciones de pago | Sales en revisión aceptada; Treasury conserva objetivo/aplicaciones | Snapshot de política y condiciones; ORGANIZATION no habilita crédito |
+| Pago personal por cuenta y derecho a reembolso | Corporate conserva hecho/fundamento; Procurement obligación; Treasury extinción por tercero y objetivo socio, [contrato](../specs/flows/financing-events-statements.md) | Pago externo distinto de movimiento de cuenta propia; remanentes separados, reversión con linaje |
+| Disposición y amortización de principal | Corporate naturaleza/instrumento, Treasury dinero ocurrido | Una referencia al dinero, contribución económica única; reembolso de adelanto no amortiza principal automáticamente |
+| Estado periódico de financiación | Corporate cálculo/conformidad; Documents manifest/snapshot | Período+corte+moneda+versión; derivado de hechos, corrección nueva preserva firmado |
+| Historia de entrega externa | Documents, [C40](../specs/flows/cpe-document-delivery.md#c40) | Propósito/documento y datos acreditados; no requiere attempt/callback ni Resend; unicidad primera finalidad preservada |
+
 ## Tres separaciones que gobiernan los flujos
 
 1. **Obligación, dinero y stock:** una factura no cobra; un pago no entrega; una devolución monetaria no recibe bienes.

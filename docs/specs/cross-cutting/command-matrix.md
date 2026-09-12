@@ -104,6 +104,7 @@ Todas las filas heredan I si D; se listan los demás recursos potenciales en ord
 | [C37](../flows/cpe-document-delivery.md#c37) Reenvío | documents.resend; documents.send además para dispatch MANUAL | S, C, D, N, J |
 | [C38](../flows/cpe-document-delivery.md#c38) Preview/descarga | documents.view y permiso del hecho vinculado | D en fase corta; no lock durante bytes |
 | [C39](../flows/cpe-document-delivery.md#c39) Cambiar insumos | documents.prepare_delivery | S, C, D, N, J si reevaluación |
+| [C40](../flows/cpe-document-delivery.md#c40) Registro de entrega externa — delta aceptado | documents.record_external_delivery | S/C cuando CPE, D/N y J si invalida; ningún envío |
 
 ## Intercalaciones que deberán demostrar compatibilidad
 
@@ -117,6 +118,7 @@ Todas las filas heredan I si D; se listan los demás recursos potenciales en ord
 | C20 contra C18/C22 | S/T/R comunes | Cobertura se verifica vigente; refund posterior deja déficit visible y bloquea nueva entrega |
 | C33/C39 contra C35/C07 | S/C/D/N y fingerprint aprobado | No despacho con CPE/recipient/artifact cambiado |
 | C34/C34 y C37 | C/D/N + UNIQUE primera finalidad | Dos claves/doble click no crean dos originales |
+| C40 contra C34/C35/C07 | C/D/N y lectura de historia/fingerprint | Registro externo anterior bloquea nueva primera entrega; dispatch ya autorizado deja carrera/duplicidad visible, no callback inventado |
 | C06/C07/C08 tras timeout/lease | J + token/generación y regla de ambigüedad | Lease vencido no vuelve a enviar ni sobrescribe intento actual |
 | C09 tardío contra C08 | K/D/N/J | Observaciones preservadas, sin regresión ciega de estado ni dinero/CPE alterados |
 | Restore contra cualquier job antiguo | entorno/epoch de recuperación y permisos | Cero efectos externos hasta reconciliación y reactivación autorizadas |

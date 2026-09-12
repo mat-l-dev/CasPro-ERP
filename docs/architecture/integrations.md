@@ -13,7 +13,8 @@ Los adaptadores viven fuera de Sales, Treasury y Procurement. Traducen HTTP/arch
 | SUNAT | Adquirir/importar, vincular y verificar CPE emitidos fuera de CasPro | Solo capacidades oficiales comprobadas; CasPro no emite, presenta ni envía CPE a SUNAT, tampoco desde un botón manual |
 | Jumpseller | Primer canal real inicial: importar pedidos y publicar stock calculado por CasPro | Cuenta/permisos, correspondencias, inbox, reconciliación y política de disponibilidad validados antes de operar |
 | Bancos | Importar extractos y registrar evidencia de movimientos | Conciliar no ordena transferir; pago externo automático fuera de alcance |
-| Email / Resend | Entrega documental inicial bajo responsabilidad de Documents | AUTO_WITH_APPROVAL operativo inicial; puerto email sin SDK en dominio, autenticación de callbacks y controles por entorno |
+| Email / Resend opcional | Adaptador inicial de entrega documental bajo responsabilidad de Documents | AUTO_WITH_APPROVAL cuando habilitado; puerto email sin SDK en dominio. [Registro externo C40](../specs/flows/cpe-document-delivery.md#c40) funciona sin Resend, con evidencia y sin callback ficticio |
+| WhatsApp Business futuro | DEFERRED / TRIGGERED INTEGRATION; sin conexión ni módulo | D03/M10: necesidad y autorización concretas, research vigente de capacidad/política y C11 antes de cualquier efecto |
 | Object storage | Archivo privado de Documents, previews y snapshots | Bytes separados de metadata PostgreSQL; proveedor pendiente, acceso autorizado y recuperación separada |
 
 Cada conexión declara proveedor/cuenta, entidad local vinculada, secreto externo a Git, URL permitida, timeouts de conexión/lectura, tamaño máximo, política de retry, identidad externa y traducción de errores. No aceptar una URL arbitraria recibida en webhook ni elegir entidad a partir del cuerpo sin verificar su conexión.
@@ -44,6 +45,8 @@ La Consulta Integrada oficial verifica un comprobante identificado por RUC emiso
 
 ## Entrega documental y Resend
 
+Delta del [amendment semántico aceptado](../evidence/b2b-financing-amendment.md): **DOCUMENT DELIVERY ≠ RESEND**. Documents posee intención/historia, un adaptador sustituible ejecuta transportes, y C40 registra envío externo conocido. Deshabilitar Resend no bloquea ese registro ni el expediente. Cambiar adaptador no borra entregas anteriores, HOLD, resultados inciertos ni unicidad CPE/finalidad; se revalida configuración/aprobación pertinente y capacidad del nuevo proveedor. Los detalles de Resend siguientes solo aplican a ese adaptador, no son defaults universales de email.
+
 Documents posee política, intención y resultado de entrega; el SDK queda en el adaptador de email. Los modos se aplican al propósito documental autorizado, no a cualquier CPE recibido: un CPE de proveedor no se envía a un cliente por estar archivado.
 
 | Modo | Efecto permitido |
@@ -60,6 +63,10 @@ La intención conserva entidad, CPE/revisión cuando aplique, propósito (primer
 Reintento = misma intención, destinatario/contenido e identidad idempotente; reenvío = nueva intención explícita, relacionada con la anterior, con sus controles y clave nueva, nunca CPE nuevo. Con resultado ambiguo no se crea automáticamente otra primera entrega. Resend ofrece adjuntos y clave idempotente con retención de 24 horas [S25](../research/technical-sources.md): el historial y protección local persisten según su política, no dependen de ese plazo. Si vence la ventana con resultado desconocido, HOLD y conciliación/resolución autorizada antes de otro envío; no retry ciego. Retención local debe cubrir intención, replays y restauración antes de habilitar automatización.
 
 Callbacks Resend: verificar firma sobre cuerpo crudo con secreto de la conexión; deduplicar svix-id y vincular email_id al intento propio. Hay entrega al menos una vez y orden no garantizado [S24](../research/technical-sources.md). Conservar observaciones y derivar estado conforme a su semántica parcial; llegada tardía no sobrescribe ciegamente un resultado, contradicción exige conciliación. Accepted/sent/delivered/bounce son resultados del correo: fallo o bounce no invalida CPE ni venta; delivered tampoco acredita lectura o aceptación fiscal. Los controles de [entornos](../operations/delivery.md) se aplican a cualquier modo y reenvío.
+
+## Frontera futura WhatsApp Business
+
+Solo se preservan Party/caso comercial, identidad externa por origen/cuenta cuando exista, propósito de comunicación y referencias a documentos/evidencia con procedencia. Sales decide aceptación, Treasury dinero, Documents intención/historia; un mensaje nunca confirma esos hechos por sí solo. No módulo WhatsApp, SDK, bus, CRM conversacional ni motor omnicanal. D03 exige caso de uso, mandato/destinatarios y research **actualizado al activarlo** de API, condiciones, privacidad y controles; no se anticipan precios, plantillas o automatización. Cambio de política/API futuro invalida supuestos de ese adaptador, no redefine los dueños. Especificación/WO y autorización posteriores por alcance, sin activación en este amendment.
 
 ## Tres clases de evento
 
