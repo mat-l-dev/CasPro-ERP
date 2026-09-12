@@ -101,7 +101,7 @@ Diseño solicitado después del PASS inicial, pendiente re-revisión conforme re
 | Vistas personales y dossier de caso | UI preferencias / Documents export | filtros tipados/corte autorizado→vista o índice/artefacto derivado | Case Flow/Access; HIGH privacidad export | M04+; solo dos conveniencias adicionales canonizadas, sin builder/ZIP universal |
 | Familias tipadas / Automation Center | Cada dueño; superficie superior router | template/regla/calendario/run→draft o comando autorizado/descriptores | Config/Access/jobs/Audit; CRITICAL si efecto | Primitives M01, consumidores por hito; [automatización](../architecture/automation.md) |
 | JournalTemplate, regla y recurrencia contable | Accounting | fuente/política/cuentas/ocurrencia→draft validado | Hechos M03–06, catálogo/período; HIGH | M07 requerido; [contrato](../accounting/templates-automation-shadow.md); autoexecute oficial OFF, mandato separado |
-| AI Accounting suggestion→draft / promoción a regla | Accounting; AIService adapter neutral | hecho minimizado/candidatos→sugerencia y draft humano; patrón→RuleCandidate revisado | POL-26/B16/D01, presupuesto; HIGH privacidad/semántica | M07 diseño requerido, activación controlada; no selección proveedor ni post IA |
+| AI Accounting suggestion→draft / promoción a regla | Accounting; AIService adapter neutral | hecho minimizado/candidatos→sugerencia y draft humano; patrón→RuleCandidate revisado | POL-26/B16/D01, presupuesto; HIGH privacidad/semántica | M07 diseño requerido, activación controlada; DeepSeek V4.1-Flash inicial por configuración neutral, sin post IA |
 | Shadow Accountant aislado | Accounting evaluación; executor separado | cápsulas congeladas→interpretaciones/ledger experimental sellado | DB/proceso/credenciales separados, B02/B13/B15; HIGH | M07 on-demand; [aislamiento](../accounting/templates-automation-shadow.md#shadow-accounting-e-aislamiento), async live por trigger |
 | Comparador mensual / multi-modelo acotado | Accounting evaluación | snapshots oficial/shadow/equivalencias→cobertura/diferencias/revisión | M07 hechos/políticas/cortes; HIGH mala inferencia de calidad | M08; [comparador](../accounting/templates-automation-shadow.md#comparador-oficial-versus-shadow); no segundo EEFF, proveedores múltiples solo experimento |
 
@@ -112,3 +112,16 @@ Capabilities assigned to a later triggered scope preserve only source facts and 
 ## Cobertura profesional propuesta
 
 Las filas anteriores identifican las capacidades estables y enlazan sus [seis specs](../specs/index.md#amendment-profesional-propuesto); el [programa](program.md#secuencia-profesional-propuesta) ordena la entrega. Las filas específicas desglosan los hechos de los dueños existentes: B2B conserva el expediente, las filas Sales sus actos; Accounting interpreta fuentes sin poseer contratos, dinero o stock. Crédito/COD diseñado con activación D03; departamentos5–6 candidatos. RFQ/multialmacén/importación ya son requisitos confirmados, no triggers para decidir si tendrán diseño. La evidencia de revisión no sustituye este mapa canónico.
+
+
+## Delta final de proveedor y declaraciones externas
+
+Extiende capacidades existentes, pendiente final conforme review; no módulo nuevo ni permiso de implementación.
+
+| Capability / purpose | Owner | Inputs → outputs / dependencies | Phase / spec / control |
+|---|---|---|---|
+| AI cost governance / off-peak scheduling | AIService/Platform; dominio posee finalidad | Tarifas/versiones, cuotas, usage y cola→reservas/coste/dispatch; Access/config/Audit | M07–M08; [AI](../architecture/ai-assistance.md#presupuesto-y-programación-del-proveedor-inicial), POL-26/D01/B16; target10USD, continuidad manual |
+| External tax filing mirror | Tax; Documents artefactos | Evidencia/definición/perfil→captura verificada o pendiente, TX5/X05 | M09; [mirror](../specs/flows/external-tax-filing-mirror.md); C08, sin SUNAT execution |
+| Tax filing field reconciliation | Tax | PreparedPackage + filing/captura + mapping→casillas/contribuciones/delta; X08 | M09; soporte por revisión y cobertura explícita; no cálculo por número reconocido |
+| Tax filing difference review | Tax; profesional competente | Diferencia/fuentes/criterio→revisión/resolución/paquete; Documents/Case Flow | M09; tax.review y permisos existentes; diferencia no atribuye error |
+| Historical external filing lineage | Tax | Original/sustitución/rectificación/eficacia→historia inmutable y comparación a corte | M09; backfill etiquetado, X05/X06; Treasury posee dinero, no overwrite |
