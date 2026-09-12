@@ -114,6 +114,8 @@ AC. Archivos: 84 fichas Markdown M01–M09; cuatro mapas (index/coverage/roadmap
 
 AD–AG. Commits, HEAD/tree final y PR se verifican después de materializar/publicar el candidato y se reportan en Git/PR y respuesta final; este documento no se autorreferencia con un SHA imposible de contener. Baseline exacta en A. PR contra main debe permanecer OPEN, sin merge y sin aceptación propia. La revisión independiente deberá fijar el HEAD/tree realmente revisado.
 
+Publicación verificada: [PR #10](https://github.com/mat-l-dev/CasPro-ERP/pull/10), OPEN contra main, misma rama. Commit documental de generación `01d13dbde7e7062ad38e91b805481cb5f1e15bf1`, tree `ec8fb4a8b89620dd3aa1bf92af07b82857808ba8`; el cierre posterior solo registra esta publicación/estado. `git diff --cached --check` limpio antes de publicar. La PR y respuesta final identifican el candidato final tras ese cierre; no merge, aceptación independiente ni ejecución. Índice, 84 fichas, cobertura, DAG y supersesión no cambian en el cierre de publicación.
+
 AH. Primer lote futuro recomendado: [WO-M01-01](../work-orders/M01/WO-M01-01.md) y luego [WO-M01-02](../work-orders/M01/WO-M01-02.md), limitado a runtime/entrega y sink append-only con lectura sensible OFF. Recomendación no es autorización; no ejecutar todo M01.
 
 AI. Preguntas al propietario: **0**. Ningún dato real solicitado. Validaciones profesionales continúan bajo C/D existentes; si una futura respuesta cambia semántica, requiere amendment, no código unilateral.
