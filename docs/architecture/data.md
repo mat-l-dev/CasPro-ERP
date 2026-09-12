@@ -61,3 +61,7 @@ Los informes permiten preview temporal o snapshot PDF persistido en Documents co
 La analítica adicional de rentabilidad con gastos indirectos o nuevos KPIs se difiere hasta su encargo ([D05](../roadmap/decisions-gaps.md#deferred)); no difiere el margen básico SP2 ya definido. El resultado contable y margen de G1 tienen definición propia en [reporting](../specs/acceptance/reporting-goldens.md); no se deducen del indicador comercial.
 
 La [arquitectura operativa](../operations/delivery.md) define migraciones, retención, backup y restore. El mero dump de PostgreSQL no incluye blobs ni todas las configuraciones externas.
+
+## Originales, perfiles y exportación profesional
+
+**Amendment aceptado por revisión independiente**, conforme a review. [Catalog](../specs/flows/catalog-sites-warehouses.md) define atributos tipados por familia, conversiones efectivas y evidencia por modelo. [Documents](../specs/flows/records-signatures-site-packs.md) define bytes originales inmutables fuera de PostgreSQL, derivados con hash propio, custodia, cuotas y copia de objetos separada. [Tax/import-export](../specs/flows/tax-workspace-books.md) exige schema/preview/revalidación/manifest y formato oficial por obligación, sin overwrite de hechos.

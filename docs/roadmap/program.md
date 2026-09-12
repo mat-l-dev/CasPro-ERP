@@ -222,3 +222,21 @@ M06 añade [eventos y estados de financiación](../specs/flows/financing-events-
 ## Future skill derivation, after freeze
 
 No skill is created in this program. After independent acceptance of the **GLOBAL DOCUMENTATION FREEZE of M01–M09**, conduct a dedicated review of frozen canonical sources and repeated workflows. Derive a short skill only when it changes repeated execution for the better: identify mandatory context, allowed/forbidden decisions, escalation and a concrete behavioral check. Candidate families: orchestration, Accounting, Tax, P2P, Inventory, Treasury, Sales/Documents/Integrations, security/QA, UI and AI assistance. Families are not an instruction to create a file for each domain. Link canonical docs and avoid copying business/regulatory rules. AGENTS remains the router. Regenerate bounded WOs afterward; changing a skill never changes domain truth or authorizes code.
+
+## Secuencia profesional propuesta
+
+Secuencia vigente según review: PR #6 aceptado→merge autorizado→regeneración de WOs acotadas en una misión separada→autorización explícita del propietario→implementación. No renumera M01–M10 ni amplía el primer circuito con todas las entregas simultáneamente. [Specs](../specs/index.md#amendment-profesional-propuesto) contienen diseño ahora; siguiente tabla define dependencia de entrega, no WOs.
+
+| Hito/incremento | Resultado y dependencias / aceptación futura |
+|---|---|
+| M02 | Catálogo/perfiles/UOM/identificadores/kits, Party/supplier y Site; M01 acceso/Documents básicos. Maestros revisados antes de stock/compromiso |
+| M03 | Transferencias/serial/tránsito/pool promedio y dinero base; depende M02. Primitivas cuenta/caja permiten posterior caja chica, sin rendición adelantada. Originales privados/derivados/custodia según consumidor |
+| M04 y M04+ | M04 B2C prepago preservado. Incremento B2B/cotización/contrato/instalación/logística/reclamos usa M02–04; compra de instalación exige tramo M05; sitio/minería se entrega al pipeline concreto con diseño ya completo |
+| M05/M05+ | Necesidad/RFQ/award/PO/match/pago y expediente importación cercano; M03 recibe/valora, Treasury base aplica. C07/C08 antes de la operación real, no esperar UI M09. Costos tardíos y parciales demuestran reconciliación |
+| M06 | Conciliación, instrumentos/caja chica/renta/constancia individual; exige fuentes M03–05 según caso. Mapping GL se especifica aquí y se implementa con Accounting M07; no seleccionar GL manual antes del libro |
+| Crédito/COD | Diseño ahora; entrega posterior a B2B y Treasury/AP-AR/exposición completos, D03 con autorización/política y pruebas. No depende de ser ORG ni activa compromiso sin reserva |
+| M07–M08 | Consumidores nuevos, perfiles/posting/recurrencias acotadas, cierre/auxiliares y cuatro EEFF/notas; hechos M03–06 preservados desde origen |
+| M09 | Datos de libros/FX/ND/importaciones desde origen, workspace/exportaciones por obligación. C08 y B08 antes de cada salida; sistemas SUNAT externos |
+| M10/D | WhatsApp/otros canales, servicio independiente, RMA completo, consignación/producción y departamentos5–6 por hechos/nueva necesidad; sin módulos anticipados |
+
+Imports y RFQ ya no son futuras incógnitas de producto. Lo no confirmado queda por trigger; no se difiere diseño de un flujo confirmado alegando entrega incremental. B14 invalida las evidencias afectadas del candidato anterior, sin reabrir las cuatro aceptaciones históricas.

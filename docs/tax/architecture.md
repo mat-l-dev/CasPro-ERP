@@ -47,3 +47,7 @@ Delta aceptado B2B/financiación: [matriz oficial N030–N043](../research/norma
 Antes de primera operación: RUC/régimen, obligaciones CPE y SIRE, afectación IGV por catálogo real, adquisiciones sujetas a SPOT/percepción/retención, calendario, tratamiento de CPE externos y evidencia. Antes del mutuo: dictamen legal-tributario-contable. Antes de RMT/General: base fiscal, pagos a cuenta, DJ anual, libros, activos/depreciación y diferencias. Todas las salidas son `PREPARED` hasta revisión; la IA puede explicar/anotar candidatos, nunca determinar ni presentar.
 
 Fuentes canónicas: [registro normativo](../research/normative/normative-register.md), [revisión tributaria actual](../research/normative/tax-current-review.md) y [memorando mutuo](../research/normative/mutuo-tax-corporate.md). La spec M09 cita esas fuentes; cada activación fija texto/vigencia, hechos, alcance, carácter vinculante y límites. La investigación documental no aprueba el perfil empresarial real.
+
+## Readiness profesional por obligación
+
+**Amendment aceptado por revisión independiente**, conforme a review. [Workspace fiscal](../specs/flows/tax-workspace-books.md) y [universo oficial de libros](../research/normative/tax-book-universe.md) concretan datos desde origen y activación por entidad/período/régimen/actividad/umbral. [Jumpseller Portugal](../research/normative/jumpseller-portugal-service.md) es clasificación preferida condicionada, no beneficio automático. Aduanas/FX/ND tienen finalidad y evidencia distintas; CasPro prepara y registra constancias externas, no presenta ni paga.

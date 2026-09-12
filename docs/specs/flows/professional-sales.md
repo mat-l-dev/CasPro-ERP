@@ -1,0 +1,52 @@
+# Cotización, contrato, crédito e instalación
+
+Propuesta del amendment profesional; [review](../../review.md) posee fase. Sales conserva [B2B aceptado](b2b-commercial-dossier.md), [SP2](sales-stock-treasury.md), OC del cliente y prepago inicial. Amplía profundidad de diseño; **crédito/contraentrega permanecen desactivados bajo D03**. Catalog provee [kits/maestros](catalog-sites-warehouses.md), Documents [firmas/paquetes](records-signatures-site-packs.md). No CRM completo, portal ERP público, servicio vendido independiente ni RMA.
+
+## Cotización y compromiso
+
+Quotation por entidad/cliente PERSON u ORG, contacto/destinatario autorizado, moneda, fecha/vigencia, numeración de serie comercial y revisiones. Cada revisión incluye líneas SKU/modelo/descripción/UOM/conversión/cantidad, kit/componentes/opciones, disponibilidad observada con fecha (no promesa de reserva), precio/lista/revisión, descuento por línea/global con reparto exacto, impuestos candidatos, costos/margen con UNKNOWN, transporte/instalación, lugar, plazos/hitos, condiciones pago/garantía y exclusiones, template/cláusulas aprobadas y documentos.
+
+Estados de revisión DRAFT→PENDING_APPROVAL→APPROVED→ISSUED→ACCEPTED/REJECTED/EXPIRED/SUPERSEDED. Aprobación interna, envío conocido y aceptación del cliente son hechos distintos. No requiere firma universal si política permite aceptación electrónica suficiente; conservar quién/cómo/fecha/documento/hash/versión y facultades. Expirar antes de aceptación impide conversión salvo nueva aprobación y versión emitida; expiración posterior no borra contrato celebrado.
+
+Sustituir cotización aceptada exige nueva revisión/adenda y aceptación pertinente, sin mutar precios/componentes/condiciones históricos. Nueva versión marca cuál sustituye y estado de compromisos descendientes; no anula orden ni reserva automáticamente. Descontinuación bloquea nuevas ofertas por política; compromiso previo se resuelve con suministro aprobado, sustitución consentida o cancelación compensada, nunca edición del SKU vendido.
+
+Contrato de venta es agregado **Sales** con identidad/número, partes/facultades snapshot, cotización/OC/revisiones, objeto y bienes/instalación, importe/moneda/impuestos, hitos de suministro y pago, entrega/aceptación, riesgos/garantía/penalidad/terminación cuando pactados, cláusulas/template aprobadas y firma. Corporate provee evidencia de representación por contrato de valores, no pasa a poseer orden o contrato comercial. DRAFT→LEGAL/COMMERCIAL_REVIEW→APPROVED_FOR_SIGNATURE→SIGNED→IN_FORCE→FULFILLED/TERMINATED; vigencia y cumplimiento son dimensiones separadas. Firma puede preceder condiciones de efectividad; no inferir pago. Adendas firmadas preservan original y recalculan compromiso solo mediante comando coordinado.
+
+Cotización/contrato pueden incluir 30% anticipo y70% antes de despacho. Aceptar ese documento registra pacto, no dinero ni excepción a HP1. Si exige crédito o despacho contraentrega aún inactivo, el compromiso registra **TERMS_NOT_ACTIVATED/HOLD**, no acepta silenciosamente una orden ejecutable incompatible. Inicialmente convertir a SalesOrder exige política prepago, disponibilidad/reserva completas y revisiones aceptadas como B2B; aceptación de cotización no garantiza esa conversión. Demanda pendiente de abastecimiento es intención comercial/requisición, no reserva ficticia; compromiso de pedido sin reserva continúa D03.
+
+## Instalación incluida en bienes
+
+FulfillmentPlan de Sales, ligado a líneas/kit/contrato: entrega física, instalación, configuración, pruebas, puesta en marcha, demostración y aceptación cliente son hitos separados con responsable interno/proveedor, sitio, prerrequisitos (energía/red/permisos/acceso), fechas/ventanas, dependencias, alcance, material/serie, evidencia y costos. Instalación subcontratada crea compra de servicio Procurement con conformidad; no segundo stock ni factura interna de servicio vendido. Horas/costos operativos se documentan sin fabricar nómina.
+
+Estados por tarea PLANNED→READY→SCHEDULED→IN_PROGRESS→COMPLETED→CUSTOMER_ACCEPTED; BLOCKED/RESCHEDULED/CANCELLED conservan motivo/fecha/actor y pendientes. Producto entregado no marca instalación terminada. Cambio técnico/extra fuera de contrato requiere variación comercial aprobada antes de ejecutar; no hace aparecer nuevo ingreso. Accounting recibe hitos/prueba de transferencia y obligaciones restantes para aplicar NPIF16/política; no reconoce100% automáticamente por POD ni aplica IFRS15 sin marco/trigger. Tax evalúa oportunidad CPE/IGV separadamente, incluso anticipos antes de entrega.
+
+## Crédito diseñado, activación posterior
+
+CreditPolicyRevision de Sales por entidad/cliente/moneda: habilitación, límite, plazo/cálculo vencimiento, segmentos de riesgo sustentados, bloqueos por mora/documentos/límite, exposición incluida, moneda de evaluación/FX y caducidad de excepción. No activar por ORG, OC o «cliente frecuente». Treasury posee objetivos y aplicaciones; Sales posee decisión de crédito; coordinador obtiene snapshots públicos de ambos.
+
+Exposición no duplica etapas: **compromisos aceptados aún no facturados/cobrables + principal abierto exigible/no vencido de objetivos**, por porción económica identificada; al pasar orden→factura→CxC se sustituye bucket de la misma porción. Anticipo reduce solo compromiso/objetivo al que fue aplicado válidamente; dinero sin identificar no libera crédito. Notas/retornos solo reducen cuando ajuste comercial confirmado; disputa/reestructuración no extingue deuda; deterioro contable tampoco. Límite no caja. Para varias monedas, límite separado inicialmente; límite global requerirá política FX aprobada, no suma PEN+USD.
+
+Aging por vencimiento contractual y fecha de corte, saldo neto de aplicaciones/reversiones, bandas versionadas. Cobro parcial reduce saldo; mora sobre remanente y hold pueden continuar. CollectionsCase incluye responsable, intentos autorizados, promesas/fecha/importe, disputa/evidencia, acuerdo y resolución; crear recordatorio interno no envía mensaje al cliente. Reestructuración aprobada genera nueva versión de calendario con puente viejo/nuevo, intereses/penalidades solo contractuales, Accounting/Tax evalúan; no reetiquetar deuda vencida para esconder historial.
+
+CreditOverride especifica aprobador real distinto donde política exige, importe adicional máximo, órdenes/cliente/moneda, motivo, evidencia, vigencia/condición y consumo. Cambio de límite, pedido, mora o fecha obliga revalidar; nunca un bypass boolean permanente. C05/C13 aprueban política real, D03 activación expresa y pruebas B03/B06. Cancelación de orden libera compromiso no entregado, no deuda ya nacida.
+
+## Contraentrega diseñada, activación posterior
+
+Terms COD define elegibilidad, transportista/custodio, moneda/medios, territorio/límite y evidencia. Despacho autorizado por modalidad activada crea stock fuera de almacén y custodia/tránsito, **no cobro**. Intento de entrega puede resultar rechazo/ausente/parcial según contrato; retorno preserva serial/condición. POD acredita entrega, recibo del cobrador acredita cobro en custodia si evidencia suficiente, depósito bancario confirma traslado de fondos a cuenta; no dos ingresos por ambas evidencias. Cobro pendiente/shortage queda contra custodio identificado, no venta pagada por estado del canal. Transferencia/applications usa Treasury y conciliación de remesas por N:M con comisiones explícitas.
+
+## Comandos y correcciones
+
+Todos aplican CM0: intención/digest, autorización vigente, revisiones y locks de raíces en orden común; writes+audit+hechos+intenciones durables en TX sin llamadas externas. Los coordinadores superiores usan valores publicados; Sales no importa Treasury/Inventory. No hay comando admin/import que salte estas guardas.
+
+| ID / capacidad | Guardas/participantes | Escritura y respuesta segura |
+|---|---|---|
+| QS1 emitir revisión / sales.quote.issue | Revisión aprobada, descuentos/facultades/plantilla, destinatario; locks cotización/aprobación | Snapshot numerado, Document intent; reintento no renumera. Envío incierto no emite revisión nueva |
+| QS2 aceptar / sales.quote.accept | Versión exacta, vigente, identidad/evidencia cliente, firma aceptable | Aceptación append-only; no SO/reserva/dinero automática. Firma de versión vieja exige resolución explícita |
+| QS3 contratar/adendar / sales.contract.approve | Términos, poderes y variaciones aprobados; contratos y descendientes afectados bloqueados | Nueva versión, firma pendiente/efectividad; nunca reemplaza PDF firmado ni cambia orden confirmada sin coordinador |
+| QS4 convertir / sales.order.accept | QS2/revisiones/OC opcional coherentes, términos activados, precio y stock elegibles | Coordinador B2B crea SO/objetivo/reserva atómicos. Costo UNKNOWN alerta/bloquea aprobación por margen requerida, no asume margen infinito |
+| CR1 aprobar/exceder crédito / sales.credit.approve | Raíz cliente/moneda serializa límite/exposición/overrides con pedidos/objetivos; misma política al commit | Consume exposición exactamente una vez; dos pedidos que individualmente caben pero juntos exceden no pasan ambos |
+| CR2 liberar despacho crédito/COD / sales.dispatch.authorize | D03 activado, crédito/override vigente o COD elegible, reserva/seriales/hitos y revisiones | Composición SP2 con rama de elegibilidad explícita. Sin activación ejecuta exclusivamente guardas prepago originales |
+| CR3 registrar cobro/remesa / treasury.money.confirm + coordinador | Evidencia real, cuenta/custodio/objetivo y residual; locks Treasury y exposición afectada | Cobro/application una vez; depósito posterior es transferencia. Falta de dinero deja saldo abierto |
+| FS1 registrar hito / sales.fulfillment.confirm | Tarea/sitio/serie/documentos/prerrequisitos y actor competente | Hecho separado, aceptación del cliente con evidencia, costos vinculados; corrección por nueva revisión y aviso Accounting, no reescritura |
+
+Aprobaciones de descuento, margen mínimo, contrato y crédito tienen política efectiva, alcance/máximo y vencimiento; cero umbrales inventados. Operador único solo puede autoaprobar cuando política del propietario lo permite expresamente y queda visible como tal; nunca simular segunda persona. C06/C07/C13 para condiciones legales/comerciales reales. Casos documentales en [expediente](../../evidence/professional-operational-completeness.md); B02–04/B06–10/B12 quedan pendientes.

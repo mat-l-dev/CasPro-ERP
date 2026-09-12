@@ -67,3 +67,16 @@ Un anticipo puede ser dinero sin aplicación a una obligación actual. No se con
 Las devoluciones de bienes siguen dirección, movimiento original y ciclo de posesión de las [invariantes](invariants.md). Los archivos y resultados técnicos de disponibilidad pertenecen a Documents; los estados del CPE pertenecen a Sales o Procurement. Tax conserva la interpretación fiscal, no el ciclo comercial de ninguno de los dos expedientes.
 
 La persistencia del progreso de una coordinación y de su seguimiento técnico se asigna por propietario en [integraciones](../architecture/integrations.md). Ningún estado de negocio queda almacenado exclusivamente en la memoria del coordinador ni pasa a ser propiedad de workflows.
+
+## Objetos del amendment profesional propuesto
+
+| Objeto / dueño | Identidad y límite / spec |
+|---|---|
+| AttributeProfile/KitRevision Catalog; Site Organization; Transfer Inventory | Revisión efectiva, composición sin stock padre; sede distinta de almacén; tránsito con posesión única. [Contrato](../specs/flows/catalog-sites-warehouses.md) |
+| QuotationRevision/SalesContract/FulfillmentPlan/CreditPolicy Sales | Versión aceptada y promesas separadas de SO/pago; exposición por porción económica y H27. [Contrato](../specs/flows/professional-sales.md) |
+| Requisition/RFQ/SupplierQuotation/Award/ImportDossier Procurement | Cantidades asignadas/revisiones; factura/DAM/levante/recepción y costo separados. [Contrato](../specs/flows/sourcing-imports.md) |
+| FinancialAccount/BankFacility/Card/PettyCash Treasury; AccountPostingProfile Accounting; SiteContract Corporate | Cuenta propia distinta de destino proveedor; límite no caja; obligación no pago. [Contrato](../specs/flows/financial-accounts-instruments.md) |
+| DocumentVersion/Derivative/SignatureEnvelope/PhysicalCustody Documents; SiteProfile/ClaimCase Sales | Original firmado distinto de preview; requisito aplicado por sitio/tarea/persona/modelo; reclamo sin orden permitido. [Contrato](../specs/flows/records-signatures-site-packs.md) |
+| FXObservation publicada por integración; selección/TaxObligation/PreparedPackage Tax o Accounting según propósito | Observación no política; obligación por período; exportación no presentación. [Contrato](../specs/flows/tax-workspace-books.md) |
+
+Identidades de entidad/revisión y correcciones de los contratos existentes se conservan. Son objetos conceptuales revisables; no tablas, migraciones o apps creadas.

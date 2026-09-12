@@ -124,3 +124,7 @@ Todas las filas heredan I si D; se listan los demás recursos potenciales en ord
 | Restore contra cualquier job antiguo | entorno/epoch de recuperación y permisos | Cero efectos externos hasta reconciliación y reactivación autorizadas |
 
 Esto es análisis estático del diseño, no evidencia de DB. Las [familias de aceptación](../acceptance/operational-scenarios.md) y [perfiles](../acceptance/validation-profiles.md) determinan las pruebas posteriores y el gate habilitante de RLS.
+
+## Comandos del amendment profesional propuesto
+
+Las fichas nuevas están en [catálogo/traslados](../flows/catalog-sites-warehouses.md), [Sales](../flows/professional-sales.md), [sourcing/imports](../flows/sourcing-imports.md), [Treasury/instrumentos](../flows/financial-accounts-instruments.md), [Documents/sitio/reclamaciones](../flows/records-signatures-site-packs.md) y [Tax](../flows/tax-workspace-books.md). Heredan íntegramente CM0 y la [extensión de recursos/hechos](economic-facts.md#delta-profesional-propuesto-productores-y-concurrencia), incluida H27 antes de S/O30 para exposición. Sus capacidades son futuras y se conceden por C13; no roles activos ni comandos implementados. Prepago sigue única modalidad habilitable sin aceptación/activación posterior D03 de crédito/COD.

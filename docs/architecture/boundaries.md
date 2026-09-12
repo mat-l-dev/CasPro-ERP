@@ -10,7 +10,7 @@ Contrato arquitectónico de [ADR-001](../decisions/adr-001-modularity.md). La fl
 | Audit | Rastro técnico/empresarial mínimo de quién hizo qué | Primitivas compartidas | Cualquier llamada de negocio de retorno |
 | Documents | Archivo privado, versiones, procedencia, disponibilidad y entrega documental | Workspace, Audit; puertos de objetos/email conectados por composición | Decidir estados legales del CPE, deuda o entrega física; importar Sales/Procurement o SDKs de proveedores en el dominio |
 | Parties | Contrapartes por entidad, roles cliente/proveedor, identidad vigente | Workspace, Audit, Documents | Apropiar saldos o tratar persona igual a usuario |
-| Catalog | Bienes/SKU, unidades, especificaciones y precios comerciales versionados | Workspace, Audit | Existencias y costes de stock |
+| Catalog | Bienes/SKU, unidades, especificaciones y precios comerciales versionados | Workspace, Audit; Documents para referencias de evidencia del amendment profesional | Existencias y costes de stock |
 | Inventory | Almacenes/ubicaciones, movimientos, coste operativo, seriales, reservas y stock publicable | Catalog, Workspace, Audit, Documents | Importar Sales/Procurement, decidir si un cliente pagó o registrar VNR/deterioro contable |
 | Procurement | Compromisos de compra, obligaciones y expediente CPE recibido de proveedor, con sus ajustes comerciales | Parties, Catalog, Workspace, Audit, Documents | Escribir existencias o dinero |
 | Sales | Pedidos, progreso comercial, expediente CPE de venta y ajustes comerciales | Parties, Catalog, Workspace, Audit, Documents | Consultar/escribir Treasury o Inventory directamente |
@@ -70,3 +70,9 @@ Treasury conserva una proyección versionada del importe liquidable, no una segu
 - Las escrituras de stock/dinero solo entran por los casos de uso definidos. Los permisos de DB restringen operaciones destructivas sobre historia; los verificadores de código no son una frontera contra código malicioso en el mismo proceso.
 
 La matriz anterior es acíclica: Audit → primitivas; Workspace → Audit; soporte → Workspace/Audit; operación → soporte; Accounting → soporte/hechos; Tax → Accounting/soporte. Los flujos superiores consumen estos contratos. Los eventos no crean llamadas de retorno.
+
+## Ownership del amendment profesional propuesto
+
+[Specs profesionales](../specs/index.md#amendment-profesional-propuesto) extienden los mismos dueños: Organization sede; Catalog perfiles/kits; Inventory almacén/tránsito/serial/costo; Sales cotización/contrato comercial/instalación/exposición/reclamación/paquete de sitio; Procurement necesidad/RFQ/adjudicación/importación y obligación de renta; Treasury instrumento/custodia de dinero; Accounting mapping cuenta financiera→GL y medición; Corporate facultades/tenencia/contrato de alquiler; Documents original/derivado/firma/custodia física; Tax obligación/FX fiscal/libros.
+
+La referencia Catalog→Documents para evidencia técnica es extensión explícita acíclica; Documents no vuelve a Catalog. Políticas de aplicabilidad o facultades entre dueños se transfieren como valores/revisiones mediante coordinador superior, sin añadir Sales→Corporate/Tax, Organization→Corporate ni Treasury→Sales. La raíz H27 protege exposición en coordinadores que además aplican dinero. Buscar/drill-down agrega lecturas autorizadas, no crea módulo Graph ni una base de hechos compartida. Maker/checker es decisión acotada del dueño, no motor universal.

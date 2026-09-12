@@ -40,3 +40,7 @@ El candidato nunca altera movimientos, aplicaciones o ledger. El fallback sin IA
 - Forecast es proyección identificada, separada de posición confirmada.
 
 La spec M06 define importación, esquema versionado, dedupe, aplicaciones, líneas no identificadas, desconciliación y cierre diario; el formato BBVA concreto requiere evidencia autorizada. Pagos automáticos, open banking, FX avanzado, cash pooling y forecasting predictivo permanecen fuera hasta necesidad y proveedor comprobados.
+
+## Instrumentos y conciliación profesional
+
+**Amendment aceptado por revisión independiente**, conforme a review. [Spec financiera](../specs/flows/financial-accounts-instruments.md) concreta cuentas→GL, préstamos/líneas/tarjetas, caja chica, constancia individual y renta. [Sales crédito/COD](../specs/flows/professional-sales.md) exige coordinador y H27 cuando una aplicación altera exposición; no añade llamadas privadas Treasury→Sales.

@@ -50,6 +50,21 @@ Las nueve filas tienen entradas/salidas, propietarios, estados/comandos, guardas
 
 ## Handoff posterior
 
-El freeze y la revisión independiente de arquitectura de información ya están aceptados conforme a [review](../review.md). La siguiente fase es investigación dedicada de skills útiles → skills → regeneración de WOs acotadas → autorización explícita del propietario → implementación. Las [seis WOs SP2](../history/work-orders-sp2.md) son insumos históricos NEEDS REGENERATION AFTER FREEZE: incorporar hechos tempranos, pool/revisiones, CM0 extendido, CPE, UX y gates locales antes de encargarlas.
+El freeze y la revisión independiente de arquitectura de información ya están aceptados conforme a [review](../review.md). El sistema de agentes y skills está aceptado según review. La secuencia vigente es PR #6 aceptado → merge autorizado → regeneración de WOs acotadas en una misión separada → autorización explícita del propietario → implementación. Las [seis WOs SP2](../history/work-orders-sp2.md) son insumos históricos NEEDS REGENERATION AFTER FREEZE: incorporar hechos tempranos, pool/revisiones, CM0 extendido, CPE, UX y gates locales antes de encargarlas.
 
 Contexto futuro: AGENTS → review → tarjeta de hito → spec y dependencias concretas → gates/perfil de evidencia. Sol orquesta; implementador y reviewer trabajan separados; Astra revisa arquitectura, dinero/stock, Accounting/Tax/Legal, seguridad o contraejemplo transversal. Ninguna etiqueta de readiness ni skill autoriza funciones, migraciones, pruebas o despliegues.
+
+## Amendment profesional propuesto
+
+Estas specs integran el amendment **aceptado por re-revisión independiente según [review](../review.md)**, sin cambiar el estado histórico de la tabla del freeze ni autorizar implementación. El expediente conserva el PASS documental del autor:
+
+| Incremento / hito | Spec local |
+|---|---|
+| Catálogo/perfiles/kits/sedes M02; multialmacén M03 | [Catalog/sites/warehouses](flows/catalog-sites-warehouses.md) |
+| Cotización/contrato/instalación M04+; crédito/COD diseño D03 | [Sales profesional](flows/professional-sales.md) |
+| Requisición/RFQ/ofertas/importación/landed cost M05+ | [Sourcing/imports](flows/sourcing-imports.md) |
+| Cuenta→GL/préstamos/tarjetas/caja/renta/constancia mutuo M06→M07 | [Finanzas](flows/financial-accounts-instruments.md) |
+| Originales/firma/custodia M03+; sitio/formas/reclamos M04+ | [Records/signatures/site packs](flows/records-signatures-site-packs.md) |
+| FX/ND/importación/libros/obligaciones M07–M09 | [Tax workspace/books](flows/tax-workspace-books.md) |
+
+[Contrato común extendido](cross-cutting/economic-facts.md#delta-profesional-propuesto-productores-y-concurrencia), [matriz/casos/informe](../evidence/professional-operational-completeness.md) y [gates](../roadmap/decisions-gaps.md) forman el paquete de revisión. No ejecutar WOs históricos; no se regeneran en esta misión.

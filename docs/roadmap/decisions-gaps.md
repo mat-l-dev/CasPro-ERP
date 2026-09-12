@@ -95,7 +95,7 @@ Cada WO concreta el fixture/candidato/configuración y evidencia de los gates pe
 |---|---|---|
 | D01 AI/Architecture | Proveedor, recursos VPS/LLM y piloto opcional | Tarea repetitiva con beneficio esperado y autorización; fijar corpus/umbral B16/coste. Flujo manual completo permanece válido |
 | D02 Accounting/Tax | Aplicación de otros marcos/ediciones, lectura íntegra por trigger de matriz62, NIIF18/19/20 y revisiones futuras | Cambio acreditado de marco/elegibilidad, fecha de vigencia o transacción; revisar texto oficial y caso antes de activar. Un hecho aplicable al primer libro pasa a C01/C08 ahora, no se oculta en M10 |
-| D03 Product/Architecture | Nuevos canales/entidades/capabilities M10, escalado y distribución; WhatsApp Business, crédito B2B/contraentrega y compromiso sin reserva | Caso/necesidad y autorización concretos; research actualizado por canal/efecto, política comercial versionada de vencimientos/límites/riesgo para crédito, spec/amendment y WO autorizada antes de ampliarlo. Sin trigger no activar WhatsApp ni despacho sin cobertura íntegra. B2B prepago está aceptado como incremento explícito posterior M04, no se mantiene diferido genéricamente |
+| D03 Product/Architecture | Nuevos canales/entidades/capabilities M10, escalado y distribución; WhatsApp Business, crédito B2B/contraentrega y compromiso sin reserva | Caso/necesidad y autorización concretos; research actualizado por canal/efecto; crédito/COD tienen diseño profesional propuesto ahora, pendiente de aceptación y política comercial real versionada, activación expresa y WO autorizada. Compromiso sin reserva y demás canales conservan necesidad de spec/amendment antes de ampliarlos. Sin trigger no activar WhatsApp ni despacho sin cobertura íntegra. B2B prepago está aceptado como incremento explícito posterior M04, no se mantiene diferido genéricamente |
 | D04 UX/Architecture | Grid avanzada/isla de otro framework, branding y visuales opcionales | Tarea demuestra insuficiencia del patrón inicial; comparar CSP/licencia/a11y/beneficio; no cambiar dominio. Valores de componentes iniciales se validan en B09 |
 | D05 Sales/Inventory/Accounting | Analítica adicional de rentabilidad, costes indirectos o nuevos KPIs | Encargo explícito y definición de bases/repartos/linaje antes de ampliarla; no difiere margen básico SP2 ni G1 ya especificados |
 | D06 Product/dueño de caso | Automatización de SLA/escalamiento o workflow genérico de Inbox | Necesidad operativa repetida y política aprobada; nueva spec. Inbox inicial solo proyecta dueño/causa/acción y seguimiento |
@@ -175,3 +175,21 @@ Las menciones PROVISIONAL/PENDING/REQUIRES LATER VALIDATION en fuentes locales c
 | Audit/review/programa/WOs/skills | Clasificación anterior sustituida por este registro; resultado de aceptación independiente en review; WOs a regenerar; skills posteriores, sin ejecución ahora |
 
 Una omisión o contradicción semántica descubierta por reviewer se registra como A con contraejemplo, dueño y contrato afectado. Cero A es conclusión de este cierre documental, no garantía de ausencia de errores ni aceptación independiente.
+
+## Impacto profesional propuesto — validación y activación
+
+Se conservan **A0 / B16 / C13 / D6**, sin cerrar ni añadir IDs. Elección de fórmula A resuelta por delegación del propietario, no bloqueador A pendiente. El amendment está aceptado por re-revisión independiente según review; cualquier contraejemplo semántico real abre A, no se oculta como parámetro C.
+
+| Gates | Hipótesis/activación extendida y respuesta al incumplimiento |
+|---|---|
+| B02/B03/B04/B05 | Nuevas entradas por entidad, H27/exposición, transferencias/kit/corte, oferta/award y costo tardío, precisión/FX. Sin conservación/aislamiento bloquear alcance y corregir, sin tolerancia implícita |
+| B06/B07/B08 | Proveedor-banco revisado, cuota/card/caja/renta, mapping efectivo, auxiliares/GL, formatos/cortes/libros y presentación externa. Sin linaje/estructura válida no aceptar salida final |
+| B09/B10/B12/B13/B15 | Flujos/compare/drilldown, PDF/upload/firma/custodia, límites/cuotas/restore DB+objetos, callbacks/readiness caducada y export sensible. Fallo mantiene HOLD/quarantine o integración desactivada |
+| C01/C03 | Fórmula promedio NPIF uniforme, método fiscal previo, costos importación/ajustes, unidades, reconocimiento entrega+instalación y alquiler/préstamo según marco. Antes de apertura/operación dependiente |
+| C04/C05/C13 | Aprobadores/descuentos/directa/award, cuenta proveedor/mapping, instrumento/límites/caja/custodios, catálogo/perfiles/sedes reales. Antes de alta/aprobación/pago operativo afectado |
+| C06 | Poderes/contratos/firma suficiente, tenencia/licencias aplicables, requisitos laborales/HSE por actividad y plazos/canal de reclamos. Antes del acto real correspondiente; no pide dictamen por toda cotización ordinaria |
+| C07/C08 | SKU/origen/restricción/DAM/levante, CPE/oportunidad, marco/régimen/libro/layout/SIRE/FX/ND/CDI/CRF/MLI/beneficios y crédito. Fuentes contradictorias retienen efecto fiscal afectado hasta resolución; no falso dato ni tasa0 |
+| C10/C11 | Original/derivados/firma/copia objetos/custodia/retención y puertos de firma/intake/FX; antes de datos o envío real, no provider elegido por herramienta |
+| D03 | Crédito/COD diseñados, activación posterior por demanda/política/aceptación; compromiso sin reserva, WhatsApp, RMA/servicio independiente y consignación/producción nuevos siguen trigger. Imports/RFQ/multialmacén confirmados salen de incógnita funcional, sin nuevo gate |
+
+La matriz no acredita políticas reales ni ensayos. Aceptación documental y autorización de ejecutar siguen review/WO; operación real exige además gates pertinentes.

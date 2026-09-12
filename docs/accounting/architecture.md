@@ -63,6 +63,10 @@ El primer producto contable usable genera situación financiera, resultados, cam
 
 ## Gates para especificación y operación
 
-Antes de código de Accounting: elegibilidad/marco de TILMUX; adopción PCGE; catálogo inicial de políticas; eventos de los hitos construidos; precisión; períodos/apertura; tratamiento RER; matriz de escenarios; aprobación profesional. Antes de operar: apertura reconciliada, balance de prueba, paquetes sintéticos completos sin Excel obligatorio, reversión/cierre/reapertura, aislamiento, concurrencia, actualización de reglas y trazabilidad hasta evidencia.
+Antes de implementar Accounting: fase habilitada y WO regenerada explícitamente autorizada, contratos/políticas tipadas, eventos, precisión y escenarios de M07. Elegibilidad/marco real, adopción PCGE, apertura/tratamiento RER y aprobación profesional limitan la activación dependiente bajo C01–03/C08, no el mecanismo con fixtures. Esta aclaración del amendment resuelve la tensión con M07/gaps sin cerrar validaciones. Antes de operar: apertura reconciliada, balance de prueba, paquetes sintéticos completos sin Excel obligatorio, reversión/cierre/reapertura, aislamiento, concurrencia, actualización de reglas y trazabilidad hasta evidencia.
 
 M07 especifica contratos de activos, provisiones, FX, instrumentos, devengos y demás auxiliares por trigger; requiere aprobar políticas/hechos antes de activarlos. Consolidación y otras expansiones M10 conservan estado CONCEPT/TRIGGERED. Ninguna spec declara tablas construidas ni tratamiento profesional aprobado.
+
+## Consumidores de operaciones profesionales
+
+**Amendment aceptado por revisión independiente**, conforme a review. [Spec financiera](../specs/flows/financial-accounts-instruments.md) define mapping efectivo de cuenta Treasury a GL y conciliaciones, préstamos/tarjetas/caja/renta. [Importación](../specs/flows/sourcing-imports.md) aporta costo elegible/revisiones; [Sales](../specs/flows/professional-sales.md) aporta entrega/instalación/aceptación separados para reconocimiento. [Libros](../specs/flows/tax-workspace-books.md) consume ledger sin alterarlo. Políticas/recurrencias/accruals/prepagos siguen M07, fuente/versión y C01; no esperar a descubrir estos hechos durante implementación.

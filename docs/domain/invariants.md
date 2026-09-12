@@ -54,3 +54,13 @@ No existe un enum universal de ERP. Cada agregado especificará transición, ori
 Separar dimensiones ortogonales: estado del pedido, progreso físico, liquidación y estado fiscal. Pagado/parcialmente pagado son resultados del saldo válido; si se materializan para lectura, se reconcilian con su fuente. Cancelar un remanente no anula silenciosamente hechos ya ejecutados.
 
 Estas invariantes son decisiones de integridad, no afirmaciones sobre tasas, asientos, normativa de emisión o marco contable. Esas reglas permanecen PENDING DOMAIN/REGULATORY VALIDATION cuando falte fuente aplicable.
+
+## Invariantes del amendment profesional propuesto
+
+[Catalog/traslados](../specs/flows/catalog-sites-warehouses.md): fórmula promedio uniforme no depende del departamento; FIFO físico no valora salida. Un serial tiene una posesión; origen+tránsito+destino conserva cantidad; pérdida real requiere ajuste. Kit compromete componentes una sola vez y compite con ventas sueltas.
+
+[Sales](../specs/flows/professional-sales.md): versión aceptada no se edita; cotización/contrato/orden y entrega/instalación/aceptación son hechos distintos. Prepago íntegro conserva modalidad inicial; cualquier rama crédito/COD exige D03 y guardas nuevas, nunca excepción implícita. Exposición cambia de bucket sin duplicar porción; pago parcial no borra mora; deterioro no extingue deuda.
+
+[Sourcing](../specs/flows/sourcing-imports.md): oferta no PO, award no recepción; suma adjudicada no excede necesidad; banco cambiado invalida propuesta pago. DAM≠factura≠costo contable; costo tardío no crea unidades ni se asigna a stock0 artificial.
+
+[Finanzas](../specs/flows/financial-accounts-instruments.md): límite no efectivo; cuota separa capital/interés/cargos; pagar tarjeta o reponer caja no repite gasto; mapping nuevo no reescribe GL; firmado no crea dinero. [Documents/Tax](../specs/flows/records-signatures-site-packs.md): derivado≠original; firma técnica≠facultades; permiso sitio no nace de READY. Readiness fiscal no impone libros inactivos, y CPE verificado no prueba declaración ni contrato cumplido.

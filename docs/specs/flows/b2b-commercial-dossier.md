@@ -67,7 +67,7 @@ Party ORGANIZATION no concede crédito. Las condiciones del compromiso son snaps
 | OC sin crédito / B2B prepago | Modalidad inicial: pago íntegro confirmado y aplicado al objetivo vigente antes de **cualquier** despacho, incluso parcial; conserva el control HP1 |
 | Pago previo a OC/venta | Treasury registra dinero real como anticipo/no aplicado, con Party identificada si se conoce; aplicación posterior expresa y acotada. Fiscalidad del anticipo no espera la OC |
 | Pago parcial | Se conserva y muestra pendiente; no autoriza entrega proporcional ni crea crédito implícito |
-| Contraentrega o crédito comercial | Representable como condición solicitada, **no elegible para aceptación/dispatch bajo política inicial**. D03 exige encargo, política comercial aprobada y spec de vencimientos, límites, riesgo/cobranza, parciales, mora y coordinación antes de habilitar el efecto. La aprobación no se infiere del texto de la OC |
+| Contraentrega o crédito comercial | Representable como condición solicitada, **no elegible para aceptación/dispatch bajo política inicial**. El [amendment profesional](professional-sales.md) propone ahora diseño de vencimientos, límites, exposición/cobranza, parciales, mora y coordinación; D03 exige aceptación de esa spec, necesidad/encargo y política comercial aprobada antes de habilitar el efecto. La aprobación no se infiere del texto de la OC |
 
 No se exige dictamen profesional para revisar cantidades o aceptar una propuesta comercial ordinaria. C07/C08 se aplican a los efectos fiscales pertinentes; crédito futuro exige decisiones concretas de riesgo y evidencia, no retrasar B2B prepago por construir AR enterprise.
 
@@ -92,3 +92,7 @@ Capturar/revisar OC o cotización exige capacidad Sales específica y revisión 
 Hechos candidatos: propuesta/cotización revisada (comercial), OC recibida/revisada (evidencia), compromiso aceptado/ajustado y entregas/retornos (económicos cuando corresponda). El envelope conserva fuentes/revisiones y causación; una OC o cotización sola no produce reconocimiento Accounting ni objetivo Treasury. Lecturas no confirman acciones. Reintento idéntico devuelve el mismo resultado; clave con inputs distintos o revisión obsoleta produce conflicto, sin efectos parciales.
 
 Aceptación documental: casos 1–15 del [expediente adversarial](../../evidence/b2b-financing-amendment.md#v-37-casos-adversariales). Implementación posterior requiere B02–05/B09/B10, pruebas de asignación OC N:M concurrente y no duplicación entre revisiones, stock/cobro/retorno y CPE existentes. Gates reales C03/C05/C07/C08/C13 por efecto; ningún check documental los cierra.
+
+## Profundidad profesional propuesta
+
+**Amendment aceptado por revisión independiente**, conforme a review. [Sales profesional](professional-sales.md) extiende cotización/contrato, instalación incluida y diseño de crédito/COD desactivado. No altera aceptación histórica de este paquete ni modalidad prepago inicial. [Site/reclamaciones](records-signatures-site-packs.md) pertenece a Sales y no convierte compra cliente en trámite universal.

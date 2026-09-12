@@ -47,3 +47,7 @@ Reglas ya sustentadas:
 Preguntas para el gate profesional: mutuante/relación real; facultades y acuerdo; monto/límite/moneda/plazo/disponibilidad; interés civil y tratamiento fiscal de valor de mercado; eventos de desembolso/devolución; documentación y bancarización; medición NPIF; revelaciones; modificación/conversión/condonación; obligaciones de precios de transferencia/beneficiario final.
 
 El cronograma de beneficiario final de RS 000168-2025 incluye cohortes por ingresos y sujetos nuevos/activados; [N029](../research/normative/normative-register.md) y el memo fiscal delimitan su alcance. Debe determinarse cohorte/vencimiento con RUC y hechos reales; CasPro prepara expediente, sin presentación automática a SUNAT.
+
+## Contratos y evidencia profesional
+
+**Amendment aceptado por revisión independiente**, conforme a review. [Spec financiera](../specs/flows/financial-accounts-instruments.md) concreta constancias por disposición, tenencia/arrendamiento de sede y facultades de financiación; [Documents](../specs/flows/records-signatures-site-packs.md) posee firma/custodia. Contrato de venta pertenece a Sales según su [spec](../specs/flows/professional-sales.md); Corporate aporta facultades y soporte legal, no posee todos los contratos por compartir título.
