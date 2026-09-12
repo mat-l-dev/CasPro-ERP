@@ -4,7 +4,21 @@ Fecha de corte: 2026-09-12. **Única fuente del estado global vigente.**
 
 ## Current status
 
-**AGENT SYSTEM FRESHNESS REFRESH: PENDING INDEPENDENT REVIEW.** Encargo actual del propietario: auditoría completa de instrucciones/skills y refresh documental acotado en rama nueva, con commit/push y un PR abierto; sin WOs, implementación ni merge del nuevo PR. [Expediente del candidato](evidence/agent-system-freshness-audit.md) y [tooling verificado](research/agent-tooling-currentness.md). Regeneración de WOs retenida hasta revisión independiente favorable, aceptación/merge de este refresh y encargo de preparación vigente. **IMPLEMENTATION: NOT AUTHORIZED.**
+**PASS — AGENT SYSTEM REFRESH ACCEPTED.** Revisión independiente completa, resultado comunicado por el propietario para PR #9: candidato semántico/documental aceptado `f85fdaaf053cd4a7cf1b4eee349905fc5fb06924`, tree `0cc404965823b0ee9898d83dec50b62f6b79aeb0`. **BLOCKER = 0; HIGH = 0; business architecture drift = 0.** Aceptados: router AGENTS, adaptadores CLAUDE/GEMINI, protocolo, workflow, rúbrica de revisión, plantilla WO, catálogo y las diez skills; routing de capabilities/privacidad/Case Flow/Shadow Accounting/External Tax Filing Mirror, separación IA de desarrollo/runtime y current/history, y eficiencia de contexto. Sin skills ni módulos nuevos innecesarios. **A0 / B16 / C13 / D6** sin cambios; todos los B/C/D permanecen abiertos.
+
+El propietario autorizó explícitamente el merge de PR #9 mediante merge commit en esta misión de cierre final, sujeto a verificar candidato y precondiciones exactos; el estado e identidad físicos del merge se verifican en Git/GitHub tras la operación. La sincronización de estado conserva el candidato aceptado y no constituye otra revisión semántica. Readiness documental para futura regeneración de WOs: **YES WITH NON-BLOCKING WATCH ITEMS**. **WO generation/regeneration: NOT AUTHORIZED BY THIS MISSION. IMPLEMENTATION: NOT AUTHORIZED.** La aceptación y el merge no autorizan ejecución de WOs.
+
+Watch items no bloqueantes aceptados por la revisión independiente comunicada por el propietario; no reabren el diseño:
+
+- Antes de depender de un harness de desarrollo en una WO ejecutable, verificar cliente, versión y configuración realmente instalados.
+- Verificar discovery/lectura real de skills cuando el host ejecutable sea pertinente.
+- Discrepancia de Folder Trust de Gemini comunicada por el propietario: una página oficial lo describe desactivado por defecto y otra referencia de configuración puede mostrar otro default. **Nunca inferir el valor efectivo solo de documentación; verificar setting y versión del host antes del uso ejecutable.** No se reabre research en este cierre.
+- Revalidar documentación mutable de tooling/proveedores solo cuando una tarea dependa del hecho mutable.
+- Presupuestos de metadata y límites de discovery siguen como vigilancia operativa, sin bloquear arquitectura.
+
+Antecedente del autor de PR #9, superado por la aceptación independiente anterior; texto de su encargo preservado como historia:
+
+> **AGENT SYSTEM FRESHNESS REFRESH: PENDING INDEPENDENT REVIEW.** Encargo actual del propietario: auditoría completa de instrucciones/skills y refresh documental acotado en rama nueva, con commit/push y un PR abierto; sin WOs, implementación ni merge del nuevo PR. [Expediente del candidato](evidence/agent-system-freshness-audit.md) y [tooling verificado](research/agent-tooling-currentness.md). Regeneración de WOs retenida hasta revisión independiente favorable, aceptación/merge de este refresh y encargo de preparación vigente. **IMPLEMENTATION: NOT AUTHORIZED.**
 
 PR #8 fue fusionado por autorización explícita del propietario el 2026-09-12T22:10:23Z: merge/main baseline `574937c2f811562948318d7ebde5e9f95b815056`, tree `49096b080ad241f5c3d8d7e7f559e321f8cb01c1`, verificados iguales a origin/main y sin cambios locales antes de crear la rama. El tree coincide con el commit de sincronización `cf41b741ede9061e4b6b3a57e83be233eea1ba02`; respecto al candidato semántico aceptado solo cambió estado en este archivo. Se preserva aceptación F01–F07 y **A0 / B16 / C13 / D6**; todos los B/C/D abiertos.
 
@@ -47,7 +61,11 @@ Resultado independiente comunicado por el propietario: **PASS — INFORMATION AR
 
 ## Next process
 
-PR #8 aceptado y MERGED; continúa solo el refresh de instrucciones autorizado arriba. Su nuevo candidato requiere revisión separada y no se fusiona en esta misión. Ninguna aceptación previa autoriza regeneración/ejecución de WOs ni implementación.
+PR #8 aceptado y MERGED; PR #9 aceptado con cierre/merge autorizado bajo las precondiciones exactas indicadas en Current status. Tras verificar main y limpiar únicamente la rama integrada, esta misión termina. La siguiente fase posible es regenerar WOs desde el HEAD/tree final de main, **solo con un nuevo encargo explícito del propietario**. No se generan ni ejecutan WOs en este cierre; implementación sigue NOT AUTHORIZED.
+
+Antecedente del encargo de refresh, preservado como historia:
+
+> PR #8 aceptado y MERGED; continúa solo el refresh de instrucciones autorizado arriba. Su nuevo candidato requiere revisión separada y no se fusiona en esta misión. Ninguna aceptación previa autoriza regeneración/ejecución de WOs ni implementación.
 
 Resultado independiente comunicado por el propietario: **PASS — AGENT SYSTEM ACCEPTED**. Candidato corregido aceptado: `e1582bf4bd67b7b5097c7f8bc222ec1c38cc9572`, tree `93ac3dbfa46b93368727a8fea9f0e1354caa89be`. El hallazgo de acoplamiento a la fase temporal quedó resuelto; no se solicitó otra corrección antes del merge. El [expediente de agentes](evidence/agent-system-research.md) conserva la evidencia histórica del autor.
 
