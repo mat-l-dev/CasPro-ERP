@@ -16,6 +16,8 @@ NON-AUTHORITATIVE RESEARCH. Estas fuentes conservan su fecha de consulta, edici�
 
 ## Fuentes técnicas y comparación
 
+[Gobierno, roles y configuración](governance-authorization-benchmark.md), corte 2026-09-12: SAP, Dynamics, NetSuite, Odoo, OWASP/NIST y recuperación; GOV-N01/N02 cotejan decisiones contables determinadas. Fuentes oficiales y límites de acceso explícitos; contratos en arquitectura/registro/manual, no aquí.
+
 [Fuentes técnicas](technical-sources.md) respaldan los [ADRs](../decisions/index.md); el [benchmark ERP](erp-benchmark.md) compara técnicas sin importar reglas de otro producto. No se abre una carpeta de un archivo para cada tipo.
 
 Las auditorías de repositorios, extracción Wbpro y reconciliación UX se encuentran en [evidence](../evidence/index.md). Los informes de cierre anteriores están en [history](../history/index.md). Volver al [mapa de autoridad](../index.md).
