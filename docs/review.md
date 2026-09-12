@@ -37,9 +37,11 @@ Resultado independiente comunicado por el propietario: **PASS — INFORMATION AR
 
 Resultado independiente comunicado por el propietario: **PASS — AGENT SYSTEM ACCEPTED**. Candidato corregido aceptado: `e1582bf4bd67b7b5097c7f8bc222ec1c38cc9572`, tree `93ac3dbfa46b93368727a8fea9f0e1354caa89be`. El hallazgo de acoplamiento a la fase temporal quedó resuelto; no se solicitó otra corrección antes del merge. El [expediente de agentes](evidence/agent-system-research.md) conserva la evidencia histórica del autor.
 
-Siguiente fase: regeneración de Work Orders acotadas → autorización explícita del propietario → implementación. Aceptar el sistema de agentes no autoriza implementación. [ADR-012](decisions/adr-012-global-documentation-freeze.md) conserva el contrato del freeze. Este cierre no regenera WOs ni implementa código.
+Siguiente fase vigente: completar amendment profesional → revisión independiente → cierre/merge autorizados posteriores → regeneración de Work Orders acotadas en otra misión → autorización explícita del propietario → implementación. Aceptar el sistema de agentes no autoriza implementación. [ADR-012](decisions/adr-012-global-documentation-freeze.md) conserva el contrato del freeze. Este cierre no regenera WOs ni implementa código.
 
-El propietario autoriza el cierre mínimo de aceptación y merge de PR #5 mediante merge commit. Siguiente acción después del merge: regenerar Work Orders acotadas en otra misión; no se preparan ni ejecutan aquí. Gates siguen **A0 / B16 / C13 / D6**, con el alcance del amendment aceptado en gaps, ninguno creado ni cerrado. La aceptación documental no acredita validación de software ni habilita implementación.
+El cierre de PR #5 fue completado: merge `c91c9b7e7421913bd208a62156966ecdc1be5ccd`, tree `e2d6dc45340e20119b557deb7743f1d7b32193d7`; rama integrada eliminada tras verificar alcance. Ese merge es baseline de la misión actual.
+
+**POST-FREEZE PROFESSIONAL OPERATIONAL COMPLETENESS AMENDMENT: PENDING INDEPENDENT REVIEW.** El [expediente del autor](evidence/professional-operational-completeness.md) propone catálogo/kits, sedes/traslados, ventas/sourcing/importaciones, instrumentos/documentos, sitio/minería/reclamaciones y preparación fiscal profesional. Alcance autorizado: investigación/documentación, commits/push y PR abierto; **NO MERGE, NO WOs, NO CODE** en esta misión. Elección delegada: promedio uniforme y FIFO físico; políticas reales y gates profesionales siguen pendientes. Se conservan las cuatro aceptaciones históricas y **A0 / B16 / C13 / D6**. **IMPLEMENTATION: NOT AUTHORIZED.**
 
 ## Canonical links
 

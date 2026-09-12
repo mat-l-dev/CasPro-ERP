@@ -53,3 +53,7 @@ Una regla vive una vez, en el documento de su propietario. Un ADR explica la ele
 Un cambio actualiza la fuente afectada y sus referencias. Cualquier reutilización de evidencia sigue el contrato de equivalencia de [calidad](quality/strategy.md); el índice no define una excepción alternativa. Las decisiones históricas se sustituyen mediante un ADR explícito, no se reescribe su motivo. La desagregación de estados de esta fundación durante Gate 1 se registra en el índice de decisiones.
 
 No hay plantilla enciclopédica obligatoria: título, propósito, contenido decisional y enlaces relevantes bastan. Cada especificación posterior tendrá propietario, invariantes, criterios de aceptación y preguntas bloqueantes. Su aprobación no se infiere de esta fundación.
+
+## Propuesta profesional posterior al freeze
+
+[Informe A–AR y matriz de cobertura](evidence/professional-operational-completeness.md) → [seis specs por dueño](specs/index.md#amendment-profesional-propuesto) → [benchmark](research/professional-erp-benchmark.md), [normativa operacional](research/normative/operational-completeness.md), [libros](research/normative/tax-book-universe.md) y [Jumpseller/CDI](research/normative/jumpseller-portugal-service.md). Es una propuesta pendiente de revisión independiente; no modifica por sí sola las aceptaciones ni autoriza implementación.

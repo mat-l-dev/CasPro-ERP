@@ -13,7 +13,7 @@ Este mapa asigna propósito, dueño, dependencias, hito y trigger; no conserva o
 | Parties | Parties | identity evidence→roles/version | Access, Documents | one counterparty; MEDIUM | M02 / master spec / richer CRM |
 | Goods catalog | Catalog | product/SKU/unit/price→version | Access | commerce; MEDIUM | M02 / SP2 / variants/serials |
 | Purchased service concepts | Procurement | description/period→nonstock line | Parties, Accounting policy later | expenses; MEDIUM tax | M05 / P2P spec / recurring contracts |
-| Operational inventory | Inventory | movements→positions/kardex | Catalog | fulfilment; HIGH money/stock | M03 / inventory spec / multiwarehouse |
+| Operational inventory | Inventory | movements→positions/kardex | Catalog | fulfilment; HIGH money/stock | M03 / inventory spec + amendment multialmacén / expansión por nueva necesidad |
 | Moving average cost | Inventory | entry costs→output cost | operational inventory | margin/COGS source; HIGH accounting | M03 / costing spec / landed costs |
 | Physical count | Inventory | plan/count→difference/adjustment | inventory, Audit | integrity; HIGH | M03/M05 / inventory-deep / scanners |
 | ATS/publication | Inventory/integration | eligible stock+buffer→Jumpseller quantity | reservations, channel | availability; HIGH external | M03–M04 / SP2, B11/C11 / second channel |
@@ -22,7 +22,7 @@ Este mapa asigna propósito, dueño, dependencias, hito y trigger; no conserva o
 | B2B commercial dossier — delta aceptado | Sales | caso/cotización/OC opcional→compromiso revisado y expediente completo | Parties/Catalog/Documents + Treasury/Inventory existentes | necesidad confirmada; HIGH | Incremento posterior M04 / [B2B](../specs/flows/b2b-commercial-dossier.md) / prepago inicial, crédito/contraentrega D03 |
 | Commercial obligation | Sales/Procurement | document terms→receivable/payable | Parties | settlement; HIGH | M04/M05 / domain specs / credit terms |
 | CPE sales/supplier dossiers | Sales/Procurement | external identity+facts→dossier | Documents, Tax | fiscal evidence; HIGH | M04/M05 / CPE y P2P specs, C07 / acquisition API |
-| Purchase order/receipt | Procurement/Inventory | demand→commitment/receipt | Parties, Catalog | replenishment; HIGH | M05 / P2P spec / approvals/RFQ |
+| Purchase order/receipt | Procurement/Inventory | demand→commitment/receipt | Parties, Catalog | replenishment; HIGH | M05 / P2P + sourcing/imports propuestos / portal proveedor futuro |
 | Matching/payability | Procurement | PO+receipt/service+CPE→match/block | Tax, Documents | prevent wrong pay; HIGH | M05 / tolerance spec / automation |
 | Accounts/movements | Treasury | bank/cash evidence→confirmed movement | Parties, Documents | money truth; CRITICAL | M03 / SP2 / multiple banks |
 | Applications/refunds | Treasury | movement+target→settlement | commercial obligations | outstanding truth; CRITICAL | M04/M05 / SP2 y Procurement settlement / nuevos tipos de liquidación |
@@ -71,3 +71,7 @@ Este desglose hereda owner Accounting, M07 para medición/registro y M08 para pr
 ## Expansion rule
 
 Capabilities assigned to a later triggered scope preserve only source facts and an explicit trigger. They do not justify a package, field, provider or abstraction today. Every activation updates this map, produces a local spec and names its validation profile.
+
+## Cobertura profesional propuesta
+
+La [matriz de40 requisitos](../evidence/professional-operational-completeness.md) amplía las filas existentes con [seis specs](../specs/index.md#amendment-profesional-propuesto), sin módulos nuevos: Catalog/sedes M02, Inventory multialmacén M03, Sales cotización/contrato/instalación/reclamos/site M04+, Procurement sourcing/import M05+, Treasury instrumentos/caja/renta M06, Accounting/Tax consumidores/libros M07–09. Crédito/COD diseñado con activación D03; departamentos5–6 candidatos. RFQ/multialmacén/importación ya son requisitos confirmados, no triggers para decidir si tendrán diseño.

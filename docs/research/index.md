@@ -19,3 +19,7 @@ NON-AUTHORITATIVE RESEARCH. Estas fuentes conservan su fecha de consulta, edici�
 [Fuentes técnicas](technical-sources.md) respaldan los [ADRs](../decisions/index.md); el [benchmark ERP](erp-benchmark.md) compara técnicas sin importar reglas de otro producto. No se abre una carpeta de un archivo para cada tipo.
 
 Las auditorías de repositorios, extracción Wbpro y reconciliación UX se encuentran en [evidence](../evidence/index.md). Los informes de cierre anteriores están en [history](../history/index.md). Volver al [mapa de autoridad](../index.md).
+
+## Investigación profesional al corte2026-09-11
+
+[Benchmark SAP/Dynamics/NetSuite/Odoo](professional-erp-benchmark.md); [costeo, minería, documentos y límites RTF](normative/operational-completeness.md); [universo oficial de libros](normative/tax-book-universe.md); [Jumpseller/Portugal nuevo análisis](normative/jumpseller-portugal-service.md). Fuentes/lecturas/limitaciones registradas; contratos en specs y aplicabilidad real bajo gates existentes.
