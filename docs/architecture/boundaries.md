@@ -39,7 +39,7 @@ Configuration no es un módulo universal: secretos/settings pertenecen a config;
 
 ## Flujos que cruzan propietarios
 
-Delta del [amendment B2B/financiación propuesto](../evidence/b2b-financing-amendment.md): Sales incorpora cotizaciones y OCs **del cliente** con significado comercial; Procurement conserva OCs **al proveedor**. [B2B](../specs/flows/b2b-commercial-dossier.md) usa los contratos existentes de stock/dinero. Para [pago por cuenta de empresa](../specs/flows/financing-events-statements.md), coordinador compone Corporate (pago externo/naturaleza/derecho), Procurement (obligación) y Treasury (liquidación por tercero sin caja propia y posterior reembolso). No añade dependencias inversas entre módulos. Corporate posee estado de financiación derivado; Documents snapshot y evidencia. [C40](../specs/flows/cpe-document-delivery.md#c40) registra historia externa sin adaptar el dominio a Resend.
+Delta del [amendment B2B/financiación aceptado](../evidence/b2b-financing-amendment.md): Sales incorpora cotizaciones y OCs **del cliente** con significado comercial; Procurement conserva OCs **al proveedor**. [B2B](../specs/flows/b2b-commercial-dossier.md) usa los contratos existentes de stock/dinero. Para [pago por cuenta de empresa](../specs/flows/financing-events-statements.md), coordinador compone Corporate (pago externo/naturaleza/derecho), Procurement (obligación) y Treasury (liquidación por tercero sin caja propia y posterior reembolso). No añade dependencias inversas entre módulos. Corporate posee estado de financiación derivado; Documents snapshot y evidencia. [C40](../specs/flows/cpe-document-delivery.md#c40) registra historia externa sin adaptar el dominio a Resend.
 
 | Coordinador | Participantes | Hecho coordinado |
 |---|---|---|

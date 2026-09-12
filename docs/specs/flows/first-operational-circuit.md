@@ -18,7 +18,7 @@ La spec concreta la fundación; no sustituye [invariantes](../../domain/invarian
 
 ## Resultado y límites
 
-Delta propuesto del [amendment](../../evidence/b2b-financing-amendment.md): M04 sigue B2C; [B2B](b2b-commercial-dossier.md) es incremento posterior. Resend es adaptador inicial opcional de Documents: [C40](cpe-document-delivery.md#c40) registra envíos externos conocidos sin ejecutarlos y sin alterar la oportunidad fiscal HP4. Esta precisión no convierte MANUAL en envío fuera del ERP ni autoriza efectos externos.
+Delta aceptado del [amendment](../../evidence/b2b-financing-amendment.md): M04 sigue B2C; [B2B](b2b-commercial-dossier.md) es incremento posterior. Resend es adaptador inicial opcional de Documents: [C40](cpe-document-delivery.md#c40) registra envíos externos conocidos sin ejecutarlos y sin alterar la oportunidad fiscal HP4. Esta precisión no convierte MANUAL en envío fuera del ERP ni autoriza efectos externos.
 
 Un pedido observado puede quedar pendiente o rechazado sin crear venta, reserva ni dinero. Aceptarlo explícitamente confirma snapshots, compromiso, reserva completa y objetivo de liquidación en una sola transacción. Treasury registra evidencia de un cobro real y sus aplicaciones. La entrega consume reserva y stock bajo cobertura vigente. Documents vincula artefactos al CPE de Sales, congela una intención aprobada y ejecuta email fuera de la transacción. Reconciliación y correcciones conservan historia.
 

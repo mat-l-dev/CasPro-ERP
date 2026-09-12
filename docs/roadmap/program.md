@@ -24,9 +24,9 @@ Ruta explícita de entrega: **repositorio documental (M00) → primer ERP ejecut
 
 ## Milestone cards
 
-### Delta de secuencia propuesto — amendment B2B y financiación
+### Delta de secuencia aceptado — amendment B2B y financiación
 
-El [amendment pendiente de revisión independiente](../evidence/b2b-financing-amendment.md) conserva numeración y M04 B2C. Se elige **incremento B2B posterior a M04**, con [spec Sales propia](../specs/flows/b2b-commercial-dossier.md), porque requiere misma plataforma/maestros, dinero, reservas y CPE pero añade entrada comercial/OC/revisiones. Ampliar M04 mezclaría aceptación de primera venta por canal con nuevo compromiso B2B; diferirlo íntegro a M10 dejaría sin producto una necesidad confirmada.
+El [amendment aceptado](../evidence/b2b-financing-amendment.md), conforme a [review](../review.md), conserva numeración y M04 B2C. Se elige **incremento B2B posterior a M04**, con [spec Sales propia](../specs/flows/b2b-commercial-dossier.md), porque requiere misma plataforma/maestros, dinero, reservas y CPE pero añade entrada comercial/OC/revisiones. Ampliar M04 mezclaría aceptación de primera venta por canal con nuevo compromiso B2B; diferirlo íntegro a M10 dejaría sin producto una necesidad confirmada.
 
 Dependencias: M01–M04 para B2B prepago con existencias; tramo Treasury M06 para conciliación bancaria completa. Puede entregarse antes de M05 sin compras ni crédito; abastecimiento futuro, crédito y contraentrega requieren D03. La fecha/orden relativo con M05 se decide al autorizar la entrega; no renumerar M05–M10. Evidencia de salida futura: OC opcional revisada→compromiso→parciales/CPE→cobros/aplicaciones→conciliación y dossier explicable, con casos1–15. No se emite WO ahora.
 

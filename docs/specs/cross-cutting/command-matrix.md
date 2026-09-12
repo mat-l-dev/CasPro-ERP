@@ -104,7 +104,7 @@ Todas las filas heredan I si D; se listan los demás recursos potenciales en ord
 | [C37](../flows/cpe-document-delivery.md#c37) Reenvío | documents.resend; documents.send además para dispatch MANUAL | S, C, D, N, J |
 | [C38](../flows/cpe-document-delivery.md#c38) Preview/descarga | documents.view y permiso del hecho vinculado | D en fase corta; no lock durante bytes |
 | [C39](../flows/cpe-document-delivery.md#c39) Cambiar insumos | documents.prepare_delivery | S, C, D, N, J si reevaluación |
-| [C40](../flows/cpe-document-delivery.md#c40) Registro de entrega externa — delta propuesto | documents.record_external_delivery | S/C cuando CPE, D/N y J si invalida; ningún envío |
+| [C40](../flows/cpe-document-delivery.md#c40) Registro de entrega externa — delta aceptado | documents.record_external_delivery | S/C cuando CPE, D/N y J si invalida; ningún envío |
 
 ## Intercalaciones que deberán demostrar compatibilidad
 

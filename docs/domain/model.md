@@ -43,9 +43,9 @@ Los maestros pueden evolucionar con trazabilidad; el documento confirmado conser
 | Evento externo / conexión + ID de evento cuando exista | Integración receptora | Mensaje → inbox → caso de uso; deduplicación del receptor atómica con su efecto | Recibido → pendiente/aplicado/rechazado/ambiguo | Si no hay ID fiable, conservar recepción/procedencia y reconciliar; no deduplicar actualizaciones por ID del pedido. Pago/refund del canal es observación, no movimiento Treasury |
 | Evento de auditoría / ID | Audit | Actor, entidad, recurso, transición, correlación y motivo | Append-only en interfaz y permisos ordinarios de DB | Acceso administrativo queda fuera de esa garantía; evidencia externa y recuperación separadas |
 
-## Delta conceptual post-freeze propuesto
+## Delta conceptual post-freeze aceptado
 
-Las siguientes extensiones pertenecen al [amendment pendiente](../evidence/b2b-financing-amendment.md); no son tablas finales ni autorización de implementación.
+Las siguientes extensiones pertenecen al [amendment aceptado](../evidence/b2b-financing-amendment.md); no son tablas finales ni autorización de implementación.
 
 | Concepto | Owner y contrato | Identidad / corrección |
 |---|---|---|

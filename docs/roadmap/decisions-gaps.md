@@ -95,14 +95,14 @@ Cada WO concreta el fixture/candidato/configuración y evidencia de los gates pe
 |---|---|---|
 | D01 AI/Architecture | Proveedor, recursos VPS/LLM y piloto opcional | Tarea repetitiva con beneficio esperado y autorización; fijar corpus/umbral B16/coste. Flujo manual completo permanece válido |
 | D02 Accounting/Tax | Aplicación de otros marcos/ediciones, lectura íntegra por trigger de matriz62, NIIF18/19/20 y revisiones futuras | Cambio acreditado de marco/elegibilidad, fecha de vigencia o transacción; revisar texto oficial y caso antes de activar. Un hecho aplicable al primer libro pasa a C01/C08 ahora, no se oculta en M10 |
-| D03 Product/Architecture | Nuevos canales/entidades/capabilities M10, escalado y distribución; WhatsApp Business, crédito B2B/contraentrega y compromiso sin reserva | Caso/necesidad y autorización concretos; research actualizado por canal/efecto, política comercial versionada de vencimientos/límites/riesgo para crédito, spec/amendment y WO autorizada antes de ampliarlo. Sin trigger no activar WhatsApp ni despacho sin cobertura íntegra. B2B prepago se propone como incremento explícito posterior M04, no se mantiene diferido genéricamente |
+| D03 Product/Architecture | Nuevos canales/entidades/capabilities M10, escalado y distribución; WhatsApp Business, crédito B2B/contraentrega y compromiso sin reserva | Caso/necesidad y autorización concretos; research actualizado por canal/efecto, política comercial versionada de vencimientos/límites/riesgo para crédito, spec/amendment y WO autorizada antes de ampliarlo. Sin trigger no activar WhatsApp ni despacho sin cobertura íntegra. B2B prepago está aceptado como incremento explícito posterior M04, no se mantiene diferido genéricamente |
 | D04 UX/Architecture | Grid avanzada/isla de otro framework, branding y visuales opcionales | Tarea demuestra insuficiencia del patrón inicial; comparar CSP/licencia/a11y/beneficio; no cambiar dominio. Valores de componentes iniciales se validan en B09 |
 | D05 Sales/Inventory/Accounting | Analítica adicional de rentabilidad, costes indirectos o nuevos KPIs | Encargo explícito y definición de bases/repartos/linaje antes de ampliarla; no difiere margen básico SP2 ni G1 ya especificados |
 | D06 Product/dueño de caso | Automatización de SLA/escalamiento o workflow genérico de Inbox | Necesidad operativa repetida y política aprobada; nueva spec. Inbox inicial solo proyecta dueño/causa/acción y seguimiento |
 
-## Impacto del amendment B2B/financiación — propuesto
+## Impacto del amendment B2B/financiación — aceptado
 
-No nuevos IDs ni cierres: **A0 / B16 / C13 / D6** se conservan. La ampliación semántica está pendiente de revisión y no hereda aceptación por conservar conteos. [Matriz/casos](../evidence/b2b-financing-amendment.md) y contratos de [B2B](../specs/flows/b2b-commercial-dossier.md), [financiación](../specs/flows/financing-events-statements.md) y [C40](../specs/flows/cpe-document-delivery.md#c40) son el delta de alcance de los gates siguientes.
+No nuevos IDs ni cierres: **A0 / B16 / C13 / D6** se conservan. La ampliación semántica fue aceptada por revisión independiente según [review](../review.md); conservar conteos no cierra gates. [Matriz/casos](../evidence/b2b-financing-amendment.md) y contratos de [B2B](../specs/flows/b2b-commercial-dossier.md), [financiación](../specs/flows/financing-events-statements.md) y [C40](../specs/flows/cpe-document-delivery.md#c40) son el delta de alcance de los gates siguientes.
 
 | Gates existentes | Extensión de hipótesis / efecto bloqueado y trigger |
 |---|---|

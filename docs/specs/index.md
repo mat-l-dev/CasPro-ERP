@@ -18,7 +18,7 @@ Las etiquetas locales SPECIFIED/CANDIDATE y READY_FOR_FREEZE_REVIEW conservan el
 
 ## Matriz de cobertura y readiness
 
-Delta semántico post-freeze **propuesto y pendiente de revisión independiente**: [incremento B2B posterior M04](flows/b2b-commercial-dossier.md), [M06 hechos/estados de financiación](flows/financing-events-statements.md) y [C40 entrega externa](flows/cpe-document-delivery.md#c40). El [expediente](../evidence/b2b-financing-amendment.md) identifica cambios y evidencia invalidada; las filas siguientes conservan el candidato del freeze y no acreditan estos deltas. No cambia M01/M02 ni prepara WOs.
+Delta semántico post-freeze **aceptado por revisión independiente según [review](../review.md)**: [incremento B2B posterior M04](flows/b2b-commercial-dossier.md), [M06 hechos/estados de financiación](flows/financing-events-statements.md) y [C40 entrega externa](flows/cpe-document-delivery.md#c40). El [expediente](../evidence/b2b-financing-amendment.md) identifica cambios y evidencia invalidada; las filas siguientes conservan el candidato del freeze y no acreditan estos deltas. No cambia M01/M02 ni prepara WOs.
 
 | Hito | Readiness | Contrato local profundo | Gates pertinentes del registro |
 |---|---|---|---|

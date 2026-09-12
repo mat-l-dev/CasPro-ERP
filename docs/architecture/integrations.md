@@ -45,7 +45,7 @@ La Consulta Integrada oficial verifica un comprobante identificado por RUC emiso
 
 ## Entrega documental y Resend
 
-Delta del [amendment semántico pendiente](../evidence/b2b-financing-amendment.md): **DOCUMENT DELIVERY ≠ RESEND**. Documents posee intención/historia, un adaptador sustituible ejecuta transportes, y C40 registra envío externo conocido. Deshabilitar Resend no bloquea ese registro ni el expediente. Cambiar adaptador no borra entregas anteriores, HOLD, resultados inciertos ni unicidad CPE/finalidad; se revalida configuración/aprobación pertinente y capacidad del nuevo proveedor. Los detalles de Resend siguientes solo aplican a ese adaptador, no son defaults universales de email.
+Delta del [amendment semántico aceptado](../evidence/b2b-financing-amendment.md): **DOCUMENT DELIVERY ≠ RESEND**. Documents posee intención/historia, un adaptador sustituible ejecuta transportes, y C40 registra envío externo conocido. Deshabilitar Resend no bloquea ese registro ni el expediente. Cambiar adaptador no borra entregas anteriores, HOLD, resultados inciertos ni unicidad CPE/finalidad; se revalida configuración/aprobación pertinente y capacidad del nuevo proveedor. Los detalles de Resend siguientes solo aplican a ese adaptador, no son defaults universales de email.
 
 Documents posee política, intención y resultado de entrega; el SDK queda en el adaptador de email. Los modos se aplican al propósito documental autorizado, no a cualquier CPE recibido: un CPE de proveedor no se envía a un cliente por estar archivado.
 

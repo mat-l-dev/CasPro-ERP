@@ -1,6 +1,6 @@
 # SP2 — CPE externo, archivo y entrega documental
 
-Propietarios: Sales conserva CPE de venta/vínculo comercial; Documents conserva archivo, disponibilidad, política e intención/historia de entrega. Adaptadores ejecutan consultas/envíos concretos fuera de transacción; Resend es proveedor inicial opcional. No nuevo Document Vault ni plataforma CRM/email. Estas son las fuentes locales de estados; [CM0](../cross-cutting/command-matrix.md#cm0) completa fichas, [integraciones](jumpseller-external-work.md) posee jobs y protocolo externo. HP4/HP5 de [alcance](first-operational-circuit.md) delimitan decisiones de política. La sección de registro externo/C40 es delta del [amendment pendiente](../../evidence/b2b-financing-amendment.md).
+Propietarios: Sales conserva CPE de venta/vínculo comercial; Documents conserva archivo, disponibilidad, política e intención/historia de entrega. Adaptadores ejecutan consultas/envíos concretos fuera de transacción; Resend es proveedor inicial opcional. No nuevo Document Vault ni plataforma CRM/email. Estas son las fuentes locales de estados; [CM0](../cross-cutting/command-matrix.md#cm0) completa fichas, [integraciones](jumpseller-external-work.md) posee jobs y protocolo externo. HP4/HP5 de [alcance](first-operational-circuit.md) delimitan decisiones de política. La sección de registro externo/C40 es delta del [amendment aceptado](../../evidence/b2b-financing-amendment.md).
 
 ## Identificar, adquirir, vincular y verificar
 

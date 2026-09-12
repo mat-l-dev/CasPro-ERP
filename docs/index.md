@@ -46,7 +46,7 @@ Cada secuencia es un punto de entrada. Cargar las dependencias concretas que cit
 
 ## Mantenimiento mínimo
 
-Amendment semántico en revisión: [expediente B2B/financiación](evidence/b2b-financing-amendment.md) → [Sales B2B](specs/flows/b2b-commercial-dossier.md), [M06 hechos/estados](specs/flows/financing-events-statements.md), [Documents entrega externa](specs/flows/cpe-document-delivery.md#c40), [research oficial](research/normative/b2b-financing-evidence.md). Estado y autorización únicamente en [review](review.md); estas rutas no aceptan el delta ni habilitan código.
+Amendment semántico aceptado: [expediente B2B/financiación](evidence/b2b-financing-amendment.md) → [Sales B2B](specs/flows/b2b-commercial-dossier.md), [M06 hechos/estados](specs/flows/financing-events-statements.md), [Documents entrega externa](specs/flows/cpe-document-delivery.md#c40), [research oficial](research/normative/b2b-financing-evidence.md). Estado y autorización únicamente en [review](review.md); estas rutas no habilitan código.
 
 Una regla vive una vez, en el documento de su propietario. Un ADR explica la elección y enlaza su contrato detallado. Un resumen enlaza ese contenido; no mantiene otra versión de la regla.
 

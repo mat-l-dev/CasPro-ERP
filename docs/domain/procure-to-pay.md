@@ -34,7 +34,7 @@ Procurement publica obligación versionada y estado de bloqueo. Treasury program
 
 ## Excepciones y controles
 
-Delta propuesto del [amendment](../evidence/b2b-financing-amendment.md): la OC recibida **del cliente** pertenece a Sales/B2B, no a esta compra. Cuando socio paga al proveedor, Procurement mantiene obligación y evidencia de adquisición/conformidad; [M06](../specs/flows/financing-events-statements.md) coordina extinción acreditada por tercero en Treasury y derecho de reembolso Corporate sin movimiento en cuenta TILMUX. Distinguir quién paga de tercero designado para recibir; no autorizar otro pago de una porción ya extinguida ni afirmar deducción por el reembolso.
+Delta aceptado del [amendment](../evidence/b2b-financing-amendment.md): la OC recibida **del cliente** pertenece a Sales/B2B, no a esta compra. Cuando socio paga al proveedor, Procurement mantiene obligación y evidencia de adquisición/conformidad; [M06](../specs/flows/financing-events-statements.md) coordina extinción acreditada por tercero en Treasury y derecho de reembolso Corporate sin movimiento en cuenta TILMUX. Distinguir quién paga de tercero designado para recibir; no autorizar otro pago de una porción ya extinguida ni afirmar deducción por el reembolso.
 
 Duplicado de factura por emisor/tipo/serie/número; factura sin recepción; exceso de cantidad/precio; servicio sin conformidad; impuesto/detracción pendiente; CPE inválido/no verificable; pago en HOLD; recepción con costo desconocido; período cerrado. Cada excepción tiene severidad WARNING/BLOCKING, recurso afectado, causa, responsable, edad y siguiente acción permitida.
 

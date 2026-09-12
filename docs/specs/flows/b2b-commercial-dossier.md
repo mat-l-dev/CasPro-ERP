@@ -1,6 +1,6 @@
 # Incremento B2B — compromiso y expediente comercial
 
-Owner: Sales; Inventory, Treasury y Documents mantienen sus hechos. **Propuesta del amendment semántico post-freeze, pendiente de revisión independiente.** Baseline y alcance: [expediente](../../evidence/b2b-financing-amendment.md). Sin implementación ni WO. Extiende Sales, no crea un segundo circuito monetario o de stock.
+Owner: Sales; Inventory, Treasury y Documents mantienen sus hechos. **Amendment semántico post-freeze aceptado por revisión independiente según [review](../../review.md).** Baseline y alcance: [expediente](../../evidence/b2b-financing-amendment.md). Sin implementación ni WO. Extiende Sales, no crea un segundo circuito monetario o de stock.
 
 ## E. Alcance y secuencia
 

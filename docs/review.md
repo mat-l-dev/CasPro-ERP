@@ -9,9 +9,9 @@ Fecha de corte: 2026-09-11. **Única fuente del estado global vigente.**
 **POST-FREEZE DOCUMENTATION INFORMATION ARCHITECTURE: ACCEPTED.**
 **AGENT SYSTEM AND SKILLS: ACCEPTED.**
 
-**POST-FREEZE SEMANTIC AMENDMENT: B2B + FINANCING OPERATIONS — READY FOR INDEPENDENT REVIEW.**
+**POST-FREEZE SEMANTIC AMENDMENT: B2B + FINANCING OPERATIONS — ACCEPTED.**
 
-El [expediente del autor](evidence/b2b-financing-amendment.md) propone un delta explícito sobre main `be5a1c6c3dc4102155c255785ee74964afbcfc78`, tree `64ce46f29d4c0109e5e81d03ebbbc293ea76fec1`: incremento B2B posterior M04, hechos/estados de financiación M06, entrega documental externa y Resend opcional, WhatsApp diferido. Los 37 casos tienen evaluación documental del autor; no se ha realizado aceptación independiente ni validación de software. **Amendment no aceptado; IMPLEMENTATION permanece NOT AUTHORIZED.** Los estados históricos aceptados anteriores no cambian.
+Resultado de revisión independiente comunicado por el propietario para [PR #5](https://github.com/mat-l-dev/CasPro-ERP/pull/5): **PASS — SCOPED SEMANTIC AMENDMENT ACCEPTED.** Candidato aceptado: `85d7b410dea75958f2cb701d10110248bd7b9948`, tree `585d6a3ddf374e1e21bda5263df2630a98fc5a22`. Sin bloqueador de diseño ni corrección semántica requerida. Se aceptan B2B/OC/prepago, financiación y pagos por tercero sin caja ficticia, reembolso separado de principal, estado mensual reproducible, Resend opcional/C40 y WhatsApp diferido D03/M10; crédito/contraentrega permanecen D03. La conclusión sobre «liquidación» se acepta únicamente con su limitación documentada de alcance no exhaustivo. El [expediente del autor](evidence/b2b-financing-amendment.md) conserva su evaluación histórica, sin convertirla en autoaceptación. Validaciones profesionales pendientes bajo gates existentes; **IMPLEMENTATION permanece NOT AUTHORIZED.** Los estados históricos aceptados anteriores no cambian.
 
 El freeze documental no significa producción preparada ni aprobación de políticas o datos reales. La enmienda **POST-FREEZE NON-SEMANTIC DOCUMENTATION IA AMENDMENT** fue aceptada mediante revisión independiente; el [informe IA](evidence/documentation-ia.md) conserva el expediente histórico del autor.
 
@@ -39,7 +39,7 @@ Resultado independiente comunicado por el propietario: **PASS — AGENT SYSTEM A
 
 Siguiente fase: regeneración de Work Orders acotadas → autorización explícita del propietario → implementación. Aceptar el sistema de agentes no autoriza implementación. [ADR-012](decisions/adr-012-global-documentation-freeze.md) conserva el contrato del freeze. Este cierre no regenera WOs ni implementa código.
 
-Para el delta B2B/financiación, el paso actual es revisión independiente del PR/candidato exacto → correcciones si corresponde → aceptación y merge solo autorizados por el propietario. Las WOs afectadas se regenerarán después de ese proceso y encargo explícito; no se preparan ni ejecutan en esta misión. Gates siguen **A0 / B16 / C13 / D6**, con alcance propuesto ampliado en gaps, ninguno cerrado.
+El propietario autoriza el cierre mínimo de aceptación y merge de PR #5 mediante merge commit. Siguiente acción después del merge: regenerar Work Orders acotadas en otra misión; no se preparan ni ejecutan aquí. Gates siguen **A0 / B16 / C13 / D6**, con el alcance del amendment aceptado en gaps, ninguno creado ni cerrado. La aceptación documental no acredita validación de software ni habilita implementación.
 
 ## Canonical links
 

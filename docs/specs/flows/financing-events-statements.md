@@ -1,6 +1,6 @@
 # M06 — hechos de financiación y estados periódicos
 
-Owner: Corporate para relación/instrumento/naturaleza; Treasury para dinero propio y liquidación; Procurement para obligación de proveedor; Accounting/Tax para interpretación; Documents para artefactos. **Delta semántico propuesto, pendiente de revisión independiente.** Complementa [M06](../milestones/treasury-corporate-deep.md), [hechos/locks](../cross-cutting/economic-facts.md) y [research](../../research/normative/b2b-financing-evidence.md). No valida el contrato gratuito rotativo ni crea código/WOs.
+Owner: Corporate para relación/instrumento/naturaleza; Treasury para dinero propio y liquidación; Procurement para obligación de proveedor; Accounting/Tax para interpretación; Documents para artefactos. **Delta semántico aceptado por revisión independiente según [review](../../review.md).** Complementa [M06](../milestones/treasury-corporate-deep.md), [hechos/locks](../cross-cutting/economic-facts.md) y [research](../../research/normative/b2b-financing-evidence.md). No valida el contrato gratuito rotativo ni crea código/WOs.
 
 ## L. Relación, instrumento y eventos individuales
 
