@@ -4,9 +4,11 @@ Fecha de corte: 2026-09-12. **Única fuente del estado global vigente.**
 
 ## Current status
 
+PR #8: re-revisión independiente comunicada por el propietario sobre `45c7ab1af8a998a6a42b2202b08e0efb7708b2c0`, tree `af41a103e4c1be864deed388a3386c0ca99d88b6`: **REQUEST CHANGES — ONE SMALL SEMANTIC OWNERSHIP CLOSURE REQUIRED.** Corrección actual exclusivamente del [ownership de privacidad](architecture/boundaries.md#propiedad-de-hechos-de-privacidad) y de la conjunción exacta privacy.context.prepare; F03–F07 e investigación normativa no se reabren. Mandato vigente: un commit/push en la misma rama/PR #8 abierto, sin merge. Cierre candidato pendiente de revisión independiente; A0/B16/C13/D6 se conserva solo como evaluación documental del autor con los cinco dueños reconciliados, no aceptación. IMPLEMENTATION permanece NOT AUTHORIZED.
+
 **GRAND AUDIT REMEDIATION F01–F07: PENDING INDEPENDENT RE-REVIEW.** La auditoría sobre main post-PR7 pidió cambios (F01/F02 P1, F03/F04/F05 P2, F06/F07 P3; ningún P0). El candidato de [remediación](evidence/grand-audit-remediation.md) corrige exclusivamente ese alcance. Los PASS siguientes son aceptaciones históricas de sus candidatos, no aceptación independiente de esta remediación.
 
-PR #7 está MERGED: main de partida verificado `114275e7567ea2ace203e76e18426554ecc42a7e`, tree `c69d08ffb9d0cf50497d53c3894692f29979d993`. Mandato actual: corrección Markdown/research F01–F07, commits/push y un nuevo PR abierto contra main; revisión en sesión independiente. No merge, código, tests/builds/Docker, datos reales, proveedores ni regeneración/ejecución de WOs. Implementación sigue NOT AUTHORIZED.
+PR #7 está MERGED: main de partida verificado `114275e7567ea2ace203e76e18426554ecc42a7e`, tree `c69d08ffb9d0cf50497d53c3894692f29979d993`. Mandato de la remediación anterior: corrección Markdown/research F01–F07, commits/push y un nuevo PR abierto contra main; revisión en sesión independiente. No merge, código, tests/builds/Docker, datos reales, proveedores ni regeneración/ejecución de WOs. Implementación sigue NOT AUTHORIZED.
 
 **GLOBAL DOCUMENTATION FREEZE: ACCEPTED.**
 **IMPLEMENTATION: NOT AUTHORIZED.**
