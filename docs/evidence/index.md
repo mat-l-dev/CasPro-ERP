@@ -1,5 +1,7 @@
 # Evidencia de auditoría y revisión
 
+[Gobierno, roles, configuración y políticas — informe A–AF](governance-roles-configuration-policies.md): baseline exacto, delta, matriz de escalabilidad y casos documentales del autor. Propuesta para revisión independiente; sin ejecución, aceptación propia, políticas reales ni merge.
+
 AUDIT / REVIEW EVIDENCE. Cada documento conserva el candidato, corte y límites que identifica; su reutilización se rige por [calidad](../quality/strategy.md). La evidencia no sustituye contratos, no demuestra ejecución ausente ni actualiza por sí sola el [estado global](../review.md).
 
 | Evidencia | Función y consumidor | Corte / límite |

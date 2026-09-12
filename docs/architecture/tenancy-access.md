@@ -4,6 +4,8 @@ La autorización explícita es un principio de diseño; el mecanismo RLS es PROV
 
 ## Qué garantiza cada capa
 
+Enmienda de gobierno propuesta: [catálogo de 21 roles, composición por capability, SoD y delegación](roles-delegation.md) concreta este contrato; [configuración](configuration-governance.md) separa mandato administrativo de aprobación empresarial. Access conserva grants/mandatos; ninguna pantalla, is_staff o rol técnico concede autoridad económica. RA1–4 y CG1–5 amplían la especificación, con validación ejecutable pendiente y fase en [review](../review.md).
+
 | Capa | Garantía buscada | Límite explícito |
 |---|---|---|
 | Django authentication | Identidad, sesión y recuperación | Autenticado no significa autorizado para una entidad |

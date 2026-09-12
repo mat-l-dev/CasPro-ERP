@@ -1,5 +1,7 @@
 # Deep specs y readiness documental
 
+Enmienda de gobierno posterior: [roles RA1–4](../architecture/roles-delegation.md), [configuración CG1–5](../architecture/configuration-governance.md), [políticas por hito](../product/company-policy-register.md#readiness-de-políticas) y [manual contable](../accounting/tilmux-policy-manual.md). [Paquete A–AF y casos documentales](../evidence/governance-roles-configuration-policies.md) para revisión independiente; crédito B2B es entrega obligatoria tras B2B+Treasury con activación controlada. No modifica la evidencia histórica de readiness ni cierra validación ejecutable.
+
 Propietario: Architecture con dueños de dominio. Este archivo conserva la matriz de readiness con la que M01–M09 se presentaron a revisión; la aceptación independiente posterior del freeze se registra únicamente en [review](../review.md), y [gaps](../roadmap/decisions-gaps.md) conserva los pendientes. Las etiquetas READY_FOR_FREEZE_REVIEW siguientes describen el candidato revisado, no una aceptación todavía pendiente ni evidencia de software, políticas reales aprobadas o permiso de implementación.
 
 ## Navegar por función
@@ -50,7 +52,7 @@ Las nueve filas tienen entradas/salidas, propietarios, estados/comandos, guardas
 
 ## Handoff posterior
 
-El freeze y la revisión independiente de arquitectura de información ya están aceptados conforme a [review](../review.md). El sistema de agentes y skills está aceptado según review. La secuencia vigente es PR #6 aceptado → merge autorizado → regeneración de WOs acotadas en una misión separada → autorización explícita del propietario → implementación. Las [seis WOs SP2](../history/work-orders-sp2.md) son insumos históricos NEEDS REGENERATION AFTER FREEZE: incorporar hechos tempranos, pool/revisiones, CM0 extendido, CPE, UX y gates locales antes de encargarlas.
+El freeze, arquitectura de información y sistema de agentes/skills están aceptados según [review](../review.md). PR #6 está integrado; la enmienda de gobierno actual requiere revisión independiente. Merge, regeneración de WOs e implementación necesitan sus posteriores autorizaciones conforme review. Las [seis WOs SP2](../history/work-orders-sp2.md) son insumos históricos NEEDS REGENERATION AFTER FREEZE: incorporar hechos tempranos, pool/revisiones, CM0 extendido, CPE, UX y gates locales antes de encargarlas; esta misión no las regenera.
 
 Contexto futuro: AGENTS → review → tarjeta de hito → spec y dependencias concretas → gates/perfil de evidencia. Sol orquesta; implementador y reviewer trabajan separados; Astra revisa arquitectura, dinero/stock, Accounting/Tax/Legal, seguridad o contraejemplo transversal. Ninguna etiqueta de readiness ni skill autoriza funciones, migraciones, pruebas o despliegues.
 

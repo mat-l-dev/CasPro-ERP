@@ -1,5 +1,7 @@
 # Frontend, sistema visual y UX
 
+Enmienda de gobierno: el [Centro de Configuración y Administración](configuration-governance.md#centro-de-configuración-y-administración) concreta navegación por dueño, Actual/Propuesta/Impacto/Aprobación/Historial/Evidencia, permisos/alcances y estados de activación. Descubrir una política no concede modificarla; confirmación crítica muestra revisión, vigencia, efectos y excepción de autoaprobación. Tema/locale siguen preferencias personales. Es contrato conceptual bajo revisión, no nueva pantalla implementada ni cambio de stack.
+
 Selección de [ADR-004](../decisions/adr-004-ui.md): Django SSR + Tailwind CSS 4 compilado + HTMX 2 donde reduzca trabajo + JavaScript nativo pequeño. Alpine no es dependencia inicial. Ningún componente ni configuración de build se implementa en esta fase.
 
 ## Alternativas y límites

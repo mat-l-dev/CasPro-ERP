@@ -35,6 +35,8 @@ Cada secuencia es un punto de entrada. Cargar las dependencias concretas que cit
 
 ## Contratos por tema
 
+Enmienda de gobierno propuesta: [roles/alcances/delegación/SoD](architecture/roles-delegation.md) y [configuración/impacto/UX](architecture/configuration-governance.md) → [TILMUX Policy Register/readiness](product/company-policy-register.md) → [manual contable futuro](accounting/tilmux-policy-manual.md). [Expediente A–AF](evidence/governance-roles-configuration-policies.md) demuestra cobertura documental y [benchmark oficial](research/governance-authorization-benchmark.md) conserva fuentes/límites. Aceptación y autorización solo en review.
+
 | Tema | Fuentes |
 |---|---|
 | Arquitectura | [Ownership/boundaries](architecture/boundaries.md), [tecnología](architecture/technology.md), [datos](architecture/data.md), [transacciones](architecture/transactions.md), [integraciones](architecture/integrations.md), [acceso](architecture/tenancy-access.md) |

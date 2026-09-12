@@ -7,7 +7,7 @@ Propietario: Product/Architecture. [ADR-012](../decisions/adr-012-global-documen
 | ID | Product outcome | Documentation gate | Delivery increment | AI execution |
 |---|---|---|---|---|
 | M00 | Visión y contratos completos antes de código | Auditoría/research, deep specs M01–M09 y candidato exacto para revisión global | Solo documentación | Astra analiza/refuta; aceptación independiente por riesgo; sin runtime IA |
-| M01 | Plataforma aislada y recuperable | Runtime/access/audit/operations specs congeladas | Bootstrap + entidad/acceso/audit + restore base | Sol 5.6 orquesta WOs; Astra checkpoint de seguridad |
+| M01 | Plataforma aislada y recuperable | Runtime/access/audit/operations más enmienda de gobierno propuesta | Bootstrap + entidad/roles/delegación/SoD/configuración/audit + restore base | Sol 5.6 orquesta WOs autorizadas; Astra checkpoint de seguridad |
 | M02 | Maestros confiables | Parties/Catalog/import specs | Party, bienes/SKU/precios, import preview | IA no necesaria |
 | M03 | Stock/dinero observables y pedido externo durable | Inventory/Treasury/Jumpseller specs | Apertura, movimientos/cobros base, inbox/propuesta | IA no confirma; evaluación futura recopila casos |
 | M04 | Primera venta B2C segura | SP2 actualizado + CPE/delivery/UX policy | Pedido, cobro íntegro y reserva habilitan despacho; CPE externo se obtiene en su oportunidad legal, incluso antes del despacho; entrega documental por aprobación | Solo explicación de excepción, si existe piloto separado |
@@ -16,7 +16,7 @@ Propietario: Product/Architecture. [ADR-012](../decisions/adr-012-global-documen
 | M07 | Ledger y cierre | Accounting policies/R2R/PCGE specs; C01–03 antes de activar políticas/libro reales | Posting, GL, conciliaciones, períodos, ajustes/cierre | Sugerencia contable opcional sin escritura |
 | M08 | EEFF NPIF completos | Reporting/notas/transición spec + golden cases | Cuatro estados, notas, comparativos y drill-down | Explicación de cifras con fuente, revisión humana |
 | M09 | Operación tributaria preparada | Contratos tipados RER/IGV/SIRE/SPOT; perfiles reales C07–09 | Registros/conciliaciones/calendario, sin presentación automática | Clasificación candidata de excepciones; sin determinación/presentación |
-| M10 | Madurez y expansión por trigger | Gate de necesidad para cada capability | maker/checker, otros canales/marcos solo si activados | proveedor se renueva por evaluación, no permanencia automática |
+| M10 | Madurez y expansión por trigger | Gate de necesidad para cada capability | otros canales/marcos por trigger; roles/SoD base pertenecen a M01 y cada flujo, crédito confirmado tiene incremento propio | proveedor se renueva por evaluación, no permanencia automática |
 
 Ruta crítica: **M00 → M01 → M02 → M03 → M04 → M05 → M07 → M08**. M06 puede avanzar tras M04 y alimenta M07; la parte Mutuo no bloquea ventas ni Accounting general si permanece inactiva. M09 investiga en paralelo, pero su salida operativa necesita hechos de M04/M05 y ledger de M07.
 
@@ -28,9 +28,17 @@ Ruta explícita de entrega: **repositorio documental (M00) → primer ERP ejecut
 
 El [amendment aceptado](../evidence/b2b-financing-amendment.md), conforme a [review](../review.md), conserva numeración y M04 B2C. Se elige **incremento B2B posterior a M04**, con [spec Sales propia](../specs/flows/b2b-commercial-dossier.md), porque requiere misma plataforma/maestros, dinero, reservas y CPE pero añade entrada comercial/OC/revisiones. Ampliar M04 mezclaría aceptación de primera venta por canal con nuevo compromiso B2B; diferirlo íntegro a M10 dejaría sin producto una necesidad confirmada.
 
-Dependencias: M01–M04 para B2B prepago con existencias; tramo Treasury M06 para conciliación bancaria completa. Puede entregarse antes de M05 sin compras ni crédito; abastecimiento futuro, crédito y contraentrega requieren D03. La fecha/orden relativo con M05 se decide al autorizar la entrega; no renumerar M05–M10. Evidencia de salida futura: OC opcional revisada→compromiso→parciales/CPE→cobros/aplicaciones→conciliación y dossier explicable, con casos1–15. No se emite WO ahora.
+Dependencias: M01–M04 para B2B prepago con existencias; tramo Treasury M06 para conciliación bancaria completa. B2B inicial puede entregarse antes de M05 sin compras ni crédito. Crédito B2B tiene incremento obligatorio descrito abajo y activación D03; abastecimiento sin reserva y contraentrega conservan triggers propios. La fecha/orden relativo con M05 se decide al autorizar la entrega; no renumerar M05–M10. Evidencia de salida futura: OC opcional revisada→compromiso→parciales/CPE→cobros/aplicaciones→conciliación y dossier explicable, con casos1–15. No se emite WO ahora.
 
 M06 añade [eventos y estados de financiación](../specs/flows/financing-events-statements.md); pago por cuenta requiere obligación M05 para reconocer su extinción completa, aunque su evidencia pueda capturarse antes. M07–M08 consumen esos hechos sin repetir caja/gasto y concilian sub-saldos. C06 precede a modalidad/financiación real. Registro de entrega externa y Resend opcional pertenecen a Documents M04; WhatsApp Business queda D03/M10 con research actualizado al trigger. M01/M02 conservan contrato.
+
+### Delta propuesto — gobierno y crédito obligatorio
+
+La enmienda de [roles/configuración/políticas](../evidence/governance-roles-configuration-policies.md) está pendiente de revisión independiente según review. M01 incorpora estructuras de roles/mandatos/SoD/último-admin y configuración versionada; los valores reales se resuelven por [readiness](../product/company-policy-register.md#readiness-de-políticas), no todos antes del primer código. Separación maker/checker existe desde cada operación sensible, con excepción honesta de arranque; no se aplaza la estructura a M10.
+
+**B2B CREDIT: CONFIRMED IMPLEMENTATION REQUIREMENT — REQUIRED TO IMPLEMENT, CONFIGURATION-CONTROLLED ACTIVATION.** Incremento acotado después de B2B prepago y Treasury base/aplicaciones/exposición (tramo M06), sin esperar M10. Conserva [CreditPolicyRevision y comandos](../specs/flows/professional-sales.md#crédito-diseñado-activación-posterior); entrega límites/exposición/aging/holds/override/cobranzas y pruebas B02/B03/B06 pertinentes aun si TILMUX inicia DISABLED. Cierre de entrega del incremento requiere capacidad construida y validada; operación real requiere POL-08 aprobada, permisos, D03 y C05/C07/C08/C13 aplicables. D03 ya no pregunta si construir crédito. OFF global bloquea nueva exposición; subset habilitado no hereda permiso económico. COD no está confirmado obligatorio y conserva trigger separado. No implica nueva venta sin reserva ni nueva política hoy activa.
+
+M03 requiere política de costo/unidades y dinero real cuando aplique; M04 contratos/impuestos; M05 compras/importación; M06 instrumentos/financiación; M07 manual/cierre; M08 presentación; M09 salidas tributarias. C07/C08 se resuelven antes del hecho fiscal dependiente, aunque UI tributaria llegue después. No cambian IDs/conteos de gates ni se emiten WOs.
 
 ### M00 — Architecture and roadmap freeze candidate
 
@@ -225,7 +233,7 @@ No skill is created in this program. After independent acceptance of the **GLOBA
 
 ## Secuencia profesional propuesta
 
-Secuencia vigente según review: PR #6 aceptado→merge autorizado→regeneración de WOs acotadas en una misión separada→autorización explícita del propietario→implementación. No renumera M01–M10 ni amplía el primer circuito con todas las entregas simultáneamente. [Specs](../specs/index.md#amendment-profesional-propuesto) contienen diseño ahora; siguiente tabla define dependencia de entrega, no WOs.
+La fase vigente se consulta en [review](../review.md): PR #6 integrado y enmienda de gobierno propuesta para revisión independiente. WOs e implementación requieren sus misiones/autorizaciones posteriores. No renumera M01–M10 ni amplía el primer circuito con todas las entregas simultáneamente. [Specs](../specs/index.md#amendment-profesional-propuesto) conservan contratos; siguiente tabla define dependencia de entrega, no WOs.
 
 | Hito/incremento | Resultado y dependencias / aceptación futura |
 |---|---|
@@ -234,7 +242,8 @@ Secuencia vigente según review: PR #6 aceptado→merge autorizado→regeneraci�
 | M04 y M04+ | M04 B2C prepago preservado. Incremento B2B/cotización/contrato/instalación/logística/reclamos usa M02–04; compra de instalación exige tramo M05; sitio/minería se entrega al pipeline concreto con diseño ya completo |
 | M05/M05+ | Necesidad/RFQ/award/PO/match/pago y expediente importación cercano; M03 recibe/valora, Treasury base aplica. C07/C08 antes de la operación real, no esperar UI M09. Costos tardíos y parciales demuestran reconciliación |
 | M06 | Conciliación, instrumentos/caja chica/renta/constancia individual; exige fuentes M03–05 según caso. Mapping GL se especifica aquí y se implementa con Accounting M07; no seleccionar GL manual antes del libro |
-| Crédito/COD | Diseño ahora; entrega posterior a B2B y Treasury/AP-AR/exposición completos, D03 con autorización/política y pruebas. No depende de ser ORG ni activa compromiso sin reserva |
+| Crédito B2B requerido | Implementación obligatoria en incremento posterior a B2B y Treasury/aplicaciones/exposición; inicialmente DISABLED, activación D03 con POL-08/permisos/pruebas. No depende de ser ORG ni activa compromiso sin reserva |
+| COD | Diseño preservado, entrega/activación por trigger independiente D03; no mandato confirmado de obligatoriedad |
 | M07–M08 | Consumidores nuevos, perfiles/posting/recurrencias acotadas, cierre/auxiliares y cuatro EEFF/notas; hechos M03–06 preservados desde origen |
 | M09 | Datos de libros/FX/ND/importaciones desde origen, workspace/exportaciones por obligación. C08 y B08 antes de cada salida; sistemas SUNAT externos |
 | M10/D | WhatsApp/otros canales, servicio independiente, RMA completo, consignación/producción y departamentos5–6 por hechos/nueva necesidad; sin módulos anticipados |

@@ -2,6 +2,8 @@
 
 Este registro explica evidencia nueva posterior a Gate 1 sin reabrirlo por rutina. Las reglas vigentes viven en sus documentos propietarios.
 
+Enmienda de gobierno propuesta ([expediente](../evidence/governance-roles-configuration-policies.md)): B01/B02/B03/B09/B10/B13 deberán cubrir roles/delegación/último-admin, composición por capability, configuración/impacto, concurrencia y restore de revisiones. [POL-01–26/readiness](../product/company-policy-register.md) y [manual AC-01–23](../accounting/tilmux-policy-manual.md) concretan decisiones C01/C03/C04/C05/C10/C13 y profesionales pertinentes sin cerrar ni crear gates. D03 distingue crédito obligatorio por mandato actual de activación pendiente; COD conserva trigger propio. **A0 / B16 / C13 / D6** sin cambio; implementación no autorizada.
+
 ## Cambios con evidencia
 
 | OLD | NEW | WHY / EVIDENCE | IMPACT |
@@ -95,7 +97,7 @@ Cada WO concreta el fixture/candidato/configuración y evidencia de los gates pe
 |---|---|---|
 | D01 AI/Architecture | Proveedor, recursos VPS/LLM y piloto opcional | Tarea repetitiva con beneficio esperado y autorización; fijar corpus/umbral B16/coste. Flujo manual completo permanece válido |
 | D02 Accounting/Tax | Aplicación de otros marcos/ediciones, lectura íntegra por trigger de matriz62, NIIF18/19/20 y revisiones futuras | Cambio acreditado de marco/elegibilidad, fecha de vigencia o transacción; revisar texto oficial y caso antes de activar. Un hecho aplicable al primer libro pasa a C01/C08 ahora, no se oculta en M10 |
-| D03 Product/Architecture | Nuevos canales/entidades/capabilities M10, escalado y distribución; WhatsApp Business, crédito B2B/contraentrega y compromiso sin reserva | Caso/necesidad y autorización concretos; research actualizado por canal/efecto; crédito/COD tienen diseño profesional propuesto ahora, pendiente de aceptación y política comercial real versionada, activación expresa y WO autorizada. Compromiso sin reserva y demás canales conservan necesidad de spec/amendment antes de ampliarlos. Sin trigger no activar WhatsApp ni despacho sin cobertura íntegra. B2B prepago está aceptado como incremento explícito posterior M04, no se mantiene diferido genéricamente |
+| D03 Product/Architecture | Nuevos canales/entidades/capabilities M10, escalado y distribución; WhatsApp, COD y compromiso sin reserva; activación del crédito B2B confirmado | Crédito B2B REQUIRED TO IMPLEMENT en incremento tras B2B+Treasury: necesidad confirmada por propietario, sin opcionalidad de construcción; inicialmente DISABLED. Activación requiere POL-08 real versionada/aprobada, permisos, pruebas, condiciones profesionales aplicables y autorización. COD tiene diseño aceptado, pero obligatoriedad no confirmada: conserva trigger propio. Compromiso sin reserva y demás canales requieren spec/amendment antes de ampliar; research vigente por efecto. B2B prepago mantiene incremento posterior M04. Ningún código/WO se autoriza aquí |
 | D04 UX/Architecture | Grid avanzada/isla de otro framework, branding y visuales opcionales | Tarea demuestra insuficiencia del patrón inicial; comparar CSP/licencia/a11y/beneficio; no cambiar dominio. Valores de componentes iniciales se validan en B09 |
 | D05 Sales/Inventory/Accounting | Analítica adicional de rentabilidad, costes indirectos o nuevos KPIs | Encargo explícito y definición de bases/repartos/linaje antes de ampliarla; no difiere margen básico SP2 ni G1 ya especificados |
 | D06 Product/dueño de caso | Automatización de SLA/escalamiento o workflow genérico de Inbox | Necesidad operativa repetida y política aprobada; nueva spec. Inbox inicial solo proyecta dueño/causa/acción y seguimiento |
@@ -113,7 +115,7 @@ No nuevos IDs ni cierres: **A0 / B16 / C13 / D6** se conservan. La ampliación s
 | B12 | C40 compite con envío, no inventa callback ni permite original duplicado; cambio proveedor no reinicia historial; antes de aceptar transporte/recuperación |
 | C04/C05/C06/C08 | Para pago por cuenta/reembolso: obligación/evidencia/acuerdo/facultades, naturaleza y sustento fiscal; C06 valida también alcance probatorio/firma del estado y tratamiento de pagos directos. Antes del efecto real pertinente, no del registro de hechos ocurridos como pendientes |
 | C07/C08/C10/C11/C13 | CPE/traslado/impuestos, conservación, transporte real y actores/maestros; B2B comercial puro no adquiere un gate profesional universal |
-| D03 | WhatsApp futuro: necesidad y research de capacidades/políticas vigente al activar. Crédito/contraentrega: demanda real y política/spec aprobadas; sin resolver bloquea esa modalidad, no B2B prepago |
+| D03 | WhatsApp/COD conservan trigger propio. Crédito B2B: construcción requerida; política/permisos/pruebas pendientes bloquean activación de esa modalidad, no su planificación ni B2B prepago |
 
 Todo efecto de implementación sigue además fase habilitada y WO autorizada. Esta modificación no aprueba valores, contratos, cuentas, destinatarios ni reglas fiscales reales.
 
@@ -190,6 +192,6 @@ Se conservan **A0 / B16 / C13 / D6**, sin cerrar ni añadir IDs. Elección de f�
 | C06 | Poderes/contratos/firma suficiente, tenencia/licencias aplicables, requisitos laborales/HSE por actividad y plazos/canal de reclamos. Antes del acto real correspondiente; no pide dictamen por toda cotización ordinaria |
 | C07/C08 | SKU/origen/restricción/DAM/levante, CPE/oportunidad, marco/régimen/libro/layout/SIRE/FX/ND/CDI/CRF/MLI/beneficios y crédito. Fuentes contradictorias retienen efecto fiscal afectado hasta resolución; no falso dato ni tasa0 |
 | C10/C11 | Original/derivados/firma/copia objetos/custodia/retención y puertos de firma/intake/FX; antes de datos o envío real, no provider elegido por herramienta |
-| D03 | Crédito/COD diseñados, activación posterior por demanda/política/aceptación; compromiso sin reserva, WhatsApp, RMA/servicio independiente y consignación/producción nuevos siguen trigger. Imports/RFQ/multialmacén confirmados salen de incógnita funcional, sin nuevo gate |
+| D03 | Crédito B2B diseñado y confirmado obligatorio; activación posterior por política/permisos/pruebas. COD, compromiso sin reserva, WhatsApp, RMA/servicio independiente y consignación/producción nuevos conservan trigger propio. Imports/RFQ/multialmacén confirmados conservan contrato, sin nuevo gate |
 
 La matriz no acredita políticas reales ni ensayos. Aceptación documental y autorización de ejecutar siguen review/WO; operación real exige además gates pertinentes.
