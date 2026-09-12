@@ -59,4 +59,4 @@ Roles: Astra arquitectura/costeo/checkpoint; Sol orquestación; implementador/re
 
 ## Incremento profesional M03 propuesto
 
-**Propuesta pendiente de revisión independiente**, conforme a review. [Catalog/traslados](../flows/catalog-sites-warehouses.md) completa multialmacén y kits; [costo elegido A](../../research/normative/operational-completeness.md) conserva pool/promedio/replay y distingue FIFO físico. [Importaciones](../flows/sourcing-imports.md) consumen estas primitivas en M05+. WT hereda corte de conteo y K/J; no se omiten por fila resumida.
+**Amendment aceptado por revisión independiente**, conforme a review. [Catalog/traslados](../flows/catalog-sites-warehouses.md) completa multialmacén y kits; [costo elegido A](../../research/normative/operational-completeness.md) conserva pool/promedio/replay y distingue FIFO físico. [Importaciones](../flows/sourcing-imports.md) consumen estas primitivas en M05+. WT hereda corte de conteo y K/J; no se omiten por fila resumida.

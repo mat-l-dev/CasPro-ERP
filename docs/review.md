@@ -1,6 +1,6 @@
 # Revisión y condición de avance
 
-Fecha de corte: 2026-09-11. **Única fuente del estado global vigente.**
+Fecha de corte: 2026-09-12. **Única fuente del estado global vigente.**
 
 ## Current status
 
@@ -37,11 +37,11 @@ Resultado independiente comunicado por el propietario: **PASS — INFORMATION AR
 
 Resultado independiente comunicado por el propietario: **PASS — AGENT SYSTEM ACCEPTED**. Candidato corregido aceptado: `e1582bf4bd67b7b5097c7f8bc222ec1c38cc9572`, tree `93ac3dbfa46b93368727a8fea9f0e1354caa89be`. El hallazgo de acoplamiento a la fase temporal quedó resuelto; no se solicitó otra corrección antes del merge. El [expediente de agentes](evidence/agent-system-research.md) conserva la evidencia histórica del autor.
 
-Fase vigente: [PR #6](https://github.com/mat-l-dev/CasPro-ERP/pull/6), candidato exacto `feb5f80e410ae8c9d43d9afa343856054a28b1d8`, tree `946460d6cc810bf9b34e143b9d9f5680a817ec10` → revisión independiente recibida → corrección requerida → re-revisión independiente del nuevo HEAD/tree publicado en PR #6 → aceptación/merge solo con autorización → regeneración de Work Orders acotadas en otra misión. Aceptar el sistema de agentes no autoriza implementación. [ADR-012](decisions/adr-012-global-documentation-freeze.md) conserva el contrato del freeze. Esta corrección no regenera WOs ni implementa código.
+Fase vigente: [PR #6](https://github.com/mat-l-dev/CasPro-ERP/pull/6) aceptado → merge autorizado mediante merge commit → regeneración de Work Orders acotadas en una misión SEPARADA → autorización explícita del propietario → implementación. [ADR-012](decisions/adr-012-global-documentation-freeze.md) conserva el contrato del freeze. Este cierre no regenera WOs ni autoriza implementación.
 
 El cierre de PR #5 fue completado: merge `c91c9b7e7421913bd208a62156966ecdc1be5ccd`, tree `e2d6dc45340e20119b557deb7743f1d7b32193d7`; rama integrada eliminada tras verificar alcance. Ese merge es baseline de la misión actual.
 
-**POST-FREEZE PROFESSIONAL OPERATIONAL COMPLETENESS AMENDMENT: REQUEST CHANGES — PENDING INDEPENDENT RE-REVIEW.** Resultado independiente comunicado por el propietario para el candidato indicado: **REQUEST CHANGES — MASTER CAPABILITY MAP INCOMPLETE.** Specs, investigación normativa, decisión de costeo, 60 casos y fronteras aceptados en principio; la enmienda no está aceptada. Corrección acotada: cobertura canónica de [capabilities](roadmap/capabilities.md), claridad del costeo y estado vigente. El [expediente del autor](evidence/professional-operational-completeness.md) se conserva intacto. Alcance autorizado: esta corrección documental, commit/push y actualización de PR #6 abierto; **NO MERGE, NO WOs, NO CODE**. Elección delegada: promedio uniforme y FIFO físico; políticas reales y gates profesionales siguen pendientes. Se conservan las cuatro aceptaciones históricas y **A0 / B16 / C13 / D6**. **IMPLEMENTATION: NOT AUTHORIZED.**
+**POST-FREEZE PROFESSIONAL OPERATIONAL COMPLETENESS AMENDMENT: ACCEPTED.** Re-revisión independiente comunicada por el propietario: **PASS — PROFESSIONAL OPERATIONAL COMPLETENESS AMENDMENT ACCEPTED.** Candidato corregido aceptado: `5ce51745fcace5f8744f4fd5a8ec19a05e628153`, tree `12132029190c5b7aad5cf816a45b7e477d13a3e7`. La revisión inicial de `feb5f80e410ae8c9d43d9afa343856054a28b1d8` (tree `946460d6cc810bf9b34e143b9d9f5680a817ec10`) solicitó cambios por MASTER CAPABILITY MAP INCOMPLETE; la corrección `5ce51745` resolvió la cobertura canónica y la re-revisión retornó PASS. No se encontró nuevo bloqueador de diseño ni se requiere otra corrección semántica. El [expediente del autor](evidence/professional-operational-completeness.md) conserva su evaluación histórica, sin autoaceptación. Promedio ponderado uniforme de medición/costo, pool/replay de promedio móvil y FIFO físico sin capas PEPS permanecen. Validaciones profesionales abiertas bajo gates existentes; se conservan las aceptaciones históricas y **A0 / B16 / C13 / D6**. **IMPLEMENTATION: NOT AUTHORIZED.**
 
 ## Canonical links
 

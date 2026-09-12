@@ -2,7 +2,7 @@
 
 Este mapa asigna propósito, dueño, dependencias, hito y trigger; no conserva otra readiness. La matriz vigente vive únicamente en [deep-spec-index](../specs/index.md), el estado global en [review](../review.md) y los pendientes en [gaps](decisions-gaps.md). El mapa no autoriza tablas, carpetas ni implementación.
 
-Las filas profesionales describen capacidades de la propuesta de PR #6, pendiente de re-revisión independiente; no añaden módulos ni gates. Dependencies incluye insumos por contratos/coordinadores, no nuevas llamadas entre dominios. Cada dueño conserva su hecho según [boundaries](../architecture/boundaries.md#ownership-del-amendment-profesional-propuesto).
+Las filas profesionales describen capacidades de PR #6, aceptado por re-revisión independiente según review; no añaden módulos ni gates. Dependencies incluye insumos por contratos/coordinadores, no nuevas llamadas entre dominios. Cada dueño conserva su hecho según [boundaries](../architecture/boundaries.md#ownership-del-amendment-profesional-propuesto).
 
 | Capability / purpose | Owner | Inputs → outputs | Dependencies | Value / risk / regulatory sensitivity | Phase / required spec / expansion trigger |
 |---|---|---|---|---|---|

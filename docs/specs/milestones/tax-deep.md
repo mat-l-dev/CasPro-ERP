@@ -64,4 +64,4 @@ Perfil futuro: DOMAIN y goldens fiscales versionados aprobados por profesional, 
 
 ## Incremento profesional M09 propuesto
 
-**Propuesta pendiente de revisión independiente**, conforme a review. [Workspace/libros/FX](../flows/tax-workspace-books.md), [matriz oficial](../../research/normative/tax-book-universe.md) y [ND Portugal](../../research/normative/jumpseller-portugal-service.md) concretan obligaciones presentes/futuras por régimen y datos de importación. Perfil real sigue C08; no salida oficial sin estructura efectiva validada ni presentación externa desde CasPro.
+**Amendment aceptado por revisión independiente**, conforme a review. [Workspace/libros/FX](../flows/tax-workspace-books.md), [matriz oficial](../../research/normative/tax-book-universe.md) y [ND Portugal](../../research/normative/jumpseller-portugal-service.md) concretan obligaciones presentes/futuras por régimen y datos de importación. Perfil real sigue C08; no salida oficial sin estructura efectiva validada ni presentación externa desde CasPro.

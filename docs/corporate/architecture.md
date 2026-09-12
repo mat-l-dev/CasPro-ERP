@@ -50,4 +50,4 @@ El cronograma de beneficiario final de RS 000168-2025 incluye cohortes por ingre
 
 ## Contratos y evidencia profesional
 
-**Propuesta pendiente de revisión independiente**, conforme a review. [Spec financiera](../specs/flows/financial-accounts-instruments.md) concreta constancias por disposición, tenencia/arrendamiento de sede y facultades de financiación; [Documents](../specs/flows/records-signatures-site-packs.md) posee firma/custodia. Contrato de venta pertenece a Sales según su [spec](../specs/flows/professional-sales.md); Corporate aporta facultades y soporte legal, no posee todos los contratos por compartir título.
+**Amendment aceptado por revisión independiente**, conforme a review. [Spec financiera](../specs/flows/financial-accounts-instruments.md) concreta constancias por disposición, tenencia/arrendamiento de sede y facultades de financiación; [Documents](../specs/flows/records-signatures-site-packs.md) posee firma/custodia. Contrato de venta pertenece a Sales según su [spec](../specs/flows/professional-sales.md); Corporate aporta facultades y soporte legal, no posee todos los contratos por compartir título.

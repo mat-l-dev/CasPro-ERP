@@ -63,4 +63,4 @@ DOMAIN conservación/asignaciones; PostgreSQL/CONCURRENCY para consumo único y 
 
 ## Incremento profesional M06 propuesto
 
-**Propuesta pendiente de revisión independiente**, conforme a review. [Cuentas/instrumentos/caja/renta](../flows/financial-accounts-instruments.md) y [crédito/COD](../flows/professional-sales.md) completan consumidores conocidos. Mapping lo posee Accounting, exposición Sales; coordinación hereda H27 antes de T/R. Firma/custodia usa [Documents](../flows/records-signatures-site-packs.md); no confirma movimiento por documento.
+**Amendment aceptado por revisión independiente**, conforme a review. [Cuentas/instrumentos/caja/renta](../flows/financial-accounts-instruments.md) y [crédito/COD](../flows/professional-sales.md) completan consumidores conocidos. Mapping lo posee Accounting, exposición Sales; coordinación hereda H27 antes de T/R. Firma/custodia usa [Documents](../flows/records-signatures-site-packs.md); no confirma movimiento por documento.

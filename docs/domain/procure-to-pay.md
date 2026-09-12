@@ -42,4 +42,4 @@ M05 concreta rutas de compra directa, conformidad, tolerancias propuestas, aprob
 
 ## Sourcing e importación profesional
 
-**Propuesta pendiente de revisión independiente**, conforme a review. [Spec M05+](../specs/flows/sourcing-imports.md) posee requisición/RFQ/oferta/comparación/award, compra directa con razón, proveedor y banco revisados, importación/DAM/levante y costos tardíos. [Renta acotada](../specs/flows/financial-accounts-instruments.md) usa obligación por contrato/período, no un recurring engine.
+**Amendment aceptado por revisión independiente**, conforme a review. [Spec M05+](../specs/flows/sourcing-imports.md) posee requisición/RFQ/oferta/comparación/award, compra directa con razón, proveedor y banco revisados, importación/DAM/levante y costos tardíos. [Renta acotada](../specs/flows/financial-accounts-instruments.md) usa obligación por contrato/período, no un recurring engine.

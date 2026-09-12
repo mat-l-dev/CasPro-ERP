@@ -95,4 +95,4 @@ Aceptación documental: casos 1–15 del [expediente adversarial](../../evidence
 
 ## Profundidad profesional propuesta
 
-**Propuesta pendiente de revisión independiente**, conforme a review. [Sales profesional](professional-sales.md) extiende cotización/contrato, instalación incluida y diseño de crédito/COD desactivado. No altera aceptación histórica de este paquete ni modalidad prepago inicial. [Site/reclamaciones](records-signatures-site-packs.md) pertenece a Sales y no convierte compra cliente en trámite universal.
+**Amendment aceptado por revisión independiente**, conforme a review. [Sales profesional](professional-sales.md) extiende cotización/contrato, instalación incluida y diseño de crédito/COD desactivado. No altera aceptación histórica de este paquete ni modalidad prepago inicial. [Site/reclamaciones](records-signatures-site-packs.md) pertenece a Sales y no convierte compra cliente en trámite universal.

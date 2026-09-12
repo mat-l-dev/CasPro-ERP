@@ -53,4 +53,4 @@ Handoff: Astra architect/checkpoint P2P/Tax; Sol orquesta; implementador y revie
 
 ## Incremento profesional M05 propuesto
 
-**Propuesta pendiente de revisión independiente**, conforme a review. [Sourcing/importaciones](../flows/sourcing-imports.md) añade requisición/RFQ/award, banco proveedor, dossier/levante/costo y correcciones; PO/recepción/conformidad/match/payability de esta spec siguen vigentes. [Renta](../flows/financial-accounts-instruments.md) publica obligación por contrato/período; no generaliza recurrencias.
+**Amendment aceptado por revisión independiente**, conforme a review. [Sourcing/importaciones](../flows/sourcing-imports.md) añade requisición/RFQ/award, banco proveedor, dossier/levante/costo y correcciones; PO/recepción/conformidad/match/payability de esta spec siguen vigentes. [Renta](../flows/financial-accounts-instruments.md) publica obligación por contrato/período; no generaliza recurrencias.

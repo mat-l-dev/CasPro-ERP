@@ -74,4 +74,4 @@ Perfiles: UNIT para cálculo puro; DOMAIN/Hypothesis para conservación y redond
 
 ## Incremento profesional M07–M08 propuesto
 
-**Propuesta pendiente de revisión independiente**, conforme a review. [Spec financiera](../flows/financial-accounts-instruments.md) concreta mapping y componentes bancarios/caja/renta; [importación](../flows/sourcing-imports.md) costo/tributo/FX; [Sales](../flows/professional-sales.md) cumplimiento físico/técnico. Consumo idempotente y conciliación M07 conservados; [Tax/libros](../flows/tax-workspace-books.md) exige linaje desde cada auxiliar a ledger y salida, sin saldo editable paralelo.
+**Amendment aceptado por revisión independiente**, conforme a review. [Spec financiera](../flows/financial-accounts-instruments.md) concreta mapping y componentes bancarios/caja/renta; [importación](../flows/sourcing-imports.md) costo/tributo/FX; [Sales](../flows/professional-sales.md) cumplimiento físico/técnico. Consumo idempotente y conciliación M07 conservados; [Tax/libros](../flows/tax-workspace-books.md) exige linaje desde cada auxiliar a ledger y salida, sin saldo editable paralelo.

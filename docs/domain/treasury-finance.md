@@ -43,4 +43,4 @@ La spec M06 define importación, esquema versionado, dedupe, aplicaciones, líne
 
 ## Instrumentos y conciliación profesional
 
-**Propuesta pendiente de revisión independiente**, conforme a review. [Spec financiera](../specs/flows/financial-accounts-instruments.md) concreta cuentas→GL, préstamos/líneas/tarjetas, caja chica, constancia individual y renta. [Sales crédito/COD](../specs/flows/professional-sales.md) exige coordinador y H27 cuando una aplicación altera exposición; no añade llamadas privadas Treasury→Sales.
+**Amendment aceptado por revisión independiente**, conforme a review. [Spec financiera](../specs/flows/financial-accounts-instruments.md) concreta cuentas→GL, préstamos/líneas/tarjetas, caja chica, constancia individual y renta. [Sales crédito/COD](../specs/flows/professional-sales.md) exige coordinador y H27 cuando una aplicación altera exposición; no añade llamadas privadas Treasury→Sales.

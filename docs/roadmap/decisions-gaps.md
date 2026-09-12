@@ -178,7 +178,7 @@ Una omisión o contradicción semántica descubierta por reviewer se registra co
 
 ## Impacto profesional propuesto — validación y activación
 
-Se conservan **A0 / B16 / C13 / D6**, sin cerrar ni añadir IDs. Elección de fórmula A resuelta por delegación del propietario, no bloqueador A pendiente. La propuesta del autor está pendiente de revisión independiente; cualquier contraejemplo semántico real abre A, no se oculta como parámetro C.
+Se conservan **A0 / B16 / C13 / D6**, sin cerrar ni añadir IDs. Elección de fórmula A resuelta por delegación del propietario, no bloqueador A pendiente. El amendment está aceptado por re-revisión independiente según review; cualquier contraejemplo semántico real abre A, no se oculta como parámetro C.
 
 | Gates | Hipótesis/activación extendida y respuesta al incumplimiento |
 |---|---|

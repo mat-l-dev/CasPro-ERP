@@ -16,4 +16,4 @@ Los informes [Astra anterior](../history/astra-master-audit.md) y [cierre del fr
 
 ## Candidato profesional
 
-[Professional operational completeness](professional-operational-completeness.md): matriz previa, informe A–AR y casos documentales del autor. Pendiente de revisión independiente; sin código/WOs/merge ni evidencia ejecutable.
+[Professional operational completeness](professional-operational-completeness.md): matriz previa, informe A–AR y casos documentales del autor. Paquete histórico del autor; aceptación independiente del candidato corregido registrada en [review](../review.md), sin convertir este expediente en autoaceptación ni evidencia ejecutable.

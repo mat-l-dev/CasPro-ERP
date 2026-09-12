@@ -225,7 +225,7 @@ No skill is created in this program. After independent acceptance of the **GLOBA
 
 ## Secuencia profesional propuesta
 
-La nueva misión documental precede a regenerar WOs: propuesta completa→revisión independiente→aceptación/cierre/merge autorizados en otra misión. No renumera M01–M10 ni amplía el primer circuito con todas las entregas simultáneamente. [Specs](../specs/index.md#amendment-profesional-propuesto) contienen diseño ahora; siguiente tabla define dependencia de entrega, no WOs.
+Secuencia vigente según review: PR #6 aceptado→merge autorizado→regeneración de WOs acotadas en una misión separada→autorización explícita del propietario→implementación. No renumera M01–M10 ni amplía el primer circuito con todas las entregas simultáneamente. [Specs](../specs/index.md#amendment-profesional-propuesto) contienen diseño ahora; siguiente tabla define dependencia de entrega, no WOs.
 
 | Hito/incremento | Resultado y dependencias / aceptación futura |
 |---|---|

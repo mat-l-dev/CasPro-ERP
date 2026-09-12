@@ -31,4 +31,4 @@ Stock publicable Jumpseller usa cantidades elegibles, reservas, demanda externa 
 
 ## Catálogo, sedes, traslados y decisión de costo
 
-**Propuesta pendiente de revisión independiente**, conforme a review. [spec Catalog/Inventory](../specs/flows/catalog-sites-warehouses.md) y [decisión delegada A](../research/normative/operational-completeness.md) concretan promedio uniforme, FIFO físico, kits y tránsito con posesión única. Conserva pool/replay/UNKNOWN; C01/C03/C08 verifican método fiscal previo antes de operación real.
+**Amendment aceptado por revisión independiente**, conforme a review. [spec Catalog/Inventory](../specs/flows/catalog-sites-warehouses.md) y [decisión delegada A](../research/normative/operational-completeness.md) concretan promedio uniforme, FIFO físico, kits y tránsito con posesión única. Conserva pool/replay/UNKNOWN; C01/C03/C08 verifican método fiscal previo antes de operación real.

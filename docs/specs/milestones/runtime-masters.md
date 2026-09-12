@@ -52,4 +52,4 @@ M01: Astra architect/checkpoint de seguridad; Sol orquesta; implementador de WO 
 
 ## Incremento profesional M02 propuesto
 
-**Propuesta pendiente de revisión independiente**, conforme a review. [Catalog/sedes](../flows/catalog-sites-warehouses.md): departamentos/perfiles/UOM/identificadores/kits, sedes distintas de almacenes; [sourcing](../flows/sourcing-imports.md): proveedor/evaluación y cuenta aprobada por Treasury. [Documents](../flows/records-signatures-site-packs.md): originales/firma/custodia como consumidores posteriores. No adelanta movimientos a M02.
+**Amendment aceptado por revisión independiente**, conforme a review. [Catalog/sedes](../flows/catalog-sites-warehouses.md): departamentos/perfiles/UOM/identificadores/kits, sedes distintas de almacenes; [sourcing](../flows/sourcing-imports.md): proveedor/evaluación y cuenta aprobada por Treasury. [Documents](../flows/records-signatures-site-packs.md): originales/firma/custodia como consumidores posteriores. No adelanta movimientos a M02.

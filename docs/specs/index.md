@@ -50,13 +50,13 @@ Las nueve filas tienen entradas/salidas, propietarios, estados/comandos, guardas
 
 ## Handoff posterior
 
-El freeze y la revisión independiente de arquitectura de información ya están aceptados conforme a [review](../review.md). El sistema de agentes y skills está aceptado según review. La misión vigente prepara el amendment profesional → revisión independiente → merge autorizado posterior → regeneración de WOs en otra misión → autorización explícita del propietario → implementación. Las [seis WOs SP2](../history/work-orders-sp2.md) son insumos históricos NEEDS REGENERATION AFTER FREEZE: incorporar hechos tempranos, pool/revisiones, CM0 extendido, CPE, UX y gates locales antes de encargarlas.
+El freeze y la revisión independiente de arquitectura de información ya están aceptados conforme a [review](../review.md). El sistema de agentes y skills está aceptado según review. La secuencia vigente es PR #6 aceptado → merge autorizado → regeneración de WOs acotadas en una misión separada → autorización explícita del propietario → implementación. Las [seis WOs SP2](../history/work-orders-sp2.md) son insumos históricos NEEDS REGENERATION AFTER FREEZE: incorporar hechos tempranos, pool/revisiones, CM0 extendido, CPE, UX y gates locales antes de encargarlas.
 
 Contexto futuro: AGENTS → review → tarjeta de hito → spec y dependencias concretas → gates/perfil de evidencia. Sol orquesta; implementador y reviewer trabajan separados; Astra revisa arquitectura, dinero/stock, Accounting/Tax/Legal, seguridad o contraejemplo transversal. Ninguna etiqueta de readiness ni skill autoriza funciones, migraciones, pruebas o despliegues.
 
 ## Amendment profesional propuesto
 
-Estas specs amplían el candidato sin cambiar el estado histórico de la tabla del freeze. Todas **READY FOR INDEPENDENT REVIEW** documental del autor, no aceptación ni implementación:
+Estas specs integran el amendment **aceptado por re-revisión independiente según [review](../review.md)**, sin cambiar el estado histórico de la tabla del freeze ni autorizar implementación. El expediente conserva el PASS documental del autor:
 
 | Incremento / hito | Spec local |
 |---|---|
