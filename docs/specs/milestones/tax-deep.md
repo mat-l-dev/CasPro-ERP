@@ -4,6 +4,8 @@ Estado: **SPECIFIED — candidato; perfil real y políticas PENDING PROFESSIONAL
 
 ## Perfil y regla versionados
 
+La regla existente conserva componentes IGV/IPM cuando el consumidor fiscal/aduanero/layout los exige: entidad, propósito, naturaleza/fecha legal del hecho, período y revisión de fuente determinan la selección, nunca fecha de carga o de reporte. [Transición Ley32387 y tabla SUNAT](../../research/normative/igv-ipm-transition.md) fija el desglose general2026–2029 sin cambiar total18% ni G1. Persistir versión/componentes/total/linaje; hueco, solapamiento o cambio normativo no conciliado mantiene REVIEW_REQUIRED. Corrección histórica preserva norma del hecho y original. B04/B08/B14 deben validar fronteras y C08/C07 la aplicación real.
+
 Entidad/período conserva RUC privado, inicio/activación, actividades, régimen y acogimiento, ingresos/adquisiciones/activos/personal pertinentes, condición de emisor electrónico/SEE, obligación de registros, padrones de agentes, residencia/vinculación y fuentes. NPIF y RER se evalúan por separado. Perfil DRAFT→VERIFIED→ACTIVE/SUPERSEDED; no hay valor “RER para siempre”. Cambio de régimen no reescribe períodos.
 
 Una regla tributaria identifica norma/artículo, emisor, publicación, vigencia, modificaciones/derogación, hechos requeridos, alcance, base, tasa, redondeo, moneda/tipo de cambio, momento, sujeto obligado, excepciones, evidencia, responsable y golden. Aprobación tiene persona/fecha/versión. Regla no codificada o hecho faltante produce REVIEW_REQUIRED, no impuesto0. Las tasas del calendario se revalidan para 2027 antes de activar; una fecha de consulta2026 no prueba estabilidad futura.
