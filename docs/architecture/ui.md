@@ -1,5 +1,9 @@
 # Frontend, sistema visual y UX
 
+Delta de [Case Flow y preview](../specs/cross-cutting/case-flow-preview.md): grafo/lista/timeline de una proyección autorizada, requisitos esperados declarados por dueños, frescura y siguiente acción; PDF/XML original separado de derivado, carga acotada y permisos preview/download. Incluye objetivos candidatos de rendimiento y dos conveniencias acotadas: vistas personales tipadas y dossier autorizado. [Centro de automatización](automation.md) y [sugerencia a draft/comparación shadow](../accounting/templates-automation-shadow.md) consumen esos patrones; no builder ejecutable ni cambio a SPA.
+
+Enmienda de gobierno: el [Centro de Configuración y Administración](configuration-governance.md#centro-de-configuración-y-administración) concreta navegación por dueño, Actual/Propuesta/Impacto/Aprobación/Historial/Evidencia, permisos/alcances y estados de activación. Descubrir una política no concede modificarla; confirmación crítica muestra revisión, vigencia, efectos y excepción de autoaprobación. Tema/locale siguen preferencias personales. Es contrato conceptual bajo revisión, no nueva pantalla implementada ni cambio de stack.
+
 Selección de [ADR-004](../decisions/adr-004-ui.md): Django SSR + Tailwind CSS 4 compilado + HTMX 2 donde reduzca trabajo + JavaScript nativo pequeño. Alpine no es dependencia inicial. Ningún componente ni configuración de build se implementa en esta fase.
 
 ## Alternativas y límites

@@ -9,7 +9,8 @@ Las filas profesionales describen capacidades de PR #6, aceptado por re-revisió
 | Identity/session | Identity | credential→principal/session | runtime | acceso; HIGH security | M01 / auth spec / nuevos métodos |
 | Legal entity directory | Organization | evidence→entity/context | Identity | separación; HIGH legal | M01 / entity spec / otra entidad |
 | Site / premises | Organization | identidad/dirección/uso/vigencia→sede por entidad | Access; hechos de tenencia Corporate y cumplimiento Tax por contrato | separación sede/almacén; HIGH legal | M02 / [sedes](../specs/flows/catalog-sites-warehouses.md#sede-almacén-y-transferencia) / nueva sede o cambio de uso |
-| Membership/capability | Access | grants→authorized context | Identity, Organization, Audit | deny-by-default; HIGH | M01 / access spec / maker-checker |
+| Membership, roles profesionales, delegación y SoD | Access; Identity credenciales | grants/versiones/scopes→contexto autorizado y control de última ruta administrativa | Organization, Audit; guardas del recurso permanecen en dueño | deny-by-default por acción/alcance; HIGH | M01 / [roles RA1–4](../architecture/roles-delegation.md) / asignación futura sin rediseño; C13/B02 |
+| Centro de Configuración y registro de políticas | Superficie superior; cada dominio posee revisión/activación, Access mandato | descriptores/DTOs/ImpactManifest→cambio tipado autorizado e indexado | APIs públicas de dueños; Audit sin consulta inversa | admin ≠ permiso económico; CRITICAL | M01 estructura y familias por hito / [CG1–5](../architecture/configuration-governance.md), [POL-01–26](../product/company-policy-register.md) / sin settings universal |
 | Audit | Audit | actor+transition→append-only event | access primitives | accountability; HIGH | M01 / audit spec / external archive |
 | Private documents | Documents | bytes+metadata→version/evidence | Access, object storage | evidence; HIGH privacy/retention | M03 / storage spec / volume/retention |
 | Document physical custody | Documents | versión/material/localizador/préstamo→cadena de custodia física | Access, sede Organization, política legal del dueño | original/copia y retención; HIGH legal/privacy | M03 según consumidor / [originales y custodia](../specs/flows/records-signatures-site-packs.md#originales-y-derivados) / original físico o traslado de archivo |
@@ -29,7 +30,8 @@ Las filas profesionales describen capacidades de PR #6, aceptado por re-revisió
 | Professional quotations | Sales | líneas/kits/precios/términos/aprobación→cotización emitida y aceptación por revisión | Parties, Catalog, Documents; B2B para conversión coordinada | compromiso explicable sin reserva/pago ficticios; HIGH | M04+ / [cotización](../specs/flows/professional-sales.md#cotización-y-compromiso) / oferta profesional; prepago inicial preservado |
 | Sales contracts | Sales | cotización/OC/términos/facultades→contrato y adendas versionados | Parties, Documents; evidencia de representación Corporate por contrato | firma/vigencia/cumplimiento separados; HIGH legal | M04+ / [contrato](../specs/flows/professional-sales.md#cotización-y-compromiso) / compromiso contractual real |
 | Installation / commissioning fulfillment | Sales | bienes/contrato/sitio/prerrequisitos→hitos y aceptación del cliente | Catalog, Documents; Procurement si subcontrato; Accounting consume hitos | entrega física ≠ instalación ni ingreso automático; HIGH | M04+, M05 si subcontrato / [instalación](../specs/flows/professional-sales.md#instalación-incluida-en-bienes) / instalación incluida en bienes |
-| Credit / collections / COD | Sales: política/exposición/cobranza; Treasury: dinero/aplicaciones | términos/compromisos/objetivos/custodia→elegibilidad, aging y remesas conciliadas | B2B, Treasury, Inventory y Documents por coordinadores | exposición sin duplicación; POD ≠ cobro; CRITICAL | Diseño completo, entrega posterior a B2B y Treasury / [crédito y COD](../specs/flows/professional-sales.md#crédito-diseñado-activación-posterior) / DESACTIVADO bajo D03; política/pruebas antes de activar |
+| B2B credit / collections — CONFIRMED IMPLEMENTATION REQUIREMENT | Sales política/exposición/cobranza; Treasury dinero/aplicaciones | términos/compromisos/objetivos→elegibilidad, límites, aging, holds y cobros conciliados | B2B, Treasury, Inventory y Documents por coordinadores | exposición sin duplicación; CRITICAL | REQUIRED TO IMPLEMENT en incremento tras B2B+Treasury; [crédito](../specs/flows/professional-sales.md#crédito-diseñado-activación-posterior); configuración inicial DISABLED, POL-08/permisos/pruebas/D03 antes de activar |
+| COD / contraentrega — activación por trigger propio | Sales condiciones/custodia comercial; Treasury dinero/remesas | entrega/custodia/depósito→remesas conciliadas | B2B, Treasury, Inventory, Documents por coordinadores | POD ≠ cobro; CRITICAL | Diseño preservado; implementación obligatoria no confirmada por mandato previo; D03 independiente de crédito |
 | Commercial obligation | Sales/Procurement | document terms→receivable/payable | Parties | settlement; HIGH | M04/M05 / domain specs / credit terms |
 | CPE sales/supplier dossiers | Sales/Procurement | external identity+facts→dossier | Documents, Tax | fiscal evidence; HIGH | M04/M05 / CPE y P2P specs, C07 / acquisition API |
 | Purchase order/receipt | Procurement/Inventory | demand→commitment/receipt | Parties, Catalog | replenishment; HIGH | M05 / P2P + sourcing/imports propuestos / portal proveedor futuro |
@@ -61,7 +63,7 @@ Las filas profesionales describen capacidades de PR #6, aceptado por re-revisió
 | Operational inbox | UI projection | owner exceptions→prioritized queue | public queries | daily efficiency; HIGH leakage | M04+ / query/UX spec / volume |
 | Search/document flow | UI projection | authorized indexes/links→results/graph | all owners | explainability; HIGH privacy | M04+ / search spec / external engine |
 | CSV/Excel import | each owner | file→validate/preview/confirm | Documents, Audit | onboarding; HIGH bulk | M03/M05 / per-domain schema / volume |
-| AI suggestion service | AI platform/domain | minimized case→candidate/evidence | provider adapter, evaluation | efficiency; CRITICAL misuse | M06 pilot / PROVISIONAL / AI pilot spec / proven KPI |
+| AI suggestion service | AI platform/domain | minimized case→candidate/evidence | provider adapter, evaluation | efficiency; CRITICAL misuse | M06 banco opcional; Accounting IA M07 requerido en diseño con activación D01 / [contrato](../accounting/templates-automation-shadow.md) / evidencia B16, sin post oficial |
 | Backup/restore | Operations | DB+objects+config→recoverable service | deployment | continuity; CRITICAL | M01/M04 gates / restore spec / target RPO/RTO |
 
 ## Capacidades contables explícitas del primer paquete
@@ -88,6 +90,21 @@ Este desglose hereda owner Accounting, M07 para medición/registro y M08 para pr
 | Cierre / correcciones / hechos posteriores | Conciliaciones, errores/estimaciones y autorización → paquete cerrado, ajustes y nueva versión | Período y materialidad aprobados; CRITICAL; NPIF errores no hereda retrospectividad NIC8 |
 | Revelaciones / comparativos / cuatro EEFF | GL, auxiliares, narrativas y mappings → paquete completo y evidencia navegable | Cada cierre; CRITICAL; faltante no cero, profesional valida notas, sin dependencia de Excel |
 
+## Delta de automatización y experiencia de PR #7
+
+Diseño solicitado después del PASS inicial, aceptado documentalmente conforme review; sin módulos nuevos. Dependencias son contratos de lectura/coordinadores, no imports entre dueños.
+
+| Capacidad / propósito | Dueño | Inputs → outputs | Dependencias / riesgo | Entrega / spec / trigger |
+|---|---|---|---|---|
+| Case Flow / resumen explicable y next action | Operations/UI proyección; fuentes por dominio | objetos/relaciones/requisitos/cortes→grafo/lista/timeline autorizado | Access, outbox durable, fuentes; HIGH privacidad/falsa completitud | Lista M02–03, grafo M04, ampliar M05–09; [flujo](../specs/cross-cutting/case-flow-preview.md) |
+| PDF/XML preview | Documents | original/version/hash→representación/metadata autorizada | Storage privado, ACL/renderer aislado; HIGH seguridad | M04 progresivo; [preview](../specs/cross-cutting/case-flow-preview.md#preview-pdf-y-xml); nuevos formatos solo por caso |
+| Vistas personales y dossier de caso | UI preferencias / Documents export | filtros tipados/corte autorizado→vista o índice/artefacto derivado | Case Flow/Access; HIGH privacidad export | M04+; solo dos conveniencias adicionales canonizadas, sin builder/ZIP universal |
+| Familias tipadas / Automation Center | Cada dueño; superficie superior router | template/regla/calendario/run→draft o comando autorizado/descriptores | Config/Access/jobs/Audit; CRITICAL si efecto | Primitives M01, consumidores por hito; [automatización](../architecture/automation.md) |
+| JournalTemplate, regla y recurrencia contable | Accounting | fuente/política/cuentas/ocurrencia→draft validado | Hechos M03–06, catálogo/período; HIGH | M07 requerido; [contrato](../accounting/templates-automation-shadow.md); autoexecute oficial OFF, mandato separado |
+| AI Accounting suggestion→draft / promoción a regla | Accounting; AIService adapter neutral | hecho minimizado/candidatos→sugerencia y draft humano; patrón→RuleCandidate revisado | POL-26/B16/D01, presupuesto; HIGH privacidad/semántica | M07 diseño requerido, activación controlada; DeepSeek V4.1-Flash inicial por configuración neutral, sin post IA |
+| Shadow Accountant aislado | Accounting evaluación; executor separado | cápsulas congeladas→interpretaciones/ledger experimental sellado | DB/proceso/credenciales separados, B02/B13/B15; HIGH | M07 on-demand; [aislamiento](../accounting/templates-automation-shadow.md#shadow-accounting-e-aislamiento), async live por trigger |
+| Comparador mensual / multi-modelo acotado | Accounting evaluación | snapshots oficial/shadow/equivalencias→cobertura/diferencias/revisión | M07 hechos/políticas/cortes; HIGH mala inferencia de calidad | M08; [comparador](../accounting/templates-automation-shadow.md#comparador-oficial-versus-shadow); no segundo EEFF, proveedores múltiples solo experimento |
+
 ## Expansion rule
 
 Capabilities assigned to a later triggered scope preserve only source facts and an explicit trigger. They do not justify a package, field, provider or abstraction today. Every activation updates this map, produces a local spec and names its validation profile.
@@ -95,3 +112,16 @@ Capabilities assigned to a later triggered scope preserve only source facts and 
 ## Cobertura profesional propuesta
 
 Las filas anteriores identifican las capacidades estables y enlazan sus [seis specs](../specs/index.md#amendment-profesional-propuesto); el [programa](program.md#secuencia-profesional-propuesta) ordena la entrega. Las filas específicas desglosan los hechos de los dueños existentes: B2B conserva el expediente, las filas Sales sus actos; Accounting interpreta fuentes sin poseer contratos, dinero o stock. Crédito/COD diseñado con activación D03; departamentos5–6 candidatos. RFQ/multialmacén/importación ya son requisitos confirmados, no triggers para decidir si tendrán diseño. La evidencia de revisión no sustituye este mapa canónico.
+
+
+## Delta final de proveedor y declaraciones externas
+
+Extiende capacidades existentes, aceptado documentalmente conforme review; no módulo nuevo ni permiso de implementación.
+
+| Capability / purpose | Owner | Inputs → outputs / dependencies | Phase / spec / control |
+|---|---|---|---|
+| AI cost governance / off-peak scheduling | AIService/Platform; dominio posee finalidad | Tarifas/versiones, cuotas, usage y cola→reservas/coste/dispatch; Access/config/Audit | M07–M08; [AI](../architecture/ai-assistance.md#presupuesto-y-programación-del-proveedor-inicial), POL-26/D01/B16; target10USD, continuidad manual |
+| External tax filing mirror | Tax; Documents artefactos | Evidencia/definición/perfil→captura verificada o pendiente, TX5/X05 | M09; [mirror](../specs/flows/external-tax-filing-mirror.md); C08, sin SUNAT execution |
+| Tax filing field reconciliation | Tax | PreparedPackage + filing/captura + mapping→casillas/contribuciones/delta; X08 | M09; soporte por revisión y cobertura explícita; no cálculo por número reconocido |
+| Tax filing difference review | Tax; profesional competente | Diferencia/fuentes/criterio→revisión/resolución/paquete; Documents/Case Flow | M09; tax.review y permisos existentes; diferencia no atribuye error |
+| Historical external filing lineage | Tax | Original/sustitución/rectificación/eficacia→historia inmutable y comparación a corte | M09; backfill etiquetado, X05/X06; Treasury posee dinero, no overwrite |
