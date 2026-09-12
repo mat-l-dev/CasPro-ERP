@@ -56,3 +56,7 @@ Lecturas: trabajo pendiente por excepción, pedido externo→venta→reserva→e
 Salida M03: goldens de coste, PROPERTY/DOMAIN de conservación, PostgreSQL de atomicidad/constraints y CONCURRENCY en W/P/S/T/R. Salida M04: HP1–HP5 + CPE multipartes, replay/webhook desordenado, refund vs dispatch y aceptación de sandbox de stock. Si no existe fencing remoto/stock reservation demostrable, no habilitar PUT positivo; reconciliación/manual o canal controlado es el fallback, no promesa de evitar toda carrera.
 
 Roles: Astra arquitectura/costeo/checkpoint; Sol orquestación; implementador/reviewer distintos. Permitido afinar índices/escala tras evidencia sin perder exactitud; prohibido cambiar pool, método, backdating, reconocimiento, stock negativo, HP1 o auto-confirmación. Entradas: esta spec, SP2, NPIF §11 y [políticas](../../accounting/npif-policy-catalog.md). Revisión contable de política y [DH3](../../roadmap/decisions-gaps.md#dh3)/[DH4](../../roadmap/decisions-gaps.md#dh4) deben quedar registradas antes de operaciones dependientes.
+
+## Incremento profesional M03 propuesto
+
+**Propuesta pendiente de revisión independiente**, conforme a review. [Catalog/traslados](../flows/catalog-sites-warehouses.md) completa multialmacén y kits; [costo elegido A](../../research/normative/operational-completeness.md) conserva pool/promedio/replay y distingue FIFO físico. [Importaciones](../flows/sourcing-imports.md) consumen estas primitivas en M05+. WT hereda corte de conteo y K/J; no se omiten por fila resumida.

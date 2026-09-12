@@ -108,3 +108,7 @@ Commit correcto + proceso muerto antes de publicar; duplicado; mensaje fuera de 
 Documents tratará DB y objetos como recursos no atómicos: carga temporal/cuarentena, confirmación de disponibilidad, reconciliación de huérfanos y política de limpieza. Una descarga usa autorización actual y enlace breve o proxy autenticado; URL opaca permanente no es permiso.
 
 REQUIRES LATER VALIDATION: esquemas/payloads reales, autenticación del proveedor, replay, leasing y caída de proceso, contratos de storage y restauración DB+blobs. No se verificó ninguna cuenta externa en esta fase.
+
+## Frontera del amendment profesional
+
+**Propuesta pendiente de revisión independiente**, conforme a review. [FX/Tax](../specs/flows/tax-workspace-books.md) añade adquisición autorizada de observaciones por finalidad, sin API inventada ni envío SUNAT. [Firma y reclamos](../specs/flows/records-signatures-site-packs.md) usan puertos neutrales, idempotencia/epoch/resultado incierto y gate por efecto. [Kits multialmacén](../specs/flows/catalog-sites-warehouses.md) afectan disponibilidad Jumpseller y mantienen B11/C11; Resend continúa opcional/C40, WhatsApp D03. Ninguna fuente leída en research constituye conexión empresarial activada.

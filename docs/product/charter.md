@@ -38,7 +38,7 @@ M06 concreta [hechos individuales de financiación](../specs/flows/financing-eve
 - SPA integral, móvil/offline, microservicios, data warehouse y motor general de reglas.
 - Emitir, presentar o enviar CPE a SUNAT desde CasPro, incluso mediante una acción manual de su UI. El operador emite fuera de CasPro mediante SOL u otra vía externa autorizada; CasPro adquiere/importa, vincula/verifica y entrega documentos dentro de capacidades comprobadas. Tampoco ordena transferencias bancarias automáticas. Publicar stock en Jumpseller y entregar email son efectos externos incluidos expresamente; ampliar esos efectos exige nuevo mandato.
 - CRM completo, otros canales ecommerce y frameworks multicanal. Conservar referencias neutrales mínimas no habilita especificar MercadoLibre/TikTok ni crear sus carpetas.
-- Acceso de clientes/proveedores y ventas de servicios, hasta tener necesidad autorizada.
+- Portal general ERP de clientes/proveedores y venta independiente de servicios, hasta necesidad autorizada. Instalación incluida en bienes y acceso al Libro de Reclamaciones están delimitados en el amendment profesional propuesto.
 - Copiar el historial de datos, migraciones o supuestas aprobaciones de Wbpro.
 
 ## Qué significa éxito
@@ -46,3 +46,9 @@ M06 concreta [hechos individuales de financiación](../specs/flows/financing-eve
 El operador puede explicar una cifra hasta su documento y hecho original; ninguna operación individual o concurrente crea dinero/stock ficticio; una corrección conserva la historia pertinente; la aplicación puede restaurarse y desplegarse con identidad verificable.
 
 Esta fundación habilita revisión. No habilita operación empresarial real. El [registro humano](../review.md) distingue alcance, aceptación de riesgo, presupuesto y validación profesional.
+
+## Amendment profesional propuesto
+
+El [expediente de completitud](../evidence/professional-operational-completeness.md) propone profundidad profesional de necesidades confirmadas: departamentos1–4 (seguridad, energía, telecom/redes, iluminación), catálogo rico/kits, sedes/multialmacén, cotización/contrato e instalación incluida, sourcing/RFQ e importaciones cercanas, cuentas/instrumentos/caja chica, documentos físicos/digitales y firmas, libros por obligación, reclamaciones y paquetes de sitio/minería. Departamentos5 herramientas/calibración y6 IT comercial son candidatos. No se crean módulos por departamento.
+
+Se diseña crédito/COD ahora y conserva activación D03 posterior; primera venta y B2B inicial siguen prepago íntegro. Se elige promedio uniforme por decisión delegada, conservando FIFO como salida física y gates de política fiscal real. La necesidad confirmada no se deja sin contrato para implementación; la entrega sigue incremental M02–M09. El nuevo amendment está pendiente de revisión independiente; las cuatro aceptaciones anteriores permanecen y no habilitan código/WOs.

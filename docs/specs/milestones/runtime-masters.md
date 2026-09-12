@@ -49,3 +49,7 @@ Salida M02: escenarios de homónimo, identificador duplicado concurrente, mappin
 ## Handoff y gates
 
 M01: Astra architect/checkpoint de seguridad; Sol orquesta; implementador de WO y reviewer independiente. M02: misma estructura, Astra ante identidad/pertenencia o cambio de contrato. Entradas canónicas son este documento y sus enlaces, CM0 y tarjeta del [programa](../../roadmap/program.md). Permitido elegir nombres internos/fixtures/índices demostrables; prohibido cambiar autenticación, propiedad, retención, identidad o semántica de import sin ADR/spec. Salida documental exige revisión separada; salida ejecutable posterior exige evidencia del candidato exacto y cierre de [DH5](../../roadmap/decisions-gaps.md#dh5) antes de operación.
+
+## Incremento profesional M02 propuesto
+
+**Propuesta pendiente de revisión independiente**, conforme a review. [Catalog/sedes](../flows/catalog-sites-warehouses.md): departamentos/perfiles/UOM/identificadores/kits, sedes distintas de almacenes; [sourcing](../flows/sourcing-imports.md): proveedor/evaluación y cuenta aprobada por Treasury. [Documents](../flows/records-signatures-site-packs.md): originales/firma/custodia como consumidores posteriores. No adelanta movimientos a M02.

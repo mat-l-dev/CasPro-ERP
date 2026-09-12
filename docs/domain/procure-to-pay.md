@@ -38,4 +38,8 @@ Delta aceptado del [amendment](../evidence/b2b-financing-amendment.md): la OC re
 
 Duplicado de factura por emisor/tipo/serie/número; factura sin recepción; exceso de cantidad/precio; servicio sin conformidad; impuesto/detracción pendiente; CPE inválido/no verificable; pago en HOLD; recepción con costo desconocido; período cerrado. Cada excepción tiene severidad WARNING/BLOCKING, recurso afectado, causa, responsable, edad y siguiente acción permitida.
 
-M05 concreta rutas de compra directa, conformidad, tolerancias propuestas, aprobaciones, obligaciones parciales, notas/devoluciones y corte. El gate de políticas aplicables sigue abierto; [Tax M09](../specs/milestones/tax-deep.md) gobierna determinaciones. RFQ, portal proveedor, sourcing, contratos avanzados y recurring engine quedan fuera hasta caso real.
+M05 concreta rutas de compra directa, conformidad, tolerancias propuestas, aprobaciones, obligaciones parciales, notas/devoluciones y corte. El gate de políticas aplicables sigue abierto; [Tax M09](../specs/milestones/tax-deep.md) gobierna determinaciones. RFQ/sourcing e importaciones ahora tienen diseño confirmado en el amendment profesional enlazado abajo; portal proveedor y un motor general de recurrencias continúan fuera. Renta recurrente se acota al contrato/período, sin motor universal.
+
+## Sourcing e importación profesional
+
+**Propuesta pendiente de revisión independiente**, conforme a review. [Spec M05+](../specs/flows/sourcing-imports.md) posee requisición/RFQ/oferta/comparación/award, compra directa con razón, proveedor y banco revisados, importación/DAM/levante y costos tardíos. [Renta acotada](../specs/flows/financial-accounts-instruments.md) usa obligación por contrato/período, no un recurring engine.

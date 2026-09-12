@@ -50,3 +50,7 @@ Casos obligatorios: PO10, recepción6, factura4→match4 y recepción pendiente 
 Evidencia futura: DOMAIN sumas N:M, PostgreSQL unicidad/atomicidad y CONCURRENCY match/pago/cambio de documento, CONTRACT artefactos y un E2E excepción→resolución. Golden Accounting de recepción por facturar y servicio prepagado en M07–M08; Tax golden por operación activada. No necesita probar SAP/Oracle ni una suite de todos los módulos.
 
 Handoff: Astra architect/checkpoint P2P/Tax; Sol orquesta; implementador y reviewer separados. Entradas esta spec, CM0, NPIF §§10–12/15/17, memo fiscal y tarjeta M05. Permitido elegir presentación/índices; prohibido inferir tolerancias, crédito fiscal, facultades, recepción desde CPE, servicio como SKU stock o automatizar pago. Gate de salida: revisión de casos/políticas aplicables, contrato de Treasury y evidencia candidata exacta; sin esto no FROZEN.
+
+## Incremento profesional M05 propuesto
+
+**Propuesta pendiente de revisión independiente**, conforme a review. [Sourcing/importaciones](../flows/sourcing-imports.md) añade requisición/RFQ/award, banco proveedor, dossier/levante/costo y correcciones; PO/recepción/conformidad/match/payability de esta spec siguen vigentes. [Renta](../flows/financial-accounts-instruments.md) publica obligación por contrato/período; no generaliza recurrencias.

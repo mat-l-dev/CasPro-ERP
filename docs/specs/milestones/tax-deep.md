@@ -61,3 +61,7 @@ Cockpit por vencimiento/obligación, inputs faltantes, diferencias CPE/registros
 | TX9 rectificación y concurrency | Dos aceptaciones misma declaración/constancia no duplican deuda; corte compite con aprobación; Tax no logra modificar asiento |
 
 Perfil futuro: DOMAIN y goldens fiscales versionados aprobados por profesional, PostgreSQL de unicidad/pertenencia, CONTRACT formatos/constancias, un E2E de excepción y conciliación. Sandbox solo si proveedor/autoridad ofrece mecanismo autorizado; no probar declaración real. Astra architect/checkpoint Tax/Legal; Sol orquesta; implementador/reviewer separados. Prohibido resolver criterios controvertidos por intuición, blogs, código Wbpro o respuesta de IA. [DH4](../../roadmap/decisions-gaps.md#dh4) y [DH2](../../roadmap/decisions-gaps.md#dh2)/[DH1](../../roadmap/decisions-gaps.md#dh1) según operación cierran el gate; no FROZEN con reglas materiales sin resolver.
+
+## Incremento profesional M09 propuesto
+
+**Propuesta pendiente de revisión independiente**, conforme a review. [Workspace/libros/FX](../flows/tax-workspace-books.md), [matriz oficial](../../research/normative/tax-book-universe.md) y [ND Portugal](../../research/normative/jumpseller-portugal-service.md) concretan obligaciones presentes/futuras por régimen y datos de importación. Perfil real sigue C08; no salida oficial sin estructura efectiva validada ni presentación externa desde CasPro.

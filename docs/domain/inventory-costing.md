@@ -28,3 +28,7 @@ valor operativo ± efectos contables separados = saldo contable
 VNR no modifica recepción, coste fuente ni posesión. La política NIC 2/NPIF se activa bajo el marco aplicable; IAS 36 no se usa para inventarios. Tax deriva su propio tratamiento.
 
 Stock publicable Jumpseller usa cantidades elegibles, reservas, demanda externa y buffer versionado. La fórmula/PUT positivo siguen pendientes del gate técnico; ninguna decisión de costeo autoriza publicar.
+
+## Catálogo, sedes, traslados y decisión de costo
+
+**Propuesta pendiente de revisión independiente**, conforme a review. [spec Catalog/Inventory](../specs/flows/catalog-sites-warehouses.md) y [decisión delegada A](../research/normative/operational-completeness.md) concretan promedio uniforme, FIFO físico, kits y tránsito con posesión única. Conserva pool/replay/UNKNOWN; C01/C03/C08 verifican método fiscal previo antes de operación real.
