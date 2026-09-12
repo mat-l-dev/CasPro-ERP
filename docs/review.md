@@ -4,6 +4,12 @@ Fecha de corte: 2026-09-12. **Única fuente del estado global vigente.**
 
 ## Current status
 
+**WORK ORDER REGENERATION: PENDING INDEPENDENT REVIEW.** El nuevo encargo explícito del propietario autoriza preparar el conjunto completo M01–M09, documentación, comprobaciones estáticas, commit/push y un PR nuevo abierto. Baseline main aceptado verificado: `b27e5eeb280b8b654b18218a11181e9c4a8eb7b1`, tree `c0f314722f1d5fa5d2e36cb5b2aad7759710e6d8`; main == origin/main y árbol limpio al iniciar. PR #8 y PR #9 están MERGED; PR #9 se integró el 2026-09-12T22:43:32Z mediante ese merge commit. No se reabren sus aceptaciones.
+
+[84 WOs actuales candidatas](work-orders/index.md), [cobertura/DAG](work-orders/roadmap.md) y [expediente del autor](evidence/work-order-regeneration.md), rama `docs/regenerate-work-orders`. Todas: **PREPARED — NOT AUTHORIZED FOR EXECUTION**. Cobertura de construcción confirmada: 87/87 filas; COD/WhatsApp permanecen diferidos. **A0 / B16 / C13 / D6**, todos B/C/D abiertos; ningún nuevo A identificado por el autor, sin sustituir revisión independiente. **IMPLEMENTATION: NOT AUTHORIZED.** Cero WOs ejecutadas; el nuevo PR permanece sin autorización de merge. Antes de cualquier ejecución futura: aceptación independiente del conjunto, main vigente revalidado, fase habilitada y autorización explícita de la WO/efectos correspondientes.
+
+### Antecedente aceptado de PR #9 y misión de cierre anterior
+
 **PASS — AGENT SYSTEM REFRESH ACCEPTED.** Revisión independiente completa, resultado comunicado por el propietario para PR #9: candidato semántico/documental aceptado `f85fdaaf053cd4a7cf1b4eee349905fc5fb06924`, tree `0cc404965823b0ee9898d83dec50b62f6b79aeb0`. **BLOCKER = 0; HIGH = 0; business architecture drift = 0.** Aceptados: router AGENTS, adaptadores CLAUDE/GEMINI, protocolo, workflow, rúbrica de revisión, plantilla WO, catálogo y las diez skills; routing de capabilities/privacidad/Case Flow/Shadow Accounting/External Tax Filing Mirror, separación IA de desarrollo/runtime y current/history, y eficiencia de contexto. Sin skills ni módulos nuevos innecesarios. **A0 / B16 / C13 / D6** sin cambios; todos los B/C/D permanecen abiertos.
 
 El propietario autorizó explícitamente el merge de PR #9 mediante merge commit en esta misión de cierre final, sujeto a verificar candidato y precondiciones exactos; el estado e identidad físicos del merge se verifican en Git/GitHub tras la operación. La sincronización de estado conserva el candidato aceptado y no constituye otra revisión semántica. Readiness documental para futura regeneración de WOs: **YES WITH NON-BLOCKING WATCH ITEMS**. **WO generation/regeneration: NOT AUTHORIZED BY THIS MISSION. IMPLEMENTATION: NOT AUTHORIZED.** La aceptación y el merge no autorizan ejecución de WOs.
@@ -60,6 +66,10 @@ Resultado independiente comunicado por el propietario: **PASS — INFORMATION AR
 **A0 / B16 / C13 / D6**, recomputación independiente final comunicada por el propietario para el candidato aceptado de PR #8 identificado arriba: F01–F07 y el cierre de ownership de privacidad aceptados, sin nuevo bloqueador semántico ni traslado de A a B. 0 bloqueadores de diseño A, 16 gates de validación B, 13 de activación C y 6 pendientes con trigger D, conforme al [registro de gaps](roadmap/decisions-gaps.md). Todos los B/C/D permanecen abiertos. Son conteos por clase, no cuatro IDs de gate. Las validaciones profesionales siguen siendo gates de activación. El registro posee alcance, trigger y clasificación; la [readiness M01–M09](specs/index.md) conserva el corte del candidato congelado.
 
 ## Next process
+
+Revisión independiente del nuevo conjunto de WOs y su candidato exacto: descomposición, cobertura, dependencias, ownership, gates, muestras y camino crítico. El autor no acepta su propio conjunto; corregir hallazgos en la misma PR antes de solicitar aceptación. Este encargo termina con el PR abierto; no autoriza merge, implementación ni ejecución de WOs. La preparación está autorizada por el nuevo encargo registrado arriba; el texto siguiente corresponde a la misión anterior.
+
+Antecedente de cierre PR #9, preservado como historia:
 
 PR #8 aceptado y MERGED; PR #9 aceptado con cierre/merge autorizado bajo las precondiciones exactas indicadas en Current status. Tras verificar main y limpiar únicamente la rama integrada, esta misión termina. La siguiente fase posible es regenerar WOs desde el HEAD/tree final de main, **solo con un nuevo encargo explícito del propietario**. No se generan ni ejecutan WOs en este cierre; implementación sigue NOT AUTHORIZED.
 

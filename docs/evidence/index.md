@@ -1,5 +1,7 @@
 # Evidencia de auditoría y revisión
 
+[Regeneración completa de Work Orders](work-order-regeneration.md): baseline aceptado, cobertura, descomposición M01–M09, dependencias, supersesión, revisión adversarial del autor y comprobaciones estáticas. Candidato pendiente de revisión independiente; cero ejecución e implementación no autorizada. Estado vigente en [review](../review.md).
+
 [Freshness del sistema de agentes](agent-system-freshness-audit.md): inventario completo, matriz antes de editar, correcciones y verificación estática del candidato del autor. Expediente histórico preservado; aceptación independiente de PR #9 y autorización de cierre en [review](../review.md), sin generación/ejecución de WOs ni implementación.
 
 [Grand audit remediation F01–F07](grand-audit-remediation.md): hallazgos originales y correcciones del autor sobre main post-PR7, con conciliación completa, fuentes y67 contraejemplos documentales. Expediente histórico del autor; aceptación independiente y merge posteriores en [review](../review.md). Preserva los expedientes anteriores.
