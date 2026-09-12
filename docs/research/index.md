@@ -18,6 +18,8 @@ Remediación F02/F04/F05 al2026-09-12: [privacidad Perú](normative/privacy-curr
 
 ## Fuentes técnicas y comparación
 
+[Tooling actual de agentes](agent-tooling-currentness.md): verificación oficial de discovery, imports, precedencia, skills y trust de Codex/Claude/Gemini al2026-09-12; seguimiento del expediente histórico, sin acreditar ejecución en cada host.
+
 [Gobierno, roles y configuración](governance-authorization-benchmark.md), corte 2026-09-12: SAP, Dynamics, NetSuite, Odoo, OWASP/NIST y recuperación; GOV-N01/N02 cotejan decisiones contables determinadas. Fuentes oficiales y límites de acceso explícitos; contratos en arquitectura/registro/manual, no aquí.
 
 [Fuentes técnicas](technical-sources.md) respaldan los [ADRs](../decisions/index.md); el [benchmark ERP](erp-benchmark.md) compara técnicas sin importar reglas de otro producto. No se abre una carpeta de un archivo para cada tipo.

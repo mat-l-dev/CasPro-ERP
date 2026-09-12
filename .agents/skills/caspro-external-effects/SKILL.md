@@ -13,9 +13,12 @@ Requiere proveedor/capacidad, dirección inbound/outbound, entorno, dueño solic
 
 - Jumpseller/webhook/publicación/trabajo durable: [flow externo](../../../docs/specs/flows/jumpseller-external-work.md), ficha del comando y dueño Sales/Inventory participante.
 - CPE/archivo/correo: [CPE/Documents](../../../docs/specs/flows/cpe-document-delivery.md); Sales o Procurement posee el expediente, Documents archivo/entrega. Tax se añade solo por interpretación fiscal.
+- Llamada a IA del producto: [AIService/proveedor inicial](../../../docs/architecture/ai-assistance.md#presupuesto-y-programación-del-proveedor-inicial), propósito del dueño y [privacidad](../../../docs/security/personal-data-lifecycle.md); distinto de herramientas/modelos de desarrollo. Resend u otro transporte documental sigue el contrato CPE/Documents anterior, sin cambiar dueño del contenido.
 - Otro provider: puerto/contrato del dueño; verificar documentación oficial actual para capacidad/versiones/autenticación que la tarea requiera. Nueva capability fuera de contrato va a Architecture antes de implementación.
 
 ## Procedimiento / límites
+
+Si cambia principal, permiso o comando, usar [registro exacto](../../../docs/architecture/capability-registry.md); datos personales de salida/retención activan [autorización y ejecución de privacidad](../../../docs/security/personal-data-lifecycle.md#autorización-y-ejecución). Conservar intención durable, outbox/UNKNOWN y conciliación del contrato seleccionado; no usar éxito de transporte como aprobación legal.
 
 Separar observación, intención preparada, autorización del comando, llamada y resultado confirmado/ambiguo conforme a la ficha. No derivar pago de PAID remoto ni confirmar negocio desde un callback. No copiar secretos, cuentas ni destinatarios reales a Git/prompts. Ante respuesta incierta, seguir reconciliación/replay autorizado; no reintentar ciegamente para obtener verde.
 

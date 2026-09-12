@@ -15,7 +15,7 @@ Cada secuencia es un punto de entrada. Cargar las dependencias concretas que cit
 | TAX / COMPLIANCE | [Estado](review.md) → [Tax](tax/architecture.md) → [M09](specs/milestones/tax-deep.md) → [registro normativo](research/normative/normative-register.md) y fuente aplicable → [gates](roadmap/decisions-gaps.md). Financiación: añadir [Corporate](corporate/architecture.md) / [Mutuo](research/normative/mutuo-tax-corporate.md) |
 | DOMAIN OWNER | [Estado](review.md) → [modelo](domain/model.md) / [invariantes](domain/invariants.md) → dueño local: [P2P](domain/procure-to-pay.md), [Inventory](domain/inventory-costing.md), [Treasury](domain/treasury-finance.md) u otro módulo → [spec del hito](specs/index.md) / [gates](roadmap/decisions-gaps.md) |
 | SECURITY / OPERATIONS | [Estado](review.md) → [acceso](architecture/tenancy-access.md) / [amenazas](security/threat-model.md) o [operación](operations/delivery.md) según tarea → [M01–M02](specs/milestones/runtime-masters.md) → [calidad](quality/strategy.md) / [gates](roadmap/decisions-gaps.md) |
-| AI ORCHESTRATOR | [AGENTS](../AGENTS.md) → [estado](review.md) → [catálogo de skills](../.ai/skills.md) / [protocolo](../.ai/README.md) → contrato, spec y gates de la tarea. La evaluación del sistema de agentes está en su [expediente](evidence/agent-system-research.md) |
+| AI ORCHESTRATOR | [AGENTS](../AGENTS.md) → [estado](review.md) → [catálogo de skills](../.ai/skills.md) / [protocolo](../.ai/README.md) → contrato, spec y gates de la tarea. La auditoría actual está en [freshness](evidence/agent-system-freshness-audit.md); el [expediente anterior](evidence/agent-system-research.md) conserva su corte histórico |
 
 ## Mapa de autoridad
 
@@ -35,7 +35,7 @@ Cada secuencia es un punto de entrada. Cargar las dependencias concretas que cit
 
 ## Contratos por tema
 
-Corrección F01–F07: [registro exacto de capabilities](architecture/capability-registry.md), [ciclo de datos personales](security/personal-data-lifecycle.md), [IA por propósito](research/normative/ai-peru-applicability.md) y [transición IGV/IPM](research/normative/igv-ipm-transition.md). [Expediente de remediación](evidence/grand-audit-remediation.md) identifica hallazgos, comprobaciones y revisión pendiente; no autorización de implementación.
+Corrección F01–F07: [registro exacto de capabilities](architecture/capability-registry.md), [ciclo de datos personales](security/personal-data-lifecycle.md), [IA por propósito](research/normative/ai-peru-applicability.md) y [transición IGV/IPM](research/normative/igv-ipm-transition.md). [Expediente de remediación](evidence/grand-audit-remediation.md) conserva hallazgos y comprobaciones del autor; la aceptación independiente y merge posteriores se registran en [review](review.md), sin autorización de implementación.
 
 Enmienda de gobierno propuesta: [roles/alcances/delegación/SoD](architecture/roles-delegation.md) y [configuración/impacto/UX](architecture/configuration-governance.md) → [TILMUX Policy Register/readiness](product/company-policy-register.md) → [manual contable futuro](accounting/tilmux-policy-manual.md). [Expediente A–AF](evidence/governance-roles-configuration-policies.md) demuestra cobertura documental y [benchmark oficial](research/governance-authorization-benchmark.md) conserva fuentes/límites. Aceptación y autorización solo en review.
 

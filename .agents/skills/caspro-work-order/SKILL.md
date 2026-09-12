@@ -17,6 +17,8 @@ Leer [plantilla](../../../.ai/work-order.md), tarjeta pertinente del [programa](
 
 Cuando se autorice preparar: derivar resultado observable y non-goals; identificar dependencias aceptadas y archivos propios; enlazar invariantes/comandos sin reescribirlos; seleccionar gates por efecto/momento y preservar estado pendiente. Completar la plantilla con perfil proporcionado por QA y reviewer. Una duda de política va al dueño/profesional; una de frontera a Architecture. No proponer código para resolver ausencia de contrato.
 
+Completar el núcleo obligatorio de la plantilla y solo sus secciones activadas por riesgo. Roles/comandos/principales → [registro exacto](../../../docs/architecture/capability-registry.md); datos personales/restore/IA → [privacidad](../../../docs/security/personal-data-lifecycle.md); propiedad → [boundaries](../../../docs/architecture/boundaries.md). Enlazar efecto/proveedor, transacciones/correcciones y evidencia desde sus dueños, sin copiar tablas. Registrar watch items con trigger, responsable y efecto retenido; nunca disfrazar un contrato ausente como prueba futura.
+
 ## Límites y salida
 
 History SP2 no es input por defecto; solo por comparación histórica solicitada. No cerrar B/C/D, elegir parámetros empresariales ni producir Authorization: IMPLEMENTATION por inferencia. La WO preparada es candidata, requiere revisión separada de alcance/perfil y posterior autorización del propietario para ejecutar.
