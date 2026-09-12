@@ -7,7 +7,10 @@ Fecha: 2026-09-10. **Estado autoritativo por alcance.** ACCEPTED acepta el contr
 | Router, roles delimitados, WO y rúbrica única | ACCEPTED | Carga según tarea; no ampliar permisos ni duplicar el contrato de evidencia |
 | Frontera provider-neutral y salida de IA como candidato sin efectos críticos | ACCEPTED | Validación determinista/humana; dominios no importan SDK ni conceden comandos críticos |
 | Adecuación real de modelos/herramientas y carga de contexto | PROVISIONAL | Revisar disponibilidad y resultado de la primera WO autorizada; las preferencias no acreditan eficacia |
-| Proveedor, modelo, Hermes/DeepSeek, VPS y primer piloto | PROVISIONAL | Inventario de recursos, threat model, licencia, seguridad y evaluación CasPro antes de selección |
+| Herramientas/modelos de desarrollo, Hermes, VPS/local y pilotos no confirmados | PROVISIONAL | Recursos, licencia, seguridad y eficacia por WO; no seleccionados por la decisión de IA runtime |
+| IA runtime: proveedor/modelo inicial DeepSeek API / V4.1-Flash | DECISIÓN POSTERIOR DEL PROPIETARIO; ACTIVACIÓN PENDIENTE | [Contrato vigente](../architecture/ai-assistance.md); arquitectura neutral aceptada, gates de propósito/privacidad/contrato/evaluación abiertos |
+
+La fila antigua mezclaba herramientas de desarrollo y proveedor del producto. Se aclara prospectivamente por F07: las preferencias Astra/Sol u otros recursos de desarrollo en [.ai](../../.ai/README.md) no cambian; solo la lectura de «proveedor runtime aún sin seleccionar» queda supersedida por la decisión posterior. Ninguna idoneidad técnica, VPS, piloto opcional ni gate se convierte mecánicamente en ACCEPTED.
 
 ## Context
 

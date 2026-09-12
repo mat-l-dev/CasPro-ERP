@@ -96,6 +96,8 @@ Audit crítico: actor real, acting roles/capabilities/grants y revisiones, entid
 
 ## Centro de Configuración y Administración
 
+Identidad de permisos F01: emitir/revocar ConfigDelegation es concesión de Access por RA2/RA3; exige configuration.delegate sobre familia/techo AND access.admin.delegate o access.manage según acción, con aprobación/revisión/A5/SoD. CG5 conserva cancelación/sustitución de política. T-CONFIG solo puede consumir configuration.activate para CG4 bajo mandato aprobado/digest/epoch; no recibe rol humano ni capacidades de preparación/aprobación. [Registro exacto](capability-registry.md) conserva esta excepción técnica separada de los roles.
+
 Navegación: Seguridad y acceso; Organización y maestros; Comercial y crédito; Compras e importación; Inventario; Tesorería; Contabilidad; Tributación; Documentos y sitio cliente; Integraciones; Operación y continuidad. Cada tarjeta muestra owner, entidad/scope, actual efectivo, próximo programado, readiness y acción disponible. Buscador por policy ID/nombre/dueño solo devuelve descriptores autorizados; la ausencia de permiso no filtra datos en totales.
 
 Detalle: Actual / Propuesta / Impacto / Aprobación / Historial / Evidencia y gates. Comparación old/new, destinatarios afectados, vigencia, razón, responsable, profesional requerido y excepción visible. Editar crea borrador; botón primario cambia a Preparar, Solicitar aprobación o Activar según paso. Confirmación crítica expone qué cambiará y qué permanecerá histórico, reauth/SoD y revisión exacta. Teclado/foco/errores/preview siguen [UI](ui.md); no página de500 campos, checkbox de superadmin ni Edit sobre histórico. Read-only puede ver estado sin modificar. USER theme/locale está en Preferencias, separado de políticas.

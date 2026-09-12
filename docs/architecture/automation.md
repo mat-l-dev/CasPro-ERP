@@ -8,16 +8,18 @@ Descriptor común: ID, familia/owner, entidad/alcance, revisión inmutable, vige
 
 | Familia | Dueño / contenido permitido | Salida y frontera |
 |---|---|---|
-| AccountingJournalTemplate | Accounting; roles/cuentas aplicadas, líneas y variables tipadas | Borrador validable; no asiento por guardar plantilla |
+| AccountingJournalTemplateRevision | Accounting posee semántica, revisión y aplicación: roles/cuentas, líneas y variables tipadas | Borrador validable; Documents solo representa un artefacto si se solicita, nunca interpreta ni aplica la plantilla contable |
 | DocumentTemplate | Documents con dueño de contenido; layout y placeholders conocidos | Derivado versionado; no original legal/CPE por sí mismo |
 | CommercialTemplate | Sales; términos/estructura de cotización/contrato dentro de política | Borrador comercial, aprobación propia |
-| EmailTemplate | Communications/Documents con dueño del mensaje | Mensaje preparado; envío requiere intención/autorización específica |
+| EmailTemplate | Dominio del acto aprueba contenido/audiencia; Documents posee representación, versión y render del mensaje | Mensaje preparado; envío requiere intención/autorización específica, no permiso por editar plantilla |
 | ImportMappingTemplate | Dueño del import; columnas, tipos y mapeos explícitos | Preview/import por comandos autorizados; nunca escritura SQL libre |
-| SiteFormTemplate | Operations; campos/evidencia tipados del trabajo | Captura/conformidad bajo contrato local; no crear obligación legal |
-| ReportTemplate | Reporting con dueño de datos; filtros/columnas registrados | Lectura/export autorizado; no consulta arbitraria ni nuevo EEFF |
+| SiteFormTemplate | Sales posee requisito de sitio y aplicabilidad; Documents posee TemplateRevision/render; flujo de visita/instalación captura valores autorizados | Formulario no decide obligación legal/cliente ni autoriza trabajo; cambio conserva paquetes y originales anteriores |
+| ReportTemplate | Dominio del informe posee definición, fórmulas, filtros/columnas y aprobación; Documents posee representación/render del artefacto | Lectura/export autorizado; plantilla visual no redefine mayor, impuesto ni EEFF |
 | AIRequestTemplate | Accounting para AI-TPL-ACCOUNTING-CLASSIFY; schema/políticas/minimización | Solicitud/sugerencia o interpretación shadow, nunca mandato oficial |
 
 Variables monetarias Decimal/moneda, fechas con semántica, referencias de origen y cuentas aplicadas; sin JavaScript, Python, SQL, fórmulas abiertas ni texto IA interpretado como código. Campos desconocidos rechazan. Herencia dinámica de plantillas y edición de lógica desde UI no se incorporan.
+
+Separación F03: contenido y aplicabilidad permanecen en el dominio; Documents conserva mecánica de plantilla documental, versión y render; la superficie consumidora captura/usa valores y la entrega conserva su intención independiente. DocumentTemplate exige el dueño del acto para texto y uso, además de Documents para representación. «Communications», «Reporting» y «Operations» en superficies no crean módulos ni propietarios empresariales. AccountingJournalTemplateRevision es una regla/plantilla contable de Accounting, no una plantilla documental trasladada a Documents. Un dominio puede solicitar otro render, nunca mutar la historia inmutable del anterior.
 
 ## Modos y riesgo
 

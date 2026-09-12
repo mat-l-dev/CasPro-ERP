@@ -30,7 +30,7 @@ Este es el único registro de incógnitas/gates abiertos. Sustituye la clasifica
 | A — DESIGN FREEZE BLOCKER | Falta semántica de dueño, hecho, identidad, estado, reconocimiento, autorización, corrección, contrato público o frontera irreversible | **0** |
 | B — IMPLEMENTATION VALIDATION GATE | Aceptar el mecanismo/alcance implementado sin el ensayo definido abajo | **16** |
 | C — PRODUCTION / FEATURE ACTIVATION BLOCKER | Usar en datos reales la función/configuración afectada sin hechos, política o habilitación | **13** |
-| D — DEFERRED / TRIGGERED | Iniciar una evolución opcional sin su trigger y nueva spec/WO | **6** |
+| D — DEFERRED / TRIGGERED | Activar construcción confirmada o iniciar evolución opcional sin su trigger; D01/D03 distinguen ambas | **6** |
 
 Son 35 registros de trabajo agrupados, no un conteo de cada parámetro o pregunta profesional. La aceptación independiente del candidato es un requisito de gobernanza cuyo resultado se registra únicamente en [review](../review.md): no es una incógnita de diseño A ni evidencia de runtime B, y no cierra los gates B/C/D. Ni la tabla ni un ensayo B autorizan implementar.
 
@@ -154,7 +154,7 @@ Hechos: prestamista/prestatario, vinculación, residencia, poderes, origen/desti
 
 | Hechos / pregunta al profesional | Opciones / fuente | Cambio / clase / cuándo |
 |---|---|---|
-| RUC/SEE, venta/anticipo/entrega/corrección y documentos disponibles: ¿qué artefacto/momento y canal son válidos? | [CPE](../specs/flows/cpe-document-delivery.md), N009 y [Tax](../specs/milestones/tax-deep.md); política por hecho o no activar operación sin cumplimiento | C07; antes de la primera operación afectada, no después de construir M09 |
+| RUC/SEE, venta/anticipo/entrega/corrección y documentos disponibles: ¿qué artefacto/momento y canal son válidos? | [CPE](../specs/flows/cpe-document-delivery.md), [N020/N023/N037](../research/normative/normative-register.md) y [Tax](../specs/milestones/tax-deep.md); política por hecho o no activar operación sin cumplimiento | C07; antes de la primera operación afectada, no después de construir M09 |
 | Régimen/ingresos/actividad, RUC/cohorte, servicio/bien, proveedores/vínculo/residencia: ¿qué RER/IGV/SIRE/SPOT/ND y vencimientos aplican? | [Registro](../research/normative/normative-register.md), N021/N024–N028; aplicar/no aplicar con fundamento o pendiente que bloquea obligación | C08; antes de determinar/declarar/pagar; servicio ND antes de contratar/pagar cuando lo exija la regla |
 | Cadena de propiedad/control, RUC/activación/ingresos: ¿qué cohorte, beneficiarios y fecha de declaración corresponden? | N029 y [Corporate](../corporate/architecture.md); declaración requerida o no aplicable sustentada | C09; antes de vencimiento real, con expediente privado fuera de Git |
 
@@ -197,3 +197,20 @@ Se conservan **A0 / B16 / C13 / D6**, sin cerrar ni añadir IDs. Elección de f�
 | D03 | Crédito B2B diseñado y confirmado obligatorio; activación posterior por política/permisos/pruebas. COD, compromiso sin reserva, WhatsApp, RMA/servicio independiente y consignación/producción nuevos conservan trigger propio. Imports/RFQ/multialmacén confirmados conservan contrato, sin nuevo gate |
 
 La matriz no acredita políticas reales ni ensayos. Aceptación documental y autorización de ejecutar siguen review/WO; operación real exige además gates pertinentes.
+
+## Recomputación candidata F01–F07
+
+A0/B16/C13/D6 pendiente de revisión independiente. Auditoría original propuso A3 por F01 identidad/elegibilidad, F02 ciclo personal y F03 ownership; el [expediente](../evidence/grand-audit-remediation.md) demuestra sus cierres documentales candidatos. F04/F05 completan fuentes/aplicabilidad y versionado; F06/F07 corrigen referencia/estatus, sin sustituir ensayos ni políticas reales. Los 16 B,13 C y6 D permanecen abiertos; no se cierra ni crea gate para fabricar A0.
+
+| Registro existente | Extensión del criterio por hallazgo; respuesta segura |
+|---|---|
+| B02/B03 | F01: IDs exactos, duties/comando, conjunción por recurso, grants/revisión/contracción y cinco IDs exclusivamente técnicos; desconocido deniega. F02: restricciones y revocación bajo A5, todas las entradas; fallo bloquea acceso |
+| B10/B13/B15 | F02: solicitud/decisión/incidente con auditoría mínima, derivados/exports, purga por plan y restore con diario posterior independiente del rollback; si falta completitud, acceso normal y efectos OFF |
+| B04/B08/B14 | F05: split IGV/IPM por fuente/fecha legal, fronteras2026–2029, total18% preservado y corrección histórica; fallo mantiene REVIEW_REQUIRED |
+| B16/B02/B13/B15 | F04: evaluación por propósito/versión, supervisión efectiva y aislamiento; diseño descrito no prueba controles |
+| C06/C10/C11/C13 | F02/F04: responsable/facultades, finalidades/categorías/inventario, banco, encargados/transferencias, plazos/holds, incidentes/Oficial y validación jurídica; sin datos/contratos reales aprobados no activar tratamiento. Copias/seguridad respetan mínimos legales del memo |
+| C07/C08 | F05/F06: norma/layout/fecha del hecho y CPE N020/N023/N037; N009 conserva NIC21 |
+| D01 | IA Accounting/shadow: construcción confirmada, activación por propósito con clasificación/aplicabilidad peruana y plazo real, además de presupuesto/proveedor/evaluación. DeepSeek inicial elegido, no habilitado |
+| D03 | Crédito B2B requerido, inicialmente desactivado; COD/WhatsApp y otras evoluciones mantienen sus triggers particulares |
+
+La validación profesional real y el inventario empresarial no son decisiones semánticas faltantes del contrato: tienen dueño, entrada, momento y salida segura establecidos. Si esa validación exige otro comportamiento fuera del contrato, abrir amendment antes del efecto, sin ocultarlo como simple C.

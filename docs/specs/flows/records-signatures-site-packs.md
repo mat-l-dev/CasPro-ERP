@@ -26,6 +26,8 @@ Estados PREPARED→REQUESTED→PARTIALLY_SIGNED→SIGNED→VERIFIED; DECLINED/EX
 
 ## Formularios y paquete del sitio
 
+Propiedad de plantillas: [familias y responsabilidades](../../architecture/automation.md#familias-de-plantillas). Sales aprueba contenido comercial/requisito y aplicabilidad del sitio; Documents gobierna representación, revisión y render. El operador completa el formulario bajo el comando del flujo; una superficie Operations no aprueba el requisito ni Documents decide su obligatoriedad. Cambiar template no muta original firmado ni manifest previo.
+
 TemplateRevision Documents: clase/owner, idioma, campos permitidos/obligatorios, numeración por entidad/serie, versión efectiva/aprobador, audiencia y texto aprobado. RenderManifest congela fuente/revisiones/valores/template/formato/hash, actor y fecha. Reimpresión conserva número/revisión y se distingue de reemisión; corrección nueva versión no borra firmado. Formularios: packing list, hoja despacho, constancia entrega/POD, aceptación, instalación, commissioning, demostración, transferencia, conteo y visita. Son evidencia comercial/control interno salvo tipo legal explícito; no se denominan CPE/GRE. Documents recibe valores del coordinador y no consulta modelos Sales/Inventory.
 
 ClientSiteProfile Sales por entidad/Party cliente/sitio-unidad y actividad (visita, demo, entrega, instalación; soporte futuro por trigger). RequirementProfileRevision contiene autoridad LAW/REGULATION/MINE_POLICY/VENDOR_QUALIFICATION/INTERNAL, fuente/cláusula/template, effective dates, applicability expression acotada (actividad/persona/equipo/vehículo/tarea), required/optional y quién decide; no DSL jurídica. Una exigencia particular no se convierte en campo obligatorio global.

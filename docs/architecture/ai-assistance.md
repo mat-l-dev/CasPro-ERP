@@ -17,6 +17,10 @@ caso de uso autorizado → redacción/minimización → AIService
 
 ## Casos y riesgo
 
+HIGH/MEDIUM en esta tabla expresa riesgo de ingeniería, no clasificación jurídica peruana. La [matriz por propósito y fuentes Ley31814/DS115-2025-PCM](../research/normative/ai-peru-applicability.md) distingue riesgo aceptable/alto/uso prohibido, obligaciones privadas/públicas y plazos; aplicabilidad real requiere validación competente C06/D01.
+
+Cada finalidad aprobada mantiene registro versionado de aplicabilidad asociado al ProcessingContext: entidad/desarrollador/implementador/responsable, actor y personas/proceso afectados, categorías/fuente de inputs, salida/uso/autoridad/efecto, revisión humana, clasificación razonada por artículo, obligaciones/plazo, controles diseñados frente a demostrados y gates. Accounting o Tax propone; responsable acreditado valida con asesoramiento competente; activación requiere POL-26/delegación/ImpactManifest y evidencia. Ningún switch global sustituye esa aprobación. Cambio de propósito, datos, modelo/alias resuelto o norma invalida la revisión para nuevas solicitudes hasta reevaluación; historia conserva linaje. [Privacidad](../security/personal-data-lifecycle.md) rige prompts, outputs, cachés y restore. La matriz no promueve otros pilotos.
+
 | Caso | Riesgo | Salida permitida | Control |
 |---|---|---|---|
 | Resumir/extractar documento ya autorizado | MEDIUM | campos+citas+incertidumbre | esquema, límites, revisión contra original |

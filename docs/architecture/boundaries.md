@@ -8,7 +8,8 @@ Contrato arquitectónico de [ADR-001](../decisions/adr-001-modularity.md). La fl
 |---|---|---|---|
 | Workspace, agrupación provisional | Subáreas Identity, Organization y Access delimitadas abajo | Audit; infraestructura de autenticación | Módulos operativos; convertir el perfil empresarial en datos globales |
 | Audit | Rastro técnico/empresarial mínimo de quién hizo qué | Primitivas compartidas | Cualquier llamada de negocio de retorno |
-| Documents | Archivo privado, versiones, procedencia, disponibilidad y entrega documental | Workspace, Audit; puertos de objetos/email conectados por composición | Decidir estados legales del CPE, deuda o entrega física; importar Sales/Procurement o SDKs de proveedores en el dominio |
+| Documents | Archivo privado, versiones, procedencia, disponibilidad, entrega documental y ciclo de trámite DataSubjectRequest según la frontera de privacidad abajo | Workspace, Audit; puertos de objetos/email conectados por composición | Decidir fundamento legal de solicitudes, estados legales del CPE, deuda o entrega física; importar Sales/Procurement o SDKs de proveedores en el dominio |
+| Operations, capacidad técnica existente | Registro y ciclo operativo PrivacyIncidentCase; operación/recuperación según delivery, sin apropiarse de hechos de negocio | Workspace, Audit, Documents para evidencia; puertos de infraestructura por composición | Decidir finalidad/base jurídica, modificar hechos de otros dueños o convertir al coordinador superior en dueño de datos; no exige un paquete nuevo |
 | Parties | Contrapartes por entidad, roles cliente/proveedor, identidad vigente | Workspace, Audit, Documents | Apropiar saldos o tratar persona igual a usuario |
 | Catalog | Bienes/SKU, unidades, especificaciones y precios comerciales versionados | Workspace, Audit; Documents para referencias de evidencia del amendment profesional | Existencias y costes de stock |
 | Inventory | Almacenes/ubicaciones, movimientos, coste operativo, seriales, reservas y stock publicable | Catalog, Workspace, Audit, Documents | Importar Sales/Procurement, decidir si un cliente pagó o registrar VNR/deterioro contable |
@@ -27,7 +28,7 @@ Workspace es una agrupación PROVISIONAL según ADR-001: compartir el alta admin
 |---|---|
 | Identity | Usuarios y principales de sistema; autenticación, sesiones y recuperación mediante su infraestructura. No decide membresía empresarial |
 | Organization | Identidad y ciclo administrativo de entidades/establecimientos. Directorio global mínimo para selección; perfil empresarial y establecimientos bajo acceso por entidad. No posee contrapartes, almacenes, dinero ni tratamientos fiscales |
-| Access | Membresías, capacidades, concesiones por recurso y contexto autorizado. Combina identidad y organización; no redefine las reglas del recurso operativo |
+| Access | Membresías, capacidades, concesiones por recurso, contexto autorizado y ciclo de DataRestriction. Combina identidad y organización; ejecuta restricciones de acceso, sin decidir fundamento legal ni redefinir las reglas del recurso operativo |
 
 Access consulta los contratos internos de Identity y Organization; estas subáreas no llaman Access para decidir sus propias reglas de dominio. La autorización de una actuación administrativa se coordina en la entrada correspondiente. Una concesión sobre un almacén conserva su referencia; Inventory verifica su pertenencia y sus guardas. No se añade una dependencia Workspace → Inventory.
 
@@ -38,6 +39,22 @@ Corporate tiene frontera lógica propia y consume Organization/Parties por contr
 Configuration no es un módulo universal: secretos/settings pertenecen a config; precios a Catalog; perfiles tributarios a Tax; políticas comerciales a su propietario. No se crea un almacén global de claves arbitrarias ni un DSL. Los datos con vigencia tienen esquema y consumidor identificados.
 
 La [enmienda de configuración](configuration-governance.md) añade Centro como proyección/router superior: consume descriptores/DTOs y llama comandos completos del dueño, que nunca depende del Centro. Access posee concesiones/mandatos y protocolo administrativo; cada dominio posee payload/revisión/guardas/activación de su política. El [registro TILMUX](../product/company-policy-register.md) solo indexa esas referencias. Impacto cruza propietarios mediante lecturas autorizadas/coordinadores; Audit recibe valores explícitos sin consultas de retorno. No nuevo módulo de verdad empresarial ni ciclo hacia Access desde guardas del recurso.
+
+## Propiedad de hechos de privacidad
+
+Este mapa posee la asignación canónica de los cinco registros del [ciclo de datos personales](../security/personal-data-lifecycle.md#contexto-y-dueños). Poseer significa persistir identidad, revisiones, estado/transiciones y resultado del registro mediante el contrato público del dueño; custodiar un artefacto, ejecutar un paso o coordinar participantes no transfiere esa propiedad. No hay módulo Privacy ni super-rol.
+
+| Hecho persistente | Único dueño del registro y su ciclo | Autoridad y ejecución que no adquiere |
+|---|---|---|
+| PersonalDataPurpose | Dominio de finalidad identificado por owner/familia del ConfigurationDescriptor estático registrado; cada finalidad tiene un único dueño y referencia estable | Define necesidad/uso de su proceso con autoridad empresarial acreditada; no obtiene potestad legal ni datos de otros dominios |
+| ProcessingContext | El mismo dominio dueño del PersonalDataPurpose referenciado; conserva revisiones y referencias de aprobación | La aprobación jurídica viene del responsable del tratamiento acreditado, con asesoramiento competente; Documents custodia la evidencia |
+| DataRestriction | Access; conserva alcance, causa/decisión referenciada, vigencia, revisión y levantamiento | Ejecuta y hace exigible restricción de acceso; cada dueño aplica los pasos sobre sus propios datos/derivados. No decide supresión legal ni borra historia económica |
+| DataSubjectRequest | Documents; posee el expediente y ciclo de atención, plazos, decisiones recibidas por referencia, pasos/constancias y cierre del trámite | Registrar una decisión aprobada no la emite jurídicamente. El responsable del tratamiento decide, el dominio evalúa sus hechos y cada dueño ejecuta el plan autorizado |
+| PrivacyIncidentCase | Operations como capacidad técnica; posee el registro y ciclo operativo del incidente, evaluación documentada, decisiones recibidas por referencia y cierre operativo | Organiza contención/seguimiento y recuperación; el responsable del tratamiento decide la obligación de notificar. Documents custodia comunicaciones/evidencias, Access restringe y cada dominio corrige sus datos |
+
+La coordinación transversal de atención, incidente o restore compone contratos por encima de los dueños; no posee ninguno de estos cinco registros ni un estado paralelo. Operations no se usa aquí como nombre de ese coordinador: su registro operativo se distingue de la composición de pasos. El progreso de solicitud queda en Documents, el de incidente en Operations y cada resultado de ejecución en su dueño. Restore conserva la barrera de privacidad y las aprobaciones operacionales ya especificadas, sin reasignar hechos al recuperar copias.
+
+Documents recibe evaluaciones/decisiones y resultados como valores/referencias versionadas verificadas por la entrada/coordinación, sin llamadas de retorno a dominios/Operations; Access recibe la decisión referenciada sin consultar modelos del dominio. Operations consume evidencia por Documents; Documents no importa Operations. Corporate coordina la validación de facultades/asesoramiento por sus contratos existentes; ni esa coordinación ni R-CORPORATE sustituyen la autoridad real del responsable del tratamiento o le transfieren los cinco registros. Las decisiones legales recibidas se registran con autor, fundamento y evidencia en el expediente correspondiente, no se derivan de su custodio. Se conservan el grafo acíclico, la custodia Documents, las restricciones Access y los gates profesionales/de activación.
 
 ## Flujos que cruzan propietarios
 
