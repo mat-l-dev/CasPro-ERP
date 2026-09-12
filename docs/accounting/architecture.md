@@ -1,5 +1,7 @@
 # Arquitectura objetivo de Accounting
 
+Extensión propuesta requerida M07–M08: [plantillas, automatización, AI_SUGGEST a DRAFT y Shadow Accounting](templates-automation-shadow.md). Accounting conserva autoridad exclusiva sobre posting oficial; el ledger experimental aislado carece de esa autoridad y no forma parte de los cuatro EEFF. [Review](../review.md) registra re-revisión pendiente del nuevo delta, sin invalidar aceptaciones históricas.
+
 Propietario: Accounting. Estado: arquitectura con [deep spec M07](../specs/milestones/accounting-deep.md) y [M08/goldens](../specs/acceptance/reporting-goldens.md) candidatas; no es implementación ni política profesional aprobada. Fuentes normativas: [registro](../research/normative/normative-register.md), [matriz NIIF](../research/normative/ifrs-applicability.md) y [reporte NPIF](npif-reporting.md).
 
 ## Cadena y ownership

@@ -1,5 +1,7 @@
 # CasPro Master Program
 
+Delta acotado posterior al PASS inicial de PR #7: [Case Flow/preview](../specs/cross-cutting/case-flow-preview.md), [automatización](../architecture/automation.md), [Accounting IA/shadow](../accounting/templates-automation-shadow.md). M01 solo primitives de Access/config/jobs/audit; M02–M03 listas y relaciones con objetos existentes; M04 grafo/preview/vista guardada/dossier; M05–M06 expanden compras/tesorería; M07 templates/reglas/recurrencia/AI→draft y shadow on-demand; M08 comparación mensual y lote acotado; M09 nodos Tax. Sin framework vacío M01 ni shadow antes de hechos. Implementar estas capacidades requiere misión/WO autorizadas; D01 controla activación IA, otros pilotos siguen opcionales.
+
 Propietario: Product/Architecture. [ADR-012](../decisions/adr-012-global-documentation-freeze.md) rige la secuencia, [review](../review.md) el estado global y el [índice profundo](../specs/index.md) la readiness por hito. **Deep specs M01–M09 → aceptación independiente del GLOBAL DOCUMENTATION FREEZE → investigación dedicada de skills → regeneración de WOs → implementación expresamente autorizada.** IDs ordenan dependencias de entrega, no aplazan especificación ni prometen fechas. Las tarjetas distinguen resultados futuros de entrega de criterios documentales; no exigen ejecutar esos resultados para revisar el diseño. Los pendientes se clasifican únicamente en [gaps](decisions-gaps.md).
 
 ## Cuatro vistas coordinadas
@@ -13,8 +15,8 @@ Propietario: Product/Architecture. [ADR-012](../decisions/adr-012-global-documen
 | M04 | Primera venta B2C segura | SP2 actualizado + CPE/delivery/UX policy | Pedido, cobro íntegro y reserva habilitan despacho; CPE externo se obtiene en su oportunidad legal, incluso antes del despacho; entrega documental por aprobación | Solo explicación de excepción, si existe piloto separado |
 | M05 | Compra a pago controlado | P2P + Tax de compra + conteo specs | PO/receipt/service/CPE/match/payable/payment | Matching IA solo candidato después del determinista |
 | M06 | Control financiero y corporate | Contratos Treasury/Corporate; C06 antes de financiar realmente | Extractos, conciliación, cash position; expediente corporate | Piloto opcional D01 de candidatos bancarios, humano obligatorio |
-| M07 | Ledger y cierre | Accounting policies/R2R/PCGE specs; C01–03 antes de activar políticas/libro reales | Posting, GL, conciliaciones, períodos, ajustes/cierre | Sugerencia contable opcional sin escritura |
-| M08 | EEFF NPIF completos | Reporting/notas/transición spec + golden cases | Cuatro estados, notas, comparativos y drill-down | Explicación de cifras con fuente, revisión humana |
+| M07 | Ledger y cierre | Accounting policies/R2R/PCGE specs; C01–03 antes de activar políticas/libro reales | Posting, GL, conciliaciones, períodos, ajustes/cierre | Templates/reglas/recurrencia, AI_SUGGEST→DRAFT y shadow aislado requeridos en diseño; activación D01 |
+| M08 | EEFF NPIF completos | Reporting/notas/transición spec + golden cases | Cuatro estados, notas, comparativos y drill-down | Comparador mensual oficial/shadow experimental y explicación con fuente; no sustituye EEFF |
 | M09 | Operación tributaria preparada | Contratos tipados RER/IGV/SIRE/SPOT; perfiles reales C07–09 | Registros/conciliaciones/calendario, sin presentación automática | Clasificación candidata de excepciones; sin determinación/presentación |
 | M10 | Madurez y expansión por trigger | Gate de necesidad para cada capability | otros canales/marcos por trigger; roles/SoD base pertenecen a M01 y cada flujo, crédito confirmado tiene incremento propio | proveedor se renueva por evaluación, no permanencia automática |
 
@@ -34,7 +36,7 @@ M06 añade [eventos y estados de financiación](../specs/flows/financing-events-
 
 ### Delta propuesto — gobierno y crédito obligatorio
 
-La enmienda de [roles/configuración/políticas](../evidence/governance-roles-configuration-policies.md) está pendiente de revisión independiente según review. M01 incorpora estructuras de roles/mandatos/SoD/último-admin y configuración versionada; los valores reales se resuelven por [readiness](../product/company-policy-register.md#readiness-de-políticas), no todos antes del primer código. Separación maker/checker existe desde cada operación sensible, con excepción honesta de arranque; no se aplaza la estructura a M10.
+La enmienda de [roles/configuración/políticas](../evidence/governance-roles-configuration-policies.md) obtuvo PASS independiente para el candidato inicial; el delta posterior del propietario requiere re-revisión del nuevo HEAD conforme [review](../review.md). M01 incorpora estructuras de roles/mandatos/SoD/último-admin y configuración versionada; los valores reales se resuelven por [readiness](../product/company-policy-register.md#readiness-de-políticas), no todos antes del primer código. Separación maker/checker existe desde cada operación sensible, con excepción honesta de arranque; no se aplaza la estructura a M10.
 
 **B2B CREDIT: CONFIRMED IMPLEMENTATION REQUIREMENT — REQUIRED TO IMPLEMENT, CONFIGURATION-CONTROLLED ACTIVATION.** Incremento acotado después de B2B prepago y Treasury base/aplicaciones/exposición (tramo M06), sin esperar M10. Conserva [CreditPolicyRevision y comandos](../specs/flows/professional-sales.md#crédito-diseñado-activación-posterior); entrega límites/exposición/aging/holds/override/cobranzas y pruebas B02/B03/B06 pertinentes aun si TILMUX inicia DISABLED. Cierre de entrega del incremento requiere capacidad construida y validada; operación real requiere POL-08 aprobada, permisos, D03 y C05/C07/C08/C13 aplicables. D03 ya no pregunta si construir crédito. OFF global bloquea nueva exposición; subset habilitado no hereda permiso económico. COD no está confirmado obligatorio y conserva trigger separado. No implica nueva venta sin reserva ni nueva política hoy activa.
 
@@ -168,7 +170,7 @@ M03 requiere política de costo/unidades y dinero real cuando aplique; M04 contr
 | Canonical docs | accounting architecture, normative register/matrix, inventory, Tax boundary |
 | Research / human decisions | professional policy catalog, PCGE version, opening, RER presentation, precision |
 | Regulatory / technical / security gates | balanced immutable postings; period locks; source version; PCGE adapter; separation Tax; approvals |
-| UX deliverable / AI role | journals, trial balance, close cockpit and drillback; AI candidates never post |
+| UX deliverable / AI role | journals/templates/rules, trial balance, close cockpit and drillback; AI candidates never official-post; shadow on-demand aislado |
 | WO family | ACCOUNTING-CORE, POSTING-POLICIES, SUBLEDGER-CONTROLS, PERIOD-CLOSE |
 | Future skill family | `caspro-accounting`, enlaza políticas vigentes sin copiarlas |
 | Orchestrator / implementer / reviewer / Astra | Sol / accounting implementer / accounting reviewer + professional / Astra mandatory |
@@ -185,7 +187,7 @@ M03 requiere política de costo/unidades y dinero real cuando aplique; M04 contr
 | Canonical docs | npif-reporting, accounting architecture, normative register |
 | Research / human decisions | note applicability, EFE mapping, authorization, materiality and exact comparative transition |
 | Regulatory / technical / security gates | NPIF 18 sections; four owner-required statements+notes; reproducibility; document authorization |
-| UX deliverable / AI role | statement→evidence drilldown and persisted PDF snapshot; IA may explain only sourced figures |
+| UX deliverable / AI role | statement→evidence drilldown and persisted PDF snapshot; comparación mensual shadow separada del paquete, explicación con fuentes |
 | WO family | REPORTING-MAPPINGS, STATEMENTS, NOTES, PACKAGE, DRILLDOWN |
 | Future skill family | `caspro-financial-reporting`, solo con políticas NPIF aprobadas |
 | Orchestrator / implementer / reviewer / Astra | Sol / reporting implementer / accountant reviewer / Astra final financial checkpoint |

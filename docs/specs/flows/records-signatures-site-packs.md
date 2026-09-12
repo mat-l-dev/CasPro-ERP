@@ -1,5 +1,7 @@
 # Originales, firmas, formularios, sitio cliente y reclamaciones
 
+Preview se concreta en [Case Flow/PDF/XML](../cross-cutting/case-flow-preview.md#preview-pdf-y-xml): originales inmutables, derivados ligados al hash/revisión, aislamiento de contenido activo, carga por páginas, metadata/preview/download separados y revocación. Dossier es snapshot autorizado e índice; no export indiscriminado ni prueba de firma desde raster/OCR. Esta extensión no cambia facultades/retención/firma del contrato siguiente.
+
 Propuesta del amendment; [review](../../review.md) controla fase. Documents posee bytes/metadatos/entrega, Sales el acto comercial/paquete cliente/reclamación, Corporate poderes/custodia legal aplicable. [Normativa](../../research/normative/operational-completeness.md) distingue ley, reglamento y requisito del cliente. No CompliancePlatform ni nuevo WorkflowEngine.
 
 ## Originales y derivados

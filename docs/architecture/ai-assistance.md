@@ -1,5 +1,7 @@
 # Arquitectura de IA asistida
 
+Delta confirmado de diseño: [Accounting templates/AI/shadow](../accounting/templates-automation-shadow.md). AI_SUGGEST recomienda cuentas del conjunto aplicado autorizado y tratamiento; humano acepta a DRAFT, nunca post automático. SHADOW_AI_EXECUTE puede postear/corregir únicamente interpretaciones en DB/proceso experimental separados sin acceso de escritura oficial. El diagrama y prohibiciones siguientes rigen efectos oficiales; esta excepción shadow no concede tools del Core. [Benchmark AF](../research/automation-flow-ai-benchmark.md) compara OpenAI/Gemini/DeepSeek/local; D01 controla activación M07–M08, no opcionalidad del diseño confirmado. Pilotos bancarios y demás casos siguen su trigger separado; no se elige proveedor ahora.
+
 Propietario: plataforma de asistencia, con decisiones finales en cada dominio. Estado: PROVISIONAL / RESEARCHED; no hay proveedor, modelo, VPS ni runtime elegido. La IA no es fuente de verdad.
 
 ## Frontera
@@ -11,7 +13,7 @@ caso de uso autorizado → redacción/minimización → AIService
  → auditoría + evaluación
 ```
 
-`AIService` centraliza políticas, presupuesto, timeout, redacción, esquemas, provenance y observabilidad. Un adaptador puede usar API o inferencia propia; ningún dominio importa SDK/modelo. El modelo recibe solo datos necesarios y nunca credenciales, documentos completos por defecto o acceso DB. Sus tools son lecturas acotadas/candidatos; comandos que cambian dinero, ledger, stock, pagos, períodos, CPE, impuestos o envíos están fuera de su autoridad.
+`AIService` centraliza políticas, presupuesto, timeout, redacción, esquemas, provenance y observabilidad. Un adaptador puede usar API o inferencia propia; ningún dominio importa SDK/modelo. El modelo recibe solo datos necesarios y nunca credenciales, documentos completos por defecto o acceso DB. Sus tools son lecturas acotadas/candidatos; comandos que cambian dinero, ledger oficial, stock, pagos, períodos oficiales, CPE, impuestos o envíos están fuera de su autoridad.
 
 ## Casos y riesgo
 
@@ -24,7 +26,7 @@ caso de uso autorizado → redacción/minimización → AIService
 | Explicar discrepancia/EEFF | MEDIUM | explicación con links a fuentes | cálculo proviene de sistema, no del LLM |
 | Búsqueda semántica | MEDIUM | resultados autorizados | filtro de entidad/permisos antes y después |
 | Anomalías | MEDIUM/HIGH | alerta reproducible | baseline/version/evaluación; sin bloqueo automático |
-| Crear/modificar hechos críticos | PROHIBITED AUTONOMOUS ACTION | ninguna | puerto inexistente para el modelo |
+| Crear/modificar hechos críticos oficiales | PROHIBITED AUTONOMOUS ACTION | ninguna | puerto inexistente para el modelo |
 
 ## Evidencia por inferencia
 

@@ -1,5 +1,7 @@
 # M07 — Accounting, políticas y control del mayor
 
+Delta M07 propuesto: [contrato de JournalTemplate, reglas/recurrencia, sugerencia IA y shadow](../../accounting/templates-automation-shadow.md), con [modos/mandatos/observabilidad](../../architecture/automation.md). Templates/reglas aprobadas generan borradores; RULE_AUTO_EXECUTE oficial permanece OFF hasta mandato determinístico separado y A03 completo. Shadow on-demand consume hechos congelados en DB/proceso aislados; M08 compara sin modificar libro/EEFF. Activación D01/B16 y B02/B03/B07/B13/B15/C01/C10/C11/C13 pertinentes; diseño confirmado, sin WO ni ejecución en esta misión.
+
 Estado: **SPECIFIED — candidato / PENDING PROFESSIONAL VALIDATION / PENDING EXECUTABLE VALIDATION**. Una spec define cómo ejecutar una política aprobada; no demuestra que esa política corresponda a TILMUX. Fuentes: [arquitectura](../../accounting/architecture.md), [18 secciones NPIF](../../accounting/npif-policy-catalog.md), [matriz NIIF](../../research/normative/ifrs-applicability.md), [hechos y locks](../cross-cutting/economic-facts.md).
 
 ## Libro, política e interpretación
@@ -10,7 +12,7 @@ Cuenta aplicada: ID estable, código oficial/código interno, versión de catál
 
 Propuesta de arranque: PCGE 2019 para 2027, con transición explícita a 2026 para 2028; anticipar 2026 solo si el contador aprueba beneficio y coste y se resuelve procedencia del PDF/dataset. Un cambio de plan produce mapping muchos-a-muchos versionado con criterios, saldos y reconciliación; no renombrado masivo por código igual. Cuenta retirada sigue navegable históricamente.
 
-Interpretación: hechos íntegros + política/regla tipada + inputs de juicio/estimación + tasa/fecha/fuente → líneas candidatas con justificación corta y comprobable. No DSL general, evaluación de Python almacenado ni IA eligiendo cuentas. Una regla ausente queda UNMAPPED; una fuente incompleta INCOMPLETE; conflicto REVIEW_REQUIRED. Ninguno crea asiento de suspense automáticamente. Ajustes manuales sí requieren motivo, documentos, política y capacidad específica.
+Interpretación: hechos íntegros + política/regla tipada + inputs de juicio/estimación + tasa/fecha/fuente → líneas candidatas con justificación corta y comprobable. No DSL general ni evaluación de Python almacenado. IA puede recomendar tratamiento y cuentas del conjunto aplicado autorizado según [AI_SUGGEST → DRAFT y shadow aislado](../../accounting/templates-automation-shadow.md); no decide cuentas oficiales ni postea autónomamente el libro oficial. Una regla ausente queda UNMAPPED; una fuente incompleta INCOMPLETE; conflicto REVIEW_REQUIRED. Ninguno crea asiento de suspense automáticamente. Ajustes manuales sí requieren motivo, documentos, política y capacidad específica.
 
 Asiento confirmado: entidad/libro/período/diario/identidad, fecha económica/contable/registro, moneda de origen e importes, moneda funcional, tasa, cuenta/dimensiones, débitos/créditos no negativos, exactamente un lado positivo por línea, suma débito=crédito exacta a precisión aprobada, al menos dos líneas y hechos/políticas referenciados. Cero no representa partida desconocida. Numeración se asigna bajo recurso que protege serie/período; huecos por abortos se explican si la política los permite, no promesa de secuencia sin huecos por usar autoincremento.
 

@@ -4,6 +4,8 @@ Owner: Access; Identity conserva credenciales/sesiones, los dominios sus guardas
 
 ## Modelo y composición
 
+El delta de automatización añade las [capabilities enumeradas](#capacidades-del-delta-de-automatización), sin nuevos roles humanos ni concesiones automáticas a asignaciones existentes.
+
 Usuario humano → Membership por entidad → RoleAssignment(s) → RoleRevision con capabilities enumeradas → ScopeGrant por capability → autorización del comando. Una duty agrupa operaciones para explicar responsabilidad, no añade un motor ni permiso implícito. PolicyRevision del dueño determina condiciones/cálculos/aprobación, no identidad. Un rol no prueba título profesional ni representación legal.
 
 RoleTemplate estándar: ID estable, nombre visible, versión, dueño Access, duties, conjunto exacto de capabilities, tipos de alcance admitidos y conflictos. RoleRevision es inmutable tras asignación; revisión nueva necesita diff/preview y reasignación aprobada, nunca propagar nuevas facultades a usuarios existentes automáticamente. CustomRole por entidad puede seleccionar capabilities registradas y scopes válidos; no expresiones, wildcards, herencia ni SQL. Retirar una capability de un comando requiere enmienda/compatibilidad explícita, no editar la plantilla. Nombre/puesto de RRHH no concede rol.
@@ -45,6 +47,30 @@ Comunes a roles operativos R-MASTER–R-SITE: `support.reference.read`, `documen
 | R-AUDIT / Auditor de lectura y trazabilidad / estándar | audit.view, audit.export, access.view, configuration.view, policy.register.view; el mandato selecciona explícitamente sales.view, procurement.view, inventory.view, treasury.view, accounting.view, tax.view, documents.view o sales.site.view según encargo | Entidad/período/dominio/audiencia de encargo | Sin modificación/aprobación/config; combinar con operación pierde independencia en sus propios hechos; S al export sensible, N |
 
 `policy.register.view` se concede también a quienes pueden leer una política de su dominio: solo fila autorizada. Registrar rol R-AUDIT no concede automáticamente todas las lecturas ni datos de salud. R-PLATFORM no accede a datos de negocio desde el ERP; acceso material DB/backup del operador es riesgo privilegiado fuera de RLS, restringido por C10/controles operacionales, no inexistente.
+
+## Capacidades del delta de automatización
+
+Catálogo exhaustivo de **15 nuevos IDs** (12 humanos, 3 técnicos) de este delta. Extienden RoleTemplate futuro, no RoleAssignment vigente: diff/aprobación por Access y scopes explícitos antes de conceder. Un permiso de superficie se conjuga con lectura/acción de dueño; no reemplaza permisos históricos. No wildcard ni herencia preview→download.
+
+| ID exacto / dueño | Plantilla humana o principal técnico elegible | Alcance y conjunción obligatoria |
+|---|---|---|
+| case_flow.view / Operations presentación | Roles operativos R-MASTER–R-SITE y R-AUDIT si mandato del caso | Entidad/casos/objetos autorizados; AND lectura de cada dueño; filtro previo a layout |
+| case_flow.export / Operations presentación + Documents artefacto | R-RECORDS, R-AUDIT y rol operativo solo por concesión explícita del caso | AND case_flow.view y permisos de export de cada sección; no originals por defecto |
+| documents.preview / Documents | Roles operativos R-MASTER–R-SITE, R-RECORDS y R-AUDIT según mandato | AND documents.view del objeto/revisión; sin bytes originales cuando no tiene download |
+| documents.download / Documents | R-RECORDS; demás roles solo concesión explícita por evidencia/mandato | AND documents.view del objeto; audiencia/hold/retención del dueño; no por tener preview |
+| automation.view / superficie por dueño | Roles operativos y R-AUDIT por familia; R-CONFIG/R-PLATFORM metadata técnica permitida | Runs/scope autorizado; ver proveedor técnico no revela input contable |
+| automation.simulate / dueño de regla | R-ACCOUNTING para familia Accounting; otros solo si dueño registra consumidor | AND lectura de inputs y accounting.policy.prepare para reglas Accounting; evaluación aislada sin efecto |
+| accounting.template.use / Accounting | R-ACCOUNTING | AND accounting.prepare; template aprobado/vigente y hechos del libro/período |
+| accounting.ai.request / Accounting | R-ACCOUNTING | AND accounting.view/fuentes; POL-26/propósito/presupuesto vigente |
+| accounting.ai.accept_draft / Accounting | R-ACCOUNTING | AND accounting.prepare; revisión/entidad/guardas del borrador; nunca post |
+| accounting.shadow.view / Accounting evaluación | R-ACCOUNTING, R-ACCOUNTING-CONTROL, R-AUDIT por mandato | AND lectura de hechos/snapshots involucrados; metadata técnica no concede contenido |
+| accounting.shadow.run / Accounting evaluación | R-ACCOUNTING | AND accounting.shadow.view, fuentes autorizadas y POL-26/mandato/budget; replay acotado, no Core writes |
+| accounting.shadow.review / Accounting evaluación | R-ACCOUNTING-CONTROL | AND accounting.shadow.view y competencia/evidencia; revisión de comparación/labels no firma EEFF |
+| shadow.interpret / executor experimental | Solo principal técnico shadow aislado | Cápsula sellada entidad/run; sin CONNECT/puertos Core |
+| shadow.post / executor experimental | Solo principal técnico shadow aislado | Schema/cuentas/balance del ledger shadow; **no accounting.post** |
+| shadow.correct / executor experimental | Solo principal técnico shadow aislado | Nueva revisión/reversa shadow; no overwrite ni corrección oficial |
+
+Comparar snapshots usa accounting.shadow.view más accounting.view y permiso de cada fuente; por ser proyección de lectura no añade capability de post ni otro ID compare. Preparar/aprobar JournalTemplate, RuleCandidate, AIRequestTemplate y EquivalenceMapping usa accounting.policy.prepare/approve existente AND delegación administrativa de la familia; SOD-05/08 y aval profesional pertinentes. RULE_AUTO_EXECUTE determinístico, OFF inicial, requiere principal de servicio con accounting.post únicamente por mandato explícito de regla/alcance/vigencia validado; tal principal no comparte identidad/secretos con proveedor, modelo o shadow. Configurar automatización nunca concede ese permiso. Implementar/verificar esta separación queda bajo gates, no se otorgan roles en esta misión.
 
 ## Capabilities existentes y refinamiento de autoridad
 

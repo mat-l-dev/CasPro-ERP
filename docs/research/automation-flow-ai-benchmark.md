@@ -86,25 +86,25 @@ La comparación de coste usa la misma ficha: tokens entrada/salida/caché/reason
 
 ## Descubrimientos y puntuación
 
-Escala de juicio de diseño1–5, no medición: V valor, F frecuencia, E reducción de error, A auditabilidad (mayor mejor); C complejidad, P coste rendimiento, R riesgo (mayor peor). Dependencias y encaje importan más que sumar cifras. NOW significa **diseño recomendado**, no aceptación independiente/implementación. Se canonizan solo dos conveniencias adicionales acotadas: vistas guardadas personales tipadas y dossier de caso; los demás NOW profundizan contratos ya exigidos o existentes.
+Escala de juicio de diseño1–5, no medición: V valor, F frecuencia, E reducción de error, A auditabilidad (mayor mejor); C complejidad de implementación, P coste de rendimiento, R riesgo de seguridad/privacidad, K coste de infraestructura/operación (mayor peor). Dependencias y encaje importan más que sumar cifras. NOW significa **diseño recomendado**, no aceptación independiente/implementación. Se canonizan solo dos conveniencias adicionales acotadas: vistas guardadas personales tipadas y dossier de caso; los demás NOW profundizan contratos ya exigidos o existentes.
 
-| Mejora y fundamento | V/F/E/A | C/P/R | Dependencia / encaje | Prioridad / disposición |
+| Mejora y fundamento | V/F/E/A | C/P/R/K | Dependencia / encaje | Prioridad / disposición |
 |---|---|---|---|---|
-| Home por rol/cola de excepciones, AF-S12 y UI existente | 5/5/5/4 | 2/2/2 | DTOs/Access M04–M08 | P0 DISCOVERED_AND_RECOMMEND_NOW, reforzar patrón existente, no dashboard nuevo |
-| Vistas guardadas, favoritos en filtro tipado; AF-S10/12 | 4/5/3/2 | 2/1/2 | Preferencias/autorizar de nuevo M04 | P1 DISCOVERED_AND_RECOMMEND_NOW solo vista personal sin compartir permisos; favoritos/recientes más tarde |
-| Dossier exportable autorizado, AF-S09/10 + necesidad B2B | 5/3/4/5 | 3/3/4 | Corte CaseFlow/Documents M04+ | P1 DISCOVERED_AND_RECOMMEND_NOW, resumen/lista e índice, no ZIP de todo por defecto |
-| Why-blocked, acción de dueño y diff humano, AF-S04/12 | 5/5/5/5 | 3/2/2 | Contratos flujo/automatización de este delta | P0 DISCOVERED_AND_RECOMMEND_NOW, requisito ya confirmado |
-| Command palette/búsqueda global reciente | 4/4/2/2 | 3/3/4 | ACL por resultado y entradas disponibles | P2 DISCOVERED_BUT_LATER; no nuevo índice indiscriminado |
-| Draft autosave seguro | 4/4/3/3 | 3/2/4 | Control de concurrencia/PII/recuperación | P2 DISCOVERED_BUT_LATER; borrador no aprobación, no persistencia sensible local por defecto |
-| Bulk impact preview y duplicate/data-quality cockpit | 5/3/5/5 | 3/3/3 | Maestros/importación/CG existentes | P1 DISCOVERED_AND_RECOMMEND_NOW como consumo existente, sin motor de deduplicación nuevo |
-| Cockpits cierre/cobranza/caja/stock/sourcing, AF-S07/12 | 5/4/4/5 | 3/3/3 | Proyecciones de cada dueño M04–M08 | P1 DISCOVERED_AND_RECOMMEND_NOW progresivo; no todos antes M01 |
-| Digest/qué cambió desde visita/contextual help | 4/3/3/3 | 3/2/3 | Epoch/cortes, mandato de envío | P2 DISCOVERED_BUT_LATER digest/diff personal; ayuda contextual ya UI |
-| Setup checklist por política | 4/2/4/4 | 2/1/2 | POL/readiness/CG M01 y cada dominio | P1 DISCOVERED_AND_RECOMMEND_NOW como vista de gates, sin “completar” aprobaciones |
-| Dashboard personal de widgets arbitrarios | 3/3/2/2 | 4/4/4 | Constructor/layout/queries | P3 DISCOVERED_BUT_LATER solo si vistas conocidas insuficientes |
-| Móvil lectura/lista y aprobación ordinaria accesible | 4/3/4/3 | 3/2/3 | UI/reauth/preview B09/C12 | P1 DISCOVERED_AND_RECOMMEND_NOW fallback equivalente, no app móvil nueva |
-| Edición offline de hechos/pagos | 2/2/1/1 | 5/5/5 | Conflictos de autoridad/duplicación | REJECT REJECTED_AS_OVERENGINEERING; no necesidad confirmada |
-| BPMN/n8n builder, canvas ejecutable, DSL de políticas | 2/2/1/2 | 5/5/5 | Reemplaza dueños y multiplica superficie | REJECT REJECTED_AS_OVERENGINEERING; solo referencia visual |
-| Multimodelo en cada hecho live y autoaprendizaje | 2/4/1/1 | 5/5/5 | Coste/datos/autoridad no justificados | REJECT REJECTED_AS_OVERENGINEERING; experimentos acotados y promoción humana sí |
-| Edición Office/colaboración realtime/anotación libre PDF | 3/2/2/2 | 5/4/5 | Nuevos parsers/protocolos/firma | P3 DISCOVERED_BUT_LATER por necesidad; preview seguro no suite ofimática |
+| Home por rol/cola de excepciones, AF-S12 y UI existente | 5/5/5/4 | 2/2/2/2 | DTOs/Access M04–M08 | P0 DISCOVERED_AND_RECOMMEND_NOW, reforzar patrón existente, no dashboard nuevo |
+| Vistas guardadas, favoritos en filtro tipado; AF-S10/12 | 4/5/3/2 | 2/1/2/1 | Preferencias/autorizar de nuevo M04 | P1 DISCOVERED_AND_RECOMMEND_NOW solo vista personal sin compartir permisos; favoritos/recientes más tarde |
+| Dossier exportable autorizado, AF-S09/10 + necesidad B2B | 5/3/4/5 | 3/3/4/3 | Corte CaseFlow/Documents M04+ | P1 DISCOVERED_AND_RECOMMEND_NOW, resumen/lista e índice, no ZIP de todo por defecto |
+| Why-blocked, acción de dueño y diff humano, AF-S04/12 | 5/5/5/5 | 3/2/2/2 | Contratos flujo/automatización de este delta | P0 DISCOVERED_AND_RECOMMEND_NOW, requisito ya confirmado |
+| Command palette/búsqueda global reciente | 4/4/2/2 | 3/3/4/3 | ACL por resultado y entradas disponibles | P2 DISCOVERED_BUT_LATER; no nuevo índice indiscriminado |
+| Draft autosave seguro | 4/4/3/3 | 3/2/4/2 | Control de concurrencia/PII/recuperación | P2 DISCOVERED_BUT_LATER; borrador no aprobación, no persistencia sensible local por defecto |
+| Bulk impact preview y duplicate/data-quality cockpit | 5/3/5/5 | 3/3/3/3 | Maestros/importación/CG existentes | P1 DISCOVERED_AND_RECOMMEND_NOW como consumo existente, sin motor de deduplicación nuevo |
+| Cockpits cierre/cobranza/caja/stock/sourcing, AF-S07/12 | 5/4/4/5 | 3/3/3/3 | Proyecciones de cada dueño M04–M08 | P1 DISCOVERED_AND_RECOMMEND_NOW progresivo; no todos antes M01 |
+| Digest/qué cambió desde visita/contextual help | 4/3/3/3 | 3/2/3/3 | Epoch/cortes, mandato de envío | P2 DISCOVERED_BUT_LATER digest/diff personal; ayuda contextual ya UI |
+| Setup checklist por política | 4/2/4/4 | 2/1/2/1 | POL/readiness/CG M01 y cada dominio | P1 DISCOVERED_AND_RECOMMEND_NOW como vista de gates, sin “completar” aprobaciones |
+| Dashboard personal de widgets arbitrarios | 3/3/2/2 | 4/4/4/4 | Constructor/layout/queries | P3 DISCOVERED_BUT_LATER solo si vistas conocidas insuficientes |
+| Móvil lectura/lista y aprobación ordinaria accesible | 4/3/4/3 | 3/2/3/2 | UI/reauth/preview B09/C12 | P1 DISCOVERED_AND_RECOMMEND_NOW fallback equivalente, no app móvil nueva |
+| Edición offline de hechos/pagos | 2/2/1/1 | 5/5/5/5 | Conflictos de autoridad/duplicación | REJECT REJECTED_AS_OVERENGINEERING; no necesidad confirmada |
+| BPMN/n8n builder, canvas ejecutable, DSL de políticas | 2/2/1/2 | 5/5/5/5 | Reemplaza dueños y multiplica superficie | REJECT REJECTED_AS_OVERENGINEERING; solo referencia visual |
+| Multimodelo en cada hecho live y autoaprendizaje | 2/4/1/1 | 5/5/5/5 | Coste/datos/autoridad no justificados | REJECT REJECTED_AS_OVERENGINEERING; experimentos acotados y promoción humana sí |
+| Edición Office/colaboración realtime/anotación libre PDF | 3/2/2/2 | 5/4/5/5 | Nuevos parsers/protocolos/firma | P3 DISCOVERED_BUT_LATER por necesidad; preview seguro no suite ofimática |
 
 No evidencia demuestra que shadow sea “mejor contador”. Evaluación requiere resultados revisados, abstención y errores materiales por dimensión; acuerdo con libro/modelo no es verdad. [Spec Accounting](../accounting/templates-automation-shadow.md) y [automatización](../architecture/automation.md) poseen los contratos propuestos; [informe A–AS](../evidence/intelligent-automation-visual-flow.md) registra cobertura y límites.

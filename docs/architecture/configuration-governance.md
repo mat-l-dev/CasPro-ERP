@@ -1,5 +1,7 @@
 # Configuración, activación e impacto
 
+[Plantillas y automatizaciones tipadas](automation.md) reutilizan este protocolo por dueño/familia: template, regla, calendario, mandato y AIRequestTemplate tienen revisiones/efectos distintos; no activación conjunta por guardar una plantilla. Accounting usa accounting.policy.prepare/approve con delegación administrativa para template/regla/equivalence mapping/POL-26 de su función. ImpactManifest incluye drafts editados, ocurrencias consumidas, mandatos, fuente/corte, versiones de modelo/prompt/evaluación y presupuesto; activar no recalcula historia ni renueva permiso vencido. Centro de automatización es router de descriptores y runs, no settings dump ni Rule DSL.
+
 Propuesta del amendment según [review](../review.md). El Centro de Configuración y Administración es una superficie de consulta y entrada a comandos de los dueños de [boundaries](boundaries.md), no un módulo empresarial nuevo. [Roles](roles-delegation.md) gobierna WHO; cada política tipada del dueño gobierna WHEN/HOW. El [registro TILMUX](../product/company-policy-register.md) indexa contratos/versiones, no ejecuta reglas. Fundamento [GOV-S03/S07/S11/S14–17](../research/governance-authorization-benchmark.md).
 
 ## Catálogo de superficies y autoridad

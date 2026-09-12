@@ -63,7 +63,7 @@ Las filas profesionales describen capacidades de PR #6, aceptado por re-revisió
 | Operational inbox | UI projection | owner exceptions→prioritized queue | public queries | daily efficiency; HIGH leakage | M04+ / query/UX spec / volume |
 | Search/document flow | UI projection | authorized indexes/links→results/graph | all owners | explainability; HIGH privacy | M04+ / search spec / external engine |
 | CSV/Excel import | each owner | file→validate/preview/confirm | Documents, Audit | onboarding; HIGH bulk | M03/M05 / per-domain schema / volume |
-| AI suggestion service | AI platform/domain | minimized case→candidate/evidence | provider adapter, evaluation | efficiency; CRITICAL misuse | M06 pilot / PROVISIONAL / AI pilot spec / proven KPI |
+| AI suggestion service | AI platform/domain | minimized case→candidate/evidence | provider adapter, evaluation | efficiency; CRITICAL misuse | M06 banco opcional; Accounting IA M07 requerido en diseño con activación D01 / [contrato](../accounting/templates-automation-shadow.md) / evidencia B16, sin post oficial |
 | Backup/restore | Operations | DB+objects+config→recoverable service | deployment | continuity; CRITICAL | M01/M04 gates / restore spec / target RPO/RTO |
 
 ## Capacidades contables explícitas del primer paquete
@@ -89,6 +89,21 @@ Este desglose hereda owner Accounting, M07 para medición/registro y M08 para pr
 | Apertura / ESFA / transición | Balance sustentado, hechos, marco y elecciones → ajustes/conciliación versionados | Primera adopción o cambio formal; CRITICAL; primer uso del ERP no equivale a primera adopción |
 | Cierre / correcciones / hechos posteriores | Conciliaciones, errores/estimaciones y autorización → paquete cerrado, ajustes y nueva versión | Período y materialidad aprobados; CRITICAL; NPIF errores no hereda retrospectividad NIC8 |
 | Revelaciones / comparativos / cuatro EEFF | GL, auxiliares, narrativas y mappings → paquete completo y evidencia navegable | Cada cierre; CRITICAL; faltante no cero, profesional valida notas, sin dependencia de Excel |
+
+## Delta de automatización y experiencia de PR #7
+
+Diseño solicitado después del PASS inicial, pendiente re-revisión conforme review; no aceptación ni módulos nuevos. Dependencias son contratos de lectura/coordinadores, no imports entre dueños.
+
+| Capacidad / propósito | Dueño | Inputs → outputs | Dependencias / riesgo | Entrega / spec / trigger |
+|---|---|---|---|---|
+| Case Flow / resumen explicable y next action | Operations/UI proyección; fuentes por dominio | objetos/relaciones/requisitos/cortes→grafo/lista/timeline autorizado | Access, outbox durable, fuentes; HIGH privacidad/falsa completitud | Lista M02–03, grafo M04, ampliar M05–09; [flujo](../specs/cross-cutting/case-flow-preview.md) |
+| PDF/XML preview | Documents | original/version/hash→representación/metadata autorizada | Storage privado, ACL/renderer aislado; HIGH seguridad | M04 progresivo; [preview](../specs/cross-cutting/case-flow-preview.md#preview-pdf-y-xml); nuevos formatos solo por caso |
+| Vistas personales y dossier de caso | UI preferencias / Documents export | filtros tipados/corte autorizado→vista o índice/artefacto derivado | Case Flow/Access; HIGH privacidad export | M04+; solo dos conveniencias adicionales canonizadas, sin builder/ZIP universal |
+| Familias tipadas / Automation Center | Cada dueño; superficie superior router | template/regla/calendario/run→draft o comando autorizado/descriptores | Config/Access/jobs/Audit; CRITICAL si efecto | Primitives M01, consumidores por hito; [automatización](../architecture/automation.md) |
+| JournalTemplate, regla y recurrencia contable | Accounting | fuente/política/cuentas/ocurrencia→draft validado | Hechos M03–06, catálogo/período; HIGH | M07 requerido; [contrato](../accounting/templates-automation-shadow.md); autoexecute oficial OFF, mandato separado |
+| AI Accounting suggestion→draft / promoción a regla | Accounting; AIService adapter neutral | hecho minimizado/candidatos→sugerencia y draft humano; patrón→RuleCandidate revisado | POL-26/B16/D01, presupuesto; HIGH privacidad/semántica | M07 diseño requerido, activación controlada; no selección proveedor ni post IA |
+| Shadow Accountant aislado | Accounting evaluación; executor separado | cápsulas congeladas→interpretaciones/ledger experimental sellado | DB/proceso/credenciales separados, B02/B13/B15; HIGH | M07 on-demand; [aislamiento](../accounting/templates-automation-shadow.md#shadow-accounting-e-aislamiento), async live por trigger |
+| Comparador mensual / multi-modelo acotado | Accounting evaluación | snapshots oficial/shadow/equivalencias→cobertura/diferencias/revisión | M07 hechos/políticas/cortes; HIGH mala inferencia de calidad | M08; [comparador](../accounting/templates-automation-shadow.md#comparador-oficial-versus-shadow); no segundo EEFF, proveedores múltiples solo experimento |
 
 ## Expansion rule
 
