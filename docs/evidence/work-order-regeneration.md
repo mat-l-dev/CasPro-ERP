@@ -1,6 +1,6 @@
 # Regeneración de Work Orders — expediente del autor
 
-**READY FOR INDEPENDENT REVIEW. IMPLEMENTATION NOT AUTHORIZED.**
+**FIXED_PENDING_INDEPENDENT_RE_REVIEW. IMPLEMENTATION NOT AUTHORIZED.**
 
 Este informe registra preparación documental, no aceptación independiente ni ejecución. El propietario encargó regenerar todo M01–M09 desde main final aceptado, con rama/commit/push y PR abierto. No se cambió arquitectura, gates, skills ni programa; ningún WO fue ejecutado. La [matriz previa](../work-orders/coverage.md) se escribió antes de las fichas individuales. Se aplicó caspro-work-order y la plantilla vigente; no se creó otra plantilla ni skill.
 
@@ -8,7 +8,7 @@ Este informe registra preparación documental, no aceptación independiente ni e
 
 Revisión independiente comunicada por el propietario: **REQUEST CHANGES — TWO SURGICAL WO CORRECTIONS REQUIRED**, candidato `3ef9bc740dcde9f57236229ce24bfa32b1cbcf84`, tree `445231128b9419223b1ef9b36a1cfd8867bbc9c2`. Rama local/remota `docs/regenerate-work-orders`, PR #10 OPEN/no merged, árbol limpio y sin divergencia al comenzar. Encargo exclusivamente F-WO-01/F-WO-02 y búsqueda exhaustiva de esas clases; no regeneración del conjunto.
 
-Estado de esta etapa: **F-WO-01 FIXED_PENDING_INDEPENDENT_RE_REVIEW; F-WO-02 identificado, corrección pendiente en commit separado.** No aceptación independiente de las correcciones.
+Estado final del autor: **F-WO-01 / F-WO-02 FIXED_PENDING_INDEPENDENT_RE_REVIEW.** No aceptación independiente de las correcciones. La revisión inicial y el expediente de generación se conservan.
 
 ### F-WO-01 — Semántica de gates
 
@@ -79,15 +79,23 @@ Tres de esas once filas tenían owner canónico desalineado: D03 (Product/Archit
 
 **INVALID_C_GATE_ASSIGNMENTS = 0; INVALID_D_GATE_ASSIGNMENTS = 0; GATE_OWNER_SEMANTIC_MISMATCHES = 0.** Resultado del autor pendiente de re-revisión.
 
-### F-WO-02 — Inventario focalizado previo a corrección
+### F-WO-02 — Bootstrap inicial y upgrade posterior
 
-Se inspeccionaron las 84 fichas: **84 líneas con lenguaje de upgrade/release en 81 WOs**; 80 VALID_LATER_INCREMENT, 2 GENERIC_MECHANISM_ONLY y **2 INVALID_FIRST_RUNTIME**, ambas en WO-M01-01 (Files expected y aceptación). INVALID_FIRST_SCHEMA_OF_OWNER = 0: una primera ficha de dominio puede ampliar el runtime CasPro ya aceptado. Otra línea en roadmap corresponde a «cada ampliación» y es VALID_LATER_INCREMENT; total ampliado inspeccionado: 85 líneas. No se usa Wbpro ni repositorio vacío como release histórico. Los dos requisitos imposibles se corregirán en la segunda unidad de este encargo; no se debilita el upgrade posterior.
+Se inspeccionaron las 84 fichas: **84 líneas con lenguaje de upgrade/release en 81 WOs** del candidato inicial; 80 VALID_LATER_INCREMENT, 2 GENERIC_MECHANISM_ONLY y **2 INVALID_FIRST_RUNTIME**, ambas en WO-M01-01 (Files expected y aceptación). INVALID_FIRST_SCHEMA_OF_OWNER = 0: una primera ficha de dominio puede ampliar el runtime CasPro ya aceptado. Otra línea en roadmap corresponde a «cada ampliación» y es VALID_LATER_INCREMENT; total ampliado inspeccionado: 85 líneas. Es conteo de líneas/contextos auditados, no versiones reales existentes.
 
-### Alcance y control de esta etapa
+Causa: copiar el perfil de upgrade de un incremento a la única raíz que crea el primer runtime. [WO-M01-01](../work-orders/M01/WO-M01-01.md) ahora exige inicialización limpia desde estado vacío/inicial documentado, entorno/bootstrap reproducible, identidad de schema/versión/configuración, roles separados, mecanismo de migración y rollback/recuperación del schema inicial. Probar esa maquinaria no prueba un upgrade histórico. No endpoints económicos ni secretos comprometidos. Un release CasPro real aceptado habilita la comparación real obligatoria en sus sucesores; Wbpro, otro proyecto anterior, no es release CasPro y no se usó como baseline. CasPro no fue eliminado/recreado.
+
+**INVALID_FIRST_RUNTIME: 2 → 0. NO_ACCEPTANCE_CRITERION_REQUIRES_NONEXISTENT_HISTORICAL_CASPRO_RELEASE = 1.** Las líneas de upgrade de las otras 83 fichas se compararon literalmente contra el candidato revisado: sin cambios. Las 80 ocurrencias VALID_LATER_INCREMENT y la protección de Delivery/roadmap permanecen; no se cambió el primer schema de otros owners por una eliminación mecánica de requisitos.
+
+### Alcance y control final
 
 Archivos F-WO-01: [WO-M02-03](../work-orders/M02/WO-M02-03.md), [WO-M03-05](../work-orders/M03/WO-M03-05.md), [WO-M04-07](../work-orders/M04/WO-M04-07.md), [WO-M04-09](../work-orders/M04/WO-M04-09.md), [WO-M04-10](../work-orders/M04/WO-M04-10.md), [WO-M04-15](../work-orders/M04/WO-M04-15.md), [WO-M05-02](../work-orders/M05/WO-M05-02.md), [WO-M07-09](../work-orders/M07/WO-M07-09.md), [WO-M07-14](../work-orders/M07/WO-M07-14.md), [WO-M07-16](../work-orders/M07/WO-M07-16.md), [WO-M07-22](../work-orders/M07/WO-M07-22.md), [WO-M09-03](../work-orders/M09/WO-M09-03.md), docs/work-orders/index.md (cinco filas), este expediente y docs/review.md (estado). Cada cambio corresponde a una asignación inválida/ambigua o su reflejo; no cambios de comportamiento, capabilities, dependencias, IDs ni histórico SP2. Conteos esperados preservados: 84 WOs; M01–M09 **8/3/11/15/7/10/22/3/5**; cobertura87/87; 178 HARD, raíz WO-M01-01 y sin ciclos; **A0/B16/C13/D6, todos B/C/D OPEN**.
 
-Recheck adversarial A–E/J: rechazar C04 por «approval» o todo gate de pago por «payment»; OFF admite cobranza existente y bloquea exposición nueva; POL-08 ausente mantiene crédito real OFF sin impedir construcción autorizada futura; COD no se promueve; otras asignaciones de la misma clase corregidas sin rediseño. Recheck F–I y validación final quedan registrados con el cierre F-WO-02. Ninguna ejecución de WO/código/migración/tests/builds/Docker/proveedor; el trabajo es solo Markdown y comprobación estática.
+F-WO-02 añade únicamente docs/work-orders/M01/WO-M01-01.md y sincroniza este expediente/docs/review.md. Total de remediación: **16 archivos**, sin archivos nuevos en Git; 13 fichas, índice y dos registros de evidencia/estado. Roadmap/cobertura/supersesión no requirieron edición. Commit F-WO-01 separado del commit F-WO-02; identidades finales en Git/PR y reporte de entrega.
+
+Recheck adversarial A–E/J: rechazar C04 por «approval» o todo gate de pago por «payment»; OFF admite cobranza existente y bloquea exposición nueva; POL-08 ausente mantiene crédito real OFF sin impedir construcción autorizada futura; COD no se promueve; otras asignaciones de la misma clase corregidas sin rediseño. F: bootstrap puede aceptarse sin release histórico inventado. G: sucesor con release real exige upgrade. H: Wbpro como supuesto release CasPro se rechaza. I: Accounting/Tax/Inventory posteriores conservan clean install/upgrade. Los diez casos son revisión documental del autor, no pruebas ejecutadas.
+
+Validación estática final: 84 IDs/84 entradas únicas; vector de hitos intacto; cobertura87/87; 178 HARD sin cambios de aristas/tipos, 84 nodos visitados sin ciclo y única raíz WO-M01-01. Se comprobaron enlaces/anchors, 371 referencias literales de capability y existencia de gates; índice coincide con cada tabla. Los 448 pares C/D finales están reconciliados; C04 ausente del crédito. Histórico SP2 intacto/no ejecutable y sin enlace de autoridad desde fichas actuales; fuentes canónicas/skills/plantilla intactas. A0/B16/C13/D6, todos B/C/D OPEN. Diff whitespace limpio; todas las WOs siguen PREPARED — NOT AUTHORIZED FOR EXECUTION. Ninguna ejecución de WO/código de aplicación/migración/tests/builds/Docker/proveedor; solo Markdown y comprobación estática. Bloqueadores de esta remediación identificados por el autor: 0; preguntas al propietario: 0. PR #10 debe permanecer OPEN/sin merge, pendiente de re-revisión independiente.
 
 El expediente A–AJ siguiente conserva la generación original y sus controles tal como fueron registrados; esta sección identifica qué corrigió la revisión independiente posterior.
 
