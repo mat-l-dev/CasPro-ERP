@@ -4,6 +4,93 @@
 
 Este informe registra preparación documental, no aceptación independiente ni ejecución. El propietario encargó regenerar todo M01–M09 desde main final aceptado, con rama/commit/push y PR abierto. No se cambió arquitectura, gates, skills ni programa; ningún WO fue ejecutado. La [matriz previa](../work-orders/coverage.md) se escribió antes de las fichas individuales. Se aplicó caspro-work-order y la plantilla vigente; no se creó otra plantilla ni skill.
 
+## Independent review remediation — PR #10
+
+Revisión independiente comunicada por el propietario: **REQUEST CHANGES — TWO SURGICAL WO CORRECTIONS REQUIRED**, candidato `3ef9bc740dcde9f57236229ce24bfa32b1cbcf84`, tree `445231128b9419223b1ef9b36a1cfd8867bbc9c2`. Rama local/remota `docs/regenerate-work-orders`, PR #10 OPEN/no merged, árbol limpio y sin divergencia al comenzar. Encargo exclusivamente F-WO-01/F-WO-02 y búsqueda exhaustiva de esas clases; no regeneración del conjunto.
+
+Estado de esta etapa: **F-WO-01 FIXED_PENDING_INDEPENDENT_RE_REVIEW; F-WO-02 identificado, corrección pendiente en commit separado.** No aceptación independiente de las correcciones.
+
+### F-WO-01 — Semántica de gates
+
+Causa: trasladar etiquetas generales («aprobación», «pago», «tax», «automatización») a gates cuyo owner/efecto es más específico. La existencia literal del ID no prueba pertinencia semántica.
+
+[WO-M04-15](../work-orders/M04/WO-M04-15.md): se retira C04; C05 queda limitado a dinero/aplicaciones Treasury, C13 a grants/aprobadores/POL-08 reales. C07/C08 se explicitan **solo si** la operación requiere CPE o tratamiento fiscal; D03 conserva propietario canónico Product/Architecture y activación con POL-08 versionada/aprobada, permisos/pruebas/autorización. Sales sigue poseyendo crédito/exposición/cobranza. OFF impide nueva exposición, no cobrar deuda existente; COD sigue diferido.
+
+Inventario exhaustivo de las 84 fichas: **450 pares WO→C/D**, incluyendo tabla local y referencias condicionales fuera de ella; **185 filas locales** y 265 pares adicionales. La matriz interna registra WO, ID/clase, owner/significado canónico, razón/efecto local, estado y acción. Se contrastó con [gates y extensiones aceptadas](../roadmap/decisions-gaps.md), contrato local de cada efecto y [privacidad](../security/personal-data-lifecycle.md), sin cambios canónicos. Recursos CM0 C70/D80 no se cuentan como gates; D04 no tiene referencia local y permanece diferido.
+
+| Gate | Filas locales antes | Otros pares condicionales/exclusiones antes |
+|---|---:|---:|
+| C01 | 29 | 0 |
+| C02 | 5 | 0 |
+| C03 | 15 | 0 |
+| C04 | 9 | 0 |
+| C05 | 13 | 0 |
+| C06 | 23 | 60 |
+| C07 | 8 | 0 |
+| C08 | 26 | 0 |
+| C09 | 1 | 0 |
+| C10 | 13 | 71 |
+| C11 | 13 | 70 |
+| C12 | 2 | 0 |
+| C13 | 20 | 63 |
+| D01 | 5 | 0 |
+| D02 | 1 | 0 |
+| D03 | 1 | 0 |
+| D05 | 0 | 1 |
+| D06 | 1 | 0 |
+
+Las referencias transversales C06/C10/C11/C13 dicen «tratamiento real ... cuando corresponda»: son **CONDITIONAL_BUT_VALID**, no gates generales de construir cada módulo. C06 retiene autoridad/finalidad legal concreta; C10 conservación/recuperación; C11 solo encargado/transferencia/efecto externo real; C13 identidad/grants/datos reales. Sin ese efecto, no se usan por analogía. Por ejemplo, el C11 condicional de privacidad en Tax no impide preparar/exportar localmente un paquete sin transporte. D05 fuera de tabla es una exclusión que preserva margen básico, no gate del margen.
+
+| Clasificación | Antes | Después |
+|---|---:|---:|
+| VALID | 169 | 172 |
+| INVALID | 5 | 0 |
+| NEEDS_NARROWING | 11 | 0 |
+| CONDITIONAL_BUT_VALID | 265 | 276 |
+| Total pares | 450 | 448 |
+
+Después: **182 filas locales**, 266 pares adicionales; diferencia por cinco asignaciones retiradas y C07/C08 condicionales incorporados a crédito. C11 de WO-M09-03 permanece únicamente como referencia de privacidad condicional, no en su tabla local. Los conteos son de referencias documentales, no cambios al registro global.
+
+| Asignación INVALID antes | Corrección / fundamento |
+|---|---|
+| [WO-M04-15](../work-orders/M04/WO-M04-15.md) → C04 | Retirar de tabla/índice: Sales crédito no ejecuta conformidad, payability ni aprobación de compra Procurement. |
+| [WO-M07-16](../work-orders/M07/WO-M07-16.md) → D01 | Retirar de tabla/índice: Plantillas/reglas/recurrencia determinísticas a draft no activan IA; mandato auto-post sigue separado y OFF. |
+| [WO-M07-09](../work-orders/M07/WO-M07-09.md) → C08 | Retirar de tabla/índice: Selección/reexpresión FX financiera sigue C01; selección fiscal C08 pertenece al consumidor Tax, no a este cálculo Accounting. |
+| [WO-M07-22](../work-orders/M07/WO-M07-22.md) → C08 | Retirar de tabla/índice: Disclosure financiero de relacionadas no realiza evaluación tributaria 32-A, expresamente separada. |
+| [WO-M09-03](../work-orders/M09/WO-M09-03.md) → C11 | Retirar de tabla/índice: Workspace prepara/exporta paquete y registra evidencia externa; no contiene transporte ni ejecución SUNAT. |
+
+Las cuatro últimas son hallazgos adicionales de la **misma clase F-WO-01**, no nuevos A. D01 no condiciona JournalTemplates determinísticos; auto-post sigue OFF y sujeto a su mandato existente. Quitar C08 de FX/disclosure no elimina C01 ni la evaluación fiscal separada de Tax. Quitar C11 del workspace no habilita SUNAT.
+
+| Asignación NEEDS_NARROWING antes | Precisión necesaria incorporada |
+|---|---|
+| [WO-M04-15](../work-orders/M04/WO-M04-15.md) → C05 | Solo cuentas, dinero y aplicaciones Treasury consumidos por la exposición/cobranza; no aprobación genérica de crédito; retiene cobro/aplicación real sin evidencia/política treasury; no bloquea construir crédito off. |
+| [WO-M04-15](../work-orders/M04/WO-M04-15.md) → C13 | Grants/aprobadores reales de Sales y configuración de POL-08 en entidad/scope autorizados; retiene habilitar actores/configuración real sin validación; sin pol-08 aprobada el crédito sigue off. |
+| [WO-M04-15](../work-orders/M04/WO-M04-15.md) → D03 | Owner: Product/Architecture + propietario; Sales posee POL-08. Crédito B2B requerido; activación exige POL-08 real versionada/aprobada, permisos, pruebas y autorización; retiene nueva exposición a crédito off hasta activación; cobranza de deuda existente permitida; cod conserva trigger propio. |
+| [WO-M04-07](../work-orders/M04/WO-M04-07.md) → D06 | Owner: Product/dueño de caso. Solo evolución futura hacia SLA/escalamiento o motor genérico; Case Flow actual sigue siendo proyección; retiene iniciar esa evolución sin necesidad/política/spec; no retiene la proyección confirmada. |
+| [WO-M07-14](../work-orders/M07/WO-M07-14.md) → D02 | Owner: Accounting/Tax. Solo cambio acreditado de marco/elegibilidad/edición o transacción que active otra base; retiene aplicar nuevo marco sin revisión; apertura contable actual bajo C01. |
+| [WO-M02-03](../work-orders/M02/WO-M02-03.md) → C06 | Condicional a tenencia/licencia o uso de sede que exija facultad/requisito legal; Corporate conserva ese hecho; retiene ese uso/acto real sin sustento; no el alta ordinaria de identidad/dirección de sede. |
+| [WO-M04-09](../work-orders/M04/WO-M04-09.md) → C06 | Solo facultad o condición contractual/legal concreta del compromiso que la requiera; retiene acto real dependiente sin evidencia; b2b comercial puro no exige dictamen universal. |
+| [WO-M04-10](../work-orders/M04/WO-M04-10.md) → C06 | Solo términos/facultades legales que la cotización o su aceptación efectivamente requieran; retiene aceptación del término/acto dependiente sin sustento; no toda cotización ordinaria. |
+| [WO-M03-05](../work-orders/M03/WO-M03-05.md) → C01 | Solo elegibilidad/atribución financiera aprobada que el costo tardío consuma de Accounting; C03 posee parámetros del pool; retiene uso de ese componente financiero sin política; no todo replay técnico ni registro del costo pendiente. |
+| [WO-M05-02](../work-orders/M05/WO-M05-02.md) → C01 | Condicional al consumo contable: Accounting elige regla/observación por finalidad financiera; retiene conversión contable dependiente sin política; no adquisición/registro de fxobservation en integrations. |
+| [WO-M05-02](../work-orders/M05/WO-M05-02.md) → C08 | Condicional al consumo fiscal: Tax elige fuente/fecha/sentido por tributo y operación; retiene cálculo fiscal dependiente sin regla; no captura de observación ni comparación comercial. |
+
+Tres de esas once filas tenían owner canónico desalineado: D03 (Product/Architecture), D06 (Product/dueño de caso), D02 (Accounting/Tax). El profesional/propietario conserva su función de aprobación; no sustituye al owner del registro. Resto de pares: significado/owner/efecto coherentes, incluidos C04 de compras/caja chica/pago por tercero, C05 de fuentes Treasury, C08 de componentes fiscales efectivamente consumidos, y D01 de IA/shadow/comparador. No se añadieron gates por similitud de vocabulario ni a todas las fichas.
+
+**INVALID_C_GATE_ASSIGNMENTS = 0; INVALID_D_GATE_ASSIGNMENTS = 0; GATE_OWNER_SEMANTIC_MISMATCHES = 0.** Resultado del autor pendiente de re-revisión.
+
+### F-WO-02 — Inventario focalizado previo a corrección
+
+Se inspeccionaron las 84 fichas: **84 líneas con lenguaje de upgrade/release en 81 WOs**; 80 VALID_LATER_INCREMENT, 2 GENERIC_MECHANISM_ONLY y **2 INVALID_FIRST_RUNTIME**, ambas en WO-M01-01 (Files expected y aceptación). INVALID_FIRST_SCHEMA_OF_OWNER = 0: una primera ficha de dominio puede ampliar el runtime CasPro ya aceptado. Otra línea en roadmap corresponde a «cada ampliación» y es VALID_LATER_INCREMENT; total ampliado inspeccionado: 85 líneas. No se usa Wbpro ni repositorio vacío como release histórico. Los dos requisitos imposibles se corregirán en la segunda unidad de este encargo; no se debilita el upgrade posterior.
+
+### Alcance y control de esta etapa
+
+Archivos F-WO-01: [WO-M02-03](../work-orders/M02/WO-M02-03.md), [WO-M03-05](../work-orders/M03/WO-M03-05.md), [WO-M04-07](../work-orders/M04/WO-M04-07.md), [WO-M04-09](../work-orders/M04/WO-M04-09.md), [WO-M04-10](../work-orders/M04/WO-M04-10.md), [WO-M04-15](../work-orders/M04/WO-M04-15.md), [WO-M05-02](../work-orders/M05/WO-M05-02.md), [WO-M07-09](../work-orders/M07/WO-M07-09.md), [WO-M07-14](../work-orders/M07/WO-M07-14.md), [WO-M07-16](../work-orders/M07/WO-M07-16.md), [WO-M07-22](../work-orders/M07/WO-M07-22.md), [WO-M09-03](../work-orders/M09/WO-M09-03.md), docs/work-orders/index.md (cinco filas), este expediente y docs/review.md (estado). Cada cambio corresponde a una asignación inválida/ambigua o su reflejo; no cambios de comportamiento, capabilities, dependencias, IDs ni histórico SP2. Conteos esperados preservados: 84 WOs; M01–M09 **8/3/11/15/7/10/22/3/5**; cobertura87/87; 178 HARD, raíz WO-M01-01 y sin ciclos; **A0/B16/C13/D6, todos B/C/D OPEN**.
+
+Recheck adversarial A–E/J: rechazar C04 por «approval» o todo gate de pago por «payment»; OFF admite cobranza existente y bloquea exposición nueva; POL-08 ausente mantiene crédito real OFF sin impedir construcción autorizada futura; COD no se promueve; otras asignaciones de la misma clase corregidas sin rediseño. Recheck F–I y validación final quedan registrados con el cierre F-WO-02. Ninguna ejecución de WO/código/migración/tests/builds/Docker/proveedor; el trabajo es solo Markdown y comprobación estática.
+
+El expediente A–AJ siguiente conserva la generación original y sus controles tal como fueron registrados; esta sección identifica qué corrigió la revisión independiente posterior.
+
 ## A–F — Base, inventario y cobertura
 
 | Campo | Resultado |
