@@ -1,8 +1,8 @@
-# Work Orders actuales — conjunto candidato
+# Work Orders actuales — baseline aceptado anterior a Marketing
 
 **PREPARED — NOT AUTHORIZED FOR EXECUTION. IMPLEMENTATION NOT AUTHORIZED.**
 
-84 WOs preparadas desde main aceptado `b27e5eeb280b8b654b18218a11181e9c4a8eb7b1` / tree `c0f314722f1d5fa5d2e36cb5b2aad7759710e6d8`. Requieren revisión independiente del conjunto y posterior autorización explícita antes de ejecutar cada unidad. [Review](../review.md) es la única fuente de fase global; aceptación/merge no habilitan código por sí mismos.
+84 WOs preparadas desde main aceptado `b27e5eeb280b8b654b18218a11181e9c4a8eb7b1` / tree `c0f314722f1d5fa5d2e36cb5b2aad7759710e6d8`. Conjunto corregido aceptado independientemente según [review](../review.md), candidato `9fadf6569e98298d7db3a5fbd6bc53575adf4ff7`, tree `9189869d1495dd25a5d2d68d6874990348053618`; F-WO-01/F-WO-02 PASS. Conserva su alcance previo al nuevo requisito Marketing. Ejecutar cada unidad sigue requiriendo fase habilitada y autorización explícita. [Review](../review.md) es la única fuente de fase global; aceptación/merge no habilitan código por sí mismos.
 
 Leer [cobertura/hallazgos previos](coverage.md), [DAG/roadmap y gates](roadmap.md), [supersesión](supersession.md) o [informe del autor](../evidence/work-order-regeneration.md) según la pregunta. Cada ficha completa la [plantilla existente](../../.ai/work-order.md); este índice no crea otro contrato de WO.
 

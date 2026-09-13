@@ -1,6 +1,6 @@
 # Regeneración de Work Orders — expediente del autor
 
-**FIXED_PENDING_INDEPENDENT_RE_REVIEW. IMPLEMENTATION NOT AUTHORIZED.**
+**Expediente histórico del autor. IMPLEMENTATION NOT AUTHORIZED.** La aceptación independiente posterior comunicada por el propietario está registrada en [review](../review.md): PASS — CURRENT CASPRO WORK ORDER SET ACCEPTED; candidato `9fadf6569e98298d7db3a5fbd6bc53575adf4ff7`, tree `9189869d1495dd25a5d2d68d6874990348053618`; F-WO-01/F-WO-02 PASS. Las 84 WOs cubren el alcance anterior a Marketing. Los estados pendientes y REQUEST CHANGES que siguen pertenecen al expediente histórico; no se reescriben como autoaceptación.
 
 Este informe registra preparación documental, no aceptación independiente ni ejecución. El propietario encargó regenerar todo M01–M09 desde main final aceptado, con rama/commit/push y PR abierto. No se cambió arquitectura, gates, skills ni programa; ningún WO fue ejecutado. La [matriz previa](../work-orders/coverage.md) se escribió antes de las fichas individuales. Se aplicó caspro-work-order y la plantilla vigente; no se creó otra plantilla ni skill.
 

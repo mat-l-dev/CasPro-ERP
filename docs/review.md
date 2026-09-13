@@ -4,6 +4,12 @@ Fecha de corte: 2026-09-12. **Única fuente del estado global vigente.**
 
 ## Current status
 
+**PASS — PR #10 SURGICAL REMEDIATION ACCEPTED. PASS — CURRENT CASPRO WORK ORDER SET ACCEPTED.** Resultado independiente comunicado por el propietario: candidato `9fadf6569e98298d7db3a5fbd6bc53575adf4ff7`, tree `9189869d1495dd25a5d2d68d6874990348053618`; **F-WO-01 PASS; F-WO-02 PASS**. Las **84 WOs** se aceptan como baseline del plan de implementación del alcance anterior al nuevo requisito Marketing Content / Media Library. Cobertura **87/87**, **178 HARD**, DAG acíclico y raíz **WO-M01-01**. **A0 / B16 / C13 / D6**, todos B/C/D OPEN, sin cambios para ese baseline. **IMPLEMENTATION: NOT AUTHORIZED.** Ninguna WO se autoriza a ejecutar.
+
+El propietario autoriza sincronización exclusivamente de estado, un commit editorial, actualización del cuerpo de PR #10, merge mediante **MERGE COMMIT** y limpieza segura tras verificar integración. La identidad física del merge se verifica después de la operación. La fase B solo empieza desde ese main verificado, en otra rama: amendment semántico acotado de Marketing, sin generar/ejecutar WOs ni fusionar su nueva PR. Esta aceptación no acepta por adelantado ese requisito nuevo ni altera el A0 histórico.
+
+### Antecedente de remediación PR #10 — histórico, superado por la aceptación anterior
+
 **PR #10 SURGICAL REMEDIATION: FIXED_PENDING_INDEPENDENT_RE_REVIEW.** Revisión independiente comunicada por el propietario sobre `3ef9bc740dcde9f57236229ce24bfa32b1cbcf84`, tree `445231128b9419223b1ef9b36a1cfd8867bbc9c2`: **REQUEST CHANGES — TWO SURGICAL WO CORRECTIONS REQUIRED.** F-WO-01: semántica de gates locales; F-WO-02: upgrade desde un release inexistente en el primer runtime. Ambos corregidos por el autor, sin aceptación independiente: conciliación exhaustiva C/D y bootstrap inicial diferenciado de upgrade posterior real. [Evidencia focalizada](evidence/work-order-regeneration.md#independent-review-remediation--pr-10). 84 WOs, cobertura87/87 y 178 HARD intactos. Mismo PR abierto, sin merge; A0/B16/C13/D6 y todos B/C/D OPEN. **IMPLEMENTATION: NOT AUTHORIZED.** El encargo vigente solo autoriza estas correcciones y comprobaciones documentales, commits/push en la misma rama.
 
 Antecedente de generación/publicación, preservado:
@@ -12,7 +18,7 @@ Antecedente de generación/publicación, preservado:
 
 [84 WOs actuales candidatas](work-orders/index.md), [cobertura/DAG](work-orders/roadmap.md) y [expediente del autor](evidence/work-order-regeneration.md), rama `docs/regenerate-work-orders`. Todas: **PREPARED — NOT AUTHORIZED FOR EXECUTION**. Cobertura de construcción confirmada: 87/87 filas; COD/WhatsApp permanecen diferidos. **A0 / B16 / C13 / D6**, todos B/C/D abiertos; ningún nuevo A identificado por el autor, sin sustituir revisión independiente. **IMPLEMENTATION: NOT AUTHORIZED.** Cero WOs ejecutadas; el nuevo PR permanece sin autorización de merge. Antes de cualquier ejecución futura: aceptación independiente del conjunto, main vigente revalidado, fase habilitada y autorización explícita de la WO/efectos correspondientes.
 
-PR actual de regeneración: [#10 — Regenerate CasPro Work Orders from accepted foundation](https://github.com/mat-l-dev/CasPro-ERP/pull/10), **OPEN**, contra main, rama `docs/regenerate-work-orders`. Pendiente de revisión independiente; merge y ejecución no autorizados. El HEAD/tree remoto final se fija en el paquete de revisión de esa PR.
+PR de regeneración en el registro histórico: [#10 — Regenerate CasPro Work Orders from accepted foundation](https://github.com/mat-l-dev/CasPro-ERP/pull/10), **OPEN**, contra main, rama `docs/regenerate-work-orders`. Pendiente de revisión independiente; merge y ejecución no autorizados. El HEAD/tree remoto final se fija en el paquete de revisión de esa PR.
 
 ### Antecedente aceptado de PR #9 y misión de cierre anterior
 
@@ -72,6 +78,10 @@ Resultado independiente comunicado por el propietario: **PASS — INFORMATION AR
 **A0 / B16 / C13 / D6**, recomputación independiente final comunicada por el propietario para el candidato aceptado de PR #8 identificado arriba: F01–F07 y el cierre de ownership de privacidad aceptados, sin nuevo bloqueador semántico ni traslado de A a B. 0 bloqueadores de diseño A, 16 gates de validación B, 13 de activación C y 6 pendientes con trigger D, conforme al [registro de gaps](roadmap/decisions-gaps.md). Todos los B/C/D permanecen abiertos. Son conteos por clase, no cuatro IDs de gate. Las validaciones profesionales siguen siendo gates de activación. El registro posee alcance, trigger y clasificación; la [readiness M01–M09](specs/index.md) conserva el corte del candidato congelado.
 
 ## Next process
+
+Completar el cierre autorizado de PR #10 y verificar main. Después preparar únicamente la enmienda de Marketing en rama/PR separada, pendiente de revisión independiente y sin merge. Solo análisis del impacto WO; IMPLEMENTATION NOT AUTHORIZED.
+
+Antecedente de proceso PR #10, preservado como historia:
 
 Revisión independiente del nuevo conjunto de WOs y su candidato exacto: descomposición, cobertura, dependencias, ownership, gates, muestras y camino crítico. El autor no acepta su propio conjunto; corregir hallazgos en la misma PR antes de solicitar aceptación. Este encargo termina con el PR abierto; no autoriza merge, implementación ni ejecución de WOs. La preparación está autorizada por el nuevo encargo registrado arriba; el texto siguiente corresponde a la misión anterior.
 

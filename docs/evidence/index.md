@@ -1,6 +1,6 @@
 # Evidencia de auditoría y revisión
 
-[Regeneración completa de Work Orders](work-order-regeneration.md): baseline aceptado, cobertura, descomposición M01–M09, dependencias, supersesión, revisión adversarial del autor y comprobaciones estáticas. Candidato pendiente de revisión independiente; cero ejecución e implementación no autorizada. Estado vigente en [review](../review.md).
+[Regeneración completa de Work Orders](work-order-regeneration.md): baseline aceptado, cobertura, descomposición M01–M09, dependencias, supersesión, revisión adversarial del autor y comprobaciones estáticas. Conjunto corregido aceptado independientemente para el alcance previo a Marketing; expediente del autor preservado, cero ejecución e implementación no autorizada. Estado vigente en [review](../review.md).
 
 [Freshness del sistema de agentes](agent-system-freshness-audit.md): inventario completo, matriz antes de editar, correcciones y verificación estática del candidato del autor. Expediente histórico preservado; aceptación independiente de PR #9 y autorización de cierre en [review](../review.md), sin generación/ejecución de WOs ni implementación.
 
