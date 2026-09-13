@@ -66,6 +66,21 @@ Las filas profesionales describen capacidades de PR #6, aceptado por re-revisió
 | AI suggestion service | AI platform/domain | minimized case→candidate/evidence | provider adapter, evaluation | efficiency; CRITICAL misuse | M06 banco opcional; Accounting IA M07 requerido en diseño con activación D01 / [contrato](../accounting/templates-automation-shadow.md) / evidencia B16, sin post oficial |
 | Backup/restore | Operations | DB+objects+config→recoverable service | deployment | continuity; CRITICAL | M01/M04 gates / restore spec / target RPO/RTO |
 
+## Marketing Content — nuevo alcance confirmado post-freeze
+
+Se agregan **6 capacidades de construcción** al alcance previo de87 filas cubierto por PR #10: total propuesto **93**, cobertura WO existente **87/93** (87/87 para su baseline original). No se regenera el conjunto ni se atribuye cobertura de Marketing a fichas antiguas. [Spec](../specs/flows/marketing-content-media-library.md), [placement](program.md#marketing-content-increment) y [gates](decisions-gaps.md#marketing-content-gates); pendiente de revisión independiente. Los IDs de permiso son otro catálogo, no estas seis capacidades de producto.
+
+| Capability / purpose | Owner | Inputs → outputs | Dependencies | Value / risk | Phase / gates |
+|---|---|---|---|---|---|
+| Marketing library / logical organization / revision integrity | Marketing; Documents custodia | archivos/metadata→activos/carpetas/tags/revisiones y derivados trazables | Access/Audit/config/privacidad M01, Catalog M02, Documents M03 | encontrar/conservar originales; HIGH privacidad | CONFIRMED_BUILD M03+ paralelo; B02/B03/B09/B10/B13/B15, C10/C12/C13 |
+| Marketing use approval / rights and restrictions | Marketing decisión de uso; Access restricción | revisión/evidencia/finalidad/canal→aprobación o bloqueo vigente | biblioteca, configuración, privacidad/evidencia | difusión autorizada; HIGH legal | CONFIRMED_BUILD M03+; B02/B03/B10/B13, C06/C10/C13 por uso |
+| Marketing campaigns / Catalog relations | Marketing | referencias/versiones/período→campaña y colecciones de contenido | biblioteca/Catalog por DTO | historia comercial sin duplicar precio; HIGH | CONFIRMED_BUILD M03+; B02/B03/B09/B15, C13 |
+| Brand Kit revision control | Marketing; Documents representaciones | logos/colores/tipografías/guidelines→kit aprobado versionado | biblioteca/derechos | consistencia de marca; HIGH derechos | CONFIRMED_BUILD M03+; B02/B03/B09/B10, C06/C13 aplicables; no D04 para kit básico |
+| Marketing copy / controlled text revisions | Marketing | texto/variantes/contexto→revisiones/aprobación por uso | Access/derechos/campaña opcional | comunicación trazable; HIGH | CONFIRMED_BUILD M03+; B02/B03/B09/B10, C06/C13 aplicables; ZERO AI |
+| Publication planning / manual external history | Marketing; Documents evidencia | manifest/fecha/destino/observación→plan y PublicationRecord separados | biblioteca/copy/derechos; sin conexión obligatoria | plan≠hecho externo; HIGH | CONFIRMED_BUILD M03+; B02/B03/B09/B10/B15; C06/C10/C12/C13; C11 solo transferencia/efecto real pertinente |
+
+Automatización Meta/Jumpseller, analítica social y publicidad pagada son OPTIONAL_FUTURE D03; IA de sugerencia D01/B16. No filas de construcción confirmada ni WOs nuevas por esos triggers. El calendario manual no activa D06; WhatsApp conserva su decisión independiente.
+
 ## Capacidades contables explícitas del primer paquete
 
 Este desglose hereda owner Accounting, M07 para medición/registro y M08 para presentación, contratos de diseño y gates de activación C01/C03 de [M07](../specs/milestones/accounting-deep.md), [NPIF](../accounting/npif-policy-catalog.md) y [M08](../specs/acceptance/reporting-goldens.md). No exige activos, trabajadores o contratos ficticios: cuando no existe el hecho, se conserva trigger y se documenta inaplicabilidad. Los datos fuente los aportan los dueños indicados; ningún auxiliar crea dinero ni stock.

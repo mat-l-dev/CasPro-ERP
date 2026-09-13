@@ -23,6 +23,8 @@ Separación F03: contenido y aplicabilidad permanecen en el dominio; Documents c
 
 ## Modos y riesgo
 
+Amendment [Marketing Content](../specs/flows/marketing-content-media-library.md): BrandKit/copy/versiones pertenecen al pequeño dueño Marketing; Documents conserva representaciones binarias y render. Templates/backgrounds son activos revisados, sin motor gráfico ni scripts. Su calendario inicial solo planifica y registra hechos MANUAL_EXTERNAL; no ejecución automática por llamarlo calendario. Funciona con ZERO AI; sugerencias futuras D01/B16 nunca aprueban ni publican, adaptadores de publicación D03/B12/C11 requieren otro contrato/mandato. Los modos Accounting de esta fuente no se heredan por Marketing.
+
 El modo se resuelve y muestra **antes** de llamar a IA. Regla determinística conocida gana sobre consulta ambigua; fuente faltante no se inventa para satisfacer una plantilla.
 
 | Modo | Resultado / autoridad |

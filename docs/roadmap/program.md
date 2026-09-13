@@ -28,6 +28,15 @@ Ruta explícita de entrega: **repositorio documental (M00) → primer ERP ejecut
 
 ## Milestone cards
 
+<a id="marketing-content-increment"></a>
+### M03+ Marketing Content — incremento paralelo confirmado
+
+**POST-FREEZE SCOPED SEMANTIC AMENDMENT, PENDING INDEPENDENT REVIEW.** [Contrato único](../specs/flows/marketing-content-media-library.md). Biblioteca/campañas/BrandKit/copy/calendario/registro manual son CONFIRMED_BUILD; no se difieren íntegros a M10. Dependencias de entrega: Access/roles/mandatos/configuración/Audit/privacidad M01, Catalog M02 y Documents/custodia+recuperación sensible M03. El incremento puede avanzar al disponer de esos contratos, sin esperar stock/dinero, B2C, ledger ni Case Flow. M01–M09 no se renumeran; **ningún flujo anterior recibe dependencia HARD de Marketing**.
+
+Secuencia interna: base de media/derechos → campañas/copy/BrandKit → planificación/registro manual; familias de entrega a descomponer **solo en posterior WO delta autorizado**. No son WOs ni IDs nuevos. Integrations M03 es dependencia de futuros adaptadores, no de biblioteca/registro manual. Operación con personas/datos/derechos reales queda ACTIVATION_ONLY bajo C06/C10/C12/C13 según efecto. Auto-publicación/social/analítica/paid ads son OPTIONAL_FUTURE D03 con research/contrato/permisos/WO propios; C11/B12 antes de transporte y D01/B16 para IA opcional. WhatsApp permanece diferido.
+
+PR #10 estableció84 WOs aceptadas para87 capacidades previas. Nuevo total propuesto93 (seis filas Marketing): cobertura futura del delta pendiente de aceptación de esta enmienda y preparación posterior; no invalida todo el plan ni crea fichas ahora. [Impacto acotado](../evidence/marketing-content-amendment.md#work-order-impact) separa78 WOs sin delta y6 con extensión posterior de contratos/evidencia, conservando las84 fichas íntegras. Gates en [registro](decisions-gaps.md#marketing-content-gates), sin cierres ni nuevas clases.
+
 ### Delta de secuencia aceptado — amendment B2B y financiación
 
 El [amendment aceptado](../evidence/b2b-financing-amendment.md), conforme a [review](../review.md), conserva numeración y M04 B2C. Se elige **incremento B2B posterior a M04**, con [spec Sales propia](../specs/flows/b2b-commercial-dossier.md), porque requiere misma plataforma/maestros, dinero, reservas y CPE pero añade entrada comercial/OC/revisiones. Ampliar M04 mezclaría aceptación de primera venta por canal con nuevo compromiso B2B; diferirlo íntegro a M10 dejaría sin producto una necesidad confirmada.

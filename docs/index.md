@@ -35,6 +35,8 @@ Cada secuencia es un punto de entrada. Cargar las dependencias concretas que cit
 
 ## Contratos por tema
 
+Nuevo amendment [Marketing Content / Media Library](specs/flows/marketing-content-media-library.md): [ownership](architecture/boundaries.md#marketing-content), [capabilities exactas](architecture/capability-registry.md#marketing-content-capabilities), [programa](roadmap/program.md#marketing-content-increment), [fuentes oficiales](research/marketing-content-providers.md) y [evidencia/impacto WO](evidence/marketing-content-amendment.md). Núcleo confirmado propuesto, pendiente de revisión independiente; las84 WOs aceptadas conservan su alcance anterior, sin WO delta ni implementación.
+
 Corrección F01–F07: [registro exacto de capabilities](architecture/capability-registry.md), [ciclo de datos personales](security/personal-data-lifecycle.md), [IA por propósito](research/normative/ai-peru-applicability.md) y [transición IGV/IPM](research/normative/igv-ipm-transition.md). [Expediente de remediación](evidence/grand-audit-remediation.md) conserva hallazgos y comprobaciones del autor; la aceptación independiente y merge posteriores se registran en [review](review.md), sin autorización de implementación.
 
 Enmienda de gobierno propuesta: [roles/alcances/delegación/SoD](architecture/roles-delegation.md) y [configuración/impacto/UX](architecture/configuration-governance.md) → [TILMUX Policy Register/readiness](product/company-policy-register.md) → [manual contable futuro](accounting/tilmux-policy-manual.md). [Expediente A–AF](evidence/governance-roles-configuration-policies.md) demuestra cobertura documental y [benchmark oficial](research/governance-authorization-benchmark.md) conserva fuentes/límites. Aceptación y autorización solo en review.

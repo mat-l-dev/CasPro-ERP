@@ -34,6 +34,8 @@ M06 concreta [hechos individuales de financiación](../specs/flows/financing-eve
 
 ## Non-goals iniciales
 
+**Nuevo requisito confirmado post-freeze:** [Marketing Content Center / Media Library](../specs/flows/marketing-content-media-library.md), posterior al baseline aceptado de84 WOs de PR #10. Biblioteca privada con carpetas lógicas, activos/revisiones/derivados, campañas, kit de marca, copy, calendario y registro externo manual para contenido Instagram/Facebook/Jumpseller. Es un incremento de contenido profesional, sin editor gráfico, Ads Manager, community inbox ni publicación automática inicial. [Ownership](../architecture/boundaries.md#marketing-content), programa y gates incorporan propuesta pendiente de revisión independiente; no invalida el A0 histórico ni autoriza implementación/WO delta.
+
 - ERP genérico, plugins, multi-país, consolidación/intercompany automática, marketplace y personalización por cliente.
 - SPA integral, móvil/offline, microservicios, data warehouse y motor general de reglas.
 - Emitir, presentar o enviar CPE a SUNAT desde CasPro, incluso mediante una acción manual de su UI. El operador emite fuera de CasPro mediante SOL u otra vía externa autorizada; CasPro adquiere/importa, vincula/verifica y entrega documentos dentro de capacidades comprobadas. Tampoco ordena transferencias bancarias automáticas. Publicar stock en Jumpseller y entregar email son efectos externos incluidos expresamente; ampliar esos efectos exige nuevo mandato.

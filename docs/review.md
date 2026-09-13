@@ -4,6 +4,14 @@ Fecha de corte: 2026-09-12. **Única fuente del estado global vigente.**
 
 ## Current status
 
+**MARKETING CONTENT / MEDIA LIBRARY AMENDMENT: PENDING INDEPENDENT REVIEW.** Nuevo requisito confirmado, **POST-FREEZE SCOPED SEMANTIC AMENDMENT**, en rama `docs/marketing-content-media-library`. [Spec única](specs/flows/marketing-content-media-library.md), [fuentes oficiales](research/marketing-content-providers.md) y [evidencia del autor/impacto WO](evidence/marketing-content-amendment.md). La misión vigente autoriza únicamente documentación/research, comprobaciones estáticas, commits/push y **un nuevo PR abierto, sin merge**. **WORK ORDER DELTA NOT YET GENERATED. IMPLEMENTATION: NOT AUTHORIZED.** Ninguna WO Marketing existe ni fue ejecutada.
+
+**PR #10 MERGED**, verificado 2026-09-13T01:41:54Z mediante merge commit `3f0dc782468c83749bcc08a2ad13f218d3889314`; main/origin/main sincronizados y limpios antes de esta rama. Tree `a70215f850e062f7e7c0380c305acf9f2e933592`, idéntico al commit de sincronización exclusivamente de estado `58b24e2c5f893053f25cc312920476c9530f9f20`. Candidato independiente aceptado y F-WO-01/F-WO-02 PASS preservados abajo; delta editorial de4 archivos, sin cambios en las84 fichas ni contratos semánticos. Rama integrada `docs/regenerate-work-orders` eliminada local/remota después de verificar ancestro e identidad del árbol.
+
+Las84 WOs aceptadas conservan cobertura **87/87 de su alcance anterior**. Marketing propone6 capacidades adicionales: total93, cobertura de las nuevas pendiente de aceptación de esta enmienda y posterior WO delta explícitamente encargado. No se declara todo el conjunto obsoleto:78 sin delta y6 con futura extensión transversal, cuerpos84 intactos. **A0 / B16 / C13 / D6**, recomputación documental del autor para el nuevo candidato; todos B/C/D **OPEN**, nuevos A identificados0 y preguntas al propietario0. Esto no es aceptación independiente de Marketing ni invalida retrospectivamente A0 del baseline aceptado.
+
+### Aceptación y mandato de cierre de PR #10 — completados
+
 **PASS — PR #10 SURGICAL REMEDIATION ACCEPTED. PASS — CURRENT CASPRO WORK ORDER SET ACCEPTED.** Resultado independiente comunicado por el propietario: candidato `9fadf6569e98298d7db3a5fbd6bc53575adf4ff7`, tree `9189869d1495dd25a5d2d68d6874990348053618`; **F-WO-01 PASS; F-WO-02 PASS**. Las **84 WOs** se aceptan como baseline del plan de implementación del alcance anterior al nuevo requisito Marketing Content / Media Library. Cobertura **87/87**, **178 HARD**, DAG acíclico y raíz **WO-M01-01**. **A0 / B16 / C13 / D6**, todos B/C/D OPEN, sin cambios para ese baseline. **IMPLEMENTATION: NOT AUTHORIZED.** Ninguna WO se autoriza a ejecutar.
 
 El propietario autoriza sincronización exclusivamente de estado, un commit editorial, actualización del cuerpo de PR #10, merge mediante **MERGE COMMIT** y limpieza segura tras verificar integración. La identidad física del merge se verifica después de la operación. La fase B solo empieza desde ese main verificado, en otra rama: amendment semántico acotado de Marketing, sin generar/ejecutar WOs ni fusionar su nueva PR. Esta aceptación no acepta por adelantado ese requisito nuevo ni altera el A0 histórico.
@@ -78,6 +86,8 @@ Resultado independiente comunicado por el propietario: **PASS — INFORMATION AR
 **A0 / B16 / C13 / D6**, recomputación independiente final comunicada por el propietario para el candidato aceptado de PR #8 identificado arriba: F01–F07 y el cierre de ownership de privacidad aceptados, sin nuevo bloqueador semántico ni traslado de A a B. 0 bloqueadores de diseño A, 16 gates de validación B, 13 de activación C y 6 pendientes con trigger D, conforme al [registro de gaps](roadmap/decisions-gaps.md). Todos los B/C/D permanecen abiertos. Son conteos por clase, no cuatro IDs de gate. Las validaciones profesionales siguen siendo gates de activación. El registro posee alcance, trigger y clasificación; la [readiness M01–M09](specs/index.md) conserva el corte del candidato congelado.
 
 ## Next process
+
+Revisión independiente del candidato exacto Marketing, ownership, autorizaciones,40 casos y WO impact. Corregir cualquier hallazgo en la nueva PR; no merge autorizado. Solo después de aceptación y posterior mandato se prepara el delta de WOs; implementar sigue requiriendo fase habilitada y autorización explícita. La misión de cierre descrita a continuación ya terminó y se conserva como historia.
 
 Completar el cierre autorizado de PR #10 y verificar main. Después preparar únicamente la enmienda de Marketing en rama/PR separada, pendiente de revisión independiente y sin merge. Solo análisis del impacto WO; IMPLEMENTATION NOT AUTHORIZED.
 

@@ -18,6 +18,8 @@ Remediación F02/F04/F05 al2026-09-12: [privacidad Perú](normative/privacy-curr
 
 ## Fuentes técnicas y comparación
 
+[Marketing Content: DAM/ERP, Meta y Jumpseller](marketing-content-providers.md): research oficial acotado del nuevo requisito post-freeze, corte2026-09-12; superficies/permisos/límites mutables separados de decisiones CasPro. Sin credenciales ni activación.
+
 [Tooling actual de agentes](agent-tooling-currentness.md): verificación oficial de discovery, imports, precedencia, skills y trust de Codex/Claude/Gemini al2026-09-12; seguimiento del expediente histórico, sin acreditar ejecución en cada host.
 
 [Gobierno, roles y configuración](governance-authorization-benchmark.md), corte 2026-09-12: SAP, Dynamics, NetSuite, Odoo, OWASP/NIST y recuperación; GOV-N01/N02 cotejan decisiones contables determinadas. Fuentes oficiales y límites de acceso explícitos; contratos en arquitectura/registro/manual, no aquí.

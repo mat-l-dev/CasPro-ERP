@@ -12,6 +12,7 @@ Contrato arquitectónico de [ADR-001](../decisions/adr-001-modularity.md). La fl
 | Operations, capacidad técnica existente | Registro y ciclo operativo PrivacyIncidentCase; operación/recuperación según delivery, sin apropiarse de hechos de negocio | Workspace, Audit, Documents para evidencia; puertos de infraestructura por composición | Decidir finalidad/base jurídica, modificar hechos de otros dueños o convertir al coordinador superior en dueño de datos; no exige un paquete nuevo |
 | Parties | Contrapartes por entidad, roles cliente/proveedor, identidad vigente | Workspace, Audit, Documents | Apropiar saldos o tratar persona igual a usuario |
 | Catalog | Bienes/SKU, unidades, especificaciones y precios comerciales versionados | Workspace, Audit; Documents para referencias de evidencia del amendment profesional | Existencias y costes de stock |
+| Marketing, pequeño dueño propuesto post-freeze | Organización y contenido comercial, aprobación de uso, campaña/marca/copy y planificación/observación de publicación según mapa siguiente | Workspace/Access, Audit, Catalog y Documents por APIs; transporte futuro por composición superior | Apropiar bytes/custodia, producto/precio/stock, autoridad jurídica o HTTP/SDK; crear Communications/Media con estado duplicado |
 | Inventory | Almacenes/ubicaciones, movimientos, coste operativo, seriales, reservas y stock publicable | Catalog, Workspace, Audit, Documents | Importar Sales/Procurement, decidir si un cliente pagó o registrar VNR/deterioro contable |
 | Procurement | Compromisos de compra, obligaciones y expediente CPE recibido de proveedor, con sus ajustes comerciales | Parties, Catalog, Workspace, Audit, Documents | Escribir existencias o dinero |
 | Sales | Pedidos, progreso comercial, expediente CPE de venta y ajustes comerciales | Parties, Catalog, Workspace, Audit, Documents | Consultar/escribir Treasury o Inventory directamente |
@@ -57,6 +58,23 @@ La coordinación transversal de atención, incidente o restore compone contratos
 Documents recibe evaluaciones/decisiones y resultados como valores/referencias versionadas verificadas por la entrada/coordinación, sin llamadas de retorno a dominios/Operations; Access recibe la decisión referenciada sin consultar modelos del dominio. Operations consume evidencia por Documents; Documents no importa Operations. Corporate coordina la validación de facultades/asesoramiento por sus contratos existentes; ni esa coordinación ni R-CORPORATE sustituyen la autoridad real del responsable del tratamiento o le transfieren los cinco registros. Las decisiones legales recibidas se registran con autor, fundamento y evidencia en el expediente correspondiente, no se derivan de su custodio. Se conservan el grafo acíclico, la custodia Documents, las restricciones Access y los gates profesionales/de activación.
 
 ## Flujos que cruzan propietarios
+
+<a id="marketing-content"></a>
+### Marketing Content — ownership del nuevo amendment
+
+**PENDING INDEPENDENT REVIEW**, posterior al alcance aceptado de PR #10. [Spec única](../specs/flows/marketing-content-media-library.md) posee ciclos/comandos. Se elige un pequeño dueño lógico Marketing con Documents y adaptadores por composición; no app Django ni plataforma Marketing materializada.
+
+| Registro / ciclo persistente | Único dueño | Responsabilidad separada |
+|---|---|---|
+| MarketingFolder/árbol, MarketingTag/asignaciones y carpeta primaria del activo | Marketing | Access posee grants/restricciones; carpeta no concede permisos ni es ruta física |
+| MarketingAsset / MarketingAssetRevision / UsageRightsRevision y aprobación/retiro/archivo | Marketing | Documents posee DocumentVersion, disponibilidad/hash/objeto/derivados y custodia; no aprobación de uso Marketing |
+| MarketingCampaign y sus vínculos revisables; BrandKit / BrandKitRevision; MarketingCopy / CopyRevision | Marketing | Catalog conserva SKU/kit/especificaciones/precio; Documents evidencia y representaciones, sin copiar ciclo editorial |
+| PublicationPlan / revisiones; PublicationRecord / correcciones y futura intención de publicación empresarial | Marketing | Integrations posee transporte/job/attempt/observación técnica; Documents solo custodia evidencia, no DeliveryIntent CPE duplicado |
+| PersonalDataPurpose / ProcessingContext de familia estática MARKETING_CONTENT | Marketing | Mismos cinco dueños transversales de privacidad: Access DataRestriction; Documents DataSubjectRequest; Operations PrivacyIncidentCase |
+
+Marketing es autoridad empresarial de finalidad/uso, **no autoridad jurídica por software**. Responsable del tratamiento/facultado y profesional competente validan fundamento/licencia/uso real; Corporate coordina acreditación cuando corresponda. Access ejecuta restricciones, cada dueño aplica sus pasos, Documents conserva evidencia y Operations coordina incidente/restore. El coordinador superior no posee estados paralelos. Referencias de custodia se registran mediante Documents en la misma TX del vínculo Marketing, sin consultas Documents→Marketing ni Catalog→Marketing; transporte se conecta por puertos/valores verificados. Este delta no reasigna ningún hecho previo.
+
+### Coordinación económica y documental existente
 
 Delta del [amendment B2B/financiación aceptado](../evidence/b2b-financing-amendment.md): Sales incorpora cotizaciones y OCs **del cliente** con significado comercial; Procurement conserva OCs **al proveedor**. [B2B](../specs/flows/b2b-commercial-dossier.md) usa los contratos existentes de stock/dinero. Para [pago por cuenta de empresa](../specs/flows/financing-events-statements.md), coordinador compone Corporate (pago externo/naturaleza/derecho), Procurement (obligación) y Treasury (liquidación por tercero sin caja propia y posterior reembolso). No añade dependencias inversas entre módulos. Corporate posee estado de financiación derivado; Documents snapshot y evidencia. [C40](../specs/flows/cpe-document-delivery.md#c40) registra historia externa sin adaptar el dominio a Resend.
 

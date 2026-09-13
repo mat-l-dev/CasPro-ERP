@@ -24,6 +24,8 @@ Todos los controles son **diseñados, no implementados**. OWASP ASVS 5.0 es refe
 
 ## Límites y decisiones proporcionales
 
+Amendment [Marketing Content](../specs/flows/marketing-content-media-library.md#seguridad-retención-ux-y-carga): SVG activo/metadata EXIF, parser de video/bombas, inferencia de asset oculto desde campaña/faceta/thumbnail y URL de original pública son nuevas superficies de las mismas amenazas. Control: cuarentena/parser sin red y límites, original privado inmutable, preview raster/derivado con linaje, proxy autenticado y filtros antes de agregados. Descargar original exige conjunción Marketing+Documents, sin herencia de preview. Restore reaplica restricciones/grants/derechos posteriores antes de lecturas; bytes ya descargados no son revocables retrospectivamente. B02/B10/B13/B15 y futuro B12 requieren evidencia; [casos10–19 y29–40](../evidence/marketing-content-amendment.md#adversarial-cases) no son tests ejecutados.
+
 F02 amplía el control de datos personales con [finalidad, derechos, incidentes y recuperación](personal-data-lifecycle.md). Restricción rige todas las lecturas/derivados/export/IA, además de comandos; original conservado no equivale a visible. Notificación depende de supuestos del art.34, y todos los incidentes se documentan. B02/B10/B13/B15 deben probar el contrato; C06/C10/C11/C13 retienen hechos/política/validación real.
 
 No confiar en que Supabase esté configurado de forma segura por defecto ni exponer tablas por su Data API. No exigir una plataforma de seguridad empresarial completa para un solo operador. Sí exigir identidad de release, control de acceso, protección de evidencias y recuperación demostrada antes de producción.

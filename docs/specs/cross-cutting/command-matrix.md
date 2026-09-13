@@ -65,6 +65,8 @@ El plan incluye locks implícitos de FK/UNIQUE y orden de INSERT/UPDATE, no solo
 
 ## Catálogo común
 
+Extensión post-freeze [MC1–MC10 Marketing](../flows/marketing-content-media-library.md#comandos-atomicidad-y-correcciones), pendiente de revisión independiente: **G30** agrega raíces tipadas Marketing (árbol/carpeta, asset, campaña, kit, copy, plan, publicación) al rango30 con orden total compartido `(entidad,tipo,ID)`. I0 → A5 → K10 solo futuro proveedor → M25 política/maestros → G30 → D80 referencias/artefactos → J100. Árbol bloqueado para cambios estructurales; nueva raíz bajo padre+UNIQUE. No locks monetarios/stock ni callbacks de Documents. Cada ficha define scope/atomicidad/corrección; MC no son WOs ni capabilities. CM0 previo conserva su orden y obligaciones.
+
 Todas las filas heredan I si D; se listan los demás recursos potenciales en orden. La ficha concreta cuándo se omiten recursos no afectados. `J al final` solo si el comando consume/crea seguimiento durable; nuevas filas de eventos/auditoría no introducen una lectura empresarial inversa.
 
 | Comando / fuente | Capacidad de actuación | Recursos competidos después de I |

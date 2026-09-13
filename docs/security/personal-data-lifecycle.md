@@ -20,6 +20,12 @@ Sin contexto aprobado: HOLD para nueva recolección, exportación o envío a IA/
 
 ## Atención de derechos
 
+### Uso Marketing del contrato existente
+
+El nuevo [Marketing Content](../specs/flows/marketing-content-media-library.md#autorización-configuración-y-privacidad), pendiente de revisión, incorpora finalidades específicas bajo descriptor **MARKETING_CONTENT** con Marketing como dueño de P/contexto; no otro registro Privacy. Preparación exacta: privacy.context.prepare AND marketing.policy.prepare AND configuration.prepare, misma entidad/P/familia/scope y revisión A5/M25. Responsable acreditado/profesional aporta autoridad jurídica; no el rol editor ni custodio. DataRestriction sigue Access; solicitud Documents e incidente Operations. Fotos de persona/sitio, EXIF y derivados se restringen antes de lectura/descarga/uso/IA. Decisiones posteriores y contracciones de derechos de difusión entran en diario de restore; Marketing no evade barrera porque el asset estuviera aprobado. Derechos/licencias de contenido y aprobación editorial se conservan por Marketing sin reemplazar este ciclo transversal.
+
+### Trámite transversal
+
 Estados: RECEIVED → IDENTITY_PENDING cuando falte acreditación → ASSESSED → DECIDED → EXECUTION_PENDING → RESPONDED → CLOSED. Cada transición conserva actor, evidencia, tiempo y revisión; rechazo/atención parcial son resultados motivados, no desaparición de solicitud. Identidad pendiente no reinicia el reloj ni inventa prórroga: se aplican solo subsanación/suspensión legales registradas. Al recibirse solicitud de supresión se registra bloqueo provisional del tratamiento objeto de la solicitud, con asociación e identificación seguras; si no se puede asociar, se restringe la nueva difusión identificable y se subsana de inmediato, sin permitir que una solicitud ajena borre datos o declare cumplido el bloqueo.
 
 El responsable verifica identidad proporcionalmente, localiza fuentes/derivados/destinatarios, evalúa acceso, rectificación, inclusión, cancelación/supresión, oposición y demás derechos aplicables. Responde incluso si no tiene datos. Acceso entrega copia inteligible de lo propio, con redacción de terceros y canal seguro; no concede cuenta ni export global. Portabilidad solo en sus supuestos y viabilidad legales; no es API universal. Comunicación a receptores de datos corregidos/suprimidos y constancias se incluyen donde corresponda.

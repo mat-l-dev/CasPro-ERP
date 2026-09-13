@@ -50,6 +50,8 @@ Preview rápido de PDF mediante contenido o representación derivada autorizada,
 
 ## Reporting, imports y exports
 
+[Marketing](../specs/flows/marketing-content-media-library.md#originales-derivados-y-almacenamiento), amendment nuevo pendiente: PostgreSQL guarda carpeta lógica/identidades/revisiones/derechos/planes y hechos de uso; Documents y object storage conservan bytes/hashes/derivados. Ruta o key nunca es asset ID. Mover/renombrar no reescribe originales ni referencias; dedupe no fusiona activos/derechos. Snapshot de precio en contenido preserva fuente/revisión/condiciones, no actualiza banner histórico con Catalog vigente.
+
 Consultas paginadas con orden estable; keyset cuando el volumen lo justifique. Listas frecuentes deben tener filtros e índices asociados al acceso por entidad. Cálculo comercial reutiliza políticas del dueño; los informes pueden combinar contratos/proyecciones de lectura publicadas, nunca escribir tablas operativas.
 
 CSV/Excel/PDF son formatos de salida, no bases paralelas. La importación CSV/Excel sigue validate → preview → confirm: staging con archivo/versión y errores, vista de cambios propuestos y confirmación explícita mediante comandos del dueño. Declarar atomicidad/fallos por fila o lote y deduplicación según efecto; confirmar revalida permisos y revisiones, y cambios relevantes invalidan el preview. Nunca ejecutar macros/fórmulas del archivo ni confirmar negocio por subirlo. Procesar con límites; neutralizar fórmulas en exportaciones de texto no confiable a hojas de cálculo.

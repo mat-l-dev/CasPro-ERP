@@ -43,6 +43,8 @@ Los goldens publicados son especificaciones sintéticas, no tests aprobados ni p
 
 ## Validation Profile de la Work Order
 
+Nuevo [Marketing Content](../specs/flows/marketing-content-media-library.md#validación-gates-y-entrega): selección futura centrada en CONTRACT/INTEGRATION de permisos y custodia, TRANSACTIONAL de árbol/aprobación/retiro/purga, BROWSER de biblioteca/calendario accesible y NON-FUNCTIONAL de archivos hostiles/privacidad/restore/carga. [40 contraejemplos](../evidence/marketing-content-amendment.md#adversarial-cases) son análisis documental, no evidencia ejecutada. No requiere tests/builds/Docker en esta fase ni suite financiera ajena al delta.
+
 Cada WO declara categorías, módulos/contratos afectados, invariantes, casos mínimos, entorno/roles, evidencia esperada y exclusiones justificadas. Ejemplos conceptuales, no comandos ejecutables:
 
 | Cambio | Perfil mínimo razonable |

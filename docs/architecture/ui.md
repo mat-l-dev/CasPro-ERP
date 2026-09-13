@@ -115,6 +115,8 @@ REQUIRES LATER VALIDATION: tareas representativas, teclado/lector, foco tras swa
 
 ## Recorridos profesionales propuestos
 
+Nuevo [Marketing Content Center](../specs/flows/marketing-content-media-library.md#seguridad-retención-ux-y-carga), pendiente de revisión: Biblioteca grid/lista/carpetas, Campañas, Kit de marca, Textos y Calendario con lista accesible equivalente. Thumbnails autorizados y metadata; original solo acción explícita con permiso separado. Mover dispone de diálogo/teclado, no drag obligatorio; LIGHT/DARK/SYSTEM. Breadcrumb/facetas/conteos no revelan nodos ocultos; revisión aprobada, plan y publicación observada se muestran como conceptos distintos. Case Flow no posee esta área ni es requisito para entregarla.
+
 [Sales](../specs/flows/professional-sales.md) muestra revisión cotización→contrato/adenda→SO→entrega→instalación/aceptación→CPE→aplicaciones/pago→línea bancaria→asiento→período fiscal. [Procurement](../specs/flows/sourcing-imports.md) muestra requisición→RFQ→ofertas/comparación→adjudicación→PO→recepción→CPE→AP→pago→banco→GL→Tax; importación añade embarque/DAM/levante/costo y sus diferencias. Enlaces son relaciones N:M, no secuencia obligatoria ni requisito de documento inexistente.
 
 Cada salto conserva entidad, objeto/revisión, fecha/corte, monto/UOM y permiso del dueño; origen restringido no revela título/total/thumbnail. Búsqueda combina SKU/MPN/serie, cliente/proveedor, número comercial/fiscal, contrato/importación/hoja con filtros y paginación estable. Falta de nodo muestra causa/owner/acción, no inventa un enlace para completar la cadena. Export/print usa audiencia y snapshot.

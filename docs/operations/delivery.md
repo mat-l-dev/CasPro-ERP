@@ -51,6 +51,8 @@ Mover a PostgreSQL managed/VPS cambia endpoint, roles, extensiones permitidas, T
 
 ## Observabilidad y salud
 
+Para [Marketing Media Library](../specs/flows/marketing-content-media-library.md#seguridad-retención-ux-y-carga), amendment pendiente, manifiesto DB+objetos incluye relaciones asset/revision/derivado y referencias de custodia, sin nueva infraestructura. Cuotas, thumbnail jobs y objetos MISSING se supervisan; biblioteca no carga originales en grid. Restore conserva lecturas normales/outbound OFF y diario posterior de restricciones/grants/derechos de uso; planes/restos de jobs nunca reenvían publicaciones. Preview autenticado no entrega URL storage reutilizable; entrega pública efímera futura a proveedor es otra zona y otro permiso C11/B12, no bucket privado público.
+
 | Señal | Uso |
 |---|---|
 | Audit | Quién actuó, entidad, recurso, transición, motivo y origen; retención empresarial |

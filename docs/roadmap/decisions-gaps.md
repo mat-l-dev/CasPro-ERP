@@ -121,6 +121,30 @@ No nuevos IDs ni cierres: **A0 / B16 / C13 / D6** se conservan. La ampliación s
 
 Todo efecto de implementación sigue además fase habilitada y WO autorizada. Esta modificación no aprueba valores, contratos, cuentas, destinatarios ni reglas fiscales reales.
 
+<a id="marketing-content-gates"></a>
+## Marketing Content — extensión por efecto, pendiente de revisión
+
+Nuevo requisito post-freeze según [spec](../specs/flows/marketing-content-media-library.md). No corrige retrospectivamente F01–F07 ni el baseline87/87 de PR #10. Recomputación del autor **A0 / B16 / C13 / D6**: no nuevo ID, ningún gate cerrado; todos B/C/D OPEN. Cada hipótesis siguiente amplía el ensayo del mismo mecanismo y mantiene owner canónico; futuro transporte añade Marketing como participante empresarial de B12, sin trasladar propiedad de Integrations/Documents.
+
+| Gate existente | Aplicación exacta / momento / salida ante falta |
+|---|---|
+| B02 Access/Security | Antes de aceptar entradas Marketing: roles/scopes/restricciones y conjuncts de original; hidden asset/faceta/campaña/thumbnail y otra entidad deniegan. Si falla, bloquear superficie |
+| B03 Dueños de comandos | Antes de aceptar MC1–MC10: árbol acíclico bajo carrera, revisión/aprobación/retiro, referencias Documents vs purga y observación única; rollback/audit/idempotencia. Fallo retiene transición |
+| B09 UX/Quality | Grid/lista/calendario/diálogo de mover accesibles, temas/foco y estados diferenciados; fallo retiene UI afectada |
+| B10 Security/UI/Documents | SVG/PDF/video/EXIF, quotas/parser, preview/URL/original privados y revocación en todos los entrypoints; cuarentena/bloqueo ante fuga o integridad desconocida |
+| B13 Operations/Security | Restore incluye objetos/derivados y diario posterior de restricciones/grants/derechos; sin completitud lecturas normales/outbound OFF |
+| B15 Architecture/Operations | Dataset sintético50.000 activos, paginación/filtros autorizados, thumbnails bounded y jobs/cuotas; medir criterios de WO antes de aceptar, ajustar mecanismo sin cambiar dueño |
+| B12 Integrations/Documents, Marketing participante del efecto futuro | Solo adaptador externo posterior: intento/epoch/resultado tardío/UNKNOWN/superficie y no reenvío por restore. Fallo mantiene HOLD; no exige prueba de red para registro manual local |
+| B14 Quality; B16 AI/Security | B14 solo reutilización de evidencia con equivalencia demostrada. B16 solo IA activada por D01, sin aprobación/publicación autónoma; función OFF si falla |
+| C06 Corporate + profesional competente | Antes del tratamiento/difusión/acto real que lo requiera: derechos/licencias/facultades/finalidad/privacidad de imagen y canal, sin consentimiento universal. Falta retiene ese uso; no construir biblioteca sintética |
+| C10 Operations/Documents + propietario/profesional | Retención/hold/custodia/targets y disposición de originales/derivados reales; sin política no purge ni promesa de recuperación |
+| C11 Integrations + propietario | Solo cuenta/destino/transferencia/efecto externo real específico; no exige credencial API para capturar MANUAL_EXTERNAL ni da permiso de red por registrar historia |
+| C12 UX/Operations + operador; C13 Access/Masters + propietario | Soporte operativo real y grants/configuración/maestros de entidad; no activación por crear las dos plantillas Marketing |
+| D03 Product/Architecture | Construcción del nuevo núcleo Marketing **confirmada** en M03+, no pendiente del trigger. Futuros adaptadores sociales/Jumpseller media, analítica/paid ads requieren encargo/spec/WO/autoridad y currentness. No amplía WhatsApp/COD ni el protocolo de stock |
+| D01 AI/Architecture | Sugerencias de copy/tags/alt text solo tras caso de beneficio, mandato/minimización y B16; no condición del flujo ZERO AI |
+
+No se usa B11 por compartir proveedor Jumpseller: ese gate protege stock, no media. No C04 por aprobación editorial, D04 por Brand Kit básico, D05 por engagement ni D06 por calendario simple. Las futuras evoluciones tienen alcance y salida segura; ninguna carencia de ownership/estado/autoridad se traslada a activación para fabricar A0. [Evidencia del autor](../evidence/marketing-content-amendment.md) y revisión independiente pendiente conservan esa distinción.
+
 ## Máximo cinco grupos humanos y profesionales
 
 DH1–DH5 son agrupaciones de preguntas de activación, no aprobación solicitada ahora ni sustitución de HP1–HP5. Referencias históricas H1–H5 en [review histórico](../history/reviews.md) no son IDs actuales. No se pide al propietario decidir locks, tablas, librerías ni cómo probar RLS.

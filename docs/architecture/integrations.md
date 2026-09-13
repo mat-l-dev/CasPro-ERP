@@ -33,6 +33,12 @@ Capacidades documentadas: API de lectura de pedidos/productos y actualización d
 
 Canal/cuenta, referencia externa, SKU vinculado y stock publicable son los conceptos neutrales mínimos. Solo se especificará Jumpseller; sin modelo universal de estados ecommerce, conectores vacíos ni motor de sincronización configurable. Discrepancia → revisión/reconciliación; cualquier ajuste local exige motivo, capacidad y auditoría del dueño, nunca edición directa del saldo.
 
+## Contenido Marketing — ampliación futura separada
+
+[Marketing Content](../specs/flows/marketing-content-media-library.md#frontera-de-publicación-automática-futura) confirma biblioteca/planificación/registro **MANUAL_EXTERNAL** sin proveedor. Marketing posee plan/observación e intención empresarial futura; Integrations transporte/attempt, Documents evidencia. No reutilizar intención de entrega CPE como hecho de publicación social. Instagram/Facebook/Jumpseller son destinos de contenido; automatización requiere D03, futuro contrato/WO y C11/B12 por superficie. El alcance “solo Jumpseller” anterior sigue referido a pedido/stock; no autoriza automatizar contenido.
+
+[Fuentes actuales](../research/marketing-content-providers.md) distinguen login/cuenta/superficie Meta, container/publicación, media de producto/página Jumpseller y banners de tema. ACK/programación no son publicación; UNKNOWN retiene intención y concilia. Proveedor recibe únicamente derivado/copia autorizada mediante entrega separada acotada, jamás URL de preview humano ni original/bucket privado público. Cambios de formato/cuenta/límites invalidan readiness de ese adaptador; no aprobación Marketing. WhatsApp conserva su trigger.
+
 ## CPE externo: acquire → link/verify → deliver
 
 | Paso | Responsable y límite |

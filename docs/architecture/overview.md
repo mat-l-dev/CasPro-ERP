@@ -38,6 +38,8 @@ Un flujo que solo afecta a un módulo vive en su aplicación. Un flujo transvers
 
 ## Estructura futura, no materializada
 
+Nuevo amendment post-freeze: [Marketing Content / Media Library](../specs/flows/marketing-content-media-library.md) añade un pequeño dueño lógico para contenido/campañas y usos/publicaciones, sobre Documents/Catalog/Access/Audit. [Mapa canónico](boundaries.md#marketing-content) distingue negocio, custodia y transporte futuro; no modifica el monolito ni crea código. Revisión independiente pendiente según review.
+
 ```text
 src/caspro/
   config/                 composición y settings
